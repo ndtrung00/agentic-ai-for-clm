@@ -1,4 +1,4 @@
-# Multi-Agentic AI Systems for Contract Lifecycle Management
+# Multi-Agentic AI Systems for Contract Lifecycle Management (CLM)
 
 Master's Thesis Project - Technical University of Munich 
 
