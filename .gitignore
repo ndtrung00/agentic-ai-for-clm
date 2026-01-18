@@ -56,8 +56,10 @@ credentials/
 # Data
 data/raw/*
 data/processed/*
+data/cuad/*
 !data/raw/.gitkeep
 !data/processed/.gitkeep
+!data/cuad/.gitkeep
 *.csv
 *.xlsx
 *.pdf

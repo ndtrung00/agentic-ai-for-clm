@@ -12,10 +12,7 @@ from pathlib import Path
 import numpy as np
 
 from src.evaluation import (
-    bootstrap_ci,
     mcnemar_test,
-    wilcoxon_test,
-    benjamini_hochberg,
     cohens_d,
     format_result,
 )
