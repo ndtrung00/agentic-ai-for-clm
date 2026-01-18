@@ -47,8 +47,8 @@ class ModelConfig:
 MODEL_REGISTRY: dict[str, ModelConfig] = {
     # Anthropic Models
     "claude-sonnet": ModelConfig(
-        name="Claude 4 Sonnet",
-        model_id="claude-sonnet-4-20250514",
+        name="Claude 3.5 Sonnet",
+        model_id="claude-3-5-sonnet-20241022",  # Use older model for Langfuse compatibility
         provider=ModelProvider.ANTHROPIC,
         max_tokens=8192,
         context_window=200000,
