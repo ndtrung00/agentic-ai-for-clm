@@ -1,0 +1,163 @@
+# IP & Commercial specialist prompt configuration
+name: ip_commercial
+description: Specialist for IP and commercial clause extraction (17 categories)
+
+categories:
+  - Ip Ownership Assignment
+  - Joint Ip Ownership
+  - License Grant
+  - Non-Transferable License
+  - Affiliate License-Licensor
+  - Affiliate License-Licensee
+  - Unlimited/All-You-Can-Eat-License
+  - Irrevocable Or Perpetual License
+  - Source Code Escrow
+  - Exclusivity
+  - Non-Compete
+  - No-Solicit Of Customers
+  - No-Solicit Of Employees
+  - Competitive Restriction Exception
+  - Revenue/Profit Sharing
+  - Price Restrictions
+  - Volume Restriction
+
+system_prompt: |
+  You are a legal expert specializing in intellectual property, licensing, and
+  commercial terms in contracts.
+
+  Your expertise covers:
+  - IP ownership and assignment
+  - License grants and restrictions
+  - Exclusivity and competition provisions
+  - Non-solicitation agreements
+  - Commercial terms (pricing, volume, revenue sharing)
+
+  IMPORTANT: If you are uncertain whether a clause is relevant, INCLUDE IT.
+  It is better to extract a potentially relevant clause than to miss one.
+  Only respond "No related clause" if you have thoroughly searched and found nothing.
+
+category_indicators:
+  Ip Ownership Assignment:
+    - assigns
+    - transfer of ownership
+    - work for hire
+    - intellectual property rights
+    - all rights
+    - hereby assigns
+    - assignment of IP
+
+  Joint Ip Ownership:
+    - joint ownership
+    - jointly own
+    - shared ownership
+    - co-owned
+    - joint IP
+
+  License Grant:
+    - hereby grants
+    - license to use
+    - right to use
+    - licensed
+    - permission
+    - grant of license
+
+  Non-Transferable License:
+    - non-transferable
+    - not transferable
+    - personal license
+    - may not transfer
+
+  Affiliate License-Licensor:
+    - licensor's affiliates
+    - affiliates of licensor
+    - parent company
+    - subsidiary (licensor context)
+
+  Affiliate License-Licensee:
+    - licensee's affiliates
+    - affiliates of licensee
+    - extend to affiliates
+    - affiliate use
+
+  Unlimited/All-You-Can-Eat-License:
+    - unlimited
+    - all-you-can-eat
+    - enterprise-wide
+    - site license
+    - unlimited users
+
+  Irrevocable Or Perpetual License:
+    - irrevocable
+    - perpetual
+    - permanent license
+    - cannot be revoked
+    - perpetuity
+
+  Source Code Escrow:
+    - source code escrow
+    - escrow agent
+    - escrow agreement
+    - code deposit
+
+  Exclusivity:
+    - exclusive
+    - sole
+    - exclusively
+    - only provider
+    - exclusive rights
+
+  Non-Compete:
+    - non-compete
+    - not compete
+    - competitive activity
+    - restriction on competition
+    - compete with
+
+  No-Solicit Of Customers:
+    - non-solicitation
+    - not solicit customers
+    - customer relationships
+    - solicit business
+
+  No-Solicit Of Employees:
+    - non-solicitation
+    - not solicit employees
+    - not hire employees
+    - personnel
+    - recruit
+
+  Competitive Restriction Exception:
+    - exception
+    - carve-out
+    - notwithstanding
+    - exclusion from non-compete
+
+  Revenue/Profit Sharing:
+    - revenue sharing
+    - profit sharing
+    - royalty
+    - percentage of revenue
+    - share of profits
+
+  Price Restrictions:
+    - price
+    - pricing
+    - minimum price
+    - resale price
+    - price maintenance
+    - price floor
+
+  Volume Restriction:
+    - volume
+    - quantity
+    - minimum order
+    - maximum
+    - units
+    - volume cap
+
+output_format: |
+  Respond with a JSON object containing:
+  - extracted_clauses: list of exact text excerpts from the contract
+  - reasoning: step-by-step explanation of your extraction logic
+  - confidence: float between 0 and 1
+  - category_indicators_found: list of specific terms/patterns found

@@ -1,0 +1,67 @@
+# Baseline experiment configurations
+# B1: Zero-shot (ContractEval replication)
+# B4: Chain-of-Thought
+
+experiment_name: baselines
+description: Baseline models for comparison
+
+models:
+  - claude-sonnet-4-20250514
+  - claude-haiku-35-20241022  # For cost comparison
+
+dataset:
+  name: cuad-qa
+  source: theatticusproject/cuad-qa
+  split: test
+
+configurations:
+  B1_zero_shot:
+    name: Zero-Shot Baseline
+    description: ContractEval replication - exact prompt match
+    type: zero_shot
+    model: claude-sonnet-4-20250514
+    temperature: 0.0
+    max_tokens: 4096
+    calibration_target:
+      f1: 0.641
+      f2: 0.678
+      jaccard: 0.472
+      laziness_rate: 0.071
+    notes: |
+      Must match ContractEval numbers closely.
+      If significant deviation, investigate prompt/parsing differences.
+
+  B4_chain_of_thought:
+    name: Chain-of-Thought Baseline
+    description: Single agent with step-by-step reasoning
+    type: chain_of_thought
+    model: claude-sonnet-4-20250514
+    temperature: 0.0
+    max_tokens: 8192  # More tokens for reasoning
+    notes: |
+      Tests whether explicit reasoning improves extraction.
+      Compare CoT overhead vs. accuracy gain.
+
+evaluation:
+  metrics:
+    - f1
+    - f2
+    - precision
+    - recall
+    - jaccard
+    - laziness_rate
+    - grounding_rate
+
+  statistical_tests:
+    bootstrap_samples: 1000
+    confidence_level: 0.95
+
+  category_analysis:
+    - by_tier  # common, moderate, rare
+    - by_category  # all 41 categories
+
+output:
+  results_dir: experiments/results/baselines
+  log_dir: experiments/logs/baselines
+  save_predictions: true
+  save_traces: true  # For LangFuse

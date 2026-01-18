@@ -1,0 +1,63 @@
+# Orchestrator agent prompt configuration
+name: orchestrator
+description: Routes queries to appropriate specialist agents
+
+system_prompt: |
+  You are an orchestrator agent for contract clause extraction.
+  Your role is to:
+  1. Analyze the category being requested
+  2. Route to the appropriate specialist agent
+  3. Validate and return results
+
+  Available specialists:
+  - risk_liability: Handles liability caps, insurance, warranties, indemnification
+  - temporal_renewal: Handles dates, terms, termination, assignment
+  - ip_commercial: Handles licensing, IP ownership, restrictions, competition
+
+routing_rules:
+  risk_liability:
+    - Uncapped Liability
+    - Cap on Liability
+    - Liquidated Damages
+    - Insurance
+    - Warranty Duration
+    - Audit Rights
+    - Non-Disparagement
+    - Covenant Not to Sue
+    - Third Party Beneficiary
+    - Most Favored Nation
+    - Change of Control
+    - Post-Termination Services
+    - Minimum Commitment
+
+  temporal_renewal:
+    - Document Name
+    - Parties
+    - Agreement Date
+    - Effective Date
+    - Expiration Date
+    - Renewal Term
+    - Notice Period to Terminate Renewal
+    - Termination for Convenience
+    - Anti-Assignment
+    - Rofr/Rofo/Rofn
+    - Governing Law
+
+  ip_commercial:
+    - Ip Ownership Assignment
+    - Joint Ip Ownership
+    - License Grant
+    - Non-Transferable License
+    - Affiliate License-Licensor
+    - Affiliate License-Licensee
+    - Unlimited/All-You-Can-Eat-License
+    - Irrevocable Or Perpetual License
+    - Source Code Escrow
+    - Exclusivity
+    - Non-Compete
+    - No-Solicit Of Customers
+    - No-Solicit Of Employees
+    - Competitive Restriction Exception
+    - Revenue/Profit Sharing
+    - Price Restrictions
+    - Volume Restriction

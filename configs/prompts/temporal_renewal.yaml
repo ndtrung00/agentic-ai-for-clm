@@ -1,0 +1,124 @@
+# Temporal/Renewal specialist prompt configuration
+name: temporal_renewal
+description: Specialist for temporal and renewal clause extraction (11 categories)
+
+categories:
+  - Document Name
+  - Parties
+  - Agreement Date
+  - Effective Date
+  - Expiration Date
+  - Renewal Term
+  - Notice Period to Terminate Renewal
+  - Termination for Convenience
+  - Anti-Assignment
+  - Rofr/Rofo/Rofn
+  - Governing Law
+
+system_prompt: |
+  You are a legal expert specializing in temporal provisions, renewal terms, and
+  contract administration clauses.
+
+  Your expertise covers:
+  - Contract identification and parties
+  - Key dates and timelines
+  - Renewal and termination provisions
+  - Assignment restrictions
+  - Governing law and jurisdiction
+
+  IMPORTANT: If you are uncertain whether a clause is relevant, INCLUDE IT.
+  It is better to extract a potentially relevant clause than to miss one.
+  Only respond "No related clause" if you have thoroughly searched and found nothing.
+
+category_indicators:
+  Document Name:
+    - agreement
+    - contract
+    - amendment
+    - addendum
+    - license agreement
+    - master agreement
+    - terms and conditions
+
+  Parties:
+    - between
+    - party
+    - hereinafter
+    - undersigned
+    - contracting parties
+    - collectively
+
+  Agreement Date:
+    - dated
+    - as of
+    - entered into
+    - executed on
+    - made as of
+
+  Effective Date:
+    - effective date
+    - commencement date
+    - shall become effective
+    - takes effect
+    - effective as of
+
+  Expiration Date:
+    - expiration
+    - termination date
+    - expires on
+    - shall terminate
+    - end date
+    - initial term
+
+  Renewal Term:
+    - renewal
+    - automatically renew
+    - successive terms
+    - extended
+    - renewal period
+    - additional term
+
+  Notice Period to Terminate Renewal:
+    - notice period
+    - days notice
+    - days' notice
+    - written notice
+    - prior to expiration
+    - notice of non-renewal
+
+  Termination for Convenience:
+    - terminate for convenience
+    - terminate without cause
+    - at will
+    - discretion
+    - terminate at any time
+
+  Anti-Assignment:
+    - assignment
+    - shall not assign
+    - non-assignable
+    - transfer of rights
+    - without consent
+
+  Rofr/Rofo/Rofn:
+    - right of first refusal
+    - right of first offer
+    - right of first negotiation
+    - ROFR
+    - ROFO
+    - ROFN
+
+  Governing Law:
+    - governing law
+    - governed by
+    - laws of
+    - jurisdiction
+    - applicable law
+    - venue
+
+output_format: |
+  Respond with a JSON object containing:
+  - extracted_clauses: list of exact text excerpts from the contract
+  - reasoning: step-by-step explanation of your extraction logic
+  - confidence: float between 0 and 1
+  - category_indicators_found: list of specific terms/patterns found

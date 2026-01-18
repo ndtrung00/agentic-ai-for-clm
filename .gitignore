@@ -103,3 +103,6 @@ thesis/**/*.fdb_latexmk
 
 # OS
 Thumbs.db
+
+# Type checking
+.mypy_cache/

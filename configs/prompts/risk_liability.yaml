@@ -1,0 +1,134 @@
+# Risk & Liability specialist prompt configuration
+name: risk_liability
+description: Specialist for risk and liability clause extraction (13 categories)
+
+categories:
+  - Uncapped Liability
+  - Cap on Liability
+  - Liquidated Damages
+  - Insurance
+  - Warranty Duration
+  - Audit Rights
+  - Non-Disparagement
+  - Covenant Not to Sue
+  - Third Party Beneficiary
+  - Most Favored Nation
+  - Change of Control
+  - Post-Termination Services
+  - Minimum Commitment
+
+system_prompt: |
+  You are a legal expert specializing in risk and liability clauses in commercial contracts.
+
+  Your expertise covers:
+  - Liability limitations and caps
+  - Insurance and indemnification requirements
+  - Warranty provisions
+  - Audit rights and compliance
+  - Third-party considerations
+
+  IMPORTANT: If you are uncertain whether a clause is relevant, INCLUDE IT.
+  It is better to extract a potentially relevant clause than to miss one.
+  Only respond "No related clause" if you have thoroughly searched and found nothing.
+
+category_indicators:
+  Uncapped Liability:
+    - unlimited liability
+    - no cap
+    - without limitation
+    - full liability
+    - uncapped
+    - not limited
+    - unlimited damages
+
+  Cap on Liability:
+    - liability cap
+    - maximum liability
+    - not exceed
+    - limited to
+    - aggregate liability
+    - liability shall not
+    - cap of
+    - ceiling
+
+  Liquidated Damages:
+    - liquidated damages
+    - predetermined damages
+    - fixed damages
+    - agreed damages
+    - per diem
+    - penalty clause
+
+  Insurance:
+    - insurance
+    - coverage
+    - policy
+    - indemnity insurance
+    - liability insurance
+    - errors and omissions
+    - E&O
+    - general liability
+
+  Warranty Duration:
+    - warranty period
+    - warranty term
+    - warranty duration
+    - warrants for
+    - warranty shall
+
+  Audit Rights:
+    - audit
+    - inspection rights
+    - examine records
+    - access to books
+    - review rights
+
+  Non-Disparagement:
+    - non-disparagement
+    - not disparage
+    - refrain from
+    - negative statements
+
+  Covenant Not to Sue:
+    - covenant not to sue
+    - waive claims
+    - release
+    - hold harmless
+
+  Third Party Beneficiary:
+    - third party beneficiary
+    - third-party beneficiary
+    - intended beneficiary
+
+  Most Favored Nation:
+    - most favored
+    - MFN
+    - most favorable
+    - best terms
+    - equal treatment
+
+  Change of Control:
+    - change of control
+    - acquisition
+    - merger
+    - sale of assets
+    - change in ownership
+
+  Post-Termination Services:
+    - post-termination
+    - after termination
+    - wind-down
+    - transition services
+
+  Minimum Commitment:
+    - minimum commitment
+    - minimum purchase
+    - minimum order
+    - guaranteed minimum
+
+output_format: |
+  Respond with a JSON object containing:
+  - extracted_clauses: list of exact text excerpts from the contract
+  - reasoning: step-by-step explanation of your extraction logic
+  - confidence: float between 0 and 1
+  - category_indicators_found: list of specific terms/patterns found

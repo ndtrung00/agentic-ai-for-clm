@@ -1,0 +1,115 @@
+# Multi-agent experiment configurations
+# M1: Full system (orchestrator + 3 specialists + validation)
+# M6: Combined prompts single-agent (critical ablation)
+
+experiment_name: multiagent
+description: Multi-agent system and ablations
+
+models:
+  - claude-sonnet-4-20250514
+
+dataset:
+  name: cuad-qa
+  source: theatticusproject/cuad-qa
+  split: test
+
+configurations:
+  M1_full_system:
+    name: Full Multi-Agent System
+    description: Orchestrator + 3 specialists + validation layer
+    type: multiagent
+    model: claude-sonnet-4-20250514
+    temperature: 0.0
+    max_tokens: 4096
+
+    agents:
+      orchestrator:
+        enabled: true
+        prompt_config: configs/prompts/orchestrator.yaml
+
+      specialists:
+        - name: risk_liability
+          prompt_config: configs/prompts/risk_liability.yaml
+          categories: 13
+
+        - name: temporal_renewal
+          prompt_config: configs/prompts/temporal_renewal.yaml
+          categories: 11
+
+        - name: ip_commercial
+          prompt_config: configs/prompts/ip_commercial.yaml
+          categories: 17
+
+      validation:
+        enabled: true
+        grounding_check: true
+        laziness_check: true
+
+    success_criteria:
+      f2: "> 0.73"  # vs 0.68 baseline
+      f2_rare: "> 0.40"  # vs ~0.15 baseline
+      laziness_rate: "< 0.03"  # vs ~0.10 baseline
+      grounding_rate: "> 0.95"
+      trace_completeness: "> 0.90"
+
+    hypotheses:
+      H1: "M1.F2 > B1.F2 (p < 0.05)"
+      H2: "ΔF2_rare > ΔF2_common"
+      H3: "M1 > M6 significant"
+      H4: "Trace completeness > 90%"
+
+  M6_combined_prompts:
+    name: Combined Prompts Single Agent
+    description: |
+      CRITICAL ABLATION: Single agent with all specialist prompts combined.
+      Tests whether multi-agent benefits come from architecture or just prompting.
+      If M1 ≈ M6, multi-agent overhead not justified.
+      If M1 > M6, architecture provides genuine benefit.
+    type: combined_prompts
+    model: claude-sonnet-4-20250514
+    temperature: 0.0
+    max_tokens: 4096
+
+    analysis:
+      key_comparison: M1 vs M6
+      null_hypothesis: "Multi-agent architecture provides no benefit beyond prompts"
+      significance_level: 0.05
+
+evaluation:
+  metrics:
+    - f1
+    - f2
+    - precision
+    - recall
+    - jaccard
+    - laziness_rate
+    - grounding_rate
+    - trace_completeness
+    - token_usage
+    - latency_ms
+
+  statistical_tests:
+    bootstrap_samples: 1000
+    confidence_level: 0.95
+    tests:
+      - mcnemar  # Paired binary outcomes
+      - wilcoxon  # Paired continuous scores
+    correction: benjamini_hochberg
+    effect_size: cohens_d
+
+  category_analysis:
+    - by_tier
+    - by_category
+    - by_specialist  # Which specialist handles which
+
+  explainability:
+    - reasoning_trace_completeness
+    - category_indicator_coverage
+    - grounding_verification
+
+output:
+  results_dir: experiments/results/multiagent
+  log_dir: experiments/logs/multiagent
+  save_predictions: true
+  save_traces: true
+  export_to_langfuse: true
