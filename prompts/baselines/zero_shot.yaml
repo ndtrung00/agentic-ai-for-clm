@@ -1,0 +1,24 @@
+name: zero_shot
+version: "1.0"
+description: "B1: Zero-shot baseline (ContractEval replication)"
+
+# This MUST match ContractEval exactly for valid comparison
+system: ""
+
+user: |
+  You are an assistant with strong legal knowledge, supporting senior lawyers by preparing reference materials. Given a Context and a Question, extract and return only the sentence(s) from the Context that directly address or relate to the Question. Do not rephrase or summarize in any way—respond with exact sentences from the Context relevant to the Question. If a relevant sentence contains unrelated elements such as page numbers or whitespace, include them exactly as they appear. If no part of the Context is relevant to the Question, respond with: "No related clause."
+
+  Context:
+  {contract_text}
+
+  Question:
+  {question}
+
+variables:
+  - contract_text
+  - question
+
+metadata:
+  baseline_type: B1
+  source: ContractEval
+  note: DO NOT MODIFY - exact replication required for valid comparison

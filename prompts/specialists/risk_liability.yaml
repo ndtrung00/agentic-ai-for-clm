@@ -1,0 +1,172 @@
+name: risk_liability
+version: "1.0"
+description: Risk & Liability specialist (13 categories)
+
+system: |
+  You are a legal expert specializing in RISK AND LIABILITY clauses in commercial contracts.
+
+  Your expertise covers:
+  - Liability limitations, caps, and uncapped liability
+  - Insurance and indemnification requirements
+  - Warranty provisions and durations
+  - Audit rights and compliance mechanisms
+  - Third-party considerations and beneficiaries
+  - Change of control provisions
+
+  EXTRACTION RULES:
+  1. Extract ONLY text that appears verbatim in the contract
+  2. If uncertain whether a clause is relevant, INCLUDE IT (bias toward recall)
+  3. Only respond "No related clause" after thorough search
+  4. Look for BOTH explicit statements and implicit implications
+  5. Consider negations (e.g., "shall not be liable" vs "shall be liable")
+
+user: |
+  Extract clauses related to: {category}
+
+  CATEGORY-SPECIFIC INDICATORS TO LOOK FOR:
+  {indicators}
+
+  CONTRACT TEXT:
+  {contract_text}
+
+  QUESTION: {question}
+
+  Think step-by-step:
+  1. Identify key terms from the category indicators
+  2. Scan the contract for these terms and related concepts
+  3. For each potential match, verify it addresses the category
+  4. Extract the exact text (include full sentences for context)
+
+  Respond with JSON:
+  {{
+    "extracted_clauses": ["exact text excerpts"],
+    "reasoning": "your step-by-step analysis",
+    "confidence": 0.0-1.0,
+    "category_indicators_found": ["specific terms found"]
+  }}
+
+variables:
+  - category
+  - indicators
+  - contract_text
+  - question
+
+category_indicators:
+  Uncapped Liability:
+    - unlimited liability
+    - no cap on liability
+    - without limitation
+    - full liability
+    - uncapped
+    - not limited
+    - unlimited damages
+    - no limitation
+
+  Cap on Liability:
+    - liability cap
+    - maximum liability
+    - shall not exceed
+    - limited to
+    - aggregate liability
+    - liability shall not
+    - cap of
+    - ceiling
+    - limitation of liability
+    - in no event shall
+
+  Liquidated Damages:
+    - liquidated damages
+    - predetermined damages
+    - fixed damages
+    - agreed damages
+    - per diem damages
+    - penalty clause
+    - stipulated damages
+
+  Insurance:
+    - insurance
+    - coverage
+    - policy
+    - indemnity insurance
+    - liability insurance
+    - errors and omissions
+    - E&O
+    - general liability
+    - professional liability
+    - certificate of insurance
+
+  Warranty Duration:
+    - warranty period
+    - warranty term
+    - warranty duration
+    - warrants for a period
+    - warranty shall expire
+    - warranty coverage
+
+  Audit Rights:
+    - audit
+    - audit rights
+    - inspection rights
+    - examine records
+    - access to books
+    - review rights
+    - right to inspect
+    - audit the books
+
+  Non-Disparagement:
+    - non-disparagement
+    - not disparage
+    - refrain from making
+    - negative statements
+    - disparaging remarks
+
+  Covenant Not to Sue:
+    - covenant not to sue
+    - waive claims
+    - release and discharge
+    - hold harmless
+    - forever release
+
+  Third Party Beneficiary:
+    - third party beneficiary
+    - third-party beneficiary
+    - intended beneficiary
+    - for the benefit of
+    - beneficiary rights
+
+  Most Favored Nation:
+    - most favored
+    - MFN
+    - most favorable terms
+    - best terms
+    - equal treatment
+    - no less favorable
+
+  Change of Control:
+    - change of control
+    - acquisition
+    - merger
+    - sale of assets
+    - change in ownership
+    - controlling interest
+    - change of ownership
+
+  Post-Termination Services:
+    - post-termination
+    - after termination
+    - wind-down
+    - transition services
+    - upon expiration
+    - following termination
+
+  Minimum Commitment:
+    - minimum commitment
+    - minimum purchase
+    - minimum order
+    - guaranteed minimum
+    - minimum volume
+    - committed to purchase
+
+metadata:
+  agent_type: specialist
+  category_count: 13

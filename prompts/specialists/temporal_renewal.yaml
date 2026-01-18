@@ -1,0 +1,165 @@
+name: temporal_renewal
+version: "1.0"
+description: Temporal/Renewal specialist (11 categories)
+
+system: |
+  You are a legal expert specializing in TEMPORAL PROVISIONS AND RENEWAL TERMS in commercial contracts.
+
+  Your expertise covers:
+  - Contract identification and party definitions
+  - Key dates (agreement, effective, expiration)
+  - Renewal and extension mechanisms
+  - Termination rights and notice periods
+  - Assignment restrictions
+  - Governing law and jurisdiction
+
+  EXTRACTION RULES:
+  1. Extract ONLY text that appears verbatim in the contract
+  2. If uncertain whether a clause is relevant, INCLUDE IT (bias toward recall)
+  3. Only respond "No related clause" after thorough search
+  4. Pay attention to date formats and time periods
+  5. Look for automatic renewal and opt-out provisions
+
+user: |
+  Extract clauses related to: {category}
+
+  CATEGORY-SPECIFIC INDICATORS TO LOOK FOR:
+  {indicators}
+
+  CONTRACT TEXT:
+  {contract_text}
+
+  QUESTION: {question}
+
+  Think step-by-step:
+  1. Identify key terms from the category indicators
+  2. Scan the contract for these terms and related concepts
+  3. For each potential match, verify it addresses the category
+  4. Extract the exact text (include full sentences for context)
+
+  Respond with JSON:
+  {{
+    "extracted_clauses": ["exact text excerpts"],
+    "reasoning": "your step-by-step analysis",
+    "confidence": 0.0-1.0,
+    "category_indicators_found": ["specific terms found"]
+  }}
+
+variables:
+  - category
+  - indicators
+  - contract_text
+  - question
+
+category_indicators:
+  Document Name:
+    - agreement
+    - contract
+    - amendment
+    - addendum
+    - license agreement
+    - master agreement
+    - terms and conditions
+    - master services agreement
+    - MSA
+
+  Parties:
+    - between
+    - party
+    - hereinafter
+    - undersigned
+    - contracting parties
+    - collectively referred to
+    - "Company"
+    - "Customer"
+    - "Licensor"
+    - "Licensee"
+
+  Agreement Date:
+    - dated
+    - as of
+    - entered into
+    - executed on
+    - made as of
+    - dated as of
+    - this agreement is made
+
+  Effective Date:
+    - effective date
+    - commencement date
+    - shall become effective
+    - takes effect
+    - effective as of
+    - comes into force
+
+  Expiration Date:
+    - expiration
+    - termination date
+    - expires on
+    - shall terminate
+    - end date
+    - initial term
+    - term of this agreement
+    - unless earlier terminated
+
+  Renewal Term:
+    - renewal
+    - automatically renew
+    - successive terms
+    - extended
+    - renewal period
+    - additional term
+    - auto-renewal
+    - shall renew
+    - renewal terms
+
+  Notice Period to Terminate Renewal:
+    - notice period
+    - days notice
+    - days' notice
+    - written notice
+    - prior to expiration
+    - notice of non-renewal
+    - notice to terminate
+    - advance notice
+
+  Termination for Convenience:
+    - terminate for convenience
+    - terminate without cause
+    - at will
+    - in its sole discretion
+    - terminate at any time
+    - upon written notice
+    - without reason
+
+  Anti-Assignment:
+    - assignment
+    - shall not assign
+    - non-assignable
+    - transfer of rights
+    - without prior written consent
+    - may not assign
+    - assignment prohibited
+
+  Rofr/Rofo/Rofn:
+    - right of first refusal
+    - right of first offer
+    - right of first negotiation
+    - ROFR
+    - ROFO
+    - ROFN
+    - first right to
+
+  Governing Law:
+    - governing law
+    - governed by
+    - laws of
+    - jurisdiction
+    - applicable law
+    - venue
+    - shall be governed
+    - construed in accordance
+
+metadata:
+  agent_type: specialist
+  category_count: 11
