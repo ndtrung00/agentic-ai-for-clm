@@ -48,10 +48,10 @@ def main():
         print(f"   - Category: {sample.category}")
         print(f"   - Tier: {sample.tier}")
         print(f"   - Contract length: {len(sample.contract_text):,} chars")
-        print(f"   - Has ground truth: {'Yes' if sample.ground_truth else 'No'}")
-        if sample.ground_truth:
+        print(f"   - Has clause: {sample.has_clause} ({sample.num_spans} spans)")
+        if sample.has_clause:
             gt_preview = sample.ground_truth[:100] + "..." if len(sample.ground_truth) > 100 else sample.ground_truth
-            print(f"   - Ground truth: {gt_preview}")
+            print(f"   - First span: {gt_preview}")
 
     # Test get_by_tier
     print("\n6. Testing tier filtering:")
