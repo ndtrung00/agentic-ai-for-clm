@@ -1,10 +1,13 @@
 """Unified model client for multiple providers.
 
 Provides a consistent interface for calling different LLM providers.
+Integrates with Langfuse for cost/token tracking.
 """
 
 import time
 from typing import Any
+
+from langfuse import observe, get_client as get_langfuse_client
 
 from src.models.config import ModelConfig, ModelProvider, get_model_config
 from src.models.diagnostics import ModelDiagnostics, TokenUsage
@@ -144,6 +147,71 @@ async def invoke_model(
         raise
 
 
+@observe(as_type="generation")
+def _call_anthropic(
+    client: Any,
+    config: ModelConfig,
+    messages: list[dict[str, str]],
+    system: str | None,
+    temperature: float,
+    max_tokens: int,
+) -> tuple[str, TokenUsage]:
+    """Call Anthropic API with Langfuse tracking.
+
+    Uses @observe(as_type="generation") to track as LLM generation in Langfuse.
+    """
+    langfuse = get_langfuse_client()
+
+    # Build request
+    kwargs: dict[str, Any] = {
+        "model": config.model_id,
+        "messages": messages,
+        "max_tokens": max_tokens,
+        "temperature": temperature,
+    }
+    if system:
+        kwargs["system"] = system
+
+    # Update Langfuse with input before call
+    langfuse.update_current_generation(
+        input=messages,
+        model=config.model_id,
+        metadata={"system": system, "temperature": temperature, "max_tokens": max_tokens},
+    )
+
+    # Make API call
+    response = client.messages.create(**kwargs)
+
+    # Extract response
+    response_text = ""
+    for block in response.content:
+        if hasattr(block, "text"):
+            response_text += block.text
+
+    # Extract usage
+    cache_read = getattr(response.usage, "cache_read_input_tokens", 0) or 0
+    cache_creation = getattr(response.usage, "cache_creation_input_tokens", 0) or 0
+
+    usage = TokenUsage(
+        input_tokens=response.usage.input_tokens,
+        output_tokens=response.usage.output_tokens,
+        cache_read_tokens=cache_read,
+        cache_creation_tokens=cache_creation,
+    )
+
+    # Update Langfuse with output and usage
+    langfuse.update_current_generation(
+        output=response_text,
+        usage_details={
+            "input": response.usage.input_tokens,
+            "output": response.usage.output_tokens,
+            "cache_read_input_tokens": cache_read,
+        },
+    )
+
+    return response_text, usage
+
+
 async def _invoke_anthropic(
     config: ModelConfig,
     messages: list[dict[str, str]],
@@ -164,32 +232,70 @@ async def _invoke_anthropic(
         Tuple of (response_text, token_usage).
     """
     client = _get_anthropic_client()
+    return _call_anthropic(client, config, messages, system, temperature, max_tokens)
+
+
+@observe(as_type="generation")
+def _call_openai(
+    client: Any,
+    config: ModelConfig,
+    messages: list[dict[str, str]],
+    system: str | None,
+    temperature: float,
+    max_tokens: int,
+    json_mode: bool = False,
+) -> tuple[str, TokenUsage]:
+    """Call OpenAI API with Langfuse tracking.
+
+    Uses @observe(as_type="generation") to track as LLM generation in Langfuse.
+    """
+    langfuse = get_langfuse_client()
+
+    # Prepend system message if provided
+    full_messages = []
+    if system:
+        full_messages.append({"role": "system", "content": system})
+    full_messages.extend(messages)
 
     # Build request
     kwargs: dict[str, Any] = {
         "model": config.model_id,
-        "messages": messages,
+        "messages": full_messages,
         "max_tokens": max_tokens,
         "temperature": temperature,
     }
-    if system:
-        kwargs["system"] = system
+    if json_mode:
+        kwargs["response_format"] = {"type": "json_object"}
 
-    # Sync call (wrap in async context)
-    response = client.messages.create(**kwargs)
+    # Update Langfuse with input before call
+    langfuse.update_current_generation(
+        input=full_messages,
+        model=config.model_id,
+        metadata={"temperature": temperature, "max_tokens": max_tokens, "json_mode": json_mode},
+    )
+
+    # Sync call
+    response = client.chat.completions.create(**kwargs)
 
     # Extract response
-    response_text = ""
-    for block in response.content:
-        if hasattr(block, "text"):
-            response_text += block.text
+    response_text = response.choices[0].message.content or ""
 
     # Extract usage
+    input_tokens = response.usage.prompt_tokens if response.usage else 0
+    output_tokens = response.usage.completion_tokens if response.usage else 0
+
     usage = TokenUsage(
-        input_tokens=response.usage.input_tokens,
-        output_tokens=response.usage.output_tokens,
-        cache_read_tokens=getattr(response.usage, "cache_read_input_tokens", 0) or 0,
-        cache_creation_tokens=getattr(response.usage, "cache_creation_input_tokens", 0) or 0,
+        input_tokens=input_tokens,
+        output_tokens=output_tokens,
+    )
+
+    # Update Langfuse with output and usage
+    langfuse.update_current_generation(
+        output=response_text,
+        usage_details={
+            "input": input_tokens,
+            "output": output_tokens,
+        },
     )
 
     return response_text, usage
@@ -217,33 +323,4 @@ async def _invoke_openai(
         Tuple of (response_text, token_usage).
     """
     client = _get_openai_client()
-
-    # Prepend system message if provided
-    full_messages = []
-    if system:
-        full_messages.append({"role": "system", "content": system})
-    full_messages.extend(messages)
-
-    # Build request
-    kwargs: dict[str, Any] = {
-        "model": config.model_id,
-        "messages": full_messages,
-        "max_tokens": max_tokens,
-        "temperature": temperature,
-    }
-    if json_mode:
-        kwargs["response_format"] = {"type": "json_object"}
-
-    # Sync call
-    response = client.chat.completions.create(**kwargs)
-
-    # Extract response
-    response_text = response.choices[0].message.content or ""
-
-    # Extract usage
-    usage = TokenUsage(
-        input_tokens=response.usage.prompt_tokens if response.usage else 0,
-        output_tokens=response.usage.completion_tokens if response.usage else 0,
-    )
-
-    return response_text, usage
+    return _call_openai(client, config, messages, system, temperature, max_tokens, json_mode)
