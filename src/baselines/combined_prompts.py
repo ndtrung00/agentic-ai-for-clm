@@ -8,7 +8,7 @@ KEY HYPOTHESIS: If M1 ≈ M6, multi-agent overhead is not justified.
 If M1 > M6, architecture provides genuine benefit beyond prompting.
 """
 
-from langfuse.decorators import observe
+from langfuse import observe
 
 from src.agents.base import AgentConfig, BaseAgent, ExtractionResult
 from src.agents.risk_liability import RISK_LIABILITY_CATEGORIES

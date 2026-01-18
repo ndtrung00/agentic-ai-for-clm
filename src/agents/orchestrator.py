@@ -3,7 +3,7 @@
 from typing import Any
 from dataclasses import dataclass, field
 
-from langfuse.decorators import observe
+from langfuse import observe
 from langgraph.graph import StateGraph, END, START
 
 from src.agents.base import AgentConfig, ExtractionResult

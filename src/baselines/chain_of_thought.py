@@ -1,6 +1,6 @@
 """B4: Chain-of-Thought single-agent baseline."""
 
-from langfuse.decorators import observe
+from langfuse import observe
 
 from src.agents.base import AgentConfig, BaseAgent, ExtractionResult
 

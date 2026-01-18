@@ -1,6 +1,6 @@
 """Validation agent for grounding and format verification."""
 
-from langfuse.decorators import observe
+from langfuse import observe
 
 from src.agents.base import AgentConfig, BaseAgent, ExtractionResult
 

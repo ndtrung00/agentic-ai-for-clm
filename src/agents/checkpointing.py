@@ -2,7 +2,7 @@
 
 Supports:
 - In-memory checkpointing for debugging
-- SQLite checkpointing for persistence
+- SQLite checkpointing for persistence (optional)
 - State inspection and replay
 """
 
@@ -10,7 +10,14 @@ from typing import Any
 from pathlib import Path
 
 from langgraph.checkpoint.memory import MemorySaver
-from langgraph.checkpoint.sqlite import SqliteSaver
+
+# SqliteSaver is optional - requires langgraph-checkpoint-sqlite
+try:
+    from langgraph.checkpoint.sqlite import SqliteSaver
+    SQLITE_AVAILABLE = True
+except ImportError:
+    SqliteSaver = None  # type: ignore
+    SQLITE_AVAILABLE = False
 
 
 def get_memory_checkpointer() -> MemorySaver:
@@ -27,7 +34,7 @@ def get_memory_checkpointer() -> MemorySaver:
 
 def get_sqlite_checkpointer(
     db_path: str | Path = "checkpoints.db",
-) -> SqliteSaver:
+) -> Any:
     """Get a SQLite checkpointer for persistence.
 
     Use this for production or when you need to:
@@ -40,7 +47,15 @@ def get_sqlite_checkpointer(
 
     Returns:
         SqliteSaver instance.
+
+    Raises:
+        ImportError: If langgraph-checkpoint-sqlite is not installed.
     """
+    if not SQLITE_AVAILABLE or SqliteSaver is None:
+        raise ImportError(
+            "SqliteSaver not available. Install with: "
+            "uv add langgraph-checkpoint-sqlite"
+        )
     import sqlite3
     conn = sqlite3.connect(str(db_path), check_same_thread=False)
     return SqliteSaver(conn)

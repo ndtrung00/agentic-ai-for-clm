@@ -1,6 +1,6 @@
 """B1: Zero-shot single-agent baseline (ContractEval replication)."""
 
-from langfuse.decorators import observe
+from langfuse import observe
 
 from src.agents.base import AgentConfig, BaseAgent, ExtractionResult
 
