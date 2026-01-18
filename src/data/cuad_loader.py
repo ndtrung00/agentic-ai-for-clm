@@ -1,6 +1,10 @@
-"""CUAD dataset loader using HuggingFace datasets.
+"""CUAD dataset loader.
 
-Dataset: theatticusproject/cuad-qa
+Supports loading from:
+1. Local JSON file (data/cuad/CUAD_v1.json)
+2. HuggingFace datasets (theatticusproject/cuad-qa)
+
+Dataset stats:
 - Test contracts: 102
 - Test data points: 4,128
 - Categories: 41 clause types
@@ -8,9 +12,9 @@ Dataset: theatticusproject/cuad-qa
 """
 
 from dataclasses import dataclass
-from typing import Iterator
-
-from datasets import load_dataset, Dataset
+from pathlib import Path
+from typing import Iterator, Any
+import json
 
 
 # Category stratification by ContractEval F1 performance
@@ -83,6 +87,10 @@ def get_category_tier(category: str) -> str:
     return "unknown"
 
 
+# Default local data path
+LOCAL_CUAD_PATH = Path(__file__).parent.parent.parent / "data" / "cuad" / "CUAD_v1.json"
+
+
 @dataclass
 class CUADSample:
     """A single CUAD evaluation sample."""
@@ -97,62 +105,91 @@ class CUADSample:
 
 
 class CUADDataLoader:
-    """Loader for CUAD dataset from HuggingFace."""
+    """Loader for CUAD dataset.
 
-    def __init__(self, split: str = "test") -> None:
+    Supports loading from local JSON file or HuggingFace.
+    """
+
+    def __init__(
+        self,
+        split: str = "test",
+        local_path: Path | str | None = None,
+        use_huggingface: bool = False,
+    ) -> None:
         """Initialize the CUAD loader.
 
         Args:
             split: Dataset split to load ('train', 'validation', 'test').
+            local_path: Path to local CUAD JSON file. If None, uses default.
+            use_huggingface: If True, load from HuggingFace instead of local.
         """
         self.split = split
-        self._dataset: Dataset | None = None
+        self.local_path = Path(local_path) if local_path else LOCAL_CUAD_PATH
+        self.use_huggingface = use_huggingface
+        self._samples: list[CUADSample] = []
+        self._loaded = False
 
     def load(self) -> None:
-        """Load the CUAD dataset from HuggingFace."""
-        self._dataset = load_dataset(
-            "theatticusproject/cuad-qa",
-            split=self.split,
-        )
+        """Load the CUAD dataset."""
+        if self.use_huggingface:
+            self._load_from_huggingface()
+        else:
+            self._load_from_local()
+        self._loaded = True
 
-    @property
-    def dataset(self) -> Dataset:
-        """Get the loaded dataset.
+    def _load_from_local(self) -> None:
+        """Load from local JSON file."""
+        if not self.local_path.exists():
+            raise FileNotFoundError(
+                f"CUAD data not found at {self.local_path}. "
+                "Download from https://github.com/TheAtticusProject/cuad or use use_huggingface=True"
+            )
 
-        Returns:
-            The HuggingFace Dataset object.
+        with open(self.local_path) as f:
+            data = json.load(f)
 
-        Raises:
-            RuntimeError: If dataset not loaded.
-        """
-        if self._dataset is None:
-            raise RuntimeError("Dataset not loaded. Call load() first.")
-        return self._dataset
+        # CUAD JSON format: {"data": [{"paragraphs": [...], "title": "..."}]}
+        for doc in data.get("data", []):
+            title = doc.get("title", "")
+            for para in doc.get("paragraphs", []):
+                context = para.get("context", "")
+                for qa in para.get("qas", []):
+                    question = qa.get("question", "")
+                    qa_id = qa.get("id", "")
+                    answers = qa.get("answers", [])
+                    ground_truth = answers[0]["text"] if answers else ""
 
-    def __len__(self) -> int:
-        """Get the number of samples in the dataset."""
-        return len(self.dataset)
+                    category = self._extract_category(question, qa_id)
+                    sample = CUADSample(
+                        id=qa_id,
+                        contract_text=context,
+                        category=category,
+                        question=question,
+                        ground_truth=ground_truth,
+                        contract_title=title,
+                        tier=get_category_tier(category),
+                    )
+                    self._samples.append(sample)
 
-    def __iter__(self) -> Iterator[CUADSample]:
-        """Iterate over CUAD samples."""
-        for item in self.dataset:
-            yield self._parse_item(item)
+    def _load_from_huggingface(self) -> None:
+        """Load from HuggingFace datasets."""
+        try:
+            from datasets import load_dataset
+        except ImportError as e:
+            raise ImportError(
+                "HuggingFace datasets not available. Install with: pip install datasets"
+            ) from e
 
-    def _parse_item(self, item: dict) -> CUADSample:
-        """Parse a raw dataset item into CUADSample.
+        dataset = load_dataset("theatticusproject/cuad-qa", split=self.split)
 
-        Args:
-            item: Raw item from HuggingFace dataset.
+        for item in dataset:
+            sample = self._parse_hf_item(item)
+            self._samples.append(sample)
 
-        Returns:
-            Parsed CUADSample.
-        """
-        # Extract category from question
-        # CUAD questions follow pattern: "Highlight the parts..."
+    def _parse_hf_item(self, item: dict[str, Any]) -> CUADSample:
+        """Parse HuggingFace dataset item."""
         question = item["question"]
         category = self._extract_category(question)
-
-        # Get answers (may be empty list)
         answers = item.get("answers", {})
         answer_texts = answers.get("text", [])
         ground_truth = answer_texts[0] if answer_texts else ""
@@ -167,18 +204,43 @@ class CUADDataLoader:
             tier=get_category_tier(category),
         )
 
-    def _extract_category(self, question: str) -> str:
-        """Extract category name from CUAD question.
+    def __len__(self) -> int:
+        """Get the number of samples in the dataset."""
+        if not self._loaded:
+            raise RuntimeError("Dataset not loaded. Call load() first.")
+        return len(self._samples)
+
+    def __iter__(self) -> Iterator[CUADSample]:
+        """Iterate over CUAD samples."""
+        if not self._loaded:
+            raise RuntimeError("Dataset not loaded. Call load() first.")
+        yield from self._samples
+
+    def _extract_category(self, question: str, qa_id: str = "") -> str:
+        """Extract category name from CUAD question or ID.
 
         Args:
             question: The CUAD question text.
+            qa_id: The question ID (format: CONTRACT__Category Name)
 
         Returns:
             Category name.
         """
-        # CUAD questions follow patterns like:
-        # "Highlight the parts (if any) of this contract related to 'Governing Law'"
-        # We need to extract the category name from quotes
+        # Try extracting from ID first (most reliable)
+        # Format: "CONTRACT_NAME__Category Name"
+        if qa_id and "__" in qa_id:
+            category = qa_id.split("__")[-1]
+            return category
+
+        # Try double quotes (local CUAD format)
+        # "Highlight the parts (if any) of this contract related to "Document Name""
+        if '"' in question:
+            import re
+            match = re.search(r'"([^"]+)"', question)
+            if match:
+                return match.group(1)
+
+        # Try single quotes (HuggingFace format)
         if "'" in question:
             start = question.find("'") + 1
             end = question.find("'", start)
@@ -197,7 +259,7 @@ class CUADDataLoader:
         Returns:
             List of samples for that category.
         """
-        return [s for s in self if s.category == category]
+        return [s for s in self._samples if s.category == category]
 
     def get_by_tier(self, tier: str) -> list[CUADSample]:
         """Get all samples for a difficulty tier.
@@ -208,7 +270,7 @@ class CUADDataLoader:
         Returns:
             List of samples in that tier.
         """
-        return [s for s in self if s.tier == tier]
+        return [s for s in self._samples if s.tier == tier]
 
     def get_categories(self) -> list[str]:
         """Get all unique categories in the dataset.
@@ -216,7 +278,7 @@ class CUADDataLoader:
         Returns:
             List of category names.
         """
-        return list(set(s.category for s in self))
+        return list(set(s.category for s in self._samples))
 
     def get_contracts(self) -> list[str]:
         """Get all unique contract titles.
@@ -224,7 +286,7 @@ class CUADDataLoader:
         Returns:
             List of contract titles.
         """
-        return list(set(s.contract_title for s in self))
+        return list(set(s.contract_title for s in self._samples))
 
     def stats(self) -> dict[str, int | float]:
         """Get dataset statistics.
@@ -232,15 +294,17 @@ class CUADDataLoader:
         Returns:
             Dict with dataset statistics.
         """
-        samples = list(self)
-        positive = sum(1 for s in samples if s.ground_truth)
-        negative = len(samples) - positive
+        if not self._loaded:
+            raise RuntimeError("Dataset not loaded. Call load() first.")
+
+        positive = sum(1 for s in self._samples if s.ground_truth)
+        negative = len(self._samples) - positive
 
         return {
-            "total_samples": len(samples),
+            "total_samples": len(self._samples),
             "positive_samples": positive,
             "negative_samples": negative,
-            "positive_rate": positive / len(samples) if samples else 0,
+            "positive_rate": positive / len(self._samples) if self._samples else 0,
             "num_categories": len(self.get_categories()),
             "num_contracts": len(self.get_contracts()),
             "common_tier_samples": len(self.get_by_tier("common")),
