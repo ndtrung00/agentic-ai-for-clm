@@ -99,9 +99,20 @@ class CUADSample:
     contract_text: str
     category: str
     question: str
-    ground_truth: str  # Empty string if no clause
+    ground_truth: str  # First answer span (empty if no clause)
+    ground_truth_spans: list[str]  # All answer spans
     contract_title: str
     tier: str  # 'common', 'moderate', 'rare'
+
+    @property
+    def has_clause(self) -> bool:
+        """Whether this sample has at least one clause."""
+        return len(self.ground_truth_spans) > 0
+
+    @property
+    def num_spans(self) -> int:
+        """Number of answer spans."""
+        return len(self.ground_truth_spans)
 
 
 class CUADDataLoader:
@@ -157,7 +168,8 @@ class CUADDataLoader:
                     question = qa.get("question", "")
                     qa_id = qa.get("id", "")
                     answers = qa.get("answers", [])
-                    ground_truth = answers[0]["text"] if answers else ""
+                    answer_texts = [a["text"] for a in answers]
+                    ground_truth = answer_texts[0] if answer_texts else ""
 
                     category = self._extract_category(question, qa_id)
                     sample = CUADSample(
@@ -166,6 +178,7 @@ class CUADDataLoader:
                         category=category,
                         question=question,
                         ground_truth=ground_truth,
+                        ground_truth_spans=answer_texts,
                         contract_title=title,
                         tier=get_category_tier(category),
                     )
@@ -200,6 +213,7 @@ class CUADDataLoader:
             category=category,
             question=question,
             ground_truth=ground_truth,
+            ground_truth_spans=answer_texts,
             contract_title=item.get("title", ""),
             tier=get_category_tier(category),
         )
@@ -297,14 +311,17 @@ class CUADDataLoader:
         if not self._loaded:
             raise RuntimeError("Dataset not loaded. Call load() first.")
 
-        positive = sum(1 for s in self._samples if s.ground_truth)
+        positive = sum(1 for s in self._samples if s.has_clause)
         negative = len(self._samples) - positive
+        total_spans = sum(s.num_spans for s in self._samples)
 
         return {
             "total_samples": len(self._samples),
             "positive_samples": positive,
             "negative_samples": negative,
             "positive_rate": positive / len(self._samples) if self._samples else 0,
+            "total_answer_spans": total_spans,  # The ~13,000 CUAD labels
+            "avg_spans_per_positive": total_spans / positive if positive else 0,
             "num_categories": len(self.get_categories()),
             "num_contracts": len(self.get_contracts()),
             "common_tier_samples": len(self.get_by_tier("common")),
