@@ -108,3 +108,5 @@ Thumbs.db
 
 # Type checking
 .mypy_cache/
+
+CLAUDE.md
