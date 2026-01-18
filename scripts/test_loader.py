@@ -24,11 +24,13 @@ def main():
     # Get stats
     print("\n3. Dataset statistics:")
     stats = loader.stats()
-    for key, value in stats.items():
-        if isinstance(value, float):
-            print(f"   {key}: {value:.2%}")
-        else:
-            print(f"   {key}: {value}")
+    print(f"   Total Q&A pairs:        {stats['total_samples']:,}")
+    print(f"   Positive (has clause):  {stats['positive_samples']:,} ({stats['positive_rate']:.1%})")
+    print(f"   Negative (no clause):   {stats['negative_samples']:,}")
+    print(f"   Total answer spans:     {stats['total_answer_spans']:,} (the ~13k CUAD labels)")
+    print(f"   Avg spans per positive: {stats['avg_spans_per_positive']:.1f}")
+    print(f"   Categories:             {stats['num_categories']}")
+    print(f"   Contracts:              {stats['num_contracts']}")
 
     # Show category tiers
     print("\n4. Category tiers:")
