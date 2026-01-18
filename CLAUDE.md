@@ -99,6 +99,7 @@ contract-mas/
 │   ├── run_experiment.py            # Main experiment runner
 │   └── analyze_results.py           # Post-hoc analysis
 ├── pyproject.toml
+├── uv.lock                          # Locked dependencies (commit to git)
 ├── .env.example
 ├── .gitignore
 ├── README.md
@@ -111,6 +112,7 @@ contract-mas/
 
 | Component | Technology | Purpose |
 |-----------|------------|---------|
+| Package manager | uv | Fast Python package management |
 | Multi-agent framework | LangGraph | Graph-based state machines, workflow control |
 | Observability | LangFuse | Reasoning traces, experiment tracking |
 | LLM Provider | Anthropic Claude | Contract analysis |
@@ -319,23 +321,29 @@ Each specialist prompt includes:
 ## Development Commands
 
 ```bash
-# Install dependencies
-poetry install
+# Install dependencies (with dev extras)
+uv sync --all-extras
+
+# Add a new dependency
+uv add package-name
+
+# Add a dev dependency
+uv add --dev package-name
 
 # Run linting
-poetry run ruff check src/
+uv run ruff check src/
 
-# Run type checking  
-poetry run mypy src/
+# Run type checking
+uv run mypy src/
 
 # Run tests
-poetry run pytest tests/ -v
+uv run pytest tests/ -v
 
 # Run single experiment
-poetry run python scripts/run_experiment.py --config experiments/baselines.yaml --model claude-sonnet-4-20250514
+uv run python scripts/run_experiment.py --config experiments/baselines.yaml --model claude-sonnet-4-20250514
 
 # Analyze results
-poetry run python scripts/analyze_results.py --results experiments/results/
+uv run python scripts/analyze_results.py --results experiments/results/
 ```
 
 ---

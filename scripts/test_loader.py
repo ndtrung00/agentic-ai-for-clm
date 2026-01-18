@@ -17,9 +17,9 @@ def main():
     loader = CUADDataLoader(split="test")
 
     # Load dataset
-    print("2. Loading dataset from HuggingFace (may take a moment)...")
+    print("2. Loading dataset from local JSON file...")
     loader.load()
-    print(f"   ✓ Loaded {len(loader)} samples")
+    print(f"   ✓ Loaded {len(loader):,} samples")
 
     # Get stats
     print("\n3. Dataset statistics:")
