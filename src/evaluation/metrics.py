@@ -79,22 +79,25 @@ def compute_recall(tp: int, fn: int) -> float:
     return tp / (tp + fn)
 
 
-def compute_f1(precision: float, recall: float) -> float:
+def compute_f1(tp: int, fp: int, fn: int) -> float:
     """Compute F1 score = 2 * (P * R) / (P + R).
 
     Args:
-        precision: Precision score.
-        recall: Recall score.
+        tp: True positives count.
+        fp: False positives count.
+        fn: False negatives count.
 
     Returns:
         F1 score (0-1).
     """
+    precision = compute_precision(tp, fp)
+    recall = compute_recall(tp, fn)
     if precision + recall == 0:
         return 0.0
     return 2 * (precision * recall) / (precision + recall)
 
 
-def compute_f2(precision: float, recall: float) -> float:
+def compute_f2(tp: int, fp: int, fn: int) -> float:
     """Compute F2 score = 5 * (P * R) / (4P + R).
 
     F2 weights recall higher than precision (beta=2).
@@ -102,12 +105,15 @@ def compute_f2(precision: float, recall: float) -> float:
     missing a clause (FN) is worse than extracting extra text (FP).
 
     Args:
-        precision: Precision score.
-        recall: Recall score.
+        tp: True positives count.
+        fp: False positives count.
+        fn: False negatives count.
 
     Returns:
         F2 score (0-1).
     """
+    precision = compute_precision(tp, fp)
+    recall = compute_recall(tp, fn)
     if 4 * precision + recall == 0:
         return 0.0
     return 5 * (precision * recall) / (4 * precision + recall)

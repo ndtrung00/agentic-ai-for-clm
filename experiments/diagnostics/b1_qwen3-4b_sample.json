@@ -1,0 +1,261 @@
+{
+  "experiment_id": "baseline_b1_qwen3-4b",
+  "start_time": "2026-02-15T22:32:45.183376",
+  "summary": {
+    "experiment_id": "baseline_b1_qwen3-4b",
+    "total_calls": 12,
+    "successful_calls": 12,
+    "failed_calls": 0,
+    "success_rate": 1.0,
+    "total_input_tokens": 44567,
+    "total_output_tokens": 33596,
+    "total_tokens": 78163,
+    "total_cost_usd": 0.0,
+    "avg_latency_ms": 98287.47953116545,
+    "min_latency_ms": 35098.048166022636,
+    "max_latency_ms": 144322.39541702438,
+    "by_model": {
+      "qwen3-4b": {
+        "calls": 12,
+        "input_tokens": 44567,
+        "output_tokens": 33596,
+        "cost_usd": 0.0,
+        "avg_latency_ms": 98287.47953116545
+      }
+    },
+    "by_agent": {
+      "zero_shot_baseline": 12
+    },
+    "duration_seconds": 1965.91401
+  },
+  "calls": [
+    {
+      "model_key": "qwen3-4b",
+      "model_id": "qwen3:4b",
+      "timestamp": "2026-02-15T22:35:13.207088",
+      "latency_ms": 144322.39541702438,
+      "usage": {
+        "input_tokens": 4096,
+        "output_tokens": 4096,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 8192
+      },
+      "cost_usd": 0.0,
+      "success": true,
+      "error": null,
+      "category": "Agreement Date",
+      "agent_name": "zero_shot_baseline",
+      "experiment_id": "baseline_b1_qwen3-4b"
+    },
+    {
+      "model_key": "qwen3-4b",
+      "model_id": "qwen3:4b",
+      "timestamp": "2026-02-15T22:35:48.308456",
+      "latency_ms": 35098.048166022636,
+      "usage": {
+        "input_tokens": 1514,
+        "output_tokens": 1016,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 2530
+      },
+      "cost_usd": 0.0,
+      "success": true,
+      "error": null,
+      "category": "Expiration Date",
+      "agent_name": "zero_shot_baseline",
+      "experiment_id": "baseline_b1_qwen3-4b"
+    },
+    {
+      "model_key": "qwen3-4b",
+      "model_id": "qwen3:4b",
+      "timestamp": "2026-02-15T22:37:30.656100",
+      "latency_ms": 102342.81662496505,
+      "usage": {
+        "input_tokens": 4096,
+        "output_tokens": 2502,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 6598
+      },
+      "cost_usd": 0.0,
+      "success": true,
+      "error": null,
+      "category": "Parties",
+      "agent_name": "zero_shot_baseline",
+      "experiment_id": "baseline_b1_qwen3-4b"
+    },
+    {
+      "model_key": "qwen3-4b",
+      "model_id": "qwen3:4b",
+      "timestamp": "2026-02-15T22:39:50.598435",
+      "latency_ms": 139936.92637502681,
+      "usage": {
+        "input_tokens": 4096,
+        "output_tokens": 4094,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 8190
+      },
+      "cost_usd": 0.0,
+      "success": true,
+      "error": null,
+      "category": "Governing Law",
+      "agent_name": "zero_shot_baseline",
+      "experiment_id": "baseline_b1_qwen3-4b"
+    },
+    {
+      "model_key": "qwen3-4b",
+      "model_id": "qwen3:4b",
+      "timestamp": "2026-02-15T22:41:47.046253",
+      "latency_ms": 116441.11987494398,
+      "usage": {
+        "input_tokens": 2174,
+        "output_tokens": 3626,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 5800
+      },
+      "cost_usd": 0.0,
+      "success": true,
+      "error": null,
+      "category": "Anti-Assignment",
+      "agent_name": "zero_shot_baseline",
+      "experiment_id": "baseline_b1_qwen3-4b"
+    },
+    {
+      "model_key": "qwen3-4b",
+      "model_id": "qwen3:4b",
+      "timestamp": "2026-02-15T22:43:59.342440",
+      "latency_ms": 132290.5348330387,
+      "usage": {
+        "input_tokens": 4096,
+        "output_tokens": 4096,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 8192
+      },
+      "cost_usd": 0.0,
+      "success": true,
+      "error": null,
+      "category": "Rofr/Rofo/Rofn",
+      "agent_name": "zero_shot_baseline",
+      "experiment_id": "baseline_b1_qwen3-4b"
+    },
+    {
+      "model_key": "qwen3-4b",
+      "model_id": "qwen3:4b",
+      "timestamp": "2026-02-15T22:45:10.564064",
+      "latency_ms": 71218.38550001848,
+      "usage": {
+        "input_tokens": 4096,
+        "output_tokens": 2077,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 6173
+      },
+      "cost_usd": 0.0,
+      "success": true,
+      "error": null,
+      "category": "Non-Transferable License",
+      "agent_name": "zero_shot_baseline",
+      "experiment_id": "baseline_b1_qwen3-4b"
+    },
+    {
+      "model_key": "qwen3-4b",
+      "model_id": "qwen3:4b",
+      "timestamp": "2026-02-15T22:46:21.174379",
+      "latency_ms": 70606.3371670316,
+      "usage": {
+        "input_tokens": 4096,
+        "output_tokens": 2033,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 6129
+      },
+      "cost_usd": 0.0,
+      "success": true,
+      "error": null,
+      "category": "Rofr/Rofo/Rofn",
+      "agent_name": "zero_shot_baseline",
+      "experiment_id": "baseline_b1_qwen3-4b"
+    },
+    {
+      "model_key": "qwen3-4b",
+      "model_id": "qwen3:4b",
+      "timestamp": "2026-02-15T22:47:17.786289",
+      "latency_ms": 56589.41799995955,
+      "usage": {
+        "input_tokens": 4096,
+        "output_tokens": 1413,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 5509
+      },
+      "cost_usd": 0.0,
+      "success": true,
+      "error": null,
+      "category": "Volume Restriction",
+      "agent_name": "zero_shot_baseline",
+      "experiment_id": "baseline_b1_qwen3-4b"
+    },
+    {
+      "model_key": "qwen3-4b",
+      "model_id": "qwen3:4b",
+      "timestamp": "2026-02-15T22:49:28.510299",
+      "latency_ms": 130717.40412496729,
+      "usage": {
+        "input_tokens": 4096,
+        "output_tokens": 4096,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 8192
+      },
+      "cost_usd": 0.0,
+      "success": true,
+      "error": null,
+      "category": "Covenant Not To Sue",
+      "agent_name": "zero_shot_baseline",
+      "experiment_id": "baseline_b1_qwen3-4b"
+    },
+    {
+      "model_key": "qwen3-4b",
+      "model_id": "qwen3:4b",
+      "timestamp": "2026-02-15T22:51:35.378123",
+      "latency_ms": 126863.44887502491,
+      "usage": {
+        "input_tokens": 4015,
+        "output_tokens": 3321,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 7336
+      },
+      "cost_usd": 0.0,
+      "success": true,
+      "error": null,
+      "category": "Third Party Beneficiary",
+      "agent_name": "zero_shot_baseline",
+      "experiment_id": "baseline_b1_qwen3-4b"
+    },
+    {
+      "model_key": "qwen3-4b",
+      "model_id": "qwen3:4b",
+      "timestamp": "2026-02-15T22:52:28.411076",
+      "latency_ms": 53022.91941596195,
+      "usage": {
+        "input_tokens": 4096,
+        "output_tokens": 1226,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 5322
+      },
+      "cost_usd": 0.0,
+      "success": true,
+      "error": null,
+      "category": "Price Restrictions",
+      "agent_name": "zero_shot_baseline",
+      "experiment_id": "baseline_b1_qwen3-4b"
+    }
+  ]
+}
