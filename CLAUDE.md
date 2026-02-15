@@ -115,9 +115,37 @@ contract-mas/
 | Package manager | uv | Fast Python package management |
 | Multi-agent framework | LangGraph | Graph-based state machines, workflow control |
 | Observability | LangFuse | Reasoning traces, experiment tracking |
-| LLM Provider | Anthropic Claude | Contract analysis |
+| LLM Providers | Anthropic, OpenAI, Google, Ollama | See model list below |
 | Data | HuggingFace datasets | CUAD loading |
 | Statistics | scipy, numpy | Bootstrap CI, significance tests |
+
+### Evaluated Models (from ContractEval)
+
+19 LLMs evaluated across proprietary and open-source:
+
+**Proprietary (4):**
+| Key | Model | Provider |
+|-----|-------|----------|
+| `claude-sonnet-4` | Claude Sonnet 4 | Anthropic |
+| `gpt-4.1` | GPT 4.1 | OpenAI |
+| `gpt-4.1-mini` | GPT 4.1 Mini | OpenAI |
+| `gemini-2.5-pro` | Gemini 2.5 Pro Preview | Google |
+
+**Open-source via Ollama (15):**
+| Key | Model |
+|-----|-------|
+| `deepseek-r1-distill-qwen-7b` | DeepSeek R1 Distill Qwen 7B |
+| `deepseek-r1-0528-qwen3-8b` | DeepSeek R1 0528 Qwen3 8B |
+| `llama-3.1-8b` | LLaMA 3.1 8B Instruct |
+| `gemma-3-4b` | Gemma 3 4B |
+| `gemma-3-12b` | Gemma 3 12B |
+| `qwen3-4b` / `qwen3-4b-thinking` | Qwen3 4B |
+| `qwen3-8b` / `qwen3-8b-thinking` | Qwen3 8B |
+| `qwen3-8b-awq` / `qwen3-8b-awq-thinking` | Qwen3 8B AWQ |
+| `qwen3-8b-fp8` / `qwen3-8b-fp8-thinking` | Qwen3 8B FP8 |
+| `qwen3-14b` / `qwen3-14b-thinking` | Qwen3 14B |
+
+Qwen3 "thinking" variants use the same model but with reasoning enabled via `/think` tag (vs `/no_think` for non-thinking). AWQ/FP8 quantisation variants may require vLLM serving instead of Ollama.
 
 ---
 
@@ -354,6 +382,7 @@ uv run python scripts/analyze_results.py --results experiments/results/
 # .env
 ANTHROPIC_API_KEY=sk-ant-...
 OPENAI_API_KEY=sk-...
+GEMINI_API_KEY=...                       # or GOOGLE_API_KEY
 LANGFUSE_PUBLIC_KEY=pk-...
 LANGFUSE_SECRET_KEY=sk-...
 LANGFUSE_HOST=https://cloud.langfuse.com

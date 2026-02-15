@@ -98,6 +98,20 @@ contract-mas/
 | Laziness Rate | < 3% | False "no clause" responses |
 | Grounding Rate | > 95% | Extracted text found in source |
 
+## Models
+
+19 LLMs from the ContractEval benchmark:
+
+| Type | Models |
+|------|--------|
+| **Proprietary** | Claude Sonnet 4, GPT 4.1, GPT 4.1 Mini, Gemini 2.5 Pro Preview |
+| **DeepSeek** | R1 Distill Qwen 7B, R1 0528 Qwen3 8B |
+| **LLaMA** | 3.1 8B Instruct |
+| **Gemma** | 3 4B, 3 12B |
+| **Qwen3** | 4B, 8B, 8B AWQ, 8B FP8, 14B (each with thinking/non-thinking variants) |
+
+Open-source models run locally via [Ollama](https://ollama.com). AWQ/FP8 variants may require [vLLM](https://docs.vllm.ai).
+
 ## Dataset
 
 Uses CUAD (Contract Understanding Atticus Dataset):
