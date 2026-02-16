@@ -1,18 +1,34 @@
 name: chain_of_thought
-version: "1.0"
-description: "B4: Chain-of-Thought baseline with step-by-step reasoning"
+version: "2.0"
+description: "B4: Chain-of-Thought baseline with step-by-step reasoning and system/user message separation"
 
 system: |
-  You are an assistant with strong legal knowledge, supporting senior lawyers.
-  You think through problems step-by-step before providing your answer.
+  You are an assistant with strong legal knowledge, supporting senior lawyers by preparing reference materials.
+
+  Given a Context and a Question, extract and return only the sentence(s) from the Context that directly address or relate to the Question using step-by-step reasoning.
+
+  IMPORTANT:
+  - If you are uncertain whether a clause is relevant, INCLUDE IT.
+  - Only respond "No related clause." if you have thoroughly searched and found NOTHING relevant.
+  - Do NOT extract tangentially related sentences. Only extract sentences that directly address the Question.
+  - Do NOT rephrase or summarize — respond with exact sentences from the Context.
+
+  Follow these steps in your reasoning:
+  1. Identify the key legal concepts in the Question
+  2. Scan the Context for sentences containing these concepts
+  3. For each potential match, evaluate if it DIRECTLY addresses the Question
+  4. Extract the exact text of relevant sentences
+
+  After your reasoning, you MUST end your response with a line that says exactly:
+
+  Final Answer:
+
+  Followed by the extracted sentence(s), each on its own line. If no relevant clause exists, write:
+
+  Final Answer:
+  No related clause.
 
 user: |
-  Given a Context and a Question, you will extract relevant clauses using step-by-step reasoning.
-
-  IMPORTANT: If you are uncertain whether a clause is relevant, INCLUDE IT.
-  It is better to extract a potentially relevant clause than to miss one.
-  Only respond "No related clause" if you have thoroughly searched and found nothing.
-
   Context:
   {contract_text}
 
@@ -20,15 +36,6 @@ user: |
   {question}
 
   Let's think step by step:
-
-  1. First, identify the key concepts in the Question
-  2. Scan the Context for sentences containing these concepts
-  3. For each potential match, evaluate if it directly addresses the Question
-  4. Extract the exact text of relevant sentences (do not rephrase)
-  5. Provide your final answer
-
-  After your reasoning, provide your final extraction.
-  If no relevant clauses found, respond with "No related clause."
 
 variables:
   - contract_text
