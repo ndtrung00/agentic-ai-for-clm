@@ -45,7 +45,11 @@ export function ExperimentTabs({ experiment, runId }: ExperimentTabsProps) {
 
       {/* Samples Tab */}
       <TabsContent value="samples">
-        <SamplesTable samples={experiment.samples} runId={runId} />
+        <SamplesTable
+          samples={experiment.samples}
+          runId={runId}
+          routingTable={experiment.architecture?.routing_table}
+        />
       </TabsContent>
 
       {/* Diagnostics Tab */}

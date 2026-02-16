@@ -1,10 +1,11 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 import type { SampleSummary } from "@/lib/types";
 import { fixed } from "@/lib/format";
 import { ClassificationBadge, TierBadge } from "./classification-badge";
+import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import {
   Select,
@@ -22,17 +23,27 @@ import {
   TableRow,
 } from "@/components/ui/table";
 
+const AGENT_SHORT: Record<string, string> = {
+  risk_liability: "Risk",
+  temporal_renewal: "Temporal",
+  ip_commercial: "IP",
+};
+
 interface SamplesTableProps {
   samples: SampleSummary[];
   runId: string;
+  routingTable?: Record<string, string>;
 }
 
-export function SamplesTable({ samples, runId }: SamplesTableProps) {
+export function SamplesTable({ samples, runId, routingTable }: SamplesTableProps) {
+  const router = useRouter();
   const [tierFilter, setTierFilter] = useState<string>("all");
   const [classFilter, setClassFilter] = useState<string>("all");
   const [search, setSearch] = useState("");
   const [sortKey, setSortKey] = useState<string>("category");
   const [sortDir, setSortDir] = useState<"asc" | "desc">("asc");
+
+  const hasRouting = !!routingTable;
 
   const filtered = useMemo(() => {
     let result = [...samples];
@@ -61,6 +72,8 @@ export function SamplesTable({ samples, runId }: SamplesTableProps) {
       {children} {sortKey === k ? (sortDir === "asc" ? "\u2191" : "\u2193") : ""}
     </TableHead>
   );
+
+  const colSpan = hasRouting ? 7 : 6;
 
   return (
     <div className="space-y-3">
@@ -104,30 +117,40 @@ export function SamplesTable({ samples, runId }: SamplesTableProps) {
               <SortHeader k="classification">Class</SortHeader>
               <SortHeader k="jaccard">Jaccard</SortHeader>
               <SortHeader k="grounding_rate">Grounding</SortHeader>
-              <TableHead />
+              {hasRouting && <TableHead>Agent</TableHead>}
             </TableRow>
           </TableHeader>
           <TableBody>
-            {filtered.map((s) => (
-              <TableRow key={s.id}>
-                <TableCell className="font-medium">{s.category}</TableCell>
-                <TableCell><TierBadge value={s.tier} /></TableCell>
-                <TableCell><ClassificationBadge value={s.classification} /></TableCell>
-                <TableCell>{fixed(s.jaccard)}</TableCell>
-                <TableCell>{s.grounding_rate != null ? fixed(s.grounding_rate) : "N/A"}</TableCell>
-                <TableCell>
-                  <Link
-                    href={`/experiments/${runId}/samples/${encodeURIComponent(s.id)}`}
-                    className="text-sm text-primary hover:underline"
-                  >
-                    View
-                  </Link>
-                </TableCell>
-              </TableRow>
-            ))}
+            {filtered.map((s) => {
+              const agent = routingTable?.[s.category];
+              return (
+                <TableRow
+                  key={s.id}
+                  className="cursor-pointer hover:bg-muted/50"
+                  onClick={() => router.push(`/experiments/${runId}/samples/${encodeURIComponent(s.id)}`)}
+                >
+                  <TableCell className="font-medium">{s.category}</TableCell>
+                  <TableCell><TierBadge value={s.tier} /></TableCell>
+                  <TableCell><ClassificationBadge value={s.classification} /></TableCell>
+                  <TableCell>{fixed(s.jaccard)}</TableCell>
+                  <TableCell>{s.grounding_rate != null ? fixed(s.grounding_rate) : "N/A"}</TableCell>
+                  {hasRouting && (
+                    <TableCell>
+                      {agent ? (
+                        <Badge variant="outline" className="text-xs">
+                          {AGENT_SHORT[agent] ?? agent}
+                        </Badge>
+                      ) : (
+                        <span className="text-muted-foreground text-xs">N/A</span>
+                      )}
+                    </TableCell>
+                  )}
+                </TableRow>
+              );
+            })}
             {filtered.length === 0 && (
               <TableRow>
-                <TableCell colSpan={6} className="text-center text-muted-foreground py-8">
+                <TableCell colSpan={colSpan} className="text-center text-muted-foreground py-8">
                   No samples match the current filters.
                 </TableCell>
               </TableRow>
