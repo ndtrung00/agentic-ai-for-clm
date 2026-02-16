@@ -96,6 +96,28 @@ export default async function SampleDetailPage({ params }: Props) {
         </Card>
       )}
 
+      {/* Multi-agent trace (M1) */}
+      {sample.trace?.nodes_visited && sample.trace.nodes_visited.length > 0 && (
+        <Card>
+          <CardHeader>
+            <CardTitle className="text-sm">Agent Trace</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-2">
+            <div className="flex items-center gap-2 text-sm">
+              {sample.trace.nodes_visited.map((node, i) => (
+                <span key={i} className="flex items-center gap-1">
+                  {i > 0 && <span className="text-muted-foreground">&rarr;</span>}
+                  <Badge variant="outline">{node}</Badge>
+                </span>
+              ))}
+            </div>
+            <p className="text-xs text-muted-foreground">
+              {sample.trace.num_llm_calls} LLM call{sample.trace.num_llm_calls !== 1 ? "s" : ""}
+            </p>
+          </CardContent>
+        </Card>
+      )}
+
       {/* Question asked */}
       {sample.input.question && (
         <Card>

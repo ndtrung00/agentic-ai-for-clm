@@ -30,7 +30,7 @@ export default function ExperimentsPage() {
           <TableHeader>
             <TableRow>
               <TableHead>Model</TableHead>
-              <TableHead>Baseline</TableHead>
+              <TableHead>Config</TableHead>
               <TableHead>Date</TableHead>
               <TableHead className="text-right">F1</TableHead>
               <TableHead className="text-right">F2</TableHead>
