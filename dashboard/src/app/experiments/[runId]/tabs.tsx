@@ -67,15 +67,23 @@ export function ExperimentTabs({ experiment, runId }: ExperimentTabsProps) {
             <ArchitectureSection architecture={experiment.architecture} />
           )}
 
-          {/* System Prompt (baseline runs) */}
-          {experiment.prompt && (
+          {/* Prompt (baseline runs) */}
+          {experiment.prompt && (experiment.prompt.system_prompt || experiment.prompt.prompt_template) && (
             <Card>
               <CardHeader>
-                <CardTitle className="text-sm">System Prompt</CardTitle>
+                <CardTitle className="text-sm">
+                  {experiment.prompt.system_prompt ? "System Prompt" : "Prompt Template"}
+                </CardTitle>
+                {!experiment.prompt.system_prompt && experiment.prompt.prompt_template && (
+                  <p className="text-xs text-muted-foreground">
+                    This baseline embeds the prompt in the user message (no separate system prompt).
+                    Placeholders like {"{{contract_text}}"} are filled per sample.
+                  </p>
+                )}
               </CardHeader>
               <CardContent>
-                <pre className="text-sm whitespace-pre-wrap bg-muted p-4 rounded-md">
-                  {experiment.prompt.system_prompt}
+                <pre className="text-sm whitespace-pre-wrap bg-muted p-4 rounded-md max-h-96 overflow-y-auto">
+                  {experiment.prompt.system_prompt ?? experiment.prompt.prompt_template}
                 </pre>
               </CardContent>
             </Card>
