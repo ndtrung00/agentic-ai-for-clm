@@ -16,7 +16,7 @@ class TestAgentConfig:
         """Test default configuration values."""
         config = AgentConfig(name="test")
         assert config.name == "test"
-        assert config.model == "claude-sonnet-4-20250514"
+        assert config.model_key == "claude-sonnet"
         assert config.temperature == 0.0
         assert config.max_tokens == 4096
         assert config.categories == []
@@ -25,12 +25,12 @@ class TestAgentConfig:
         """Test custom configuration."""
         config = AgentConfig(
             name="custom",
-            model="claude-opus-4-20250514",
+            model_key="claude-opus-4-20250514",
             temperature=0.5,
             max_tokens=8192,
             categories=["cat1", "cat2"],
         )
-        assert config.model == "claude-opus-4-20250514"
+        assert config.model_key == "claude-opus-4-20250514"
         assert config.temperature == 0.5
         assert len(config.categories) == 2
 
@@ -107,10 +107,10 @@ class TestRiskLiabilityAgent:
         assert not agent.handles_category("Governing Law")
 
     def test_get_prompt(self, agent):
-        """Test prompt generation."""
-        prompt = agent.get_prompt("Cap on Liability")
-        assert "liability" in prompt.lower()
-        assert "IMPORTANT" in prompt
+        """Test prompt generation returns system and user templates."""
+        system, user = agent.get_prompt()
+        assert "liability" in system.lower()
+        assert len(user) > 0
 
 
 class TestTemporalRenewalAgent:

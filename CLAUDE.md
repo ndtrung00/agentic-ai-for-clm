@@ -94,8 +94,9 @@ contract-mas/
 │   └── test_agents.py
 ├── notebooks/
 │   ├── 01_data_exploration.ipynb
-│   ├── 02_baseline_calibration.ipynb
-│   └── 03_results_analysis.ipynb
+│   ├── 02_workflow_test.ipynb
+│   ├── 03_baseline_calibration.ipynb    # B1, B4
+│   └── 04_multiagent_experiment.ipynb   # M1–M6 + statistical comparison
 ├── scripts/
 │   ├── run_experiment.py            # Main experiment runner
 │   └── analyze_results.py           # Post-hoc analysis

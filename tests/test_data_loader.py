@@ -53,6 +53,7 @@ class TestCUADSample:
             category="Governing Law",
             question="What is the governing law?",
             ground_truth="New York law",
+            ground_truth_spans=["New York law"],
             contract_title="Test Agreement",
             tier="common",
         )
@@ -67,6 +68,7 @@ class TestCUADSample:
             category="Uncapped Liability",
             question="Is there uncapped liability?",
             ground_truth="",
+            ground_truth_spans=[],
             contract_title="Test Agreement",
             tier="rare",
         )
@@ -92,7 +94,7 @@ class TestCUADDataLoader:
     def test_loader_not_loaded_error(self, loader):
         """Test error when accessing dataset before loading."""
         with pytest.raises(RuntimeError, match="not loaded"):
-            _ = loader.dataset
+            len(loader)
 
     @pytest.mark.slow
     def test_loader_load(self, loader):

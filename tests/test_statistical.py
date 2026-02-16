@@ -49,9 +49,9 @@ class TestMcNemarTest:
 
     def test_mcnemar_different(self):
         """Test McNemar with different outcomes."""
-        # System B is better on all discordant pairs
-        correct_a = [True, False, False, False, False]
-        correct_b = [True, True, True, True, True]
+        # System B is better on many discordant pairs (n01=19, n10=0)
+        correct_a = [True] + [False] * 19
+        correct_b = [True] * 20
         chi2, p_value = mcnemar_test(correct_a, correct_b)
         assert p_value < 0.05
 
@@ -130,8 +130,8 @@ class TestCohensD:
 
     def test_cohens_d_sign(self):
         """Test Cohen's d sign convention."""
-        group_a = [5.0, 5.0, 5.0]
-        group_b = [1.0, 1.0, 1.0]
+        group_a = [4.5, 5.0, 5.5]
+        group_b = [0.5, 1.0, 1.5]
         d = cohens_d(group_a, group_b)
         # A > B, so d should be positive
         assert d > 0

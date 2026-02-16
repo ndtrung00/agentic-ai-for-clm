@@ -351,8 +351,8 @@ def evaluate_batch(
     # Compute aggregate metrics
     precision = compute_precision(tp, fp)
     recall = compute_recall(tp, fn)
-    f1 = compute_f1(precision, recall)
-    f2 = compute_f2(precision, recall)
+    f1 = compute_f1(tp, fp, fn)
+    f2 = compute_f2(tp, fp, fn)
     jaccard = float(np.mean(jaccard_scores)) if jaccard_scores else 0.0
     grounding = float(np.mean(grounding_scores)) if grounding_scores else 1.0
     laziness = compute_laziness_rate(predictions, ground_truths)
@@ -366,8 +366,8 @@ def evaluate_batch(
         cat_precision = compute_precision(int(cat_tp), int(cat_fp))
         cat_recall = compute_recall(int(cat_tp), int(cat_fn))
         category_scores[cat] = {
-            "f1": compute_f1(cat_precision, cat_recall),
-            "f2": compute_f2(cat_precision, cat_recall),
+            "f1": compute_f1(int(cat_tp), int(cat_fp), int(cat_fn)),
+            "f2": compute_f2(int(cat_tp), int(cat_fp), int(cat_fn)),
             "precision": cat_precision,
             "recall": cat_recall,
             "jaccard": float(np.mean([r["jaccard"] for r in results])),

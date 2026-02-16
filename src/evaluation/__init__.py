@@ -6,6 +6,8 @@ from src.evaluation.metrics import (
     compute_jaccard,
     compute_laziness_rate,
     compute_grounding_rate,
+    evaluate_batch,
+    evaluate_single,
     EvaluationResult,
 )
 from src.evaluation.statistical import (
@@ -22,6 +24,8 @@ __all__ = [
     "compute_jaccard",
     "compute_laziness_rate",
     "compute_grounding_rate",
+    "evaluate_batch",
+    "evaluate_single",
     "EvaluationResult",
     "bootstrap_ci",
     "mcnemar_test",
