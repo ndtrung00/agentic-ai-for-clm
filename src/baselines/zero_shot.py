@@ -3,6 +3,7 @@
 from langfuse import observe
 
 from src.agents.base import AgentConfig, BaseAgent, ExtractionResult
+from src.models import ModelDiagnostics
 
 
 # ContractEval exact prompt - MUST REPLICATE EXACTLY
@@ -13,15 +14,20 @@ CONTRACTEVAL_PROMPT = """You are an assistant with strong legal knowledge, suppo
 class ZeroShotBaseline(BaseAgent):
     """B1: Zero-shot baseline replicating ContractEval methodology."""
 
-    def __init__(self, config: AgentConfig | None = None) -> None:
+    def __init__(
+        self,
+        config: AgentConfig | None = None,
+        diagnostics: ModelDiagnostics | None = None,
+    ) -> None:
         """Initialize the zero-shot baseline.
 
         Args:
             config: Optional agent configuration.
+            diagnostics: Optional diagnostics collector.
         """
         if config is None:
             config = AgentConfig(name="zero_shot_baseline")
-        super().__init__(config)
+        super().__init__(config, diagnostics)
 
     def get_prompt(self, category: str) -> str:
         """Get the ContractEval prompt template.
@@ -59,6 +65,9 @@ Question:
     ) -> ExtractionResult:
         """Extract clauses using zero-shot prompting.
 
+        Replicates ContractEval methodology exactly: system prompt sets the
+        role, user message provides Context + Question.
+
         Args:
             contract_text: The full contract text.
             category: The CUAD category.
@@ -67,9 +76,18 @@ Question:
         Returns:
             ExtractionResult with extracted clauses.
         """
-        # TODO: Implement LLM call
-        # This should exactly replicate ContractEval methodology
-        raise NotImplementedError("LLM extraction not yet implemented")
+        user_message = self.format_input(contract_text, question)
+        messages = [{"role": "user", "content": user_message}]
+
+        response = await self.invoke_model(
+            messages=messages,
+            system=CONTRACTEVAL_PROMPT,
+            category=category,
+        )
+
+        result = self.parse_response(response)
+        result.category = category
+        return result
 
     def parse_response(self, response: str) -> ExtractionResult:
         """Parse the raw LLM response into ExtractionResult.

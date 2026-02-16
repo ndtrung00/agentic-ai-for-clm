@@ -45,30 +45,37 @@ class TestBasicMetrics:
 
     def test_f1_perfect(self):
         """Test F1 with perfect precision and recall."""
-        assert compute_f1(1.0, 1.0) == 1.0
+        # tp=10, fp=0, fn=0 → P=1.0, R=1.0 → F1=1.0
+        assert compute_f1(10, 0, 0) == 1.0
 
     def test_f1_zero(self):
         """Test F1 with zero precision or recall."""
-        assert compute_f1(0.0, 1.0) == 0.0
-        assert compute_f1(1.0, 0.0) == 0.0
-        assert compute_f1(0.0, 0.0) == 0.0
+        # tp=0, fp=5, fn=0 → P=0.0 → F1=0.0
+        assert compute_f1(0, 5, 0) == 0.0
+        # tp=0, fp=0, fn=5 → R=0.0 → F1=0.0
+        assert compute_f1(0, 0, 5) == 0.0
+        # tp=0, fp=0, fn=0 → F1=0.0
+        assert compute_f1(0, 0, 0) == 0.0
 
     def test_f1_balanced(self):
         """Test F1 with equal precision and recall."""
-        assert compute_f1(0.5, 0.5) == 0.5
+        # tp=5, fp=5, fn=5 → P=0.5, R=0.5 → F1=0.5
+        assert compute_f1(5, 5, 5) == 0.5
 
     def test_f2_weights_recall(self):
         """Test that F2 weights recall higher than precision."""
-        # Same precision, different recall
-        f2_high_recall = compute_f2(0.5, 0.9)
-        f2_low_recall = compute_f2(0.5, 0.3)
+        # Same precision (0.5), high recall (0.9): tp=9, fp=9, fn=1
+        f2_high_recall = compute_f2(9, 9, 1)
+        # Same precision (0.5), low recall (0.3): tp=3, fp=3, fn=7
+        f2_low_recall = compute_f2(3, 3, 7)
         assert f2_high_recall > f2_low_recall
 
     def test_f2_formula(self):
         """Test F2 formula: 5 * (P * R) / (4P + R)."""
+        # tp=12, fp=3, fn=8 → P=12/15=0.8, R=12/20=0.6
         p, r = 0.8, 0.6
         expected = 5 * (p * r) / (4 * p + r)
-        assert abs(compute_f2(p, r) - expected) < 1e-10
+        assert abs(compute_f2(12, 3, 8) - expected) < 1e-10
 
 
 class TestJaccard:

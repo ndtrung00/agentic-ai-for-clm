@@ -79,22 +79,25 @@ def compute_recall(tp: int, fn: int) -> float:
     return tp / (tp + fn)
 
 
-def compute_f1(precision: float, recall: float) -> float:
+def compute_f1(tp: int, fp: int, fn: int) -> float:
     """Compute F1 score = 2 * (P * R) / (P + R).
 
     Args:
-        precision: Precision score.
-        recall: Recall score.
+        tp: True positives count.
+        fp: False positives count.
+        fn: False negatives count.
 
     Returns:
         F1 score (0-1).
     """
+    precision = compute_precision(tp, fp)
+    recall = compute_recall(tp, fn)
     if precision + recall == 0:
         return 0.0
     return 2 * (precision * recall) / (precision + recall)
 
 
-def compute_f2(precision: float, recall: float) -> float:
+def compute_f2(tp: int, fp: int, fn: int) -> float:
     """Compute F2 score = 5 * (P * R) / (4P + R).
 
     F2 weights recall higher than precision (beta=2).
@@ -102,12 +105,15 @@ def compute_f2(precision: float, recall: float) -> float:
     missing a clause (FN) is worse than extracting extra text (FP).
 
     Args:
-        precision: Precision score.
-        recall: Recall score.
+        tp: True positives count.
+        fp: False positives count.
+        fn: False negatives count.
 
     Returns:
         F2 score (0-1).
     """
+    precision = compute_precision(tp, fp)
+    recall = compute_recall(tp, fn)
     if 4 * precision + recall == 0:
         return 0.0
     return 5 * (precision * recall) / (4 * precision + recall)
@@ -345,8 +351,8 @@ def evaluate_batch(
     # Compute aggregate metrics
     precision = compute_precision(tp, fp)
     recall = compute_recall(tp, fn)
-    f1 = compute_f1(precision, recall)
-    f2 = compute_f2(precision, recall)
+    f1 = compute_f1(tp, fp, fn)
+    f2 = compute_f2(tp, fp, fn)
     jaccard = float(np.mean(jaccard_scores)) if jaccard_scores else 0.0
     grounding = float(np.mean(grounding_scores)) if grounding_scores else 1.0
     laziness = compute_laziness_rate(predictions, ground_truths)
@@ -360,8 +366,8 @@ def evaluate_batch(
         cat_precision = compute_precision(int(cat_tp), int(cat_fp))
         cat_recall = compute_recall(int(cat_tp), int(cat_fn))
         category_scores[cat] = {
-            "f1": compute_f1(cat_precision, cat_recall),
-            "f2": compute_f2(cat_precision, cat_recall),
+            "f1": compute_f1(int(cat_tp), int(cat_fp), int(cat_fn)),
+            "f2": compute_f2(int(cat_tp), int(cat_fp), int(cat_fn)),
             "precision": cat_precision,
             "recall": cat_recall,
             "jaccard": float(np.mean([r["jaccard"] for r in results])),

@@ -1,0 +1,888 @@
+{
+  "experiment_id": "cot_gpt-4.1-mini_20260216_012937",
+  "start_time": "2026-02-16T01:29:37.690673",
+  "summary": {
+    "experiment_id": "cot_gpt-4.1-mini_20260216_012937",
+    "total_calls": 45,
+    "successful_calls": 45,
+    "failed_calls": 0,
+    "success_rate": 1.0,
+    "total_input_tokens": 336410,
+    "total_output_tokens": 44295,
+    "total_tokens": 380705,
+    "total_cost_usd": 0.205436,
+    "avg_latency_ms": 11284.60398055613,
+    "min_latency_ms": 2346.4057500241324,
+    "max_latency_ms": 31789.384790987242,
+    "by_model": {
+      "gpt-4.1-mini": {
+        "calls": 45,
+        "input_tokens": 336410,
+        "output_tokens": 44295,
+        "cost_usd": 0.205436,
+        "avg_latency_ms": 11284.60398055613
+      }
+    },
+    "by_agent": {
+      "cot": 45
+    },
+    "duration_seconds": 508.009536
+  },
+  "calls": [
+    {
+      "model_key": "gpt-4.1-mini",
+      "model_id": "gpt-4.1-mini",
+      "timestamp": "2026-02-16T01:29:45.442516",
+      "latency_ms": 7751.182000036351,
+      "usage": {
+        "input_tokens": 6865,
+        "output_tokens": 676,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 7541
+      },
+      "cost_usd": 0.0038276000000000004,
+      "success": true,
+      "error": null,
+      "category": "Agreement Date",
+      "agent_name": "cot",
+      "experiment_id": "cot_gpt-4.1-mini_20260216_012937"
+    },
+    {
+      "model_key": "gpt-4.1-mini",
+      "model_id": "gpt-4.1-mini",
+      "timestamp": "2026-02-16T01:29:50.085012",
+      "latency_ms": 4639.972832985222,
+      "usage": {
+        "input_tokens": 1507,
+        "output_tokens": 385,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1892
+      },
+      "cost_usd": 0.0012188,
+      "success": true,
+      "error": null,
+      "category": "Expiration Date",
+      "agent_name": "cot",
+      "experiment_id": "cot_gpt-4.1-mini_20260216_012937"
+    },
+    {
+      "model_key": "gpt-4.1-mini",
+      "model_id": "gpt-4.1-mini",
+      "timestamp": "2026-02-16T01:30:21.876388",
+      "latency_ms": 31789.384790987242,
+      "usage": {
+        "input_tokens": 13153,
+        "output_tokens": 2968,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 16121
+      },
+      "cost_usd": 0.010010000000000002,
+      "success": true,
+      "error": null,
+      "category": "Parties",
+      "agent_name": "cot",
+      "experiment_id": "cot_gpt-4.1-mini_20260216_012937"
+    },
+    {
+      "model_key": "gpt-4.1-mini",
+      "model_id": "gpt-4.1-mini",
+      "timestamp": "2026-02-16T01:30:38.085026",
+      "latency_ms": 16202.598292031325,
+      "usage": {
+        "input_tokens": 10170,
+        "output_tokens": 1351,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 11521
+      },
+      "cost_usd": 0.0062296,
+      "success": true,
+      "error": null,
+      "category": "Document Name",
+      "agent_name": "cot",
+      "experiment_id": "cot_gpt-4.1-mini_20260216_012937"
+    },
+    {
+      "model_key": "gpt-4.1-mini",
+      "model_id": "gpt-4.1-mini",
+      "timestamp": "2026-02-16T01:30:56.989249",
+      "latency_ms": 18900.687125045806,
+      "usage": {
+        "input_tokens": 6059,
+        "output_tokens": 1724,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 7783
+      },
+      "cost_usd": 0.005182000000000001,
+      "success": true,
+      "error": null,
+      "category": "Parties",
+      "agent_name": "cot",
+      "experiment_id": "cot_gpt-4.1-mini_20260216_012937"
+    },
+    {
+      "model_key": "gpt-4.1-mini",
+      "model_id": "gpt-4.1-mini",
+      "timestamp": "2026-02-16T01:31:07.968711",
+      "latency_ms": 10970.890457974747,
+      "usage": {
+        "input_tokens": 5714,
+        "output_tokens": 1012,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 6726
+      },
+      "cost_usd": 0.003904800000000001,
+      "success": true,
+      "error": null,
+      "category": "Parties",
+      "agent_name": "cot",
+      "experiment_id": "cot_gpt-4.1-mini_20260216_012937"
+    },
+    {
+      "model_key": "gpt-4.1-mini",
+      "model_id": "gpt-4.1-mini",
+      "timestamp": "2026-02-16T01:31:14.429424",
+      "latency_ms": 6455.417832999956,
+      "usage": {
+        "input_tokens": 15143,
+        "output_tokens": 423,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 15566
+      },
+      "cost_usd": 0.006734,
+      "success": true,
+      "error": null,
+      "category": "Governing Law",
+      "agent_name": "cot",
+      "experiment_id": "cot_gpt-4.1-mini_20260216_012937"
+    },
+    {
+      "model_key": "gpt-4.1-mini",
+      "model_id": "gpt-4.1-mini",
+      "timestamp": "2026-02-16T01:31:22.919036",
+      "latency_ms": 8487.736500042956,
+      "usage": {
+        "input_tokens": 13469,
+        "output_tokens": 665,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 14134
+      },
+      "cost_usd": 0.0064516,
+      "success": true,
+      "error": null,
+      "category": "Agreement Date",
+      "agent_name": "cot",
+      "experiment_id": "cot_gpt-4.1-mini_20260216_012937"
+    },
+    {
+      "model_key": "gpt-4.1-mini",
+      "model_id": "gpt-4.1-mini",
+      "timestamp": "2026-02-16T01:31:27.485722",
+      "latency_ms": 4564.0905409818515,
+      "usage": {
+        "input_tokens": 5422,
+        "output_tokens": 385,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 5807
+      },
+      "cost_usd": 0.0027847999999999996,
+      "success": true,
+      "error": null,
+      "category": "Effective Date",
+      "agent_name": "cot",
+      "experiment_id": "cot_gpt-4.1-mini_20260216_012937"
+    },
+    {
+      "model_key": "gpt-4.1-mini",
+      "model_id": "gpt-4.1-mini",
+      "timestamp": "2026-02-16T01:31:45.448487",
+      "latency_ms": 17960.16066696029,
+      "usage": {
+        "input_tokens": 12187,
+        "output_tokens": 1717,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 13904
+      },
+      "cost_usd": 0.007622,
+      "success": true,
+      "error": null,
+      "category": "Document Name",
+      "agent_name": "cot",
+      "experiment_id": "cot_gpt-4.1-mini_20260216_012937"
+    },
+    {
+      "model_key": "gpt-4.1-mini",
+      "model_id": "gpt-4.1-mini",
+      "timestamp": "2026-02-16T01:31:47.800224",
+      "latency_ms": 2346.4057500241324,
+      "usage": {
+        "input_tokens": 1511,
+        "output_tokens": 193,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1704
+      },
+      "cost_usd": 0.0009132,
+      "success": true,
+      "error": null,
+      "category": "Governing Law",
+      "agent_name": "cot",
+      "experiment_id": "cot_gpt-4.1-mini_20260216_012937"
+    },
+    {
+      "model_key": "gpt-4.1-mini",
+      "model_id": "gpt-4.1-mini",
+      "timestamp": "2026-02-16T01:31:53.632017",
+      "latency_ms": 5830.355416983366,
+      "usage": {
+        "input_tokens": 1505,
+        "output_tokens": 437,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1942
+      },
+      "cost_usd": 0.0013012000000000002,
+      "success": true,
+      "error": null,
+      "category": "Effective Date",
+      "agent_name": "cot",
+      "experiment_id": "cot_gpt-4.1-mini_20260216_012937"
+    },
+    {
+      "model_key": "gpt-4.1-mini",
+      "model_id": "gpt-4.1-mini",
+      "timestamp": "2026-02-16T01:32:00.372213",
+      "latency_ms": 6739.319915999658,
+      "usage": {
+        "input_tokens": 1096,
+        "output_tokens": 597,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1693
+      },
+      "cost_usd": 0.0013936,
+      "success": true,
+      "error": null,
+      "category": "Expiration Date",
+      "agent_name": "cot",
+      "experiment_id": "cot_gpt-4.1-mini_20260216_012937"
+    },
+    {
+      "model_key": "gpt-4.1-mini",
+      "model_id": "gpt-4.1-mini",
+      "timestamp": "2026-02-16T01:32:03.093705",
+      "latency_ms": 2718.0594580131583,
+      "usage": {
+        "input_tokens": 483,
+        "output_tokens": 215,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 698
+      },
+      "cost_usd": 0.0005372,
+      "success": true,
+      "error": null,
+      "category": "Governing Law",
+      "agent_name": "cot",
+      "experiment_id": "cot_gpt-4.1-mini_20260216_012937"
+    },
+    {
+      "model_key": "gpt-4.1-mini",
+      "model_id": "gpt-4.1-mini",
+      "timestamp": "2026-02-16T01:32:07.463151",
+      "latency_ms": 4368.096041958779,
+      "usage": {
+        "input_tokens": 967,
+        "output_tokens": 336,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1303
+      },
+      "cost_usd": 0.0009244000000000001,
+      "success": true,
+      "error": null,
+      "category": "Effective Date",
+      "agent_name": "cot",
+      "experiment_id": "cot_gpt-4.1-mini_20260216_012937"
+    },
+    {
+      "model_key": "gpt-4.1-mini",
+      "model_id": "gpt-4.1-mini",
+      "timestamp": "2026-02-16T01:32:15.191627",
+      "latency_ms": 7727.293666044716,
+      "usage": {
+        "input_tokens": 3743,
+        "output_tokens": 730,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 4473
+      },
+      "cost_usd": 0.0026652,
+      "success": true,
+      "error": null,
+      "category": "Non-Compete",
+      "agent_name": "cot",
+      "experiment_id": "cot_gpt-4.1-mini_20260216_012937"
+    },
+    {
+      "model_key": "gpt-4.1-mini",
+      "model_id": "gpt-4.1-mini",
+      "timestamp": "2026-02-16T01:32:30.558110",
+      "latency_ms": 15364.732958958484,
+      "usage": {
+        "input_tokens": 7161,
+        "output_tokens": 1417,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 8578
+      },
+      "cost_usd": 0.0051316,
+      "success": true,
+      "error": null,
+      "category": "Post-Termination Services",
+      "agent_name": "cot",
+      "experiment_id": "cot_gpt-4.1-mini_20260216_012937"
+    },
+    {
+      "model_key": "gpt-4.1-mini",
+      "model_id": "gpt-4.1-mini",
+      "timestamp": "2026-02-16T01:32:39.784778",
+      "latency_ms": 9222.747874970082,
+      "usage": {
+        "input_tokens": 15316,
+        "output_tokens": 806,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 16122
+      },
+      "cost_usd": 0.007416000000000001,
+      "success": true,
+      "error": null,
+      "category": "Insurance",
+      "agent_name": "cot",
+      "experiment_id": "cot_gpt-4.1-mini_20260216_012937"
+    },
+    {
+      "model_key": "gpt-4.1-mini",
+      "model_id": "gpt-4.1-mini",
+      "timestamp": "2026-02-16T01:32:46.630749",
+      "latency_ms": 6843.588582996745,
+      "usage": {
+        "input_tokens": 10184,
+        "output_tokens": 702,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 10886
+      },
+      "cost_usd": 0.0051968,
+      "success": true,
+      "error": null,
+      "category": "Insurance",
+      "agent_name": "cot",
+      "experiment_id": "cot_gpt-4.1-mini_20260216_012937"
+    },
+    {
+      "model_key": "gpt-4.1-mini",
+      "model_id": "gpt-4.1-mini",
+      "timestamp": "2026-02-16T01:32:53.984332",
+      "latency_ms": 7351.64462501416,
+      "usage": {
+        "input_tokens": 10654,
+        "output_tokens": 535,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 11189
+      },
+      "cost_usd": 0.0051176,
+      "success": true,
+      "error": null,
+      "category": "Anti-Assignment",
+      "agent_name": "cot",
+      "experiment_id": "cot_gpt-4.1-mini_20260216_012937"
+    },
+    {
+      "model_key": "gpt-4.1-mini",
+      "model_id": "gpt-4.1-mini",
+      "timestamp": "2026-02-16T01:33:10.801040",
+      "latency_ms": 16813.42987495009,
+      "usage": {
+        "input_tokens": 4900,
+        "output_tokens": 1587,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 6487
+      },
+      "cost_usd": 0.0044992,
+      "success": true,
+      "error": null,
+      "category": "Exclusivity",
+      "agent_name": "cot",
+      "experiment_id": "cot_gpt-4.1-mini_20260216_012937"
+    },
+    {
+      "model_key": "gpt-4.1-mini",
+      "model_id": "gpt-4.1-mini",
+      "timestamp": "2026-02-16T01:33:17.710350",
+      "latency_ms": 6905.46841698233,
+      "usage": {
+        "input_tokens": 3638,
+        "output_tokens": 524,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 4162
+      },
+      "cost_usd": 0.0022936000000000002,
+      "success": true,
+      "error": null,
+      "category": "Termination For Convenience",
+      "agent_name": "cot",
+      "experiment_id": "cot_gpt-4.1-mini_20260216_012937"
+    },
+    {
+      "model_key": "gpt-4.1-mini",
+      "model_id": "gpt-4.1-mini",
+      "timestamp": "2026-02-16T01:33:24.781666",
+      "latency_ms": 7069.175290991552,
+      "usage": {
+        "input_tokens": 3291,
+        "output_tokens": 660,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 3951
+      },
+      "cost_usd": 0.0023724,
+      "success": true,
+      "error": null,
+      "category": "Termination For Convenience",
+      "agent_name": "cot",
+      "experiment_id": "cot_gpt-4.1-mini_20260216_012937"
+    },
+    {
+      "model_key": "gpt-4.1-mini",
+      "model_id": "gpt-4.1-mini",
+      "timestamp": "2026-02-16T01:33:32.235304",
+      "latency_ms": 7452.468166011386,
+      "usage": {
+        "input_tokens": 16487,
+        "output_tokens": 651,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 17138
+      },
+      "cost_usd": 0.0076364,
+      "success": true,
+      "error": null,
+      "category": "Anti-Assignment",
+      "agent_name": "cot",
+      "experiment_id": "cot_gpt-4.1-mini_20260216_012937"
+    },
+    {
+      "model_key": "gpt-4.1-mini",
+      "model_id": "gpt-4.1-mini",
+      "timestamp": "2026-02-16T01:33:48.994114",
+      "latency_ms": 16753.84604197461,
+      "usage": {
+        "input_tokens": 9769,
+        "output_tokens": 1673,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 11442
+      },
+      "cost_usd": 0.006584400000000001,
+      "success": true,
+      "error": null,
+      "category": "Non-Compete",
+      "agent_name": "cot",
+      "experiment_id": "cot_gpt-4.1-mini_20260216_012937"
+    },
+    {
+      "model_key": "gpt-4.1-mini",
+      "model_id": "gpt-4.1-mini",
+      "timestamp": "2026-02-16T01:33:57.340255",
+      "latency_ms": 8342.204290966038,
+      "usage": {
+        "input_tokens": 4562,
+        "output_tokens": 572,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 5134
+      },
+      "cost_usd": 0.0027400000000000002,
+      "success": true,
+      "error": null,
+      "category": "Warranty Duration",
+      "agent_name": "cot",
+      "experiment_id": "cot_gpt-4.1-mini_20260216_012937"
+    },
+    {
+      "model_key": "gpt-4.1-mini",
+      "model_id": "gpt-4.1-mini",
+      "timestamp": "2026-02-16T01:34:16.239353",
+      "latency_ms": 18897.209542046767,
+      "usage": {
+        "input_tokens": 4173,
+        "output_tokens": 1366,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 5539
+      },
+      "cost_usd": 0.0038548000000000002,
+      "success": true,
+      "error": null,
+      "category": "Irrevocable Or Perpetual License",
+      "agent_name": "cot",
+      "experiment_id": "cot_gpt-4.1-mini_20260216_012937"
+    },
+    {
+      "model_key": "gpt-4.1-mini",
+      "model_id": "gpt-4.1-mini",
+      "timestamp": "2026-02-16T01:34:21.406432",
+      "latency_ms": 5162.814750045072,
+      "usage": {
+        "input_tokens": 3986,
+        "output_tokens": 365,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 4351
+      },
+      "cost_usd": 0.0021784,
+      "success": true,
+      "error": null,
+      "category": "Audit Rights",
+      "agent_name": "cot",
+      "experiment_id": "cot_gpt-4.1-mini_20260216_012937"
+    },
+    {
+      "model_key": "gpt-4.1-mini",
+      "model_id": "gpt-4.1-mini",
+      "timestamp": "2026-02-16T01:34:30.863843",
+      "latency_ms": 9454.835250042379,
+      "usage": {
+        "input_tokens": 8312,
+        "output_tokens": 739,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 9051
+      },
+      "cost_usd": 0.004507199999999999,
+      "success": true,
+      "error": null,
+      "category": "Change Of Control",
+      "agent_name": "cot",
+      "experiment_id": "cot_gpt-4.1-mini_20260216_012937"
+    },
+    {
+      "model_key": "gpt-4.1-mini",
+      "model_id": "gpt-4.1-mini",
+      "timestamp": "2026-02-16T01:34:48.952491",
+      "latency_ms": 18085.449083009735,
+      "usage": {
+        "input_tokens": 5449,
+        "output_tokens": 1540,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 6989
+      },
+      "cost_usd": 0.0046435999999999995,
+      "success": true,
+      "error": null,
+      "category": "No-Solicit Of Customers",
+      "agent_name": "cot",
+      "experiment_id": "cot_gpt-4.1-mini_20260216_012937"
+    },
+    {
+      "model_key": "gpt-4.1-mini",
+      "model_id": "gpt-4.1-mini",
+      "timestamp": "2026-02-16T01:34:58.854123",
+      "latency_ms": 9897.888667008374,
+      "usage": {
+        "input_tokens": 13312,
+        "output_tokens": 865,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 14177
+      },
+      "cost_usd": 0.0067088,
+      "success": true,
+      "error": null,
+      "category": "Third Party Beneficiary",
+      "agent_name": "cot",
+      "experiment_id": "cot_gpt-4.1-mini_20260216_012937"
+    },
+    {
+      "model_key": "gpt-4.1-mini",
+      "model_id": "gpt-4.1-mini",
+      "timestamp": "2026-02-16T01:35:06.658300",
+      "latency_ms": 7801.907458982896,
+      "usage": {
+        "input_tokens": 3464,
+        "output_tokens": 679,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 4143
+      },
+      "cost_usd": 0.0024720000000000002,
+      "success": true,
+      "error": null,
+      "category": "Minimum Commitment",
+      "agent_name": "cot",
+      "experiment_id": "cot_gpt-4.1-mini_20260216_012937"
+    },
+    {
+      "model_key": "gpt-4.1-mini",
+      "model_id": "gpt-4.1-mini",
+      "timestamp": "2026-02-16T01:35:26.649545",
+      "latency_ms": 19989.199625037145,
+      "usage": {
+        "input_tokens": 10599,
+        "output_tokens": 1662,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 12261
+      },
+      "cost_usd": 0.0068988,
+      "success": true,
+      "error": null,
+      "category": "Minimum Commitment",
+      "agent_name": "cot",
+      "experiment_id": "cot_gpt-4.1-mini_20260216_012937"
+    },
+    {
+      "model_key": "gpt-4.1-mini",
+      "model_id": "gpt-4.1-mini",
+      "timestamp": "2026-02-16T01:35:31.801891",
+      "latency_ms": 5145.3207089798525,
+      "usage": {
+        "input_tokens": 4914,
+        "output_tokens": 315,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 5229
+      },
+      "cost_usd": 0.0024696,
+      "success": true,
+      "error": null,
+      "category": "Revenue/Profit Sharing",
+      "agent_name": "cot",
+      "experiment_id": "cot_gpt-4.1-mini_20260216_012937"
+    },
+    {
+      "model_key": "gpt-4.1-mini",
+      "model_id": "gpt-4.1-mini",
+      "timestamp": "2026-02-16T01:36:01.828376",
+      "latency_ms": 30024.1714589647,
+      "usage": {
+        "input_tokens": 6581,
+        "output_tokens": 2632,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 9213
+      },
+      "cost_usd": 0.0068436,
+      "success": true,
+      "error": null,
+      "category": "Volume Restriction",
+      "agent_name": "cot",
+      "experiment_id": "cot_gpt-4.1-mini_20260216_012937"
+    },
+    {
+      "model_key": "gpt-4.1-mini",
+      "model_id": "gpt-4.1-mini",
+      "timestamp": "2026-02-16T01:36:11.781140",
+      "latency_ms": 9950.062167015858,
+      "usage": {
+        "input_tokens": 12304,
+        "output_tokens": 729,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 13033
+      },
+      "cost_usd": 0.006088,
+      "success": true,
+      "error": null,
+      "category": "Notice Period To Terminate Renewal",
+      "agent_name": "cot",
+      "experiment_id": "cot_gpt-4.1-mini_20260216_012937"
+    },
+    {
+      "model_key": "gpt-4.1-mini",
+      "model_id": "gpt-4.1-mini",
+      "timestamp": "2026-02-16T01:36:25.281563",
+      "latency_ms": 13496.074999973644,
+      "usage": {
+        "input_tokens": 13602,
+        "output_tokens": 1131,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 14733
+      },
+      "cost_usd": 0.007250400000000001,
+      "success": true,
+      "error": null,
+      "category": "Price Restrictions",
+      "agent_name": "cot",
+      "experiment_id": "cot_gpt-4.1-mini_20260216_012937"
+    },
+    {
+      "model_key": "gpt-4.1-mini",
+      "model_id": "gpt-4.1-mini",
+      "timestamp": "2026-02-16T01:36:30.032927",
+      "latency_ms": 4749.490832968149,
+      "usage": {
+        "input_tokens": 4895,
+        "output_tokens": 394,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 5289
+      },
+      "cost_usd": 0.0025884000000000002,
+      "success": true,
+      "error": null,
+      "category": "Notice Period To Terminate Renewal",
+      "agent_name": "cot",
+      "experiment_id": "cot_gpt-4.1-mini_20260216_012937"
+    },
+    {
+      "model_key": "gpt-4.1-mini",
+      "model_id": "gpt-4.1-mini",
+      "timestamp": "2026-02-16T01:36:46.950370",
+      "latency_ms": 16912.390624987893,
+      "usage": {
+        "input_tokens": 9925,
+        "output_tokens": 1510,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 11435
+      },
+      "cost_usd": 0.006386000000000001,
+      "success": true,
+      "error": null,
+      "category": "Minimum Commitment",
+      "agent_name": "cot",
+      "experiment_id": "cot_gpt-4.1-mini_20260216_012937"
+    },
+    {
+      "model_key": "gpt-4.1-mini",
+      "model_id": "gpt-4.1-mini",
+      "timestamp": "2026-02-16T01:36:58.241787",
+      "latency_ms": 11287.229875044432,
+      "usage": {
+        "input_tokens": 4601,
+        "output_tokens": 1079,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 5680
+      },
+      "cost_usd": 0.0035668,
+      "success": true,
+      "error": null,
+      "category": "Minimum Commitment",
+      "agent_name": "cot",
+      "experiment_id": "cot_gpt-4.1-mini_20260216_012937"
+    },
+    {
+      "model_key": "gpt-4.1-mini",
+      "model_id": "gpt-4.1-mini",
+      "timestamp": "2026-02-16T01:37:15.181596",
+      "latency_ms": 16936.85350002488,
+      "usage": {
+        "input_tokens": 19474,
+        "output_tokens": 1482,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 20956
+      },
+      "cost_usd": 0.010160800000000001,
+      "success": true,
+      "error": null,
+      "category": "Notice Period To Terminate Renewal",
+      "agent_name": "cot",
+      "experiment_id": "cot_gpt-4.1-mini_20260216_012937"
+    },
+    {
+      "model_key": "gpt-4.1-mini",
+      "model_id": "gpt-4.1-mini",
+      "timestamp": "2026-02-16T01:37:19.867190",
+      "latency_ms": 4681.294458976481,
+      "usage": {
+        "input_tokens": 5456,
+        "output_tokens": 413,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 5869
+      },
+      "cost_usd": 0.0028432,
+      "success": true,
+      "error": null,
+      "category": "Source Code Escrow",
+      "agent_name": "cot",
+      "experiment_id": "cot_gpt-4.1-mini_20260216_012937"
+    },
+    {
+      "model_key": "gpt-4.1-mini",
+      "model_id": "gpt-4.1-mini",
+      "timestamp": "2026-02-16T01:37:34.016825",
+      "latency_ms": 14146.25387499109,
+      "usage": {
+        "input_tokens": 10723,
+        "output_tokens": 1473,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 12196
+      },
+      "cost_usd": 0.006646000000000001,
+      "success": true,
+      "error": null,
+      "category": "Affiliate License-Licensor",
+      "agent_name": "cot",
+      "experiment_id": "cot_gpt-4.1-mini_20260216_012937"
+    },
+    {
+      "model_key": "gpt-4.1-mini",
+      "model_id": "gpt-4.1-mini",
+      "timestamp": "2026-02-16T01:37:41.983324",
+      "latency_ms": 7964.074167015497,
+      "usage": {
+        "input_tokens": 5817,
+        "output_tokens": 784,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 6601
+      },
+      "cost_usd": 0.0035812000000000005,
+      "success": true,
+      "error": null,
+      "category": "Volume Restriction",
+      "agent_name": "cot",
+      "experiment_id": "cot_gpt-4.1-mini_20260216_012937"
+    },
+    {
+      "model_key": "gpt-4.1-mini",
+      "model_id": "gpt-4.1-mini",
+      "timestamp": "2026-02-16T01:38:05.633040",
+      "latency_ms": 23653.700667025987,
+      "usage": {
+        "input_tokens": 3867,
+        "output_tokens": 2196,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 6063
+      },
+      "cost_usd": 0.0050604000000000005,
+      "success": true,
+      "error": null,
+      "category": "Uncapped Liability",
+      "agent_name": "cot",
+      "experiment_id": "cot_gpt-4.1-mini_20260216_012937"
+    }
+  ]
+}

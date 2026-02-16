@@ -11,6 +11,7 @@ If M1 > M6, architecture provides genuine benefit beyond prompting.
 from langfuse import observe
 
 from src.agents.base import AgentConfig, BaseAgent, ExtractionResult
+from src.models import ModelDiagnostics
 from src.agents.risk_liability import RISK_LIABILITY_CATEGORIES
 from src.agents.temporal_renewal import TEMPORAL_RENEWAL_CATEGORIES
 from src.agents.ip_commercial import IP_COMMERCIAL_CATEGORIES
@@ -63,11 +64,16 @@ class CombinedPromptsBaseline(BaseAgent):
     come from architecture or just from specialized prompting.
     """
 
-    def __init__(self, config: AgentConfig | None = None) -> None:
+    def __init__(
+        self,
+        config: AgentConfig | None = None,
+        diagnostics: ModelDiagnostics | None = None,
+    ) -> None:
         """Initialize the combined prompts baseline.
 
         Args:
             config: Optional agent configuration.
+            diagnostics: Optional diagnostics collector.
         """
         all_categories = (
             RISK_LIABILITY_CATEGORIES
@@ -79,7 +85,7 @@ class CombinedPromptsBaseline(BaseAgent):
                 name="combined_prompts",
                 categories=all_categories,
             )
-        super().__init__(config)
+        super().__init__(config, diagnostics)
 
     def get_prompt(self, category: str) -> str:
         """Get the combined prompt template.
@@ -119,6 +125,9 @@ class CombinedPromptsBaseline(BaseAgent):
     ) -> ExtractionResult:
         """Extract clauses using combined specialist prompting.
 
+        Sends the combined prompt (all domain guidance in one) as the user
+        message and requests structured JSON output.
+
         Args:
             contract_text: The full contract text.
             category: The CUAD category.
@@ -127,5 +136,51 @@ class CombinedPromptsBaseline(BaseAgent):
         Returns:
             ExtractionResult with extracted clauses.
         """
-        # TODO: Implement LLM call with combined prompt
-        raise NotImplementedError("LLM extraction not yet implemented")
+        user_message = COMBINED_PROMPT.format(
+            category=category,
+            contract_text=contract_text,
+            question=question,
+        )
+        messages = [{"role": "user", "content": user_message}]
+
+        response = await self.invoke_model(
+            messages=messages,
+            category=category,
+        )
+
+        # Try JSON parsing first; fall back to plain-text extraction
+        data = self.parse_json_response(response)
+        if data and "extracted_clauses" in data:
+            result = self.result_from_dict(data, category)
+        else:
+            result = self._parse_plaintext(response, category)
+
+        return result
+
+    def _parse_plaintext(self, response: str, category: str) -> ExtractionResult:
+        """Fallback parser when model doesn't return valid JSON.
+
+        Args:
+            response: Raw model response.
+            category: The CUAD category.
+
+        Returns:
+            ExtractionResult parsed from plain text.
+        """
+        text = response.strip()
+
+        if text.lower().strip('"').strip() in ("no related clause.", "no related clause"):
+            return ExtractionResult(
+                extracted_clauses=[],
+                reasoning="Model found no relevant clauses",
+                confidence=1.0,
+                category=category,
+            )
+
+        clauses = [c.strip() for c in text.split("\n\n") if c.strip()]
+        return ExtractionResult(
+            extracted_clauses=clauses,
+            reasoning="Combined prompts extraction (plaintext fallback)",
+            confidence=0.7,
+            category=category,
+        )

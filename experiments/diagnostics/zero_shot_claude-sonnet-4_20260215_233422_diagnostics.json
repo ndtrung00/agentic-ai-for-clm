@@ -1,0 +1,204 @@
+{
+  "experiment_id": "zero_shot_claude-sonnet-4_20260215_233422",
+  "start_time": "2026-02-15T23:34:22.887274",
+  "summary": {
+    "experiment_id": "zero_shot_claude-sonnet-4_20260215_233422",
+    "total_calls": 9,
+    "successful_calls": 9,
+    "failed_calls": 0,
+    "success_rate": 1.0,
+    "total_input_tokens": 51996,
+    "total_output_tokens": 787,
+    "total_tokens": 52783,
+    "total_cost_usd": 0.167793,
+    "avg_latency_ms": 2566.75039797685,
+    "min_latency_ms": 1209.4028330175206,
+    "max_latency_ms": 4471.255457960069,
+    "by_model": {
+      "claude-sonnet-4": {
+        "calls": 9,
+        "input_tokens": 51996,
+        "output_tokens": 787,
+        "cost_usd": 0.167793,
+        "avg_latency_ms": 2566.75039797685
+      }
+    },
+    "by_agent": {
+      "zero_shot": 9
+    },
+    "duration_seconds": 34.339487
+  },
+  "calls": [
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-02-15T23:34:27.332858",
+      "latency_ms": 4444.85554198036,
+      "usage": {
+        "input_tokens": 7628,
+        "output_tokens": 128,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 7756
+      },
+      "cost_usd": 0.024804000000000003,
+      "success": true,
+      "error": null,
+      "category": "Agreement Date",
+      "agent_name": "zero_shot",
+      "experiment_id": "zero_shot_claude-sonnet-4_20260215_233422"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-02-15T23:34:28.543812",
+      "latency_ms": 1209.4028330175206,
+      "usage": {
+        "input_tokens": 1590,
+        "output_tokens": 7,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1597
+      },
+      "cost_usd": 0.004875,
+      "success": true,
+      "error": null,
+      "category": "Expiration Date",
+      "agent_name": "zero_shot",
+      "experiment_id": "zero_shot_claude-sonnet-4_20260215_233422"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-02-15T23:34:29.829526",
+      "latency_ms": 1282.644166960381,
+      "usage": {
+        "input_tokens": 3700,
+        "output_tokens": 7,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 3707
+      },
+      "cost_usd": 0.011205,
+      "success": true,
+      "error": null,
+      "category": "Expiration Date",
+      "agent_name": "zero_shot",
+      "experiment_id": "zero_shot_claude-sonnet-4_20260215_233422"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-02-15T23:34:32.837214",
+      "latency_ms": 3005.916166002862,
+      "usage": {
+        "input_tokens": 12659,
+        "output_tokens": 201,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 12860
+      },
+      "cost_usd": 0.040992,
+      "success": true,
+      "error": null,
+      "category": "Insurance",
+      "agent_name": "zero_shot",
+      "experiment_id": "zero_shot_claude-sonnet-4_20260215_233422"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-02-15T23:34:34.510319",
+      "latency_ms": 1669.5881669875234,
+      "usage": {
+        "input_tokens": 2241,
+        "output_tokens": 27,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 2268
+      },
+      "cost_usd": 0.007128000000000001,
+      "success": true,
+      "error": null,
+      "category": "Anti-Assignment",
+      "agent_name": "zero_shot",
+      "experiment_id": "zero_shot_claude-sonnet-4_20260215_233422"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-02-15T23:34:36.123262",
+      "latency_ms": 1611.188749957364,
+      "usage": {
+        "input_tokens": 1626,
+        "output_tokens": 7,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1633
+      },
+      "cost_usd": 0.004983,
+      "success": true,
+      "error": null,
+      "category": "Change Of Control",
+      "agent_name": "zero_shot",
+      "experiment_id": "zero_shot_claude-sonnet-4_20260215_233422"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-02-15T23:34:40.595345",
+      "latency_ms": 4471.255457960069,
+      "usage": {
+        "input_tokens": 9593,
+        "output_tokens": 282,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 9875
+      },
+      "cost_usd": 0.033009,
+      "success": true,
+      "error": null,
+      "category": "Covenant Not To Sue",
+      "agent_name": "zero_shot",
+      "experiment_id": "zero_shot_claude-sonnet-4_20260215_233422"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-02-15T23:34:44.370304",
+      "latency_ms": 3771.5049159596674,
+      "usage": {
+        "input_tokens": 3536,
+        "output_tokens": 121,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 3657
+      },
+      "cost_usd": 0.012423,
+      "success": true,
+      "error": null,
+      "category": "Minimum Commitment",
+      "agent_name": "zero_shot",
+      "experiment_id": "zero_shot_claude-sonnet-4_20260215_233422"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-02-15T23:34:46.007264",
+      "latency_ms": 1634.397582965903,
+      "usage": {
+        "input_tokens": 9423,
+        "output_tokens": 7,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 9430
+      },
+      "cost_usd": 0.028374,
+      "success": true,
+      "error": null,
+      "category": "Revenue/Profit Sharing",
+      "agent_name": "zero_shot",
+      "experiment_id": "zero_shot_claude-sonnet-4_20260215_233422"
+    }
+  ]
+}

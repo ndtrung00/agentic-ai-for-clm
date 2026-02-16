@@ -51,20 +51,57 @@ def get_agent_for_config(config_name: str, config: dict):
     Returns:
         Configured agent instance.
     """
+    from src.agents.base import AgentConfig
+    from src.models import ModelDiagnostics
+
     agent_type = config.get("type", "zero_shot")
+    model_key = config.get("model", "claude-sonnet-4")
+    diagnostics = ModelDiagnostics()
 
     if agent_type == "zero_shot":
         from src.baselines import ZeroShotBaseline
-        return ZeroShotBaseline()
+        agent_config = AgentConfig(name="zero_shot_baseline", model_key=model_key)
+        return ZeroShotBaseline(config=agent_config, diagnostics=diagnostics)
     elif agent_type == "chain_of_thought":
         from src.baselines import ChainOfThoughtBaseline
-        return ChainOfThoughtBaseline()
+        agent_config = AgentConfig(name="cot_baseline", model_key=model_key)
+        return ChainOfThoughtBaseline(config=agent_config, diagnostics=diagnostics)
     elif agent_type == "combined_prompts":
         from src.baselines import CombinedPromptsBaseline
-        return CombinedPromptsBaseline()
+        agent_config = AgentConfig(name="combined_prompts", model_key=model_key)
+        return CombinedPromptsBaseline(config=agent_config, diagnostics=diagnostics)
     elif agent_type == "multiagent":
-        # TODO: Build multi-agent system
-        raise NotImplementedError("Multi-agent system not yet implemented")
+        from src.agents import (
+            Orchestrator,
+            RiskLiabilityAgent,
+            TemporalRenewalAgent,
+            IPCommercialAgent,
+        )
+
+        risk_config = AgentConfig(
+            name="risk_liability", model_key=model_key,
+            prompt_name="risk_liability",
+        )
+        temporal_config = AgentConfig(
+            name="temporal_renewal", model_key=model_key,
+            prompt_name="temporal_renewal",
+        )
+        ip_config = AgentConfig(
+            name="ip_commercial", model_key=model_key,
+            prompt_name="ip_commercial",
+        )
+
+        specialists = {
+            "risk_liability": RiskLiabilityAgent(config=risk_config, diagnostics=diagnostics),
+            "temporal_renewal": TemporalRenewalAgent(config=temporal_config, diagnostics=diagnostics),
+            "ip_commercial": IPCommercialAgent(config=ip_config, diagnostics=diagnostics),
+        }
+
+        return Orchestrator(
+            specialists=specialists,
+            validation_agent=None,
+            config=AgentConfig(name="orchestrator", model_key=model_key),
+        )
     else:
         raise ValueError(f"Unknown agent type: {agent_type}")
 

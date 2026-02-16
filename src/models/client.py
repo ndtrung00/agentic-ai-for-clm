@@ -4,10 +4,11 @@ Provides a consistent interface for calling different LLM providers.
 Integrates with Langfuse for cost/token tracking.
 """
 
+import os
 import time
 from typing import Any
 
-from langfuse import observe, get_client as get_langfuse_client
+from langfuse import get_client as get_langfuse_client
 
 from src.models.config import ModelConfig, ModelProvider, get_model_config
 from src.models.diagnostics import ModelDiagnostics, TokenUsage
@@ -16,6 +17,8 @@ from src.models.diagnostics import ModelDiagnostics, TokenUsage
 # Lazy imports to avoid loading unused dependencies
 _anthropic_client = None
 _openai_client = None
+_google_client = None
+_ollama_clients: dict[str, Any] = {}
 
 
 def _get_anthropic_client():
@@ -36,11 +39,38 @@ def _get_openai_client():
     return _openai_client
 
 
-def get_client(provider: ModelProvider):
+def _get_google_client():
+    """Get or create Google Gemini client (via OpenAI-compatible API)."""
+    global _google_client
+    if _google_client is None:
+        from openai import OpenAI
+        api_key = os.environ.get("GEMINI_API_KEY") or os.environ.get("GOOGLE_API_KEY", "")
+        _google_client = OpenAI(
+            base_url="https://generativelanguage.googleapis.com/v1beta/openai/",
+            api_key=api_key,
+        )
+    return _google_client
+
+
+def _get_ollama_client(base_url: str = "http://localhost:11434/v1"):
+    """Get or create Ollama client (OpenAI-compatible).
+
+    Args:
+        base_url: Ollama server URL.
+    """
+    global _ollama_clients
+    if base_url not in _ollama_clients:
+        from openai import OpenAI
+        _ollama_clients[base_url] = OpenAI(base_url=base_url, api_key="ollama")
+    return _ollama_clients[base_url]
+
+
+def get_client(provider: ModelProvider, base_url: str | None = None):
     """Get client for a provider.
 
     Args:
         provider: Model provider enum.
+        base_url: Optional base URL override (used for Ollama).
 
     Returns:
         Provider client instance.
@@ -49,6 +79,10 @@ def get_client(provider: ModelProvider):
         return _get_anthropic_client()
     if provider == ModelProvider.OPENAI:
         return _get_openai_client()
+    if provider == ModelProvider.GOOGLE:
+        return _get_google_client()
+    if provider == ModelProvider.OLLAMA:
+        return _get_ollama_client(base_url or "http://localhost:11434/v1")
     raise ValueError(f"Unknown provider: {provider}")
 
 
@@ -98,8 +132,8 @@ async def invoke_model(
                 temperature=temp,
                 max_tokens=tokens,
             )
-        elif config.provider == ModelProvider.OPENAI:
-            response_text, usage = await _invoke_openai(
+        elif config.provider in (ModelProvider.OPENAI, ModelProvider.GOOGLE, ModelProvider.OLLAMA):
+            response_text, usage = await _invoke_openai_compatible(
                 config=config,
                 messages=messages,
                 system=system,
@@ -231,7 +265,7 @@ async def _invoke_anthropic(
     return response_text, usage
 
 
-async def _invoke_openai(
+async def _invoke_openai_compatible(
     config: ModelConfig,
     messages: list[dict[str, str]],
     system: str | None,
@@ -239,7 +273,7 @@ async def _invoke_openai(
     max_tokens: int,
     json_mode: bool = False,
 ) -> tuple[str, TokenUsage]:
-    """Invoke OpenAI API with Langfuse tracking.
+    """Invoke an OpenAI-compatible API (OpenAI, Google Gemini, Ollama) with Langfuse tracking.
 
     Args:
         config: Model configuration.
@@ -252,7 +286,13 @@ async def _invoke_openai(
     Returns:
         Tuple of (response_text, token_usage).
     """
-    client = _get_openai_client()
+    if config.provider == ModelProvider.OLLAMA:
+        client = _get_ollama_client(config.base_url or "http://localhost:11434/v1")
+    elif config.provider == ModelProvider.GOOGLE:
+        client = _get_google_client()
+    else:
+        client = _get_openai_client()
+
     langfuse = get_langfuse_client()
 
     # Prepend system message if provided
@@ -271,14 +311,15 @@ async def _invoke_openai(
     if json_mode:
         kwargs["response_format"] = {"type": "json_object"}
 
+    gen_name = f"{config.provider.value}-completion"
+
     # Use context manager for generation tracking
     with langfuse.start_as_current_generation(
-        name="openai-completion",
+        name=gen_name,
         model=config.model_id,
         input=full_messages,
         metadata={"temperature": temperature, "max_tokens": max_tokens, "json_mode": json_mode},
     ) as generation:
-        # Sync call
         response = client.chat.completions.create(**kwargs)
 
         # Extract response
@@ -288,7 +329,7 @@ async def _invoke_openai(
         input_tokens = response.usage.prompt_tokens if response.usage else 0
         output_tokens = response.usage.completion_tokens if response.usage else 0
 
-        # Calculate costs
+        # Calculate costs (zero for Ollama/local models)
         input_cost = (input_tokens / 1000) * config.input_cost_per_1k
         output_cost = (output_tokens / 1000) * config.output_cost_per_1k
 
