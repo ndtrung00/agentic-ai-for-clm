@@ -1,11 +1,14 @@
 """B4: Chain-of-Thought single-agent baseline."""
 
+import logging
 import re
 
 from langfuse import observe
 
 from src.agents.base import AgentConfig, BaseAgent, ExtractionResult
 from src.models import ModelDiagnostics
+
+logger = logging.getLogger(__name__)
 
 
 COT_SYSTEM_PROMPT = """You are an assistant with strong legal knowledge, supporting senior lawyers by preparing reference materials.
@@ -151,30 +154,61 @@ class ChainOfThoughtBaseline(BaseAgent):
                 answer_section = text[match.end() :].strip()
                 break
 
-        # If no delimiter found, use the full text as the answer
+        # Safety net for missing or empty answer delimiter.
+        #
+        # Three cases:
+        # 1. Delimiter found but nothing after it (e.g. "Final Answer:\n")
+        #    → Treat as empty extraction (model declined to answer).
+        # 2. No delimiter found in a long response (>500 chars)
+        #    → Likely contains CoT reasoning that shouldn't become clauses.
+        #      Use the last paragraph as a best-effort answer section.
+        # 3. No delimiter found in a short response
+        #    → Likely just the answer itself; use the full text.
+        delimiter_found = any(
+            re.search(p, text) for p in delimiter_patterns
+        )
         if not answer_section:
-            answer_section = text
-
-        # Check for "No related clause" anywhere in the answer section
-        no_clause_pattern = r'(?i)"?\s*no\s+related\s+clause\.?\s*"?'
-        if re.search(no_clause_pattern, answer_section):
-            # Only treat as "no clause" if there are no actual extractions after it
-            # Remove the "no related clause" line and check if anything substantive remains
-            cleaned = re.sub(no_clause_pattern, "", answer_section).strip()
-            # Filter out commentary lines (lines without quotes or contract-like text)
-            remaining_lines = [
-                line.strip() for line in cleaned.split("\n")
-                if line.strip()
-                and not line.strip().startswith("(")
-                and len(line.strip()) > 20
-            ]
-            if not remaining_lines:
+            if delimiter_found:
+                # Case 1: delimiter present but answer is empty/whitespace
+                logger.debug(
+                    "Answer delimiter found but answer section is empty. "
+                    "Treating as empty extraction."
+                )
                 return ExtractionResult(
                     extracted_clauses=[],
                     reasoning=reasoning_section,
-                    confidence=1.0,
+                    confidence=0.5,
                     category_indicators_found=[],
                 )
+            elif len(text) > 500:
+                # Case 2: long response without delimiter — reasoning leaked
+                paragraphs = [
+                    p.strip() for p in text.split("\n\n") if p.strip()
+                ]
+                if len(paragraphs) > 1:
+                    answer_section = paragraphs[-1]
+                    reasoning_section = "\n\n".join(paragraphs[:-1])
+                else:
+                    answer_section = text
+                logger.warning(
+                    "No answer delimiter found in CoT response (%d chars). "
+                    "Using last paragraph as answer section.",
+                    len(text),
+                )
+            else:
+                # Case 3: short response, probably just the answer
+                answer_section = text
+
+        # Detect negative responses: the model says "no clause" in various ways,
+        # sometimes followed by lengthy commentary that shouldn't be parsed as
+        # extracted clauses.
+        if self._is_negative_response(answer_section):
+            return ExtractionResult(
+                extracted_clauses=[],
+                reasoning=reasoning_section,
+                confidence=1.0,
+                category_indicators_found=[],
+            )
 
         # Clean the answer section: remove preamble lines like
         # "The relevant clauses are:" or "A lawyer should review:"
@@ -218,3 +252,82 @@ class ChainOfThoughtBaseline(BaseAgent):
             confidence=0.8,
             category_indicators_found=[],
         )
+
+    # ------------------------------------------------------------------
+    # Negative-response detection
+    # ------------------------------------------------------------------
+
+    # Patterns that indicate the first line is a negative statement
+    _NEGATIVE_OPENER_PATTERNS: list[re.Pattern[str]] = [
+        re.compile(r'^"?\s*no\s+related\s+clause\b', re.IGNORECASE),
+        re.compile(r"^no\s+explicit\b", re.IGNORECASE),
+        re.compile(r"^no\s+clause\b", re.IGNORECASE),
+        re.compile(r"^no\s+specific\s+(?:clause|provision)", re.IGNORECASE),
+        re.compile(r"^the\s+(?:contract|agreement)\s+does\s+not\b", re.IGNORECASE),
+        re.compile(r"^there\s+is\s+no\b", re.IGNORECASE),
+    ]
+
+    # Quoted-text patterns: actual contract extractions are typically >40
+    # characters and enclosed in quotes (regular or smart).
+    _QUOTED_TEXT_PATTERNS: list[re.Pattern[str]] = [
+        re.compile(r'"[^"]{40,}"'),
+        re.compile(r"\u201c[^\u201d]{40,}\u201d"),  # smart double quotes
+        re.compile(r"'[^']{40,}'"),
+        re.compile(r"\u2018[^\u2019]{40,}\u2019"),  # smart single quotes
+    ]
+
+    def _is_negative_response(self, answer_section: str) -> bool:
+        """Detect whether the answer section is a negative response.
+
+        The model sometimes says "no clause found" in verbose ways —
+        e.g. "No explicit X clause. However, the following sections..."
+        — producing paragraphs of commentary that the clause parser
+        would otherwise treat as extracted clauses.
+
+        Detection strategy:
+        1. Check if the first line matches a known negative-opener
+           pattern (broadened beyond just "No related clause").
+        2. If it does, look for actual quoted contract text (>40 chars).
+           When the model says "no clause" but then quotes contract
+           passages, those may be tangential extractions that the
+           evaluator should score — so we let them through.
+        3. If there are no quoted extractions, the answer is pure
+           commentary and we treat it as a true negative.
+
+        Args:
+            answer_section: The text after the answer delimiter.
+
+        Returns:
+            True if the answer should be treated as "no clause found".
+        """
+        first_line = answer_section.split("\n")[0].strip()
+
+        is_negative = any(
+            p.match(first_line) for p in self._NEGATIVE_OPENER_PATTERNS
+        )
+
+        # Fallback: "No related clause" anywhere (not just first line)
+        if not is_negative:
+            is_negative = bool(
+                re.search(
+                    r'(?i)"?\s*no\s+related\s+clause\.?\s*"?', answer_section
+                )
+            )
+
+        if not is_negative:
+            return False
+
+        # Negative opener detected. Only return True (empty extraction)
+        # if there are no substantial quoted contract passages.
+        has_quoted_extraction = any(
+            p.search(answer_section) for p in self._QUOTED_TEXT_PATTERNS
+        )
+
+        if has_quoted_extraction:
+            logger.debug(
+                "Negative opener detected but answer contains quoted "
+                "text (>40 chars). Letting extractions through."
+            )
+            return False
+
+        return True

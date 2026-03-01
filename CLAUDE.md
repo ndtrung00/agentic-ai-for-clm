@@ -1,5 +1,23 @@
 # CLAUDE.md - Multi-Agent Contract Analysis System
 
+1. Plan mode by default.
+   Enter plan mode for any task with 3+ steps or architectural decisions. If something goes sideways, stop and re-plan immediately. Write detailed specs upfront to reduce ambiguity. Planning is how you stay in control.
+
+2. Use subagents liberally.
+   Offload research, exploration, and parallel analysis to subagents. Keep your main context window clean. For complex problems, throw more compute at it. One task per subagent for focused execution.
+
+3. Build a self-improvement loop.
+   After any correction, update a lessons file with the pattern. Write rules that prevent the same mistake. Ruthlessly iterate on these lessons until mistake rates drop. Review them at the start of every session.
+
+4. Verify before marking done.
+   Never mark a task complete without proving it works. Diff behavior between main and your changes. Ask yourself: would a staff engineer approve this? Run tests, check logs, demonstrate correctness.
+
+5. Demand elegance, but stay balanced.
+   For non-trivial changes, pause and ask if there's a more elegant way. If a fix feels hacky, implement the elegant solution. But skip this for simple, obvious fixes. Challenge your own work before presenting it.
+
+6. Let Claude fix bugs autonomously.
+   When given a bug report, just fix it. Point at logs, errors, failing tests and resolve them. Go fix failing CI tests without being told how.
+
 ## Project Overview
 
 **Title:** Design and Evaluation of Multi-Agentic AI Systems for Contract Lifecycle Management
@@ -175,8 +193,8 @@ agentic-ai-for-clm/
 | Component             | Technology                        | Purpose                                      |
 | --------------------- | --------------------------------- | -------------------------------------------- |
 | Package manager       | uv                                | Fast Python package management               |
-| Multi-agent framework | LangGraph                         | Graph-based state machines, workflow control  |
-| Observability         | LangFuse                          | Reasoning traces, experiment tracking         |
+| Multi-agent framework | LangGraph                         | Graph-based state machines, workflow control |
+| Observability         | LangFuse                          | Reasoning traces, experiment tracking        |
 | LLM Providers         | Anthropic, OpenAI, Google, Ollama | See model list below                         |
 | Data                  | HuggingFace datasets              | CUAD loading                                 |
 | Statistics            | scipy, numpy                      | Bootstrap CI, significance tests             |
@@ -186,6 +204,7 @@ agentic-ai-for-clm/
 ### Python Dependencies
 
 **Core:**
+
 - `langgraph>=0.2.0` -- Multi-agent orchestration
 - `langchain>=0.3.0`, `langchain-anthropic>=0.3.0` -- LLM framework
 - `langfuse>=2.0.0` -- Observability
@@ -281,18 +300,18 @@ IP Ownership Assignment, Joint IP Ownership, License Grant, Non-Transferable Lic
 
 ### Baselines (notebook 03)
 
-| Config | Type                | Description                                       |
-| ------ | ------------------- | ------------------------------------------------- |
-| **B1** | `zero_shot`         | Zero-shot single-agent (ContractEval replication)  |
-| **B4** | `chain_of_thought`  | Chain-of-Thought single-agent                     |
+| Config | Type               | Description                                       |
+| ------ | ------------------ | ------------------------------------------------- |
+| **B1** | `zero_shot`        | Zero-shot single-agent (ContractEval replication) |
+| **B4** | `chain_of_thought` | Chain-of-Thought single-agent                     |
 
 ### Multi-Agent (notebook 04)
 
-| Config | Type                | Description                                             |
-| ------ | ------------------- | ------------------------------------------------------- |
-| **M1** | `multiagent`        | Full system (orchestrator + 3 specialists + validation) |
-| **M6** | `combined_prompts`  | Combined prompts single-agent (architecture ablation)   |
-| M2--M5 | Various ablations   | Not yet implemented                                     |
+| Config | Type               | Description                                             |
+| ------ | ------------------ | ------------------------------------------------------- |
+| **M1** | `multiagent`       | Full system (orchestrator + 3 specialists + validation) |
+| **M6** | `combined_prompts` | Combined prompts single-agent (architecture ablation)   |
+| M2--M5 | Various ablations  | Not yet implemented                                     |
 
 **Key insight:** If M1 ~ M6, multi-agent overhead not justified. If M1 > M6, architecture provides genuine benefit.
 
@@ -303,11 +322,11 @@ IP Ownership Assignment, Joint IP Ownership, License Grant, Non-Transferable Lic
 ### Primary Metrics
 
 | Metric                 | Formula                          | Target                     |
-| ---------------------- | -------------------------------- | -------------------------- |
-| **F2 Score**           | 5 * (P * R) / (4P + R)           | > 0.73 (vs 0.68 baseline)  |
+| ---------------------- | -------------------------------- | -------------------------- | --- | ----- | --- | ------ |
+| **F2 Score**           | 5 _ (P _ R) / (4P + R)           | > 0.73 (vs 0.68 baseline)  |
 | **F2 Rare Categories** | F2 on rare tier only             | > 0.40 (vs ~0.15 baseline) |
 | **Laziness Rate**      | FN("no clause") / Total Positive | < 3% (vs ~10% baseline)    |
-| **Jaccard Similarity** | |A n B| / |A u B|                | > 0.50                     |
+| **Jaccard Similarity** |                                  | A n B                      | /   | A u B |     | > 0.50 |
 
 ### Explainability Metrics
 
@@ -330,6 +349,7 @@ IP Ownership Assignment, Joint IP Ownership, License Grant, Non-Transferable Lic
 ### Summary JSON (per run)
 
 Saved to `experiments/results/{type}_{model}_{timestamp}_summary.json`. Contains:
+
 - `config`: model_key, model_id, provider, baseline_type/experiment_type, temperature, max_tokens, samples_per_tier
 - `prompt` (baselines): system_prompt text
 - `architecture` (M1): specialist_prompts, routing_table, workflow, validation_enabled
