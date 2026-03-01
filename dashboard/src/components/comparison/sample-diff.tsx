@@ -21,6 +21,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { Pagination, paginate } from "@/components/ui/pagination";
 
 interface SampleDiffProps {
   experiments: ExperimentSummary[];
@@ -30,6 +31,8 @@ type DiffFilter = "all" | "disagreements" | "fn_improvements" | "fn_regressions"
 
 export function SampleDiff({ experiments }: SampleDiffProps) {
   const [diffFilter, setDiffFilter] = useState<DiffFilter>("disagreements");
+  const [page, setPage] = useState(1);
+  const [pageSize, setPageSize] = useState(50);
 
   // Build a unified sample map keyed by category
   const sampleRows = useMemo(() => {
@@ -83,6 +86,12 @@ export function SampleDiff({ experiments }: SampleDiffProps) {
     }
   }, [sampleRows, diffFilter]);
 
+  // Reset page when filter changes
+  const filteredLen = filtered.length;
+  useMemo(() => setPage(1), [filteredLen, diffFilter]);
+
+  const paged = useMemo(() => paginate(filtered, page, pageSize), [filtered, page, pageSize]);
+
   return (
     <div className="space-y-4">
       <div className="flex items-center gap-3">
@@ -125,7 +134,7 @@ export function SampleDiff({ experiments }: SampleDiffProps) {
             </TableRow>
           </TableHeader>
           <TableBody>
-            {filtered.map((row) => {
+            {paged.map((row) => {
               const tc = tierColors[row.tier];
               return (
                 <TableRow key={row.category}>
@@ -179,6 +188,14 @@ export function SampleDiff({ experiments }: SampleDiffProps) {
           </TableBody>
         </Table>
       </div>
+
+      <Pagination
+        totalItems={filtered.length}
+        page={page}
+        pageSize={pageSize}
+        onPageChange={setPage}
+        onPageSizeChange={setPageSize}
+      />
     </div>
   );
 }

@@ -23,6 +23,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { ExportButton } from "@/components/ui/export-button";
+import { Pagination, paginate } from "@/components/ui/pagination";
 
 const AGENT_SHORT: Record<string, string> = {
   risk_liability: "Risk",
@@ -43,6 +44,8 @@ export function SamplesTable({ samples, runId, routingTable }: SamplesTableProps
   const [search, setSearch] = useState("");
   const [sortKey, setSortKey] = useState<string>("category");
   const [sortDir, setSortDir] = useState<"asc" | "desc">("asc");
+  const [page, setPage] = useState(1);
+  const [pageSize, setPageSize] = useState(50);
 
   const hasRouting = !!routingTable;
 
@@ -62,6 +65,12 @@ export function SamplesTable({ samples, runId, routingTable }: SamplesTableProps
     });
     return result;
   }, [samples, tierFilter, classFilter, search, sortKey, sortDir]);
+
+  // Reset page when filters change
+  const filteredLen = filtered.length;
+  useMemo(() => setPage(1), [filteredLen, tierFilter, classFilter, search]);
+
+  const paged = useMemo(() => paginate(filtered, page, pageSize), [filtered, page, pageSize]);
 
   const toggleSort = (key: string) => {
     if (sortKey === key) setSortDir((d) => (d === "asc" ? "desc" : "asc"));
@@ -135,7 +144,7 @@ export function SamplesTable({ samples, runId, routingTable }: SamplesTableProps
             </TableRow>
           </TableHeader>
           <TableBody>
-            {filtered.map((s) => {
+            {paged.map((s) => {
               const agent = routingTable?.[s.category];
               return (
                 <TableRow
@@ -172,6 +181,14 @@ export function SamplesTable({ samples, runId, routingTable }: SamplesTableProps
           </TableBody>
         </Table>
       </div>
+
+      <Pagination
+        totalItems={filtered.length}
+        page={page}
+        pageSize={pageSize}
+        onPageChange={setPage}
+        onPageSizeChange={setPageSize}
+      />
     </div>
   );
 }
