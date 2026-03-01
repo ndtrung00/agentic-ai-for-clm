@@ -884,5 +884,6 @@
       "agent_name": "zero_shot",
       "experiment_id": "zero_shot_gpt-4.1-mini_20260301_232236"
     }
-  ]
+  ],
+  "run_mode": "test"
 }

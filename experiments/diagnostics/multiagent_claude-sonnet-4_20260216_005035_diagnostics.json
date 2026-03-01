@@ -411,5 +411,6 @@
       "agent_name": "risk_liability",
       "experiment_id": ""
     }
-  ]
+  ],
+  "run_mode": "test"
 }

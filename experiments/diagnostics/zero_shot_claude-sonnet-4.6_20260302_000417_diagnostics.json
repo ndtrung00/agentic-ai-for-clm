@@ -884,5 +884,6 @@
       "agent_name": "zero_shot",
       "experiment_id": "zero_shot_claude-sonnet-4.6_20260302_000417"
     }
-  ]
+  ],
+  "run_mode": "test"
 }

@@ -213,6 +213,7 @@ def save_experiment(
     include_negative: bool,
     prompt: dict[str, Any] | None = None,
     architecture: dict[str, Any] | None = None,
+    is_official: bool = False,
 ) -> tuple[Path, Path]:
     """Build summary JSON and save summary + diagnostics files.
 
@@ -249,10 +250,12 @@ def save_experiment(
     output_dir.mkdir(parents=True, exist_ok=True)
 
     # Build config block — type key depends on baseline vs multi-agent
+    run_mode = "official" if is_official else "test"
     config_block: dict[str, Any] = {
         "model_key": model_key,
         "model_id": config.model_id,
         "provider": config.provider.value,
+        "run_mode": run_mode,
         "samples_per_tier": samples_per_tier,
         "temperature": temperature,
         "max_tokens": max_tokens,

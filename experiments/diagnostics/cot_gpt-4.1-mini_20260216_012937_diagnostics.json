@@ -884,5 +884,6 @@
       "agent_name": "cot",
       "experiment_id": "cot_gpt-4.1-mini_20260216_012937"
     }
-  ]
+  ],
+  "run_mode": "test"
 }

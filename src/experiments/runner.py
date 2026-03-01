@@ -96,6 +96,7 @@ def _build_record(
     run_type: str,
     run_label: str,
     run_type_key: str,
+    run_mode: str,
 ) -> dict[str, Any]:
     """Build the full JSONL record for one sample."""
     # Type key: baseline_type/baseline_label vs experiment_type/experiment_label
@@ -105,6 +106,7 @@ def _build_record(
     record: dict[str, Any] = {
         "sample_id": sample.id,
         "run_id": run_id,
+        "run_mode": run_mode,
         "timestamp": datetime.datetime.now().isoformat(),
         "model_key": model_key,
         "model_id": model_id,
@@ -161,12 +163,14 @@ def _build_error_record(
     model_key: str,
     run_type: str,
     run_type_key: str,
+    run_mode: str,
 ) -> dict[str, Any]:
     """Build a minimal error record for JSONL."""
     type_key = f"{run_type_key}_type"
     return {
         "sample_id": sample.id,
         "run_id": run_id,
+        "run_mode": run_mode,
         "timestamp": datetime.datetime.now().isoformat(),
         "status": "error",
         "error": str(error),
@@ -196,6 +200,7 @@ async def run_extraction(
     run_type_key: str,
     intermediate_path: Path | str,
     concurrency: int = 1,
+    is_official: bool = False,
 ) -> tuple[list[dict], list[dict]]:
     """Run the extraction loop with resume, evaluation, JSONL persistence.
 
@@ -212,11 +217,13 @@ async def run_extraction(
             appear in the JSONL record (``baseline_type`` vs ``experiment_type``).
         intermediate_path: Path to the JSONL file for crash-safe persistence.
         concurrency: Maximum number of parallel API calls (Semaphore width).
+        is_official: If True, marks the run as ``"official"``; otherwise ``"test"``.
 
     Returns:
         ``(results, failures)`` — lists of successful records and error records.
     """
     intermediate_path = Path(intermediate_path)
+    run_mode = "official" if is_official else "test"
 
     # ── Resume: load existing completed samples (skip error records) ──
     resumed_results: list[dict] = []
@@ -264,6 +271,7 @@ async def run_extraction(
                     run_type=run_type,
                     run_label=run_label,
                     run_type_key=run_type_key,
+                    run_mode=run_mode,
                 )
 
                 async with jsonl_lock:
@@ -289,6 +297,7 @@ async def run_extraction(
                     model_key=model_key,
                     run_type=run_type,
                     run_type_key=run_type_key,
+                    run_mode=run_mode,
                 )
                 async with jsonl_lock:
                     with open(intermediate_path, "a") as f:
