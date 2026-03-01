@@ -7,10 +7,10 @@ Integrates with Langfuse for cost/token tracking.
 import logging
 import os
 import time
+from contextlib import contextmanager
 from typing import Any
 
 import httpx
-from langfuse import get_client as get_langfuse_client
 from tenacity import (
     before_sleep_log,
     retry,
@@ -43,6 +43,42 @@ def _is_retryable(exc: BaseException) -> bool:
     if type(exc).__name__ in ("APIConnectionError", "APITimeoutError"):
         return True
     return False
+
+
+# ---------------------------------------------------------------------------
+# Langfuse — optional observability (no-op when env vars are missing)
+# ---------------------------------------------------------------------------
+_langfuse_enabled: bool | None = None  # lazy-checked once
+
+
+def _is_langfuse_enabled() -> bool:
+    global _langfuse_enabled
+    if _langfuse_enabled is None:
+        _langfuse_enabled = bool(
+            os.environ.get("LANGFUSE_PUBLIC_KEY")
+            and os.environ.get("LANGFUSE_SECRET_KEY")
+        )
+        if not _langfuse_enabled:
+            logger.info("Langfuse disabled (LANGFUSE_PUBLIC_KEY / LANGFUSE_SECRET_KEY not set)")
+    return _langfuse_enabled
+
+
+class _NoOpGeneration:
+    """Dummy generation context that silently ignores update() calls."""
+    def update(self, **kwargs: Any) -> None:
+        pass
+
+
+@contextmanager
+def _langfuse_generation(**kwargs: Any):
+    """Yield a Langfuse generation span, or a no-op if Langfuse is disabled."""
+    if _is_langfuse_enabled():
+        from langfuse import get_client as get_langfuse_client
+        langfuse = get_langfuse_client()
+        with langfuse.start_as_current_generation(**kwargs) as gen:
+            yield gen
+    else:
+        yield _NoOpGeneration()
 
 
 # Lazy imports to avoid loading unused dependencies
@@ -238,7 +274,6 @@ async def _invoke_anthropic(
         Tuple of (response_text, token_usage).
     """
     client = _get_anthropic_client()
-    langfuse = get_langfuse_client()
 
     # Build request
     kwargs: dict[str, Any] = {
@@ -250,8 +285,7 @@ async def _invoke_anthropic(
     if system:
         kwargs["system"] = system
 
-    # Use context manager for generation tracking
-    with langfuse.start_as_current_generation(
+    with _langfuse_generation(
         name="anthropic-completion",
         model=config.model_id,
         input=messages,
@@ -342,8 +376,6 @@ async def _invoke_openai_compatible(
     else:
         client = _get_openai_client()
 
-    langfuse = get_langfuse_client()
-
     # Prepend system message if provided
     full_messages = []
     if system:
@@ -362,8 +394,7 @@ async def _invoke_openai_compatible(
 
     gen_name = f"{config.provider.value}-completion"
 
-    # Use context manager for generation tracking
-    with langfuse.start_as_current_generation(
+    with _langfuse_generation(
         name=gen_name,
         model=config.model_id,
         input=full_messages,
