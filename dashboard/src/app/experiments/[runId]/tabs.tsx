@@ -6,11 +6,17 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { MetricsGrid } from "@/components/metrics/metrics-grid";
 import { ConfusionMatrix } from "@/components/metrics/confusion-matrix";
 import { TierBreakdown } from "@/components/metrics/tier-breakdown";
+import { CategoryBreakdown } from "@/components/metrics/category-breakdown";
 import { ClassificationPie } from "@/components/charts/classification-pie";
+import { ConfidenceHistogram } from "@/components/charts/confidence-histogram";
+import { LengthPerformance } from "@/components/charts/length-performance";
 import { SamplesTable } from "@/components/samples/samples-table";
 import { DiagnosticsCards } from "@/components/diagnostics/diagnostics-cards";
+import { SpecialistBreakdown } from "@/components/diagnostics/specialist-breakdown";
+import { ArchitectureDiagram } from "@/components/diagnostics/architecture-diagram";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { CopyButton } from "@/components/ui/copy-button";
 
 interface ExperimentTabsProps {
   experiment: ExperimentSummary;
@@ -41,6 +47,17 @@ export function ExperimentTabs({ experiment, runId }: ExperimentTabsProps) {
         {Object.keys(experiment.per_tier).length > 0 && (
           <TierBreakdown perTier={experiment.per_tier} />
         )}
+
+        {experiment.samples.length > 0 && (
+          <CategoryBreakdown samples={experiment.samples} />
+        )}
+
+        {experiment.samples.length > 0 && (
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <ConfidenceHistogram samples={experiment.samples} />
+            <LengthPerformance samples={experiment.samples} />
+          </div>
+        )}
       </TabsContent>
 
       {/* Samples Tab */}
@@ -54,8 +71,15 @@ export function ExperimentTabs({ experiment, runId }: ExperimentTabsProps) {
 
       {/* Diagnostics Tab */}
       {experiment.diagnostics && (
-        <TabsContent value="diagnostics">
+        <TabsContent value="diagnostics" className="space-y-6">
           <DiagnosticsCards diagnostics={experiment.diagnostics} />
+          {experiment.architecture?.routing_table && (
+            <SpecialistBreakdown
+              diagnostics={experiment.diagnostics}
+              samples={experiment.samples}
+              routingTable={experiment.architecture.routing_table}
+            />
+          )}
         </TabsContent>
       )}
 
@@ -64,7 +88,15 @@ export function ExperimentTabs({ experiment, runId }: ExperimentTabsProps) {
         <TabsContent value="config" className="space-y-4">
           {/* Architecture (multi-agent runs) */}
           {experiment.architecture && (
-            <ArchitectureSection architecture={experiment.architecture} />
+            <>
+              <ArchitectureSection architecture={experiment.architecture} />
+              {experiment.architecture.specialists && experiment.architecture.specialists.length > 0 && (
+                <ArchitectureDiagram
+                  architecture={experiment.architecture}
+                  diagnostics={experiment.diagnostics}
+                />
+              )}
+            </>
           )}
 
           {/* Prompt (baseline runs) */}
@@ -81,7 +113,10 @@ export function ExperimentTabs({ experiment, runId }: ExperimentTabsProps) {
                   </p>
                 )}
               </CardHeader>
-              <CardContent>
+              <CardContent className="space-y-2">
+                <div className="flex justify-end">
+                  <CopyButton text={experiment.prompt.system_prompt ?? experiment.prompt.prompt_template ?? ""} />
+                </div>
                 <pre className="text-sm whitespace-pre-wrap bg-muted p-4 rounded-md max-h-96 overflow-y-auto">
                   {experiment.prompt.system_prompt ?? experiment.prompt.prompt_template}
                 </pre>
@@ -183,6 +218,9 @@ function ArchitectureSection({ architecture }: { architecture: NonNullable<Exper
                     <span className="text-muted-foreground">Categories: </span>
                     {info.categories.join(", ")}
                   </div>
+                  <div className="flex justify-end mb-1">
+                    <CopyButton text={info.system_prompt} />
+                  </div>
                   <pre className="text-xs whitespace-pre-wrap bg-muted p-3 rounded-md max-h-60 overflow-y-auto">
                     {info.system_prompt}
                   </pre>
@@ -220,7 +258,10 @@ function ArchitectureSection({ architecture }: { architecture: NonNullable<Exper
           <CardHeader>
             <CardTitle className="text-sm">Combined Prompt Template</CardTitle>
           </CardHeader>
-          <CardContent>
+          <CardContent className="space-y-2">
+            <div className="flex justify-end">
+              <CopyButton text={architecture.system_prompt ?? ""} />
+            </div>
             <pre className="text-sm whitespace-pre-wrap bg-muted p-4 rounded-md max-h-96 overflow-y-auto">
               {architecture.system_prompt}
             </pre>

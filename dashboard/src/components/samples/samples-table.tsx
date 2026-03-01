@@ -22,6 +22,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { ExportButton } from "@/components/ui/export-button";
 
 const AGENT_SHORT: Record<string, string> = {
   risk_liability: "Risk",
@@ -106,6 +107,19 @@ export function SamplesTable({ samples, runId, routingTable }: SamplesTableProps
         <span className="text-sm text-muted-foreground self-center">
           {filtered.length} of {samples.length} samples
         </span>
+        <ExportButton
+          data={filtered.map((s) => ({
+            id: s.id,
+            category: s.category,
+            tier: s.tier,
+            classification: s.classification,
+            jaccard: s.jaccard,
+            grounding_rate: s.grounding_rate ?? "",
+            agent: routingTable?.[s.category] ?? "",
+          }))}
+          filename="samples"
+          label="Export CSV"
+        />
       </div>
 
       <div className="border rounded-md">

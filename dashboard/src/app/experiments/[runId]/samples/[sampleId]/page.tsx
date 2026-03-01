@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ClassificationBadge, TierBadge } from "@/components/samples/classification-badge";
 import { ContractViewer } from "@/components/samples/contract-viewer";
+import { SampleNavigation } from "@/components/samples/sample-navigation";
 import { Separator } from "@/components/ui/separator";
 
 export const dynamic = "force-dynamic";
@@ -53,6 +54,13 @@ export default async function SampleDetailPage({ params }: Props) {
           </span>
         )}
       </div>
+
+      {/* Navigation */}
+      <SampleNavigation
+        samples={experiment.samples}
+        currentSampleId={decoded}
+        runId={runId}
+      />
 
       <Separator />
 

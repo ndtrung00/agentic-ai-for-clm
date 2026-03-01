@@ -48,8 +48,8 @@ class ModelConfig:
 
 
 # ---------------------------------------------------------------------------
-# Model registry — ContractEval paper models (19 LLMs)
-# Proprietary: 4 | Open-source via Ollama: 15
+# Model registry — Evaluated models (26 LLMs)
+# Proprietary: 11 | Open-source via Ollama: 15
 #
 # Qwen3 "thinking" variants use the SAME model_id; the difference is
 # controlled at the prompt level (/think vs /no_think system tag).
@@ -69,6 +69,33 @@ MODEL_REGISTRY: dict[str, ModelConfig] = {
         context_window=200000,
         input_cost_per_1k=0.003,
         output_cost_per_1k=0.015,
+    ),
+    "claude-sonnet-4.6": ModelConfig(
+        name="Claude Sonnet 4.6",
+        model_id="claude-sonnet-4-6",
+        provider=ModelProvider.ANTHROPIC,
+        max_tokens=64000,
+        context_window=200000,
+        input_cost_per_1k=0.003,
+        output_cost_per_1k=0.015,
+    ),
+    "claude-opus-4.6": ModelConfig(
+        name="Claude Opus 4.6",
+        model_id="claude-opus-4-6",
+        provider=ModelProvider.ANTHROPIC,
+        max_tokens=128000,
+        context_window=200000,
+        input_cost_per_1k=0.005,
+        output_cost_per_1k=0.025,
+    ),
+    "claude-haiku-4.5": ModelConfig(
+        name="Claude Haiku 4.5",
+        model_id="claude-haiku-4-5-20251001",
+        provider=ModelProvider.ANTHROPIC,
+        max_tokens=64000,
+        context_window=200000,
+        input_cost_per_1k=0.001,
+        output_cost_per_1k=0.005,
     ),
 
     # OpenAI
@@ -93,13 +120,40 @@ MODEL_REGISTRY: dict[str, ModelConfig] = {
 
     # Google
     "gemini-2.5-pro": ModelConfig(
-        name="Gemini 2.5 Pro Preview",
+        name="Gemini 2.5 Pro",
         model_id="gemini-2.5-pro-preview-05-06",
         provider=ModelProvider.GOOGLE,
         max_tokens=8192,
         context_window=1048576,
         input_cost_per_1k=0.00125,
         output_cost_per_1k=0.01,
+    ),
+    "gemini-2.5-flash": ModelConfig(
+        name="Gemini 2.5 Flash",
+        model_id="gemini-2.5-flash",
+        provider=ModelProvider.GOOGLE,
+        max_tokens=8192,
+        context_window=1048576,
+        input_cost_per_1k=0.0003,
+        output_cost_per_1k=0.0025,
+    ),
+    "gemini-3-flash": ModelConfig(
+        name="Gemini 3 Flash Preview",
+        model_id="gemini-3-flash-preview",
+        provider=ModelProvider.GOOGLE,
+        max_tokens=64000,
+        context_window=1048576,
+        input_cost_per_1k=0.0005,
+        output_cost_per_1k=0.003,
+    ),
+    "gemini-3.1-pro": ModelConfig(
+        name="Gemini 3.1 Pro Preview",
+        model_id="gemini-3.1-pro-preview",
+        provider=ModelProvider.GOOGLE,
+        max_tokens=64000,
+        context_window=1048576,
+        input_cost_per_1k=0.002,
+        output_cost_per_1k=0.012,
     ),
 
     # ── Open-source models (Ollama) ──────────────────────────────────────
