@@ -228,16 +228,22 @@ agentic-ai-for-clm/
 
 ### Evaluated Models
 
-19 LLMs across proprietary and open-source:
+25 LLMs across proprietary and open-source:
 
-**Proprietary (4):**
+**Proprietary (10):**
 
-| Key               | Model                  | Provider  |
-| ----------------- | ---------------------- | --------- |
-| `claude-sonnet-4` | Claude Sonnet 4        | Anthropic |
-| `gpt-4.1`         | GPT 4.1                | OpenAI    |
-| `gpt-4.1-mini`    | GPT 4.1 Mini           | OpenAI    |
-| `gemini-2.5-pro`  | Gemini 2.5 Pro Preview | Google    |
+| Key                | Model                   | Provider  |
+| ------------------ | ----------------------- | --------- |
+| `claude-sonnet-4`  | Claude Sonnet 4         | Anthropic |
+| `claude-sonnet-4.6`| Claude Sonnet 4.6       | Anthropic |
+| `claude-opus-4.6`  | Claude Opus 4.6         | Anthropic |
+| `claude-haiku-4.5` | Claude Haiku 4.5        | Anthropic |
+| `gpt-4.1`          | GPT 4.1                 | OpenAI    |
+| `gpt-4.1-mini`     | GPT 4.1 Mini            | OpenAI    |
+| `gemini-2.5-pro`   | Gemini 2.5 Pro          | Google    |
+| `gemini-2.5-flash` | Gemini 2.5 Flash        | Google    |
+| `gemini-3-flash`   | Gemini 3 Flash Preview  | Google    |
+| `gemini-3.1-pro`   | Gemini 3.1 Pro Preview  | Google    |
 
 **Open-source via Ollama (15):**
 

@@ -4,14 +4,45 @@ Provides a consistent interface for calling different LLM providers.
 Integrates with Langfuse for cost/token tracking.
 """
 
+import logging
 import os
 import time
 from typing import Any
 
+import httpx
 from langfuse import get_client as get_langfuse_client
+from tenacity import (
+    before_sleep_log,
+    retry,
+    retry_if_exception,
+    stop_after_attempt,
+    wait_exponential,
+)
 
 from src.models.config import ModelConfig, ModelProvider, get_model_config
 from src.models.diagnostics import ModelDiagnostics, TokenUsage
+
+logger = logging.getLogger(__name__)
+
+DEFAULT_MAX_RETRIES = 3
+
+
+def _is_retryable(exc: BaseException) -> bool:
+    """Return True for transient errors worth retrying.
+
+    Retries on:
+    - httpx timeouts and connection errors (network-level)
+    - HTTP 429 (rate limit), 500/502/503/529 (server errors)
+    - Provider SDK timeout/connection error classes
+    """
+    if isinstance(exc, (httpx.TimeoutException, httpx.ConnectError)):
+        return True
+    status = getattr(exc, "status_code", None)
+    if status in (429, 500, 502, 503, 529):
+        return True
+    if type(exc).__name__ in ("APIConnectionError", "APITimeoutError"):
+        return True
+    return False
 
 
 # Lazy imports to avoid loading unused dependencies
@@ -96,6 +127,7 @@ async def invoke_model(
     diagnostics: ModelDiagnostics | None = None,
     agent_name: str = "",
     category: str = "",
+    max_retries: int = DEFAULT_MAX_RETRIES,
 ) -> tuple[str, TokenUsage]:
     """Invoke a model with unified interface.
 
@@ -109,13 +141,14 @@ async def invoke_model(
         diagnostics: Optional diagnostics collector.
         agent_name: Agent name for tracking.
         category: Category being processed.
+        max_retries: Max retry attempts for transient API errors.
 
     Returns:
         Tuple of (response_text, token_usage).
 
     Raises:
         ValueError: If model not found.
-        Exception: If API call fails.
+        Exception: If API call fails after all retries.
     """
     config = get_model_config(model_key)
     temp = temperature if temperature is not None else config.temperature
@@ -131,6 +164,7 @@ async def invoke_model(
                 system=system,
                 temperature=temp,
                 max_tokens=tokens,
+                max_retries=max_retries,
             )
         elif config.provider in (ModelProvider.OPENAI, ModelProvider.GOOGLE, ModelProvider.OLLAMA):
             response_text, usage = await _invoke_openai_compatible(
@@ -140,6 +174,7 @@ async def invoke_model(
                 temperature=temp,
                 max_tokens=tokens,
                 json_mode=json_mode,
+                max_retries=max_retries,
             )
         else:
             raise ValueError(f"Unknown provider: {config.provider}")
@@ -187,6 +222,7 @@ async def _invoke_anthropic(
     system: str | None,
     temperature: float,
     max_tokens: int,
+    max_retries: int = DEFAULT_MAX_RETRIES,
 ) -> tuple[str, TokenUsage]:
     """Invoke Anthropic API with Langfuse tracking.
 
@@ -196,6 +232,7 @@ async def _invoke_anthropic(
         system: System prompt.
         temperature: Temperature setting.
         max_tokens: Max output tokens.
+        max_retries: Max retry attempts for transient errors.
 
     Returns:
         Tuple of (response_text, token_usage).
@@ -220,8 +257,18 @@ async def _invoke_anthropic(
         input=messages,
         metadata={"system": system, "temperature": temperature, "max_tokens": max_tokens},
     ) as generation:
-        # Make API call
-        response = client.messages.create(**kwargs)
+        # Make API call with retry on transient errors
+        @retry(
+            stop=stop_after_attempt(max_retries),
+            wait=wait_exponential(multiplier=1, min=1, max=60),
+            retry=retry_if_exception(_is_retryable),
+            before_sleep=before_sleep_log(logger, logging.WARNING),
+            reraise=True,
+        )
+        def _call_with_retry():
+            return client.messages.create(**kwargs)
+
+        response = _call_with_retry()
 
         # Extract response
         response_text = ""
@@ -272,6 +319,7 @@ async def _invoke_openai_compatible(
     temperature: float,
     max_tokens: int,
     json_mode: bool = False,
+    max_retries: int = DEFAULT_MAX_RETRIES,
 ) -> tuple[str, TokenUsage]:
     """Invoke an OpenAI-compatible API (OpenAI, Google Gemini, Ollama) with Langfuse tracking.
 
@@ -282,6 +330,7 @@ async def _invoke_openai_compatible(
         temperature: Temperature setting.
         max_tokens: Max output tokens.
         json_mode: Request JSON output.
+        max_retries: Max retry attempts for transient errors.
 
     Returns:
         Tuple of (response_text, token_usage).
@@ -320,7 +369,17 @@ async def _invoke_openai_compatible(
         input=full_messages,
         metadata={"temperature": temperature, "max_tokens": max_tokens, "json_mode": json_mode},
     ) as generation:
-        response = client.chat.completions.create(**kwargs)
+        @retry(
+            stop=stop_after_attempt(max_retries),
+            wait=wait_exponential(multiplier=1, min=1, max=60),
+            retry=retry_if_exception(_is_retryable),
+            before_sleep=before_sleep_log(logger, logging.WARNING),
+            reraise=True,
+        )
+        def _call_with_retry():
+            return client.chat.completions.create(**kwargs)
+
+        response = _call_with_retry()
 
         # Extract response
         response_text = response.choices[0].message.content or ""
