@@ -33,11 +33,14 @@ type SortKey = keyof ExperimentListItem;
 const STORAGE_KEY = "experiments-table-filters";
 const HIDDEN_KEY = "experiments-table-hidden";
 
+type RunMode = "all" | "official" | "test";
+
 interface FilterState {
   search: string;
   configFilter: string;
   modelFilter: string;
   providerFilter: string;
+  runMode: RunMode;
   sortKey: SortKey;
   sortDir: "asc" | "desc";
 }
@@ -47,6 +50,7 @@ const DEFAULT_FILTERS: FilterState = {
   configFilter: "all",
   modelFilter: "all",
   providerFilter: "all",
+  runMode: "official",
   sortKey: "timestamp",
   sortDir: "desc",
 };
@@ -147,6 +151,11 @@ export function ExperimentsTable({ experiments }: ExperimentsTableProps) {
       result = result.filter((e) => !hiddenRuns.has(e.run_id));
     }
 
+    // Apply run mode filter
+    if (filters.runMode !== "all") {
+      result = result.filter((e) => e.run_mode === filters.runMode);
+    }
+
     if (filters.configFilter !== "all") {
       result = result.filter((e) => e.baseline_type === filters.configFilter);
     }
@@ -198,6 +207,7 @@ export function ExperimentsTable({ experiments }: ExperimentsTableProps) {
     filters.modelFilter !== "all",
     filters.providerFilter !== "all",
     filters.search !== "",
+    filters.runMode !== "official",
   ].filter(Boolean).length;
 
   const clearFilters = () => {
@@ -207,6 +217,7 @@ export function ExperimentsTable({ experiments }: ExperimentsTableProps) {
       configFilter: "all",
       modelFilter: "all",
       providerFilter: "all",
+      runMode: "official",
     }));
   };
 
@@ -259,6 +270,21 @@ export function ExperimentsTable({ experiments }: ExperimentsTableProps) {
   return (
     <div className="space-y-4">
       <div className="flex gap-3 flex-wrap items-center">
+        <div className="inline-flex rounded-md border border-input bg-background">
+          {(["official", "test", "all"] as const).map((mode) => (
+            <button
+              key={mode}
+              onClick={() => updateFilter("runMode", mode)}
+              className={`px-3 py-1.5 text-sm font-medium first:rounded-l-md last:rounded-r-md transition-colors ${
+                filters.runMode === mode
+                  ? "bg-primary text-primary-foreground"
+                  : "hover:bg-muted"
+              }`}
+            >
+              {mode === "official" ? "Official" : mode === "test" ? "Test" : "All"}
+            </button>
+          ))}
+        </div>
         <Input
           placeholder="Search model or provider..."
           className="w-64"

@@ -257,5 +257,6 @@
       "agent_name": "zero_shot_baseline",
       "experiment_id": "baseline_b1_qwen3-4b"
     }
-  ]
+  ],
+  "run_mode": "test"
 }
