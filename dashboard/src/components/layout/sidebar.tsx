@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 
 const navItems = [
   { href: "/experiments", label: "Experiments", icon: "flask" },
+  { href: "/compare", label: "Compare", icon: "compare" },
 ];
 
 export function Sidebar() {
