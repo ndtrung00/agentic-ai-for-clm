@@ -1,0 +1,433 @@
+{
+  "experiment_id": "zero_shot_gpt-4.1_20260302_113154",
+  "run_mode": "test",
+  "start_time": "2026-03-02T11:31:54.451626",
+  "summary": {
+    "experiment_id": "zero_shot_gpt-4.1_20260302_113154",
+    "total_calls": 21,
+    "successful_calls": 21,
+    "failed_calls": 0,
+    "success_rate": 1.0,
+    "total_input_tokens": 160025,
+    "total_output_tokens": 3115,
+    "total_tokens": 163140,
+    "total_cost_usd": 0.3449700000000001,
+    "avg_latency_ms": 3034.3748314300597,
+    "min_latency_ms": 648.1325830100104,
+    "max_latency_ms": 8995.597208995605,
+    "by_model": {
+      "gpt-4.1": {
+        "calls": 21,
+        "input_tokens": 160025,
+        "output_tokens": 3115,
+        "cost_usd": 0.3449700000000001,
+        "avg_latency_ms": 3034.3748314300597
+      }
+    },
+    "by_agent": {
+      "zero_shot": 21
+    },
+    "duration_seconds": 9.020308
+  },
+  "calls": [
+    {
+      "model_key": "gpt-4.1",
+      "model_id": "gpt-4.1",
+      "timestamp": "2026-03-02T11:31:55.601373",
+      "latency_ms": 1141.2608750106301,
+      "usage": {
+        "input_tokens": 1468,
+        "output_tokens": 25,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1493
+      },
+      "cost_usd": 0.003136,
+      "success": true,
+      "error": null,
+      "category": "Expiration Date",
+      "agent_name": "zero_shot",
+      "experiment_id": "zero_shot_gpt-4.1_20260302_113154"
+    },
+    {
+      "model_key": "gpt-4.1",
+      "model_id": "gpt-4.1",
+      "timestamp": "2026-03-02T11:31:56.060264",
+      "latency_ms": 1596.384875010699,
+      "usage": {
+        "input_tokens": 5316,
+        "output_tokens": 4,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 5320
+      },
+      "cost_usd": 0.010664,
+      "success": true,
+      "error": null,
+      "category": "Effective Date",
+      "agent_name": "zero_shot",
+      "experiment_id": "zero_shot_gpt-4.1_20260302_113154"
+    },
+    {
+      "model_key": "gpt-4.1",
+      "model_id": "gpt-4.1",
+      "timestamp": "2026-03-02T11:31:56.218017",
+      "latency_ms": 1754.568999996991,
+      "usage": {
+        "input_tokens": 2837,
+        "output_tokens": 13,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 2850
+      },
+      "cost_usd": 0.005778,
+      "success": true,
+      "error": null,
+      "category": "Effective Date",
+      "agent_name": "zero_shot",
+      "experiment_id": "zero_shot_gpt-4.1_20260302_113154"
+    },
+    {
+      "model_key": "gpt-4.1",
+      "model_id": "gpt-4.1",
+      "timestamp": "2026-03-02T11:31:56.915366",
+      "latency_ms": 695.8960420015501,
+      "usage": {
+        "input_tokens": 3578,
+        "output_tokens": 35,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 3613
+      },
+      "cost_usd": 0.007436,
+      "success": true,
+      "error": null,
+      "category": "Renewal Term",
+      "agent_name": "zero_shot",
+      "experiment_id": "zero_shot_gpt-4.1_20260302_113154"
+    },
+    {
+      "model_key": "gpt-4.1",
+      "model_id": "gpt-4.1",
+      "timestamp": "2026-03-02T11:31:57.044431",
+      "latency_ms": 2581.800875006593,
+      "usage": {
+        "input_tokens": 6019,
+        "output_tokens": 151,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 6170
+      },
+      "cost_usd": 0.013246,
+      "success": true,
+      "error": null,
+      "category": "Parties",
+      "agent_name": "zero_shot",
+      "experiment_id": "zero_shot_gpt-4.1_20260302_113154"
+    },
+    {
+      "model_key": "gpt-4.1",
+      "model_id": "gpt-4.1",
+      "timestamp": "2026-03-02T11:31:57.564853",
+      "latency_ms": 648.1325830100104,
+      "usage": {
+        "input_tokens": 1392,
+        "output_tokens": 4,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1396
+      },
+      "cost_usd": 0.002816,
+      "success": true,
+      "error": null,
+      "category": "Irrevocable Or Perpetual License",
+      "agent_name": "zero_shot",
+      "experiment_id": "zero_shot_gpt-4.1_20260302_113154"
+    },
+    {
+      "model_key": "gpt-4.1",
+      "model_id": "gpt-4.1",
+      "timestamp": "2026-03-02T11:31:58.281889",
+      "latency_ms": 3824.1160000034142,
+      "usage": {
+        "input_tokens": 6825,
+        "output_tokens": 210,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 7035
+      },
+      "cost_usd": 0.01533,
+      "success": true,
+      "error": null,
+      "category": "Agreement Date",
+      "agent_name": "zero_shot",
+      "experiment_id": "zero_shot_gpt-4.1_20260302_113154"
+    },
+    {
+      "model_key": "gpt-4.1",
+      "model_id": "gpt-4.1",
+      "timestamp": "2026-03-02T11:31:58.612211",
+      "latency_ms": 4146.702250000089,
+      "usage": {
+        "input_tokens": 4882,
+        "output_tokens": 358,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 5240
+      },
+      "cost_usd": 0.012628,
+      "success": true,
+      "error": null,
+      "category": "Post-Termination Services",
+      "agent_name": "zero_shot",
+      "experiment_id": "zero_shot_gpt-4.1_20260302_113154"
+    },
+    {
+      "model_key": "gpt-4.1",
+      "model_id": "gpt-4.1",
+      "timestamp": "2026-03-02T11:31:59.137652",
+      "latency_ms": 4673.278458998539,
+      "usage": {
+        "input_tokens": 9772,
+        "output_tokens": 311,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 10083
+      },
+      "cost_usd": 0.022032000000000003,
+      "success": true,
+      "error": null,
+      "category": "Change Of Control",
+      "agent_name": "zero_shot",
+      "experiment_id": "zero_shot_gpt-4.1_20260302_113154"
+    },
+    {
+      "model_key": "gpt-4.1",
+      "model_id": "gpt-4.1",
+      "timestamp": "2026-03-02T11:31:59.315585",
+      "latency_ms": 2269.123000005493,
+      "usage": {
+        "input_tokens": 8528,
+        "output_tokens": 117,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 8645
+      },
+      "cost_usd": 0.017992,
+      "success": true,
+      "error": null,
+      "category": "Price Restrictions",
+      "agent_name": "zero_shot",
+      "experiment_id": "zero_shot_gpt-4.1_20260302_113154"
+    },
+    {
+      "model_key": "gpt-4.1",
+      "model_id": "gpt-4.1",
+      "timestamp": "2026-03-02T11:31:59.352071",
+      "latency_ms": 3291.1626669956604,
+      "usage": {
+        "input_tokens": 3982,
+        "output_tokens": 362,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 4344
+      },
+      "cost_usd": 0.010860000000000002,
+      "success": true,
+      "error": null,
+      "category": "Audit Rights",
+      "agent_name": "zero_shot",
+      "experiment_id": "zero_shot_gpt-4.1_20260302_113154"
+    },
+    {
+      "model_key": "gpt-4.1",
+      "model_id": "gpt-4.1",
+      "timestamp": "2026-03-02T11:31:59.404392",
+      "latency_ms": 1120.8822920016246,
+      "usage": {
+        "input_tokens": 10545,
+        "output_tokens": 4,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 10549
+      },
+      "cost_usd": 0.021122000000000002,
+      "success": true,
+      "error": null,
+      "category": "Most Favored Nation",
+      "agent_name": "zero_shot",
+      "experiment_id": "zero_shot_gpt-4.1_20260302_113154"
+    },
+    {
+      "model_key": "gpt-4.1",
+      "model_id": "gpt-4.1",
+      "timestamp": "2026-03-02T11:31:59.673191",
+      "latency_ms": 2107.091625002795,
+      "usage": {
+        "input_tokens": 5525,
+        "output_tokens": 192,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 5717
+      },
+      "cost_usd": 0.012586,
+      "success": true,
+      "error": null,
+      "category": "Affiliate License-Licensee",
+      "agent_name": "zero_shot",
+      "experiment_id": "zero_shot_gpt-4.1_20260302_113154"
+    },
+    {
+      "model_key": "gpt-4.1",
+      "model_id": "gpt-4.1",
+      "timestamp": "2026-03-02T11:32:00.040310",
+      "latency_ms": 687.0318330038572,
+      "usage": {
+        "input_tokens": 2294,
+        "output_tokens": 4,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 2298
+      },
+      "cost_usd": 0.00462,
+      "success": true,
+      "error": null,
+      "category": "Most Favored Nation",
+      "agent_name": "zero_shot",
+      "experiment_id": "zero_shot_gpt-4.1_20260302_113154"
+    },
+    {
+      "model_key": "gpt-4.1",
+      "model_id": "gpt-4.1",
+      "timestamp": "2026-03-02T11:32:00.196579",
+      "latency_ms": 4592.961041998933,
+      "usage": {
+        "input_tokens": 15408,
+        "output_tokens": 149,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 15557
+      },
+      "cost_usd": 0.032008,
+      "success": true,
+      "error": null,
+      "category": "Anti-Assignment",
+      "agent_name": "zero_shot",
+      "experiment_id": "zero_shot_gpt-4.1_20260302_113154"
+    },
+    {
+      "model_key": "gpt-4.1",
+      "model_id": "gpt-4.1",
+      "timestamp": "2026-03-02T11:32:00.726319",
+      "latency_ms": 1586.4276670035906,
+      "usage": {
+        "input_tokens": 9803,
+        "output_tokens": 4,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 9807
+      },
+      "cost_usd": 0.019638000000000003,
+      "success": true,
+      "error": null,
+      "category": "Price Restrictions",
+      "agent_name": "zero_shot",
+      "experiment_id": "zero_shot_gpt-4.1_20260302_113154"
+    },
+    {
+      "model_key": "gpt-4.1",
+      "model_id": "gpt-4.1",
+      "timestamp": "2026-03-02T11:32:01.135830",
+      "latency_ms": 6673.939999993308,
+      "usage": {
+        "input_tokens": 10130,
+        "output_tokens": 163,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 10293
+      },
+      "cost_usd": 0.021564000000000003,
+      "success": true,
+      "error": null,
+      "category": "Document Name",
+      "agent_name": "zero_shot",
+      "experiment_id": "zero_shot_gpt-4.1_20260302_113154"
+    },
+    {
+      "model_key": "gpt-4.1",
+      "model_id": "gpt-4.1",
+      "timestamp": "2026-03-02T11:32:01.240363",
+      "latency_ms": 1922.9844999936176,
+      "usage": {
+        "input_tokens": 13957,
+        "output_tokens": 4,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 13961
+      },
+      "cost_usd": 0.027946000000000002,
+      "success": true,
+      "error": null,
+      "category": "Non-Disparagement",
+      "agent_name": "zero_shot",
+      "experiment_id": "zero_shot_gpt-4.1_20260302_113154"
+    },
+    {
+      "model_key": "gpt-4.1",
+      "model_id": "gpt-4.1",
+      "timestamp": "2026-03-02T11:32:01.242410",
+      "latency_ms": 2628.9740829961374,
+      "usage": {
+        "input_tokens": 8199,
+        "output_tokens": 227,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 8426
+      },
+      "cost_usd": 0.018214,
+      "success": true,
+      "error": null,
+      "category": "Competitive Restriction Exception",
+      "agent_name": "zero_shot",
+      "experiment_id": "zero_shot_gpt-4.1_20260302_113154"
+    },
+    {
+      "model_key": "gpt-4.1",
+      "model_id": "gpt-4.1",
+      "timestamp": "2026-03-02T11:32:01.244468",
+      "latency_ms": 6783.554583002115,
+      "usage": {
+        "input_tokens": 13113,
+        "output_tokens": 496,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 13609
+      },
+      "cost_usd": 0.030194,
+      "success": true,
+      "error": null,
+      "category": "Parties",
+      "agent_name": "zero_shot",
+      "experiment_id": "zero_shot_gpt-4.1_20260302_113154"
+    },
+    {
+      "model_key": "gpt-4.1",
+      "model_id": "gpt-4.1",
+      "timestamp": "2026-03-02T11:32:03.460479",
+      "latency_ms": 8995.597208995605,
+      "usage": {
+        "input_tokens": 16452,
+        "output_tokens": 282,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 16734
+      },
+      "cost_usd": 0.035160000000000004,
+      "success": true,
+      "error": null,
+      "category": "Renewal Term",
+      "agent_name": "zero_shot",
+      "experiment_id": "zero_shot_gpt-4.1_20260302_113154"
+    }
+  ]
+}

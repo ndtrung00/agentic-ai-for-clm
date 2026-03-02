@@ -13,6 +13,7 @@ TP/FP/FN Definitions (from ContractEval):
 - FN: Label not empty BUT model outputs "no related clause" OR fails to cover span
 """
 
+import re
 from dataclasses import dataclass, field
 from typing import Sequence
 
@@ -119,10 +120,21 @@ def compute_f2(tp: int, fp: int, fn: int) -> float:
     return 5 * (precision * recall) / (4 * precision + recall)
 
 
+def _normalize_tokens(text: str) -> set[str]:
+    """Lowercase, strip punctuation, split into token set.
+
+    This ensures tokens like ``"escrow`` and ``escrow`` match correctly.
+    """
+    text = re.sub(r'[^\w\s]', ' ', text.lower())
+    return set(text.split())
+
+
 def compute_jaccard(prediction: str, ground_truth: str) -> float:
     """Compute Jaccard similarity between prediction and ground truth.
 
-    Jaccard = |A ∩ B| / |A ∪ B| where A and B are token sets.
+    Jaccard = |A ∩ B| / |A ∪ B| where A and B are normalized token sets.
+    Punctuation is stripped before tokenizing so that e.g. ``"ESCROW``
+    matches ``ESCROW``.
 
     Args:
         prediction: Predicted text.
@@ -136,8 +148,8 @@ def compute_jaccard(prediction: str, ground_truth: str) -> float:
     if not prediction or not ground_truth:
         return 0.0  # One empty = no overlap
 
-    pred_tokens = set(prediction.lower().split())
-    truth_tokens = set(ground_truth.lower().split())
+    pred_tokens = _normalize_tokens(prediction)
+    truth_tokens = _normalize_tokens(ground_truth)
 
     intersection = pred_tokens & truth_tokens
     union = pred_tokens | truth_tokens
@@ -146,6 +158,25 @@ def compute_jaccard(prediction: str, ground_truth: str) -> float:
         return 0.0
 
     return len(intersection) / len(union)
+
+
+def compute_span_coverage(predicted_text: str, truth_spans: list[str]) -> float:
+    """Fraction of ground truth spans fully covered by the prediction.
+
+    Uses :func:`span_overlap` (whitespace-normalized substring check) which
+    is the same criterion used for TP classification.
+
+    Args:
+        predicted_text: Joined predicted clause text.
+        truth_spans: List of ground truth span strings.
+
+    Returns:
+        Coverage ratio (0-1). 0.0 if no spans.
+    """
+    if not truth_spans:
+        return 0.0
+    covered = sum(1 for gt in truth_spans if span_overlap(predicted_text, gt))
+    return covered / len(truth_spans)
 
 
 def compute_laziness_rate(

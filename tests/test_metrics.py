@@ -8,6 +8,7 @@ from src.evaluation.metrics import (
     compute_f1,
     compute_f2,
     compute_jaccard,
+    compute_span_coverage,
     compute_laziness_rate,
     compute_grounding_rate,
     span_overlap,
@@ -104,6 +105,49 @@ class TestJaccard:
     def test_jaccard_case_insensitive(self):
         """Test that Jaccard is case insensitive."""
         assert compute_jaccard("Hello World", "hello world") == 1.0
+
+    def test_jaccard_punctuation_normalization(self):
+        """Test that punctuation is stripped before tokenizing."""
+        # Quoted text should match unquoted after normalization
+        assert compute_jaccard('"ESCROW AGREEMENT".', "ESCROW AGREEMENT") == 1.0
+
+    def test_jaccard_punctuation_partial(self):
+        """Test Jaccard with punctuation and partial overlap."""
+        # "hello, world!" vs "hello there" → tokens: {hello, world} vs {hello, there}
+        result = compute_jaccard("hello, world!", "hello there")
+        assert result == 1 / 3
+
+
+class TestSpanCoverage:
+    """Tests for span coverage metric."""
+
+    def test_span_coverage_empty_spans(self):
+        """Test span coverage with no ground truth spans."""
+        assert compute_span_coverage("some prediction", []) == 0.0
+
+    def test_span_coverage_single_covered(self):
+        """Test span coverage with one span fully covered."""
+        pred = "The liability is capped at $1M for all claims."
+        spans = ["capped at $1M"]
+        assert compute_span_coverage(pred, spans) == 1.0
+
+    def test_span_coverage_none_covered(self):
+        """Test span coverage when prediction covers no spans."""
+        pred = "Unrelated text about something else."
+        spans = ["capped at $1M", "limited liability"]
+        assert compute_span_coverage(pred, spans) == 0.0
+
+    def test_span_coverage_partial(self):
+        """Test span coverage with partial coverage."""
+        pred = "The liability is capped at $1M."
+        spans = ["capped at $1M", "limited to consequential damages"]
+        assert compute_span_coverage(pred, spans) == 0.5
+
+    def test_span_coverage_all_covered(self):
+        """Test span coverage when all spans are covered."""
+        pred = "The liability is capped at $1M and limited to direct damages only."
+        spans = ["capped at $1M", "limited to direct damages"]
+        assert compute_span_coverage(pred, spans) == 1.0
 
 
 class TestLazinessRate:

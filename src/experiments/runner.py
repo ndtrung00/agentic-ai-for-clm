@@ -21,6 +21,7 @@ from tqdm.auto import tqdm
 from src.evaluation.metrics import (
     compute_grounding_rate,
     compute_jaccard,
+    compute_span_coverage,
     span_overlap,
 )
 
@@ -67,7 +68,15 @@ def _evaluate_sample(sample: Any, output: ExtractionOutput) -> dict[str, Any]:
         classification = "FP" if has_prediction else "TN"
 
     jacc = (
-        compute_jaccard(predicted_text, sample.ground_truth)
+        max(
+            compute_jaccard(predicted_text, gt)
+            for gt in sample.ground_truth_spans
+        )
+        if sample.has_clause and has_prediction and sample.ground_truth_spans
+        else 0.0
+    )
+    span_cov = (
+        compute_span_coverage(predicted_text, sample.ground_truth_spans)
         if sample.has_clause and has_prediction
         else 0.0
     )
@@ -80,6 +89,7 @@ def _evaluate_sample(sample: Any, output: ExtractionOutput) -> dict[str, Any]:
     return {
         "classification": classification,
         "jaccard": jacc,
+        "span_coverage": span_cov,
         "grounding_rate": grounding,
     }
 
