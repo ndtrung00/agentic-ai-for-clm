@@ -1,6 +1,8 @@
 """Risk & Liability specialist agent (13 categories)."""
 
-from langfuse import observe
+from src.models.client import get_observe_decorator
+
+observe = get_observe_decorator()
 
 from src.agents.base import AgentConfig, BaseAgent, ExtractionResult
 from src.models import ModelDiagnostics
@@ -9,16 +11,16 @@ from src.models import ModelDiagnostics
 # Categories handled by this specialist
 RISK_LIABILITY_CATEGORIES = [
     "Uncapped Liability",
-    "Cap on Liability",
+    "Cap On Liability",
     "Liquidated Damages",
     "Insurance",
     "Warranty Duration",
     "Audit Rights",
     "Non-Disparagement",
-    "Covenant Not to Sue",
+    "Covenant Not To Sue",
     "Third Party Beneficiary",
     "Most Favored Nation",
-    "Change of Control",
+    "Change Of Control",
     "Post-Termination Services",
     "Minimum Commitment",
 ]

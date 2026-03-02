@@ -103,7 +103,7 @@ class TestRiskLiabilityAgent:
     def test_handles_category(self, agent):
         """Test category handling."""
         assert agent.handles_category("Uncapped Liability")
-        assert agent.handles_category("Cap on Liability")
+        assert agent.handles_category("Cap On Liability")
         assert not agent.handles_category("Governing Law")
 
     def test_get_prompt(self, agent):
@@ -160,8 +160,16 @@ class TestOrchestrator:
         """Test routing known categories."""
         orchestrator = Orchestrator(specialists={})
         assert orchestrator.route_category("Governing Law") == "temporal_renewal"
-        assert orchestrator.route_category("Cap on Liability") == "risk_liability"
+        assert orchestrator.route_category("Cap On Liability") == "risk_liability"
         assert orchestrator.route_category("License Grant") == "ip_commercial"
+
+    def test_route_category_case_insensitive(self):
+        """Test routing handles case mismatches gracefully."""
+        orchestrator = Orchestrator(specialists={})
+        # Old-style casing should still route via fallback
+        assert orchestrator.route_category("Cap on Liability") == "risk_liability"
+        assert orchestrator.route_category("Change of Control") == "risk_liability"
+        assert orchestrator.route_category("Termination for Convenience") == "temporal_renewal"
 
     def test_route_category_unknown(self):
         """Test routing unknown category raises error."""

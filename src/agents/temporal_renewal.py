@@ -1,6 +1,8 @@
 """Temporal/Renewal specialist agent (11 categories)."""
 
-from langfuse import observe
+from src.models.client import get_observe_decorator
+
+observe = get_observe_decorator()
 
 from src.agents.base import AgentConfig, BaseAgent, ExtractionResult
 from src.models import ModelDiagnostics
@@ -14,8 +16,8 @@ TEMPORAL_RENEWAL_CATEGORIES = [
     "Effective Date",
     "Expiration Date",
     "Renewal Term",
-    "Notice Period to Terminate Renewal",
-    "Termination for Convenience",
+    "Notice Period To Terminate Renewal",
+    "Termination For Convenience",
     "Anti-Assignment",
     "Rofr/Rofo/Rofn",
     "Governing Law",

@@ -3,7 +3,9 @@
 from typing import Any
 from dataclasses import dataclass, field
 
-from langfuse import observe
+from src.models.client import get_observe_decorator
+
+observe = get_observe_decorator()
 from langgraph.graph import StateGraph, END, START
 
 from src.agents.base import AgentConfig, ExtractionResult
@@ -13,16 +15,16 @@ from src.agents.base import AgentConfig, ExtractionResult
 CATEGORY_ROUTING: dict[str, str] = {
     # Risk & Liability (13 categories)
     "Uncapped Liability": "risk_liability",
-    "Cap on Liability": "risk_liability",
+    "Cap On Liability": "risk_liability",
     "Liquidated Damages": "risk_liability",
     "Insurance": "risk_liability",
     "Warranty Duration": "risk_liability",
     "Audit Rights": "risk_liability",
     "Non-Disparagement": "risk_liability",
-    "Covenant Not to Sue": "risk_liability",
+    "Covenant Not To Sue": "risk_liability",
     "Third Party Beneficiary": "risk_liability",
     "Most Favored Nation": "risk_liability",
-    "Change of Control": "risk_liability",
+    "Change Of Control": "risk_liability",
     "Post-Termination Services": "risk_liability",
     "Minimum Commitment": "risk_liability",
     # Temporal/Renewal (11 categories)
@@ -32,8 +34,8 @@ CATEGORY_ROUTING: dict[str, str] = {
     "Effective Date": "temporal_renewal",
     "Expiration Date": "temporal_renewal",
     "Renewal Term": "temporal_renewal",
-    "Notice Period to Terminate Renewal": "temporal_renewal",
-    "Termination for Convenience": "temporal_renewal",
+    "Notice Period To Terminate Renewal": "temporal_renewal",
+    "Termination For Convenience": "temporal_renewal",
     "Anti-Assignment": "temporal_renewal",
     "Rofr/Rofo/Rofn": "temporal_renewal",
     "Governing Law": "temporal_renewal",
@@ -351,6 +353,13 @@ class Orchestrator:
             ValueError: If category is not recognized.
         """
         specialist = CATEGORY_ROUTING.get(category)
+        if specialist is None:
+            # Case-insensitive fallback
+            cat_lower = category.lower()
+            for key, val in CATEGORY_ROUTING.items():
+                if key.lower() == cat_lower:
+                    specialist = val
+                    break
         if specialist is None:
             raise ValueError(f"Unknown category: {category}")
         return specialist

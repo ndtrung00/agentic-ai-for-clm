@@ -135,7 +135,7 @@ class ExperimentConfig:
     def effective_concurrency(self) -> int:
         if self.concurrency is not None:
             return self.concurrency
-        return 1 if self.run_type == "M1" else 5
+        return 3 if self.run_type == "M1" else 5
 
 
 @dataclass
@@ -288,11 +288,11 @@ async def run_experiment_pipeline(
 
     elif config.run_type == "M1":
         diagnostics, extract_fn, orchestrator, specialists = (
-            _make_m1_extract_fn(config)
+            _make_m1_extract_fn(config, run_id=run_id)
         )
 
     elif config.run_type == "M6":
-        diagnostics, extract_fn, m6_baseline = _make_m6_extract_fn(config)
+        diagnostics, extract_fn, m6_baseline = _make_m6_extract_fn(config, run_id=run_id)
 
     else:
         raise NotImplementedError(f"{config.run_type} is not implemented")
@@ -615,7 +615,7 @@ def _make_baseline_extract_fn(
     return extract_fn
 
 
-def _make_m1_extract_fn(config: ExperimentConfig):
+def _make_m1_extract_fn(config: ExperimentConfig, *, run_id: str):
     """Build an async extract_fn for M1 (full multi-agent).
 
     Returns (diagnostics, extract_fn, orchestrator, specialists).
@@ -627,7 +627,8 @@ def _make_m1_extract_fn(config: ExperimentConfig):
         TemporalRenewalAgent,
     )
 
-    diagnostics = ModelDiagnostics()
+    run_mode = "official" if config.is_official else "test"
+    diagnostics = ModelDiagnostics(experiment_id=run_id, run_mode=run_mode)
 
     risk_cfg = AgentConfig(
         name="risk_liability",
@@ -699,12 +700,13 @@ def _make_m1_extract_fn(config: ExperimentConfig):
     return diagnostics, extract_fn, orchestrator, specialists
 
 
-def _make_m6_extract_fn(config: ExperimentConfig):
+def _make_m6_extract_fn(config: ExperimentConfig, *, run_id: str):
     """Build an async extract_fn for M6 (combined prompts ablation).
 
     Returns (diagnostics, extract_fn, m6_baseline).
     """
-    diagnostics = ModelDiagnostics()
+    run_mode = "official" if config.is_official else "test"
+    diagnostics = ModelDiagnostics(experiment_id=run_id, run_mode=run_mode)
 
     m6_baseline = CombinedPromptsBaseline(
         config=AgentConfig(name="combined_prompts", model_key=config.model_key),

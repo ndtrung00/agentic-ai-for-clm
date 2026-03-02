@@ -70,6 +70,30 @@ class _NoOpGeneration:
         pass
 
 
+def _noop_observe(*args, **kwargs):
+    """No-op replacement for ``langfuse.observe``.
+
+    Handles both ``@observe`` and ``@observe(name="...")`` usage.
+    """
+    if args and callable(args[0]):
+        # Used as @observe (without parentheses)
+        return args[0]
+    # Used as @observe(name="...") — return identity decorator
+    return lambda fn: fn
+
+
+def get_observe_decorator():
+    """Return langfuse.observe if Langfuse is configured, else a no-op decorator.
+
+    Use this instead of ``from langfuse import observe`` to avoid the
+    'client initialized without public_key' warning when keys aren't set.
+    """
+    if _is_langfuse_enabled():
+        from langfuse import observe
+        return observe
+    return _noop_observe
+
+
 @contextmanager
 def _langfuse_generation(**kwargs: Any):
     """Yield a Langfuse generation span, or a no-op if Langfuse is disabled."""
