@@ -69,12 +69,12 @@ def _evaluate_sample(sample: Any, output: ExtractionOutput) -> dict[str, Any]:
     jacc = (
         compute_jaccard(predicted_text, sample.ground_truth)
         if sample.has_clause and has_prediction
-        else (1.0 if not sample.has_clause and not has_prediction else 0.0)
+        else 0.0
     )
     grounding = (
         compute_grounding_rate(output.extracted_clauses, sample.contract_text)
         if has_prediction
-        else 1.0
+        else 0.0
     )
 
     return {

@@ -44,9 +44,9 @@ export default async function SampleDetailPage({ params }: Props) {
         <h1 className="text-lg font-bold">{sample.category}</h1>
         <TierBadge value={sample.tier} />
         <ClassificationBadge value={sample.evaluation.classification} />
-        <Badge variant="outline">Jaccard: {sample.evaluation.classification === "TN" ? "N/A" : fixed(sample.evaluation.jaccard)}</Badge>
+        <Badge variant="outline">Jaccard: {fixed(sample.evaluation.jaccard)}</Badge>
         {sample.evaluation.grounding_rate != null && (
-          <Badge variant="outline">Grounding: {sample.evaluation.classification === "TN" ? "N/A" : fixed(sample.evaluation.grounding_rate)}</Badge>
+          <Badge variant="outline">Grounding: {fixed(sample.evaluation.grounding_rate)}</Badge>
         )}
         {sample.contract_title && (
           <span className="text-sm text-muted-foreground">

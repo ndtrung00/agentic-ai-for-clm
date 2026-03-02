@@ -66,9 +66,7 @@ data/cuad/*
 *.docx
 
 # Experiments
-experiments/results/*
 experiments/logs/*
-!experiments/results/.gitkeep
 !experiments/logs/.gitkeep
 
 # LangFuse / Observability
