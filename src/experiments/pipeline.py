@@ -53,7 +53,14 @@ from src.baselines.chain_of_thought import (
     COT_USER_TEMPLATE,
     ChainOfThoughtBaseline,
 )
-from src.baselines.combined_prompts import COMBINED_PROMPT, CombinedPromptsBaseline
+from src.baselines.combined_prompts import (
+    M6_SYSTEM_PROMPT,
+    M6_USER_TEMPLATE,
+    CombinedPromptsBaseline,
+    _get_domain,
+    _get_indicators,
+    _DOMAIN_EXPERTISE,
+)
 from src.baselines.zero_shot import CONTRACTEVAL_PROMPT, ZeroShotBaseline
 from src.data.cuad_loader import CUADDataLoader, CUADSample
 from src.experiments.results import (
@@ -368,7 +375,7 @@ async def run_experiment_pipeline(
                 "(architecture ablation)"
             ),
             "workflow": ["combined_prompt"],
-            "system_prompt": COMBINED_PROMPT.split("{contract_text}")[0].strip(),
+            "system_prompt": M6_SYSTEM_PROMPT,
         }
 
     # ── 8. Save ──
@@ -705,9 +712,15 @@ def _make_m6_extract_fn(config: ExperimentConfig):
     )
 
     async def extract_fn(sample: CUADSample) -> ExtractionOutput:
-        system_prompt = None
-        user_message = COMBINED_PROMPT.format(
+        domain = _get_domain(sample.category)
+        domain_expertise = _DOMAIN_EXPERTISE.get(domain, "General contract analysis.")
+
+        system_prompt = M6_SYSTEM_PROMPT
+        user_message = M6_USER_TEMPLATE.format(
+            domain=domain.replace("_", " ").title(),
+            domain_expertise=domain_expertise,
             category=sample.category,
+            indicators=_get_indicators(sample.category),
             contract_text=sample.contract_text,
             question=sample.question,
         )
@@ -724,11 +737,8 @@ def _make_m6_extract_fn(config: ExperimentConfig):
             category=sample.category,
         )
 
-        data = m6_baseline.parse_json_response(raw_response)
-        if data and "extracted_clauses" in data:
-            result = m6_baseline.result_from_dict(data, sample.category)
-        else:
-            result = m6_baseline._parse_plaintext(raw_response, sample.category)
+        result = m6_baseline._cot_parser.parse_response(raw_response)
+        result.category = sample.category
 
         return ExtractionOutput(
             extracted_clauses=result.extracted_clauses,
