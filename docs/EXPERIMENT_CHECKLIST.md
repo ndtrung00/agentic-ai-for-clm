@@ -27,69 +27,69 @@ Small-scale runs to verify implementation correctness before committing to full 
 ### B1 — Zero-Shot
 
 
-| Model              | Status      | F1    | F2    | Laziness | Notes                        |
-| ------------------ | ----------- | ----- | ----- | -------- | ---------------------------- |
-| Claude Sonnet 4    | Done        | 0.847 | 0.839 | 10%      | 2x duplicate runs exist      |
-| Claude Sonnet 4.6  | Not started |       |       |          |                              |
-| Claude Opus 4.6    | Not started |       |       |          |                              |
-| Claude Haiku 4.5   | Not started |       |       |          |                              |
-| GPT-4.1            | Not started |       |       |          | ContractEval reference model |
-| GPT-4.1 Mini       | Not started |       |       |          |                              |
-| Gemini 2.5 Pro     | Not started |       |       |          |                              |
-| Gemini 2.5 Flash   | Not started |       |       |          |                              |
-| Gemini 3 Flash     | Not started |       |       |          | Preview                      |
-| Gemini 3.1 Pro     | Not started |       |       |          | Preview                      |
+| Model             | Status      | F1    | F2    | Laziness | Notes                        |
+| ----------------- | ----------- | ----- | ----- | -------- | ---------------------------- |
+| Claude Sonnet 4   | Done        | 0.847 | 0.839 | 10%      | 2x duplicate runs exist      |
+| Claude Sonnet 4.6 | Not started |       |       |          |                              |
+| Claude Opus 4.6   | Not started |       |       |          |                              |
+| Claude Haiku 4.5  | Not started |       |       |          |                              |
+| GPT-4.1           | Done        |       |       |          | ContractEval reference model |
+| GPT-4.1 Mini      | Done        |       |       |          |                              |
+| Gemini 2.5 Pro    | Not started |       |       |          |                              |
+| Gemini 2.5 Flash  | Not started |       |       |          |                              |
+| Gemini 3 Flash    | Not started |       |       |          | Preview                      |
+| Gemini 3.1 Pro    | Not started |       |       |          | Preview                      |
 
 
 ### B4 — Chain-of-Thought
 
 
-| Model              | Status      | F1    | F2    | Laziness | Notes                                     |
-| ------------------ | ----------- | ----- | ----- | -------- | ----------------------------------------- |
-| Claude Sonnet 4    | Not started |       |       |          |                                           |
-| Claude Sonnet 4.6  | Not started |       |       |          |                                           |
-| Claude Opus 4.6    | Not started |       |       |          |                                           |
-| Claude Haiku 4.5   | Not started |       |       |          |                                           |
-| GPT-4.1            | Not started |       |       |          |                                           |
-| GPT-4.1 Mini       | Done        | 0.732 | 0.807 | 0%       | Over-extraction issue under investigation |
-| Gemini 2.5 Pro     | Not started |       |       |          |                                           |
-| Gemini 2.5 Flash   | Not started |       |       |          |                                           |
-| Gemini 3 Flash     | Not started |       |       |          | Preview                                   |
-| Gemini 3.1 Pro     | Not started |       |       |          | Preview                                   |
+| Model             | Status      | F1    | F2    | Laziness | Notes                                     |
+| ----------------- | ----------- | ----- | ----- | -------- | ----------------------------------------- |
+| Claude Sonnet 4   | Done        |       |       |          |                                           |
+| Claude Sonnet 4.6 | Not started |       |       |          |                                           |
+| Claude Opus 4.6   | Not started |       |       |          |                                           |
+| Claude Haiku 4.5  | Not started |       |       |          |                                           |
+| GPT-4.1           | Done        |       |       |          |                                           |
+| GPT-4.1 Mini      | Done        | 0.732 | 0.807 | 0%       | Over-extraction issue under investigation |
+| Gemini 2.5 Pro    | Not started |       |       |          |                                           |
+| Gemini 2.5 Flash  | Not started |       |       |          |                                           |
+| Gemini 3 Flash    | Not started |       |       |          | Preview                                   |
+| Gemini 3.1 Pro    | Not started |       |       |          | Preview                                   |
 
 
 ### M1 — Multi-Agent (Full System)
 
 
-| Model              | Status      | F1    | F2    | Laziness | Notes                    |
-| ------------------ | ----------- | ----- | ----- | -------- | ------------------------ |
-| Claude Sonnet 4    | Done        | 0.714 | 0.685 | 13.3%    | Only 5/tier (21 samples) |
-| Claude Sonnet 4.6  | Not started |       |       |          |                          |
-| Claude Opus 4.6    | Not started |       |       |          |                          |
-| Claude Haiku 4.5   | Not started |       |       |          |                          |
-| GPT-4.1            | Not started |       |       |          |                          |
-| GPT-4.1 Mini       | Not started |       |       |          |                          |
-| Gemini 2.5 Pro     | Not started |       |       |          |                          |
-| Gemini 2.5 Flash   | Not started |       |       |          |                          |
-| Gemini 3 Flash     | Not started |       |       |          | Preview                  |
-| Gemini 3.1 Pro     | Not started |       |       |          | Preview                  |
+| Model             | Status      | F1    | F2    | Laziness | Notes                    |
+| ----------------- | ----------- | ----- | ----- | -------- | ------------------------ |
+| Claude Sonnet 4   | Done        | 0.714 | 0.685 | 13.3%    | Only 5/tier (21 samples) |
+| Claude Sonnet 4.6 | Not started |       |       |          |                          |
+| Claude Opus 4.6   | Not started |       |       |          |                          |
+| Claude Haiku 4.5  | Not started |       |       |          |                          |
+| GPT-4.1           | Not started |       |       |          |                          |
+| GPT-4.1 Mini      | Not started |       |       |          |                          |
+| Gemini 2.5 Pro    | Not started |       |       |          |                          |
+| Gemini 2.5 Flash  | Not started |       |       |          |                          |
+| Gemini 3 Flash    | Not started |       |       |          | Preview                  |
+| Gemini 3.1 Pro    | Not started |       |       |          | Preview                  |
 
 
 ### M6 — Combined Prompts Ablation
 
 
-| Model              | Status      | F1  | F2  | Laziness | Notes   |
-| ------------------ | ----------- | --- | --- | -------- | ------- |
-| Claude Sonnet 4    | Not started |     |     |          |         |
-| Claude Sonnet 4.6  | Not started |     |     |          |         |
-| Claude Opus 4.6    | Not started |     |     |          |         |
-| Claude Haiku 4.5   | Not started |     |     |          |         |
-| GPT-4.1            | Not started |     |     |          |         |
-| GPT-4.1 Mini       | Not started |     |     |          |         |
-| Gemini 2.5 Pro     | Not started |     |     |          |         |
-| Gemini 2.5 Flash   | Not started |     |     |          |         |
-| Gemini 3 Flash     | Not started |     |     |          | Preview |
-| Gemini 3.1 Pro     | Not started |     |     |          | Preview |
+| Model             | Status      | F1  | F2  | Laziness | Notes   |
+| ----------------- | ----------- | --- | --- | -------- | ------- |
+| Claude Sonnet 4   | Not started |     |     |          |         |
+| Claude Sonnet 4.6 | Not started |     |     |          |         |
+| Claude Opus 4.6   | Not started |     |     |          |         |
+| Claude Haiku 4.5  | Not started |     |     |          |         |
+| GPT-4.1           | Not started |     |     |          |         |
+| GPT-4.1 Mini      | Not started |     |     |          |         |
+| Gemini 2.5 Pro    | Not started |     |     |          |         |
+| Gemini 2.5 Flash  | Not started |     |     |          |         |
+| Gemini 3 Flash    | Not started |     |     |          | Preview |
+| Gemini 3.1 Pro    | Not started |     |     |          | Preview |
 
 
 ---
