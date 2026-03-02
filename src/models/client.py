@@ -1,6 +1,7 @@
 """Unified model client for multiple providers.
 
 Provides a consistent interface for calling different LLM providers.
+Uses async SDK clients for true concurrent execution with asyncio.
 Integrates with Langfuse for cost/token tracking.
 """
 
@@ -88,31 +89,43 @@ _google_client = None
 _ollama_clients: dict[str, Any] = {}
 
 
+def reset_clients() -> None:
+    """Clear cached SDK clients so the next call creates fresh ones.
+
+    Useful after code changes in a long-running notebook kernel.
+    """
+    global _anthropic_client, _openai_client, _google_client, _ollama_clients
+    _anthropic_client = None
+    _openai_client = None
+    _google_client = None
+    _ollama_clients = {}
+
+
 def _get_anthropic_client():
-    """Get or create Anthropic client."""
+    """Get or create async Anthropic client."""
     global _anthropic_client
     if _anthropic_client is None:
-        from anthropic import Anthropic
-        _anthropic_client = Anthropic()
+        from anthropic import AsyncAnthropic
+        _anthropic_client = AsyncAnthropic()
     return _anthropic_client
 
 
 def _get_openai_client():
-    """Get or create OpenAI client."""
+    """Get or create async OpenAI client."""
     global _openai_client
     if _openai_client is None:
-        from openai import OpenAI
-        _openai_client = OpenAI()
+        from openai import AsyncOpenAI
+        _openai_client = AsyncOpenAI()
     return _openai_client
 
 
 def _get_google_client():
-    """Get or create Google Gemini client (via OpenAI-compatible API)."""
+    """Get or create async Google Gemini client (via OpenAI-compatible API)."""
     global _google_client
     if _google_client is None:
-        from openai import OpenAI
+        from openai import AsyncOpenAI
         api_key = os.environ.get("GEMINI_API_KEY") or os.environ.get("GOOGLE_API_KEY", "")
-        _google_client = OpenAI(
+        _google_client = AsyncOpenAI(
             base_url="https://generativelanguage.googleapis.com/v1beta/openai/",
             api_key=api_key,
         )
@@ -120,15 +133,15 @@ def _get_google_client():
 
 
 def _get_ollama_client(base_url: str = "http://localhost:11434/v1"):
-    """Get or create Ollama client (OpenAI-compatible).
+    """Get or create async Ollama client (OpenAI-compatible).
 
     Args:
         base_url: Ollama server URL.
     """
     global _ollama_clients
     if base_url not in _ollama_clients:
-        from openai import OpenAI
-        _ollama_clients[base_url] = OpenAI(base_url=base_url, api_key="ollama")
+        from openai import AsyncOpenAI
+        _ollama_clients[base_url] = AsyncOpenAI(base_url=base_url, api_key="ollama")
     return _ollama_clients[base_url]
 
 
@@ -291,7 +304,7 @@ async def _invoke_anthropic(
         input=messages,
         metadata={"system": system, "temperature": temperature, "max_tokens": max_tokens},
     ) as generation:
-        # Make API call with retry on transient errors
+        # Make async API call with retry on transient errors
         @retry(
             stop=stop_after_attempt(max_retries),
             wait=wait_exponential(multiplier=1, min=1, max=60),
@@ -299,10 +312,10 @@ async def _invoke_anthropic(
             before_sleep=before_sleep_log(logger, logging.WARNING),
             reraise=True,
         )
-        def _call_with_retry():
-            return client.messages.create(**kwargs)
+        async def _call_with_retry():
+            return await client.messages.create(**kwargs)
 
-        response = _call_with_retry()
+        response = await _call_with_retry()
 
         # Extract response
         response_text = ""
@@ -407,10 +420,10 @@ async def _invoke_openai_compatible(
             before_sleep=before_sleep_log(logger, logging.WARNING),
             reraise=True,
         )
-        def _call_with_retry():
-            return client.chat.completions.create(**kwargs)
+        async def _call_with_retry():
+            return await client.chat.completions.create(**kwargs)
 
-        response = _call_with_retry()
+        response = await _call_with_retry()
 
         # Extract response
         response_text = response.choices[0].message.content or ""

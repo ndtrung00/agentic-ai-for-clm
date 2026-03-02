@@ -1,0 +1,433 @@
+{
+  "experiment_id": "zero_shot_claude-sonnet-4_20260302_023435",
+  "run_mode": "official",
+  "start_time": "2026-03-02T02:34:35.264402",
+  "summary": {
+    "experiment_id": "zero_shot_claude-sonnet-4_20260302_023435",
+    "total_calls": 21,
+    "successful_calls": 21,
+    "failed_calls": 0,
+    "success_rate": 1.0,
+    "total_input_tokens": 175345,
+    "total_output_tokens": 3544,
+    "total_tokens": 178889,
+    "total_cost_usd": 0.5791949999999999,
+    "avg_latency_ms": 4530.649168618505,
+    "min_latency_ms": 1087.8457079961663,
+    "max_latency_ms": 12440.627292002318,
+    "by_model": {
+      "claude-sonnet-4": {
+        "calls": 21,
+        "input_tokens": 175345,
+        "output_tokens": 3544,
+        "cost_usd": 0.5791949999999999,
+        "avg_latency_ms": 4530.649168618505
+      }
+    },
+    "by_agent": {
+      "zero_shot": 21
+    },
+    "duration_seconds": 148.772458
+  },
+  "calls": [
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-03-02T02:35:33.553294",
+      "latency_ms": 4713.979124993784,
+      "usage": {
+        "input_tokens": 7628,
+        "output_tokens": 128,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 7756
+      },
+      "cost_usd": 0.024804000000000003,
+      "success": true,
+      "error": null,
+      "category": "Agreement Date",
+      "agent_name": "zero_shot",
+      "experiment_id": "zero_shot_claude-sonnet-4_20260302_023435"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-03-02T02:35:34.873694",
+      "latency_ms": 1318.5912089975318,
+      "usage": {
+        "input_tokens": 1590,
+        "output_tokens": 7,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1597
+      },
+      "cost_usd": 0.004875,
+      "success": true,
+      "error": null,
+      "category": "Expiration Date",
+      "agent_name": "zero_shot",
+      "experiment_id": "zero_shot_claude-sonnet-4_20260302_023435"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-03-02T02:35:46.649103",
+      "latency_ms": 11773.545666001155,
+      "usage": {
+        "input_tokens": 14366,
+        "output_tokens": 272,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 14638
+      },
+      "cost_usd": 0.047178,
+      "success": true,
+      "error": null,
+      "category": "Parties",
+      "agent_name": "zero_shot",
+      "experiment_id": "zero_shot_claude-sonnet-4_20260302_023435"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-03-02T02:35:50.705112",
+      "latency_ms": 4054.7744579962455,
+      "usage": {
+        "input_tokens": 10812,
+        "output_tokens": 139,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 10951
+      },
+      "cost_usd": 0.034520999999999996,
+      "success": true,
+      "error": null,
+      "category": "Document Name",
+      "agent_name": "zero_shot",
+      "experiment_id": "zero_shot_claude-sonnet-4_20260302_023435"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-03-02T02:35:54.367533",
+      "latency_ms": 3658.773208007915,
+      "usage": {
+        "input_tokens": 6720,
+        "output_tokens": 148,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 6868
+      },
+      "cost_usd": 0.02238,
+      "success": true,
+      "error": null,
+      "category": "Parties",
+      "agent_name": "zero_shot",
+      "experiment_id": "zero_shot_claude-sonnet-4_20260302_023435"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-03-02T02:35:55.622970",
+      "latency_ms": 1252.981625002576,
+      "usage": {
+        "input_tokens": 3116,
+        "output_tokens": 7,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 3123
+      },
+      "cost_usd": 0.009453,
+      "success": true,
+      "error": null,
+      "category": "Effective Date",
+      "agent_name": "zero_shot",
+      "experiment_id": "zero_shot_claude-sonnet-4_20260302_023435"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-03-02T02:35:58.121061",
+      "latency_ms": 2496.508833995904,
+      "usage": {
+        "input_tokens": 5912,
+        "output_tokens": 65,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 5977
+      },
+      "cost_usd": 0.018711000000000002,
+      "success": true,
+      "error": null,
+      "category": "Effective Date",
+      "agent_name": "zero_shot",
+      "experiment_id": "zero_shot_claude-sonnet-4_20260302_023435"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-03-02T02:36:03.002270",
+      "latency_ms": 4880.102707989863,
+      "usage": {
+        "input_tokens": 10523,
+        "output_tokens": 393,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 10916
+      },
+      "cost_usd": 0.037464,
+      "success": true,
+      "error": null,
+      "category": "Change Of Control",
+      "agent_name": "zero_shot",
+      "experiment_id": "zero_shot_claude-sonnet-4_20260302_023435"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-03-02T02:36:13.692692",
+      "latency_ms": 10686.953500000527,
+      "usage": {
+        "input_tokens": 18528,
+        "output_tokens": 361,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 18889
+      },
+      "cost_usd": 0.060999,
+      "success": true,
+      "error": null,
+      "category": "Renewal Term",
+      "agent_name": "zero_shot",
+      "experiment_id": "zero_shot_claude-sonnet-4_20260302_023435"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-03-02T02:36:19.051866",
+      "latency_ms": 5355.463542000507,
+      "usage": {
+        "input_tokens": 5391,
+        "output_tokens": 402,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 5793
+      },
+      "cost_usd": 0.022203,
+      "success": true,
+      "error": null,
+      "category": "Post-Termination Services",
+      "agent_name": "zero_shot",
+      "experiment_id": "zero_shot_claude-sonnet-4_20260302_023435"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-03-02T02:36:23.118725",
+      "latency_ms": 4063.5586669959594,
+      "usage": {
+        "input_tokens": 16781,
+        "output_tokens": 179,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 16960
+      },
+      "cost_usd": 0.053028,
+      "success": true,
+      "error": null,
+      "category": "Anti-Assignment",
+      "agent_name": "zero_shot",
+      "experiment_id": "zero_shot_claude-sonnet-4_20260302_023435"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-03-02T02:36:27.143344",
+      "latency_ms": 4020.8966250065714,
+      "usage": {
+        "input_tokens": 4363,
+        "output_tokens": 331,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 4694
+      },
+      "cost_usd": 0.018054,
+      "success": true,
+      "error": null,
+      "category": "Audit Rights",
+      "agent_name": "zero_shot",
+      "experiment_id": "zero_shot_claude-sonnet-4_20260302_023435"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-03-02T02:36:30.052826",
+      "latency_ms": 2905.840249994071,
+      "usage": {
+        "input_tokens": 3975,
+        "output_tokens": 42,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 4017
+      },
+      "cost_usd": 0.012555,
+      "success": true,
+      "error": null,
+      "category": "Renewal Term",
+      "agent_name": "zero_shot",
+      "experiment_id": "zero_shot_claude-sonnet-4_20260302_023435"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-03-02T02:36:31.206012",
+      "latency_ms": 1151.6006660094718,
+      "usage": {
+        "input_tokens": 1566,
+        "output_tokens": 7,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1573
+      },
+      "cost_usd": 0.004803,
+      "success": true,
+      "error": null,
+      "category": "Irrevocable Or Perpetual License",
+      "agent_name": "zero_shot",
+      "experiment_id": "zero_shot_claude-sonnet-4_20260302_023435"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-03-02T02:36:34.538868",
+      "latency_ms": 3330.8139169967035,
+      "usage": {
+        "input_tokens": 9276,
+        "output_tokens": 132,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 9408
+      },
+      "cost_usd": 0.029807999999999998,
+      "success": true,
+      "error": null,
+      "category": "Price Restrictions",
+      "agent_name": "zero_shot",
+      "experiment_id": "zero_shot_claude-sonnet-4_20260302_023435"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-03-02T02:36:38.391270",
+      "latency_ms": 3851.202000005287,
+      "usage": {
+        "input_tokens": 5983,
+        "output_tokens": 99,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 6082
+      },
+      "cost_usd": 0.019434,
+      "success": true,
+      "error": null,
+      "category": "Affiliate License-Licensee",
+      "agent_name": "zero_shot",
+      "experiment_id": "zero_shot_claude-sonnet-4_20260302_023435"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-03-02T02:36:45.713239",
+      "latency_ms": 7319.831374989008,
+      "usage": {
+        "input_tokens": 11598,
+        "output_tokens": 216,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 11814
+      },
+      "cost_usd": 0.038034000000000005,
+      "success": true,
+      "error": null,
+      "category": "Most Favored Nation",
+      "agent_name": "zero_shot",
+      "experiment_id": "zero_shot_claude-sonnet-4_20260302_023435"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-03-02T02:36:49.075745",
+      "latency_ms": 3361.2332500051707,
+      "usage": {
+        "input_tokens": 9135,
+        "output_tokens": 151,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 9286
+      },
+      "cost_usd": 0.02967,
+      "success": true,
+      "error": null,
+      "category": "Competitive Restriction Exception",
+      "agent_name": "zero_shot",
+      "experiment_id": "zero_shot_claude-sonnet-4_20260302_023435"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-03-02T02:37:01.519034",
+      "latency_ms": 12440.627292002318,
+      "usage": {
+        "input_tokens": 10637,
+        "output_tokens": 451,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 11088
+      },
+      "cost_usd": 0.038676,
+      "success": true,
+      "error": null,
+      "category": "Price Restrictions",
+      "agent_name": "zero_shot",
+      "experiment_id": "zero_shot_claude-sonnet-4_20260302_023435"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-03-02T02:37:02.942237",
+      "latency_ms": 1418.5089160018833,
+      "usage": {
+        "input_tokens": 14990,
+        "output_tokens": 7,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 14997
+      },
+      "cost_usd": 0.045075000000000004,
+      "success": true,
+      "error": null,
+      "category": "Non-Disparagement",
+      "agent_name": "zero_shot",
+      "experiment_id": "zero_shot_claude-sonnet-4_20260302_023435"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-03-02T02:37:04.030679",
+      "latency_ms": 1087.8457079961663,
+      "usage": {
+        "input_tokens": 2455,
+        "output_tokens": 7,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 2462
+      },
+      "cost_usd": 0.00747,
+      "success": true,
+      "error": null,
+      "category": "Most Favored Nation",
+      "agent_name": "zero_shot",
+      "experiment_id": "zero_shot_claude-sonnet-4_20260302_023435"
+    }
+  ]
+}
