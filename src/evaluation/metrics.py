@@ -284,9 +284,9 @@ def evaluate_single(
     }
 
     if truth_empty and pred_empty:
-        # TN: Both empty
+        # TN: Both empty — jaccard is undefined (nothing to compare)
         result["tn"] = 1
-        result["jaccard"] = 1.0
+        result["jaccard"] = 0.0
     elif truth_empty and not pred_empty:
         # FP: Truth empty but prediction not
         result["fp"] = 1

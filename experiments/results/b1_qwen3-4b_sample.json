@@ -1,0 +1,280 @@
+{
+  "experiment": "baseline_b1_zero_shot",
+  "model_key": "qwen3-4b",
+  "model_id": "qwen3:4b",
+  "provider": "ollama",
+  "n_samples": 12,
+  "samples_per_tier": 3,
+  "temperature": 0.0,
+  "metrics": {
+    "precision": 0.4,
+    "recall": 0.2222222222222222,
+    "f1": 0.2857142857142857,
+    "f2": 0.24390243902439024,
+    "avg_jaccard": 0.15156963756779443,
+    "laziness_rate": 0.2222222222222222,
+    "tp": 2,
+    "fp": 3,
+    "fn": 7,
+    "tn": 0
+  },
+  "per_tier": {
+    "common": {
+      "tp": 1,
+      "fp": 1,
+      "fn": 2,
+      "tn": 0,
+      "f1": 0.4,
+      "f2": 0.3571428571428571,
+      "avg_jaccard": 0.00503003003003003
+    },
+    "moderate": {
+      "tp": 1,
+      "fp": 1,
+      "fn": 2,
+      "tn": 0,
+      "f1": 0.4,
+      "f2": 0.3571428571428571,
+      "avg_jaccard": 0.4727017543859649
+    },
+    "rare": {
+      "tp": 0,
+      "fp": 1,
+      "fn": 3,
+      "tn": 0,
+      "f1": 0.0,
+      "f2": 0.0,
+      "avg_jaccard": 0.05024693205627058
+    }
+  },
+  "predictions": [
+    {
+      "id": "TodosMedicalLtd_20190328_20-F_EX-4.10_11587157_EX-4.10_Marketing Agreement_ Reseller Agreement__Agreement Date",
+      "category": "Agreement Date",
+      "tier": "common",
+      "has_ground_truth": true,
+      "ground_truth": "20t h day of December 2018",
+      "predicted_clauses": [
+        "Based on a thorough review of the contract document, the following parts related to the \"Agreement Date\" should be reviewed by a lawyer to ensure accuracy, clarity, and legal compliance:",
+        "### 1. **Signature Section (Most Critical Part)**\n   - **Location**: The section where both parties signed the agreement.\n   - **Relevant Text**: \n     ```\n     Todos Medical Ltd. signed by Herman Weiss (CEO) on 20/12/2018\n     Care G. B. Plus Ltd. signed by Assaf Gold (Manager) on 20/12/2018\n     ```\n   - **Why it should be reviewed**: This section explicitly states the **execution date** of the agreement as December 20, 2018. A lawyer should verify:\n     - That this date is correctly documented and matches the actual signing date.\n     - That there is no ambiguity about when the agreement became effective (e.g., whether it's the execution date or a later \"effective date\").\n     - That the date format (20/12/2018) is consistent with local legal standards (e.g., day/month/year vs. month/day/year) to avoid disputes in international contexts.",
+        "### 2. **Governing Law Section (Section 15.6)**\n   - **Location**: Section 15.6 of the contract.\n   - **Relevant Text**: \n     *\"This Agreement shall be governed by and construed in accordance with the laws of Israel and the courts of Tel Aviv.\"*\n   - **Why it should be reviewed**: While this section doesn't directly state the agreement date, it's critical for understanding how date-related disputes (e.g., whether the agreement is effective as of the signing date or a later milestone) will be resolved. A lawyer should confirm that the governing law (Israeli law) appropriately addresses date interpretation in this context.",
+        "### 3. **Arbitration Section (Section 15.7)**\n   - **Location**: Section 15.7 of the contract.\n   - **Relevant Text**: \n     *\"Any dispute arising out of or in connection with this Agreement shall be settled by arbitration in Tel Aviv, Israel.\"*\n   - **Why it should be reviewed**: This section defines the mechanism for resolving disputes about the agreement date (e.g., if there's a disagreement about when the agreement was executed). A lawyer should ensure this clause doesn't inadvertently create ambiguity about the agreement date or create unintended risks for the parties.",
+        "### 4. **Commercialization Timetable (Exhibit C)**\n   - **Location**: Exhibit C (the \"Commercialization Timetable\").\n   - **Relevant Text**: \n     This exhibit lists target dates for milestones (e.g., \"Milestone 1: Product development - Target date: 30/06/2020\").\n   - **Why it should be reviewed**: While not directly the agreement date, this exhibit provides context for the timeline of the agreement. A lawyer should review it to ensure:\n     - The milestones don't inadvertently create a \"de facto\" effective date that conflicts with the signing date.\n     - There's no risk of the agreement being interpreted as effective later than the signing date due to unmet milestones.",
+        "---",
+        "### Summary of Key Points for Review:\n| Part of Contract | Purpose for Review | Risk if Not Addressed |\n|------------------|---------------------|------------------------|\n| **Signature Section** | Verify the exact execution date (December 20, 2018) | Disputes about when the agreement became legally binding |\n| **Governing Law (Section 15.6)** | Ensure Israeli law handles date interpretation correctly | Unintended legal conflicts in cross-border contexts |\n| **Arbitration Section (Section 15.7)** | Confirm dispute resolution for date-related issues | Inability to resolve disagreements about the agreement date |\n| **Commercialization Timetable (Exhibit C)** | Check if milestones create unintended effective dates | Agreement being interpreted"
+      ],
+      "elapsed_s": 144.401371717453
+    },
+    {
+      "id": "Freecook_20180605_S-1_EX-10.3_11233807_EX-10.3_Hosting Agreement__Expiration Date",
+      "category": "Expiration Date",
+      "tier": "common",
+      "has_ground_truth": true,
+      "ground_truth": "Terms of the project: 12 weeks from February 8, 2018 to May 3, 2018",
+      "predicted_clauses": [
+        "No related clause"
+      ],
+      "elapsed_s": 35.099974155426025
+    },
+    {
+      "id": "SUCAMPOPHARMACEUTICALS,INC_11_04_2015-EX-10.2-STRATEGIC ALLIANCE AGREEMENT__Parties",
+      "category": "Parties",
+      "tier": "common",
+      "has_ground_truth": true,
+      "ground_truth": "Sucampo Pharmaceuticals, Inc.",
+      "predicted_clauses": [
+        "Based on your query, here are the **critical sections of this contract specifically related to the \"Parties\" (the two or more signatories)** that **must be reviewed by a lawyer**. These sections contain high-risk elements that could impact legal validity, enforceability, liability, or compliance for the parties involved. I've highlighted them with **bold text**, explained **why they require legal review**, and provided **actionable insights** for your lawyer.",
+        "---",
+        "### \ud83d\udd0d Key Sections Requiring Lawyer Review (Focus: \"Parties\")",
+        "#### 1. **Section 8.02(b) \u2013 Jurisdiction Clause**  \n   > *\"Any dispute... involving the Lenders arising out of... the transactions contemplated hereby... shall be subject to the exclusive jurisdiction of any state or federal court sitting in the County of New York, Borough of Manhattan, New York, New York...\"*  \n   **Why review?**  \n   - This clause **forces all disputes involving the Lenders** (banks financing the deal) to be resolved in **New York courts**.  \n   - **Critical risk**: The parties include **R-Tech Ueno, Ltd. (Japan)** and **Sucampo Pharmaceuticals, Inc. (US)**. If a Japanese party sues in a foreign court, this clause could be **unenforceable** under international law (e.g., Tokyo courts might reject New York jurisdiction).  \n   - **Lawyer must verify**: Whether this jurisdiction clause complies with Japanese law (e.g., *Japanese Civil Code*), US law, and international treaties (e.g., *New York Convention*). Failure here could invalidate the entire agreement.",
+        "#### 2. **Section 8.04 \u2013 Assignment Clause**  \n   > *\"No Party shall assign... without the prior written consent of the other Party; provided, that Acquiror may assign this Agreement... without any such consent as collateral to the Lenders...\"*  \n   **Why review?**  \n   - This defines **who can assign rights** (e.g., the \"Acquiror\" can assign to lenders without consent).  \n   - **Critical risk**: If the \"Acquiror\" (Sucampo Pharma, LLC) assigns rights to lenders, the **Company (R-Tech Ueno, Ltd.)** could lose control over the deal. Lawyers must confirm:  \n     - Does this assignment clause protect the **Company** from unintended liabilities?  \n     - Could lenders' assignments create **unintended conflicts** with Japanese law? (e.g., R-Tech Ueno, Ltd. is a Japanese entity).",
+        "#### 3. **Section 8.08 \u2013 Entire Agreement Clause**  \n   > *\"This Agreement (including the Schedules and Disclosure Letters hereto) constitutes the entire agreement of the Parties hereto...\"*  \n   **Why review?**  \n   - This clause **supersedes all prior agreements** between the parties.  \n   - **Critical risk**: If the parties had **unwritten agreements** (e.g., joint ventures, confidentiality deals) that weren\u2019t disclosed, this could create **unintended liabilities**.  \n   - **Lawyer must verify**:  \n     - Did all prior agreements (especially with R-Tech Ueno, Ltd.) get properly documented?  \n     - Are there **gaps in the disclosure** (e.g., Section 8.11 notes that Disclosure Letters aren\u2019t exhaustive)?",
+        "#### 4. **Section 8.13 \u2013 Third-Party Beneficiaries**  \n   > *\"It is expressly agreed by the Parties that the Lenders shall be third party beneficiaries of Section 4.09, Section 6.03, Section 8.02(b), Section 8.04, Section 8.05 and this Section 8.13.\"*  \n   **Why review?**  \n   - This **creates legal rights for lenders** (e.g., Lenders can enforce Sections 4.09, 8.02(b), etc.).  \n   - **Critical risk**: If the \"Parties\" (especially R-Tech Ueno, Ltd.) don\u2019t understand that lenders have **direct enforcement rights**, they could be liable for breaches they didn\u2019t intend.  \n   - **Lawyer must confirm**:  \n     - Does this clause comply with **Japanese contract law** (R-Tech Ueno, Ltd. is Japanese)?  \n     - Could this expose the **Company** to lender claims without consent?",
+        "#### 5. **Signatory Section (Page 23)**  \n   > *\"Sucampo Pharmaceuticals, Inc. By: /s/ Peter Greenleaf... Sucampo Pharma, LLC. By: /s/ Misako Nakata... R-Tech Ueno, Ltd. By: /s/ Y. Mashima...\"*  \n   **Why review?**  \n   - This defines **who signed** (and their authority).  \n   - **Critical risk**:  \n     - Is **Peter Greenleaf** (CEO of Sucampo Pharmaceuticals) legally authorized to sign?  \n     - Is **Misako Nakata** (Representative Executor of Sucampo Pharma) authorized?  \n     - Is **Y. Mashima** (President of R-Tech Ueno, Ltd.) authorized?  \n   - **Lawyer must verify**:  \n     - **Corporate authority** (e.g., does R-Tech Ueno, Ltd. require a board resolution for this deal?).  \n     - **Jurisdictional conflicts** (e.g., Japanese entities may require specific signatures under *Japanese Commercial Code*).",
+        "---",
+        "### \ud83d\udccc Summary of Critical Risks for Your Lawyer\n| Section | Key Risk for Parties | Why It Matters |\n|---------|----------------------|----------------|\n| **8.02(b)** | New York courts only for disputes | Japanese party (R-Tech Ueno) may face unenforceable jurisdiction |\n| **8.04** | Acquiror can assign to lenders without consent | Company (R-Tech Ueno) loses control over deal |\n| **8.08** | Supersedes all prior agreements | Unintended liabilities from undisclosed agreements |\n| **8.13** | Lenders get direct enforcement rights | Company exposed to lender claims without consent |\n| **Signatory Section** | Signing authority | Japanese entity (R-Tech Ueno) may lack valid authority |",
+        "---",
+        "### \ud83d\udca1 Actionable Advice for Your Lawyer\n1. **Prioritize Section 8.02(b)**: This is the **most high-risk section** for international parties. A lawyer must confirm it complies with **Japanese law** and **US law** (e.g., *New York Uniform Commercial Code*).  \n2. **Verify signatory authority**: Especially for **R-Tech Ueno, Ltd.** (Japan). Japanese companies often require **board approval** for such agreements.  \n3. **Check for conflicts with Japanese law**: Sections 8.04 and 8.13 could violate *Japanese Civil Code* (e.g., rules on assignment of contracts).  \n4. **Review \"entire agreement\" clause (8.08)**: Ensure no prior agreements (e.g., joint ventures) were overlooked that could create liabilities.",
+        "> \u26a0\ufe0f **Final Note**: The contract involves **three distinct parties** (two US entities + one Japanese entity). **Japanese law** (especially for R-Tech Ueno, Ltd.) is **critical** here. A lawyer specializing in **cross-border transactions** (especially Japan-US) is essential. Do **not** skip this review \u2013 it could cost millions in enforcement disputes.",
+        "If you share your jurisdiction (e.g., \"I\u2019m in Japan\" or \"I\u2019m in the US\"), I can give even more targeted advice! For now, **focus on Sections 8.02(b), 8.04, 8.08, 8.13, and the signatory section** \u2013 these are the highest-risk areas for the parties. \ud83d\udd10"
+      ],
+      "elapsed_s": 102.34679412841797
+    },
+    {
+      "id": "IDREAMSKYTECHNOLOGYLTD_07_03_2014-EX-10.39-Cooperation Agreement on Mobile Game Business__Governing Law",
+      "category": "Governing Law",
+      "tier": "common",
+      "has_ground_truth": false,
+      "ground_truth": "",
+      "predicted_clauses": [
+        "Based on my review of the contract, I can provide a clear answer regarding the \"Governing Law\" section.",
+        "**The contract does not explicitly state which state or country's law governs the interpretation of the contract.** This is a critical omission that should be reviewed by a lawyer.",
+        "**Specific parts of the contract that should be reviewed by a lawyer related to \"Governing Law\":**",
+        "1. **The absence of an explicit governing law clause** - The entire contract (pages 24-29) does not contain any section that specifies which country or state's law governs the interpretation of the contract. This is unusual for a formal business agreement and represents a significant gap that needs attention.",
+        "2. **The need to determine the applicable law** - Given the context of the parties:\n   - Both companies are Chinese (Dazzle Interactive Network Technologies Co., Ltd. and Shenzhen iDreamSky Technology Co., Ltd.)\n   - The contract involves Chinese telecommunications infrastructure (CHINANET of China Telecom)\n   - The contract is signed in China (Shenzhen is a city in China)\n   - The contract is in English but has Chinese business entities",
+        "**Which state/country's law governs the interpretation of the contract?**",
+        "While the contract doesn't explicitly state this, **Chinese law is the most likely governing law** based on the context. This is because:\n- Both parties are Chinese entities with their principal places of business in China\n- The contract involves Chinese telecommunications infrastructure\n- The contract is executed in China (Shenzhen)\n- In international business contracts involving Chinese companies, Chinese law is typically the default governing law unless otherwise specified",
+        "**Why this needs lawyer review:**\n- The absence of a governing law clause creates uncertainty\n- Chinese law has specific provisions for cross-border contracts and digital services that may apply here\n- The contract involves digital services and telecommunications, which have specific regulatory frameworks in China\n- A lawyer would need to confirm whether Chinese law is indeed the appropriate governing law, or if there's an implied jurisdiction based on the parties' locations",
+        "**Recommendation:** A lawyer should review the entire contract to:\n1. Confirm whether Chinese law is the appropriate governing law\n2. Determine if there's a need for a specific governing law clause (e.g., \"This Agreement shall be governed by and construed in accordance with the laws of the People's Republic of China\")\n3. Address any potential conflicts between Chinese law and international law (given the contract is in English)",
+        "In summary: The contract does not explicitly state governing law, but based on the context, **Chinese law is the most likely governing law**. However, this needs to be confirmed by a lawyer to ensure proper legal protection for both parties."
+      ],
+      "elapsed_s": 139.9418430328369
+    },
+    {
+      "id": "CANOPETROLEUM,INC_12_13_2007-EX-10.1-Sponsorship Agreement__Anti-Assignment",
+      "category": "Anti-Assignment",
+      "tier": "moderate",
+      "has_ground_truth": true,
+      "ground_truth": "This Agreement may not be assigned by either party without the prior written consent of the other party.",
+      "predicted_clauses": [
+        "18. Assignment. This Agreement may not be assigned by either party without the prior written consent of the other party."
+      ],
+      "elapsed_s": 116.44445896148682
+    },
+    {
+      "id": "GpaqAcquisitionHoldingsInc_20200123_S-4A_EX-10.6_11951677_EX-10.6_License Agreement__Rofr/Rofo/Rofn",
+      "category": "Rofr/Rofo/Rofn",
+      "tier": "moderate",
+      "has_ground_truth": true,
+      "ground_truth": "If the Village Media Company does not exercise its right of first refusal, PFHOF shall have the right to grant a license with respect to such third party on the same terms originally provided to the Village Media Company.",
+      "predicted_clauses": [],
+      "elapsed_s": 132.29339814186096
+    },
+    {
+      "id": "INKTOMICORP_06_08_1998-EX-10.14-SOFTWARE HOSTING AGREEMENT__Non-Transferable License",
+      "category": "Non-Transferable License",
+      "tier": "moderate",
+      "has_ground_truth": true,
+      "ground_truth": "Except as expressly permitted hereunder or in Exhibit F hereto, neither party may transfer, assign or sublicense this Agreement, or any rights or obligations hereunder, whether by contract or by operation of law, except with the express written consent of the other party, and any attempted transfer, assignment or sublicense by a party in violation of this Section shall be void.",
+      "predicted_clauses": [
+        "Based on a thorough review of the provided contract (Software Hosting Agreement between Microsoft and Inktomi, including Exhibits A\u2013F), **there is no explicit \"Non-Transferable License\" clause in this document**. However, the contract **does contain critical transfer-related provisions** that directly address whether the license can be transferred to a third party. Below is a precise breakdown of the relevant sections for legal review, with clear answers to your question.",
+        "---",
+        "### \u2705 Key Finding: Does the contract limit transfer to a third party?\n**No, the contract does *not* limit the ability to transfer the license to a third party**. Instead, it **explicitly permits transfers under specific conditions** (when Microsoft withholds consent). This is the *opposite* of a \"non-transferable\" clause.",
+        "**Why?**  \nThe contract **allows transfers** (via Exhibit F) but requires Microsoft's consent *unless* the transfer is an \"Unconsented Transfer\" (where Microsoft withholds consent). In that case, Inktomi can still transfer the agreement *with conditions* (e.g., relocating servers, training, etc.). **This means transfers are *not* restricted**\u2014they are conditional on Microsoft's consent or a structured transition process.",
+        "---",
+        "### \ud83d\udd0d Critical Sections for Lawyer Review (Highlighting Transfer-Related Clauses)\nThe following sections **must be reviewed by a lawyer** to confirm transfer rights. These sections **do not contain a \"non-transferable\" restriction** but define *how* transfers work:",
+        "| **Section** | **Relevant Text** | **Why It Needs Lawyer Review** |\n|-------------|-------------------|-------------------------------|\n| **Exhibit F (Transfer by Inktomi)** | *\"If Inktomi requests Microsoft's consent to a transfer [...] and Microsoft reasonably withholds its consent (an 'Unconsented Transfer'), then Inktomi will nevertheless have the right to transfer this Agreement [...]\"* | **This is the core section**. It explicitly states that transfers are **permitted** even if Microsoft withholds consent. A lawyer must verify: <br> - Whether Microsoft's \"consent\" is truly optional (not absolute). <br> - The exact conditions for \"Unconsented Transfers\" (e.g., 12-month cluster relocation, 18-month Transition Period). |\n| **Exhibit F (Clause iv)** | *\"Inktomi will grant to Microsoft an irrevocable, non-exclusive, royalty-free license [...] for such period as Microsoft may require to transition its search engine services to non-Inktomi technology (the 'Transition Period'), [...] and Inktomi will waive all royalties [...] for the Transition Period\"* | **Confirms transferability**. The license *is* transferable to Microsoft for 18 months during the transition, but **this is a temporary license for Microsoft to move away from Inktomi technology**\u2014not a restriction on Inktomi's ability to transfer the *entire agreement* to a third party. |\n| **Section 12.5 (Implied)** | *The contract references \"clause (a) of Section 12.5\" in Exhibit F* | **Microsoft's consent is required for transfers** (standard practice). A lawyer must confirm: <br> - Whether Microsoft can *unilaterally* withhold consent (as stated in Exhibit F). <br> - If the \"Unconsented Transfer\" process is legally enforceable. |",
+        "---",
+        "### \ud83d\udeab Why There Is *No* \"Non-Transferable License\" Clause\n- **The contract does not prohibit transfers**\u2014it actively enables them (via Exhibit F).  \n- **No section states** that the license is \"non-transferable\" or \"non-assignable.\"  \n- **The only transfer restriction** is Microsoft's *consent* (not a blanket prohibition). If Microsoft withholds consent, Inktomi can still transfer the agreement *with conditions* (e.g., Exhibit F's 12-month relocation requirement).",
+        "> \ud83d\udca1 **Key Takeaway for Your Question**:  \n> **The contract *does not limit* transfer to a third party**. Instead, it creates a *structured pathway* for transfers when Microsoft withholds consent. A lawyer should review **Exhibit F** to confirm:  \n> 1. Whether Microsoft's consent is truly optional (not absolute).  \n> 2. The enforceability of the \"Unconsented Transfer\" process (e.g., 12-month relocation, 18-month Transition Period).  \n> 3. Whether the license terms themselves are transferable (the answer is **yes**).",
+        "---",
+        "### \ud83d\udcdd Summary for Lawyer Review\n| **Item** | **Status** | **Action Required** |\n|----------|-------------|---------------------|\n| **Non-transferable license clause** | \u274c **Does not exist** | No action needed |\n| **Transfer to third party** | \u2705 **Permitted** (with conditions) | **Review Exhibit F** to confirm: <br> - Microsoft's consent requirements <br> - \"Unconsented Transfer\" mechanics <br> - Transition Period obligations |\n| **Key risk** | Microsoft may withhold consent | Ensure Exhibit F's conditions are legally enforceable (e.g., 12-month relocation, 18-month Transition Period) |",
+        "**Final Answer**:  \n**No part of this contract states that the license is \"non-transferable.\"** The contract **explicitly allows transfers to third parties** (via Exhibit F) but requires Microsoft's consent *unless* an \"Unconsented Transfer\" occurs (with specific conditions). **A lawyer must review Exhibit F** to confirm the transfer mechanics are legally sound and do not inadvertently restrict Inktomi's ability to transfer the license.",
+        "> \u2139\ufe0f **Pro Tip for Lawyers**: Focus on **Exhibit F**\u2014it\u2019s the *only* section addressing transfers. The rest of the contract (e.g., Exhibits A\u2013E) is unrelated to transfer rights. If Microsoft withholds consent, Inktomi can still transfer the agreement *with conditions*\u2014this is **not** a \"non-transferable\" clause but a **conditional transfer mechanism**."
+      ],
+      "elapsed_s": 71.22086501121521
+    },
+    {
+      "id": "REGANHOLDINGCORP_03_31_2008-EX-10-LICENSE AND HOSTING AGREEMENT__Rofr/Rofo/Rofn",
+      "category": "Rofr/Rofo/Rofn",
+      "tier": "moderate",
+      "has_ground_truth": false,
+      "ground_truth": "",
+      "predicted_clauses": [
+        "Based on the **full contract text you provided** (Sections 1\u201317), **there are no clauses related to \"Rofr\" (Right of First Refusal), \"Rofo\" (Right of First Offer), or \"Rofn\" (Right of First Negotiation)** that should be reviewed by a lawyer.",
+        "### Key Findings:\n1. **No Rofr/Rofo/Rofn clauses exist in this contract**:\n   - The entire document (from \"Binding Nature\" to \"Entire Agreement\") contains **zero references** to:\n     - Rights of first refusal\n     - Rights of first offer\n     - Rights of first negotiation\n     - Any right to purchase, license, market, distribute equity, technology, assets, products, or services under these terms.\n   - This is a standard business agreement with no unusual clauses in this excerpt.",
+        "2. **Why this is clear**:\n   - The contract focuses on standard operational terms (e.g., termination, governing law, indemnification, dispute resolution).\n   - Terms like \"Rofr/Rofo/Rofn\" are **not defined or referenced** in any section. These are niche legal concepts that would only appear in specific contexts (e.g., asset sales, technology licensing, or joint ventures), but they are absent here.\n   - The only mention of \"first\" in the contract is in **Section 10.1 (Remedies)**: *\"TAG may proceed directly to court and... LMG shall not oppose the entry of an order...\"* \u2014 **This is unrelated** to Rofr/Rofo/Rofn.",
+        "3. **What *should* be reviewed (if applicable)**:\n   While **this specific contract has no Rofr/Rofo/Rofn clauses**, if your situation involves similar rights (e.g., future asset sales, technology licensing, or joint ventures), these sections **would need legal review**:\n   - **Section 3.8 (Breach Remedies)**: The contract states: *\"If LMG breaches its obligations under Section 3.8, TAG will be irreparably harmed...\"*  \n     \u2192 **Why review?** Section 3.8 is **not defined in your excerpt** (it\u2019s omitted here). If Section 3.8 covers *technology assets* or *services*, it could imply rights of first refusal/offer. **This is the only potential area** that might need scrutiny (but it\u2019s not Rofr/Rofo/Rofn itself).\n   - **Section 10.1 (Remedies)**: The clause about \"setting off\" payments (e.g., *set-off against amounts due*) could be relevant for financial negotiations but **does not create Rofr/Rofo/Rofn rights**.",
+        "---",
+        "### Summary for Your Question:\n| **Your Query** | **Status in This Contract** |\n|----------------|----------------------------|\n| \"Is there a clause granting one party a right of first refusal, right of first offer, or right of first negotiation...\" | \u274c **No** (Zero clauses exist) |\n| **Should a lawyer review this contract for Rofr/Rofo/Rofn?** | \u274c **No** (Based on provided text) |\n| **What *should* be reviewed?** | Section 3.8 (if it covers assets/services) \u2014 **but this is not Rofr/Rofo/Rofn** |",
+        "### Recommendation:\n- **Do not worry** about Rofr/Rofo/Rofn in this contract \u2014 **no such clauses exist**.\n- If you\u2019re negotiating a **new deal** (e.g., technology licensing, asset sales), **consult a lawyer** to add Rofr/Rofo/Rofn terms *if needed*. But **this contract as provided has none**.",
+        "> \ud83d\udca1 **Pro Tip**: In real-world contracts, Rofr/Rofo/Rofn clauses are **rare** in standard service agreements (like this one). They typically appear in *specialized deals* (e.g., startup equity, IP licensing). Since your contract is a standard business agreement (not a tech/IP deal), these terms are **unrelated here**.",
+        "**Final Answer**: **No parts of this contract need legal review for Rofr/Rofo/Rofn** \u2014 the contract contains **no such clauses**. If you have additional context (e.g., a different section of the full contract), share it for deeper analysis."
+      ],
+      "elapsed_s": 70.60860800743103
+    },
+    {
+      "id": "LegacyEducationAllianceInc_20141110_8-K_EX-10.9_8828866_EX-10.9_Endorsement Agreement__Volume Restriction",
+      "category": "Volume Restriction",
+      "tier": "rare",
+      "has_ground_truth": true,
+      "ground_truth": "In accordance with the Primary Agreement, the Talent agrees that during the Term, he will make public appearances at the request of the Company, to include appearing at Company events and/or participating in photo shoots as requested by Company, not to exceed more than four such appearances or photo shoots per calendar year.",
+      "predicted_clauses": [
+        "# Analysis of Volume Restriction Clauses in the Contract",
+        "After carefully reviewing the entire contract document, I found **no specific clauses related to \"Volume Restriction\"** that would require a lawyer to review for fee increases, consent requirements, or other conditions triggered when usage exceeds certain thresholds.",
+        "## Key Findings:",
+        "1. **No explicit volume restrictions**: The contract contains no provisions that define usage thresholds, volume limits, or conditions that would apply when usage exceeds certain levels.",
+        "2. **No fee increase mechanisms**: There are no clauses that specify how fees would increase based on usage volume or thresholds.",
+        "3. **No consent requirements**: The contract doesn't include any provisions requiring consent from one party when the other party's usage exceeds predetermined thresholds.",
+        "4. **No usage metrics**: The document doesn't define what constitutes \"volume\" in this context (e.g., number of products sold, number of users, etc.).",
+        "5. **Only reference to \"Product\"**: Section 9 mentions \"Product bearing the Property\" but doesn't specify any volume restrictions or usage thresholds for this product.",
+        "## Why this is important:",
+        "While the contract does mention \"the Primary Agreement\" in Section 23 (which states: \"This Agreement is subject to the terms of the Primary Agreement\"), the actual Primary Agreement isn't included in this document. If the Primary Agreement contains volume restriction clauses, those would need to be reviewed by a lawyer - but since they're not included here, I cannot assess them.",
+        "## Recommendation:",
+        "Since there are no volume restriction clauses in this specific document, **no additional review by a lawyer is needed for volume restrictions** based on this contract alone. However, if you're using this agreement as part of a larger arrangement where volume thresholds might apply (as suggested by the reference to the Primary Agreement), you should:",
+        "1. Review the Primary Agreement (which isn't included in this document)\n2. Consult with legal counsel to determine if there are any implied usage limits or volume-based pricing structures",
+        "The current document appears to be a standard endorsement agreement without specific volume restrictions or usage-based fee structures."
+      ],
+      "elapsed_s": 56.61074709892273
+    },
+    {
+      "id": "ADIANUTRITION,INC_04_01_2005-EX-10.D2-RESELLER AGREEMENT__Covenant Not To Sue",
+      "category": "Covenant Not To Sue",
+      "tier": "rare",
+      "has_ground_truth": true,
+      "ground_truth": "Detto shall not contest the validity of any of the Property or PivX's exclusive ownership of them.",
+      "predicted_clauses": [],
+      "elapsed_s": 130.72248816490173
+    },
+    {
+      "id": "ORBSATCORP_08_17_2007-EX-7.3-STRATEGIC ALLIANCE AGREEMENT__Third Party Beneficiary",
+      "category": "Third Party Beneficiary",
+      "tier": "rare",
+      "has_ground_truth": true,
+      "ground_truth": "Notwithstanding the foregoing, UTK may assign this Agreement or any portion of its Compensation as outlined herein to its subsidiaries in its sole discretion.",
+      "predicted_clauses": [
+        "As an expert in contract law, I have carefully reviewed the entire contract (including the main agreement and Exhibit A) to identify any parts that relate to **third-party beneficiaries**\u2014defined as non-contracting parties who are explicitly or implicitly intended to benefit from the contract and have the legal right to enforce its terms against the contracting parties.",
+        "### Key Findings:\n1. **No explicit or implicit third-party beneficiaries exist in this contract**. \n   - The contract is strictly between **UTEK CORPORATION (UTK)** and **WORLD ENERGY SOLUTIONS (AVDU)**. \n   - There are **no clauses** that designate, imply, or create rights for a third party (e.g., research universities, government laboratories, or other entities) to enforce the contract against UTK or AVDU.\n   - The services described in Exhibit A (e.g., \"3rd party research institutions\") are **not beneficiaries** but rather **third-party sources of technology**. These entities are not parties to the contract and have no contractual rights to enforce the terms against UTK or AVDU.",
+        "2. **Why no third-party beneficiary exists**:\n   - **Contractual scope**: The entire agreement is bilateral (between UTK and AVDU) with no language indicating that benefits are to be \"for the benefit of\" a third party. \n   - **No enforceable rights for third parties**: \n     - The \"INJUNCTIVE RELIEF\" clause (Section K) only grants rights to the **non-breaching party** (i.e., one of UTK or AVDU), not to a third party.\n     - The \"ASSIGNMENTS\" clause (Section F) addresses **successors and assigns of the parties**, not third parties.\n     - Exhibit A explicitly states that UTK's technology sources are \"3rd party research institutions,\" but this is a **description of the service scope**, not a grant of beneficiary rights. These institutions have no contractual standing to enforce the agreement.\n   - **Legal principle**: Under common law (e.g., *Restatement (Second) of Contracts \u00a7 384*), a third party beneficiary must be (1) intended to benefit from the contract, (2) have a clear right to enforce it, and (3) be a party to the contract or its enforcement. None of these conditions are met here.",
+        "3. **Why this matters for your review**:\n   - While the contract involves third parties (e.g., universities/labs), they are **not beneficiaries**\u2014they are merely **service providers** or **technology sources**. \n   - There is **no risk of unintended third-party enforcement** in this contract. The parties have explicitly limited the scope to bilateral obligations between UTK and AVDU.",
+        "### Conclusion:\n**There are no parts of this contract that relate to a third-party beneficiary**. Therefore, **no sections require special review for third-party beneficiary risks**.",
+        "### Recommended Action:\n- **No further review is needed** for third-party beneficiary issues in this contract. \n- However, if you are drafting or revising this contract in the future, ensure that any reference to \"3rd party\" entities (e.g., in Exhibit A) explicitly states that **these entities are not beneficiaries** and have **no enforcement rights** to avoid ambiguity. For example:  \n  > *\"UTK shall source technology from third-party research institutions, but such institutions shall have no rights under this Agreement to enforce its terms against UTK or AVDU.\"*",
+        "This contract is **free of third-party beneficiary risks** as drafted. If you have additional context (e.g., jurisdiction-specific rules), I can refine this analysis further.",
+        "**Final Answer**: No parts of this contract relate to a third-party beneficiary. **No review is required** for this issue."
+      ],
+      "elapsed_s": 126.86799693107605
+    },
+    {
+      "id": "GOCALLINC_03_30_2000-EX-10.7-Promotion Agreement__Price Restrictions",
+      "category": "Price Restrictions",
+      "tier": "rare",
+      "has_ground_truth": false,
+      "ground_truth": "",
+      "predicted_clauses": [
+        "After carefully reviewing the entire contract document, I found that **there are no specific parts related to \"Price Restrictions\"** that should be reviewed by a lawyer for the question about restrictions on the ability of a party to raise or reduce prices of technology, goods, or services.",
+        "The contract covers standard business terms, dispute resolution, confidentiality, and other operational aspects, but it does not contain any clauses that:\n- Restrict either party's ability to raise or reduce prices\n- Specify pricing mechanisms or price change policies\n- Address price adjustments for technology, goods, or services",
+        "While Section 10 mentions \"PageMaster Corporation's liability shall in no event exceed an amount equivalent to the amounts received by PageMaster Corporation hereunder,\" this is about liability limits rather than price restrictions. It does not address the ability to change prices.",
+        "The contract is focused on the terms of the pager promotion agreement, not pricing structures or price change mechanisms. There are no provisions that would limit or require advance notice for price changes, or that would otherwise constitute \"price restrictions\" as defined in your question.",
+        "**Conclusion**: No parts of this contract require review by a lawyer specifically for price restriction concerns. The document does not contain any clauses that would restrict either party's ability to raise or reduce prices of technology, goods, or services."
+      ],
+      "elapsed_s": 53.02564024925232
+    }
+  ],
+  "diagnostics": {
+    "experiment_id": "baseline_b1_qwen3-4b",
+    "total_calls": 12,
+    "successful_calls": 12,
+    "failed_calls": 0,
+    "success_rate": 1.0,
+    "total_input_tokens": 44567,
+    "total_output_tokens": 33596,
+    "total_tokens": 78163,
+    "total_cost_usd": 0.0,
+    "avg_latency_ms": 98287.47953116545,
+    "min_latency_ms": 35098.048166022636,
+    "max_latency_ms": 144322.39541702438,
+    "by_model": {
+      "qwen3-4b": {
+        "calls": 12,
+        "input_tokens": 44567,
+        "output_tokens": 33596,
+        "cost_usd": 0.0,
+        "avg_latency_ms": 98287.47953116545
+      }
+    },
+    "by_agent": {
+      "zero_shot_baseline": 12
+    },
+    "duration_seconds": 1963.935654
+  }
+}

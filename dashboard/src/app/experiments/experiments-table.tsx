@@ -23,6 +23,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { ExportButton } from "@/components/ui/export-button";
+import { Pagination, paginate } from "@/components/ui/pagination";
 
 interface ExperimentsTableProps {
   experiments: ExperimentListItem[];
@@ -103,6 +104,8 @@ export function ExperimentsTable({ experiments }: ExperimentsTableProps) {
   const [selectedRuns, setSelectedRuns] = useState<Set<string>>(new Set());
   const [hiddenRuns, setHiddenRuns] = useState<Set<string>>(new Set());
   const [showHidden, setShowHidden] = useState(false);
+  const [page, setPage] = useState(1);
+  const [pageSize, setPageSize] = useState(25);
 
   // Load from localStorage on mount
   useEffect(() => {
@@ -192,6 +195,12 @@ export function ExperimentsTable({ experiments }: ExperimentsTableProps) {
 
     return result;
   }, [experiments, filters, hiddenRuns, showHidden]);
+
+  // Reset page when filters change
+  const filteredLen = filtered.length;
+  useMemo(() => setPage(1), [filteredLen, filters.search, filters.configFilter, filters.modelFilter, filters.providerFilter, filters.runMode]);
+
+  const paged = useMemo(() => paginate(filtered, page, pageSize), [filtered, page, pageSize]);
 
   const toggleSort = (key: SortKey) => {
     setFilters((prev) => {
@@ -435,7 +444,7 @@ export function ExperimentsTable({ experiments }: ExperimentsTableProps) {
             </TableRow>
           </TableHeader>
           <TableBody>
-            {filtered.map((exp) => {
+            {paged.map((exp) => {
               const isHidden = hiddenRuns.has(exp.run_id);
               return (
                 <TableRow
@@ -517,6 +526,14 @@ export function ExperimentsTable({ experiments }: ExperimentsTableProps) {
           </TableBody>
         </Table>
       </div>
+
+      <Pagination
+        totalItems={filtered.length}
+        page={page}
+        pageSize={pageSize}
+        onPageChange={setPage}
+        onPageSizeChange={setPageSize}
+      />
     </div>
   );
 }

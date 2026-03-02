@@ -323,6 +323,7 @@ def save_experiment(
     print(f"Summary saved:      {summary_path}")
 
     # Save diagnostics
+    diagnostics.run_mode = run_mode
     diag_dir = output_dir.parent / "diagnostics"
     diag_dir.mkdir(parents=True, exist_ok=True)
     diag_path = diag_dir / f"{run_id}_diagnostics.json"

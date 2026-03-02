@@ -66,9 +66,7 @@ data/cuad/*
 *.docx
 
 # Experiments
-experiments/results/*
 experiments/logs/*
-!experiments/results/.gitkeep
 !experiments/logs/.gitkeep
 
 # LangFuse / Observability
@@ -110,3 +108,6 @@ Thumbs.db
 .mypy_cache/
 
 CLAUDE.md
+
+# Presentation notes (private)
+MIDTERM_PRESENTATION.md

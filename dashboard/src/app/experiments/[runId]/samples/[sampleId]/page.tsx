@@ -1,11 +1,12 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { getExperiment, getSamples } from "@/lib/data-loader";
+import { getExperiment, getSamples, getContractText } from "@/lib/data-loader";
 import { fixed, tokens, ms } from "@/lib/format";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ClassificationBadge, TierBadge } from "@/components/samples/classification-badge";
 import { ContractViewer } from "@/components/samples/contract-viewer";
+import { ContractPreview } from "@/components/samples/contract-preview";
 import { SampleNavigation } from "@/components/samples/sample-navigation";
 import { Separator } from "@/components/ui/separator";
 
@@ -25,6 +26,10 @@ export default async function SampleDetailPage({ params }: Props) {
   const samples = getSamples(runId);
   const sample = samples.find((s) => s.sample_id === decoded);
   if (!sample) return notFound();
+
+  const contractText = sample.contract_title
+    ? getContractText(sample.contract_title)
+    : null;
 
   return (
     <div className="p-6 space-y-6">
@@ -66,6 +71,16 @@ export default async function SampleDetailPage({ params }: Props) {
 
       {/* Side-by-side GT vs Prediction */}
       <ContractViewer sample={sample} />
+
+      {/* Contract text preview */}
+      {contractText && sample.contract_title && (
+        <ContractPreview
+          contractTitle={sample.contract_title}
+          contractText={contractText}
+          gtSpans={sample.ground_truth.spans}
+          predictedClauses={sample.output.parsed_clauses}
+        />
+      )}
 
       {/* Raw response (collapsible) */}
       <details className="border rounded-lg">

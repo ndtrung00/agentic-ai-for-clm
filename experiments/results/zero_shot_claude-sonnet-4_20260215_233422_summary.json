@@ -1,0 +1,209 @@
+{
+  "run_id": "zero_shot_claude-sonnet-4_20260215_233422",
+  "timestamp": "2026-02-15T23:34:57.222196",
+  "config": {
+    "model_key": "claude-sonnet-4",
+    "model_id": "claude-sonnet-4-20250514",
+    "provider": "anthropic",
+    "baseline_type": "B1",
+    "baseline_label": "zero_shot",
+    "samples_per_tier": 2,
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "max_contract_chars": 100000,
+    "include_negative": true,
+    "run_mode": "test"
+  },
+  "prompt": {
+    "system_prompt": "You are an assistant with strong legal knowledge, supporting senior lawyers by preparing reference materials. Given a Context and a Question, extract and return only the sentence(s) from the Context that directly address or relate to the Question. Do not rephrase or summarize in any way\u2014respond with exact sentences from the Context relevant to the Question. If a relevant sentence contains unrelated elements such as page numbers or whitespace, include them exactly as they appear. If no part of the Context is relevant to the Question, respond with: \"No related clause.\"\n",
+    "template_name": "zero_shot"
+  },
+  "metrics": {
+    "precision": 1.0,
+    "recall": 0.8333333333333334,
+    "f1": 0.9090909090909091,
+    "f2": 0.8620689655172415,
+    "avg_jaccard": 0.4009799743585822,
+    "laziness_rate": 0.16666666666666666,
+    "tp": 5,
+    "fp": 0,
+    "fn": 1,
+    "tn": 3
+  },
+  "per_tier": {
+    "common": {
+      "tp": 1,
+      "fp": 0,
+      "fn": 1,
+      "tn": 1,
+      "f1": 0.6666666666666666,
+      "f2": 0.5555555555555556,
+      "avg_jaccard": 0.06
+    },
+    "moderate": {
+      "tp": 2,
+      "fp": 0,
+      "fn": 0,
+      "tn": 1,
+      "f1": 1.0,
+      "f2": 1.0,
+      "avg_jaccard": 0.7538200339558574
+    },
+    "rare": {
+      "tp": 2,
+      "fp": 0,
+      "fn": 0,
+      "tn": 1,
+      "f1": 1.0,
+      "f2": 1.0,
+      "avg_jaccard": 0.3891198891198891
+    }
+  },
+  "samples": [
+    {
+      "id": "TodosMedicalLtd_20190328_20-F_EX-4.10_11587157_EX-4.10_Marketing Agreement_ Reseller Agreement__Agreement Date",
+      "category": "Agreement Date",
+      "tier": "common",
+      "classification": "TP",
+      "jaccard": 0.12,
+      "grounding_rate": 1.0,
+      "num_clauses_predicted": 1,
+      "num_gt_spans": 1,
+      "input_tokens": 7628,
+      "output_tokens": 128,
+      "latency_s": 4.44
+    },
+    {
+      "id": "Freecook_20180605_S-1_EX-10.3_11233807_EX-10.3_Hosting Agreement__Expiration Date",
+      "category": "Expiration Date",
+      "tier": "common",
+      "classification": "FN",
+      "jaccard": 0.0,
+      "grounding_rate": 1.0,
+      "num_clauses_predicted": 0,
+      "num_gt_spans": 1,
+      "input_tokens": 1590,
+      "output_tokens": 7,
+      "latency_s": 1.21
+    },
+    {
+      "id": "HertzGroupRealtyTrustInc_20190920_S-11A_EX-10.8_11816941_EX-10.8_Trademark License Agreement__Expiration Date",
+      "category": "Expiration Date",
+      "tier": "common",
+      "classification": "TN",
+      "jaccard": 1.0,
+      "grounding_rate": 1.0,
+      "num_clauses_predicted": 0,
+      "num_gt_spans": 0,
+      "input_tokens": 3700,
+      "output_tokens": 7,
+      "latency_s": 1.28
+    },
+    {
+      "id": "GpaqAcquisitionHoldingsInc_20200123_S-4A_EX-10.8_11951679_EX-10.8_Service Agreement__Insurance",
+      "category": "Insurance",
+      "tier": "moderate",
+      "classification": "TP",
+      "jaccard": 0.6129032258064516,
+      "grounding_rate": 1.0,
+      "num_clauses_predicted": 1,
+      "num_gt_spans": 2,
+      "input_tokens": 12659,
+      "output_tokens": 201,
+      "latency_s": 3.01
+    },
+    {
+      "id": "CANOPETROLEUM,INC_12_13_2007-EX-10.1-Sponsorship Agreement__Anti-Assignment",
+      "category": "Anti-Assignment",
+      "tier": "moderate",
+      "classification": "TP",
+      "jaccard": 0.8947368421052632,
+      "grounding_rate": 1.0,
+      "num_clauses_predicted": 1,
+      "num_gt_spans": 1,
+      "input_tokens": 2241,
+      "output_tokens": 27,
+      "latency_s": 1.67
+    },
+    {
+      "id": "PrecheckHealthServicesInc_20200320_8-K_EX-99.2_12070169_EX-99.2_Distributor Agreement__Change Of Control",
+      "category": "Change Of Control",
+      "tier": "moderate",
+      "classification": "TN",
+      "jaccard": 1.0,
+      "grounding_rate": 1.0,
+      "num_clauses_predicted": 0,
+      "num_gt_spans": 0,
+      "input_tokens": 1626,
+      "output_tokens": 7,
+      "latency_s": 1.61
+    },
+    {
+      "id": "EbixInc_20010515_10-Q_EX-10.3_4049767_EX-10.3_Co-Branding Agreement__Covenant Not To Sue",
+      "category": "Covenant Not To Sue",
+      "tier": "rare",
+      "classification": "TP",
+      "jaccard": 0.6756756756756757,
+      "grounding_rate": 0.0,
+      "num_clauses_predicted": 3,
+      "num_gt_spans": 4,
+      "input_tokens": 9593,
+      "output_tokens": 282,
+      "latency_s": 4.47
+    },
+    {
+      "id": "VARIABLESEPARATEACCOUNT_04_30_2014-EX-13.C-UNCONDITIONAL CAPITAL MAINTENANCE AGREEMENT__Minimum Commitment",
+      "category": "Minimum Commitment",
+      "tier": "rare",
+      "classification": "TP",
+      "jaccard": 0.10256410256410256,
+      "grounding_rate": 0.0,
+      "num_clauses_predicted": 3,
+      "num_gt_spans": 3,
+      "input_tokens": 3536,
+      "output_tokens": 121,
+      "latency_s": 3.77
+    },
+    {
+      "id": "BellringBrandsInc_20190920_S-1_EX-10.12_11817081_EX-10.12_Manufacturing Agreement1__Revenue/Profit Sharing",
+      "category": "Revenue/Profit Sharing",
+      "tier": "rare",
+      "classification": "TN",
+      "jaccard": 1.0,
+      "grounding_rate": 1.0,
+      "num_clauses_predicted": 0,
+      "num_gt_spans": 0,
+      "input_tokens": 9423,
+      "output_tokens": 7,
+      "latency_s": 1.63
+    }
+  ],
+  "diagnostics": {
+    "experiment_id": "zero_shot_claude-sonnet-4_20260215_233422",
+    "total_calls": 9,
+    "successful_calls": 9,
+    "failed_calls": 0,
+    "success_rate": 1.0,
+    "total_input_tokens": 51996,
+    "total_output_tokens": 787,
+    "total_tokens": 52783,
+    "total_cost_usd": 0.167793,
+    "avg_latency_ms": 2566.75039797685,
+    "min_latency_ms": 1209.4028330175206,
+    "max_latency_ms": 4471.255457960069,
+    "by_model": {
+      "claude-sonnet-4": {
+        "calls": 9,
+        "input_tokens": 51996,
+        "output_tokens": 787,
+        "cost_usd": 0.167793,
+        "avg_latency_ms": 2566.75039797685
+      }
+    },
+    "by_agent": {
+      "zero_shot": 9
+    },
+    "duration_seconds": 30.482314
+  },
+  "intermediate_file": "../experiments/results/zero_shot_claude-sonnet-4_20260215_233422_intermediate.jsonl"
+}

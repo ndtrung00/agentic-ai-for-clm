@@ -25,6 +25,7 @@ import {
   Cell,
 } from "recharts";
 import { ExportButton } from "@/components/ui/export-button";
+import { Pagination, paginate } from "@/components/ui/pagination";
 
 interface CategoryBreakdownProps {
   samples: SampleSummary[];
@@ -36,6 +37,8 @@ export function CategoryBreakdown({ samples }: CategoryBreakdownProps) {
   const categories = useMemo(() => computeCategoryMetrics(samples), [samples]);
   const [sortKey, setSortKey] = useState<SortKey>("tier");
   const [sortDir, setSortDir] = useState<"asc" | "desc">("asc");
+  const [page, setPage] = useState(1);
+  const [pageSize, setPageSize] = useState(50);
 
   const sorted = useMemo(() => {
     const tierOrder: Record<string, number> = { common: 0, moderate: 1, rare: 2 };
@@ -61,6 +64,8 @@ export function CategoryBreakdown({ samples }: CategoryBreakdownProps) {
       setSortDir(key === "category" || key === "tier" ? "asc" : "desc");
     }
   };
+
+  const paged = useMemo(() => paginate(sorted, page, pageSize), [sorted, page, pageSize]);
 
   // Chart data: F2 per category, colored by tier
   const chartData = useMemo(
@@ -158,7 +163,7 @@ export function CategoryBreakdown({ samples }: CategoryBreakdownProps) {
             </TableRow>
           </TableHeader>
           <TableBody>
-            {sorted.map((c) => {
+            {paged.map((c) => {
               const tc = tierColors[c.tier];
               return (
                 <TableRow key={c.category}>
@@ -183,6 +188,14 @@ export function CategoryBreakdown({ samples }: CategoryBreakdownProps) {
           </TableBody>
         </Table>
       </div>
+
+      <Pagination
+        totalItems={sorted.length}
+        page={page}
+        pageSize={pageSize}
+        onPageChange={setPage}
+        onPageSizeChange={setPageSize}
+      />
     </div>
   );
 }

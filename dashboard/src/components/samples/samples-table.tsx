@@ -6,7 +6,6 @@ import type { SampleSummary } from "@/lib/types";
 import { fixed } from "@/lib/format";
 import { ClassificationBadge, TierBadge } from "./classification-badge";
 import { Badge } from "@/components/ui/badge";
-import { Input } from "@/components/ui/input";
 import {
   Select,
   SelectContent,
@@ -23,6 +22,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { ExportButton } from "@/components/ui/export-button";
+import { Pagination, paginate } from "@/components/ui/pagination";
 
 const AGENT_SHORT: Record<string, string> = {
   risk_liability: "Risk",
@@ -40,20 +40,24 @@ export function SamplesTable({ samples, runId, routingTable }: SamplesTableProps
   const router = useRouter();
   const [tierFilter, setTierFilter] = useState<string>("all");
   const [classFilter, setClassFilter] = useState<string>("all");
-  const [search, setSearch] = useState("");
+  const [categoryFilter, setCategoryFilter] = useState<string>("all");
   const [sortKey, setSortKey] = useState<string>("category");
   const [sortDir, setSortDir] = useState<"asc" | "desc">("asc");
+  const [page, setPage] = useState(1);
+  const [pageSize, setPageSize] = useState(50);
 
   const hasRouting = !!routingTable;
+
+  const categories = useMemo(
+    () => [...new Set(samples.map((s) => s.category))].sort(),
+    [samples],
+  );
 
   const filtered = useMemo(() => {
     let result = [...samples];
     if (tierFilter !== "all") result = result.filter((s) => s.tier === tierFilter);
     if (classFilter !== "all") result = result.filter((s) => s.classification === classFilter);
-    if (search) {
-      const q = search.toLowerCase();
-      result = result.filter((s) => s.category.toLowerCase().includes(q) || s.id.toLowerCase().includes(q));
-    }
+    if (categoryFilter !== "all") result = result.filter((s) => s.category === categoryFilter);
     result.sort((a, b) => {
       const av = a[sortKey as keyof SampleSummary] ?? "";
       const bv = b[sortKey as keyof SampleSummary] ?? "";
@@ -61,7 +65,13 @@ export function SamplesTable({ samples, runId, routingTable }: SamplesTableProps
       return sortDir === "asc" ? cmp : -cmp;
     });
     return result;
-  }, [samples, tierFilter, classFilter, search, sortKey, sortDir]);
+  }, [samples, tierFilter, classFilter, categoryFilter, sortKey, sortDir]);
+
+  // Reset page when filters change
+  const filteredLen = filtered.length;
+  useMemo(() => setPage(1), [filteredLen, tierFilter, classFilter, categoryFilter]);
+
+  const paged = useMemo(() => paginate(filtered, page, pageSize), [filtered, page, pageSize]);
 
   const toggleSort = (key: string) => {
     if (sortKey === key) setSortDir((d) => (d === "asc" ? "desc" : "asc"));
@@ -78,13 +88,16 @@ export function SamplesTable({ samples, runId, routingTable }: SamplesTableProps
 
   return (
     <div className="space-y-3">
-      <div className="flex gap-3 flex-wrap">
-        <Input
-          placeholder="Search category..."
-          className="w-60"
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-        />
+      <div className="flex gap-3 flex-wrap items-center">
+        <Select value={categoryFilter} onValueChange={setCategoryFilter}>
+          <SelectTrigger className="w-56"><SelectValue placeholder="Category" /></SelectTrigger>
+          <SelectContent>
+            <SelectItem value="all">All categories ({categories.length})</SelectItem>
+            {categories.map((c) => (
+              <SelectItem key={c} value={c}>{c}</SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
         <Select value={tierFilter} onValueChange={setTierFilter}>
           <SelectTrigger className="w-36"><SelectValue placeholder="Tier" /></SelectTrigger>
           <SelectContent>
@@ -135,7 +148,7 @@ export function SamplesTable({ samples, runId, routingTable }: SamplesTableProps
             </TableRow>
           </TableHeader>
           <TableBody>
-            {filtered.map((s) => {
+            {paged.map((s) => {
               const agent = routingTable?.[s.category];
               return (
                 <TableRow
@@ -172,6 +185,14 @@ export function SamplesTable({ samples, runId, routingTable }: SamplesTableProps
           </TableBody>
         </Table>
       </div>
+
+      <Pagination
+        totalItems={filtered.length}
+        page={page}
+        pageSize={pageSize}
+        onPageChange={setPage}
+        onPageSizeChange={setPageSize}
+      />
     </div>
   );
 }

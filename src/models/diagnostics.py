@@ -85,13 +85,15 @@ class ModelDiagnostics:
         diagnostics.export("experiments/diagnostics/exp_001.json")
     """
 
-    def __init__(self, experiment_id: str = "") -> None:
+    def __init__(self, experiment_id: str = "", run_mode: str = "test") -> None:
         """Initialize diagnostics collector.
 
         Args:
             experiment_id: Identifier for this experiment run.
+            run_mode: "official" or "test".
         """
         self.experiment_id = experiment_id
+        self.run_mode = run_mode
         self.calls: list[ModelCall] = []
         self._start_time = datetime.now()
 
@@ -224,6 +226,7 @@ class ModelDiagnostics:
 
         data = {
             "experiment_id": self.experiment_id,
+            "run_mode": self.run_mode,
             "start_time": self._start_time.isoformat(),
             "summary": self.summary(),
             "calls": [c.to_dict() for c in self.calls],
