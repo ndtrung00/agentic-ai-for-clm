@@ -15,22 +15,54 @@ interface Segment {
 }
 
 /**
- * Find all non-overlapping occurrences of a substring in text.
- * Returns [start, end) index pairs.
+ * Normalize text for matching: collapse all whitespace runs into a single space,
+ * and build a mapping from normalized index → original index.
+ */
+function normalizeWithMap(text: string): { norm: string; toOrig: number[] } {
+  const norm: string[] = [];
+  const toOrig: number[] = [];
+  let inWs = false;
+  for (let i = 0; i < text.length; i++) {
+    const ch = text[i];
+    if (/\s/.test(ch)) {
+      if (!inWs) {
+        norm.push(" ");
+        toOrig.push(i);
+        inWs = true;
+      }
+    } else {
+      norm.push(ch.toLowerCase());
+      toOrig.push(i);
+      inWs = false;
+    }
+  }
+  // Sentinel so toOrig[norm.length] gives end-of-text
+  toOrig.push(text.length);
+  return { norm: norm.join(""), toOrig };
+}
+
+/**
+ * Find all non-overlapping occurrences of needle in text using
+ * whitespace-normalized matching. Returns [start, end) index pairs
+ * in the *original* text coordinates.
  */
 function findAllOccurrences(text: string, needle: string): [number, number][] {
-  if (!needle || needle.length < 5) return []; // skip tiny/empty strings
-  const results: [number, number][] = [];
-  const lowerText = text.toLowerCase();
-  const lowerNeedle = needle.toLowerCase().trim();
-  if (!lowerNeedle) return results;
+  const trimmed = needle.trim();
+  if (!trimmed || trimmed.length < 5) return [];
 
+  const { norm: normText, toOrig } = normalizeWithMap(text);
+  const normNeedle = trimmed.toLowerCase().replace(/\s+/g, " ");
+  if (!normNeedle) return [];
+
+  const results: [number, number][] = [];
   let pos = 0;
-  while (pos < lowerText.length) {
-    const idx = lowerText.indexOf(lowerNeedle, pos);
+  while (pos < normText.length) {
+    const idx = normText.indexOf(normNeedle, pos);
     if (idx === -1) break;
-    results.push([idx, idx + lowerNeedle.length]);
-    pos = idx + lowerNeedle.length;
+    const origStart = toOrig[idx];
+    const origEnd = toOrig[idx + normNeedle.length];
+    results.push([origStart, origEnd]);
+    pos = idx + normNeedle.length;
   }
   return results;
 }
@@ -104,7 +136,7 @@ const STYLE_MAP: Record<Segment["type"], string> = {
   plain: "",
   gt: "bg-yellow-200/70",
   predicted: "bg-green-200/70",
-  both: "bg-amber-300/70",
+  both: "bg-purple-300/70",
 };
 
 export function ContractPreview({
@@ -155,7 +187,7 @@ export function ContractPreview({
             Prediction
           </span>
           <span className="flex items-center gap-1">
-            <span className="inline-block w-3 h-3 rounded bg-amber-300/70 border border-amber-400" />
+            <span className="inline-block w-3 h-3 rounded bg-purple-300/70 border border-purple-400" />
             Both
           </span>
         </div>
