@@ -3,6 +3,7 @@
 import pytest
 
 from src.evaluation.metrics import (
+    compute_containment,
     compute_precision,
     compute_recall,
     compute_f1,
@@ -116,6 +117,53 @@ class TestJaccard:
         # "hello, world!" vs "hello there" → tokens: {hello, world} vs {hello, there}
         result = compute_jaccard("hello, world!", "hello there")
         assert result == 1 / 3
+
+
+class TestContainment:
+    """Tests for containment metric (asymmetric GT-in-prediction)."""
+
+    def test_containment_exact_match(self):
+        """Exact match → 1.0."""
+        assert compute_containment("hello world", "hello world") == 1.0
+
+    def test_containment_empty_ground_truth(self):
+        """Empty ground truth → 0.0."""
+        assert compute_containment("hello world", "") == 0.0
+        assert compute_containment("hello world", "   ") == 0.0
+
+    def test_containment_empty_prediction(self):
+        """Empty prediction → 0.0."""
+        assert compute_containment("", "hello world") == 0.0
+        assert compute_containment("   ", "hello world") == 0.0
+
+    def test_containment_both_empty(self):
+        """Both empty → 0.0."""
+        assert compute_containment("", "") == 0.0
+
+    def test_containment_gt_subset_of_pred(self):
+        """GT fully contained in verbose prediction → 1.0."""
+        pred = "The liability is capped at one million dollars for all claims."
+        gt = "capped at one million dollars"
+        assert compute_containment(pred, gt) == 1.0
+
+    def test_containment_partial_overlap(self):
+        """Partial overlap → fraction of GT tokens found."""
+        # GT tokens: {hello, world}, pred tokens: {hello, there}
+        # Overlap: {hello} → 1/2
+        assert compute_containment("hello there", "hello world") == 0.5
+
+    def test_containment_pred_subset_of_gt(self):
+        """Prediction is subset of GT → less than 1.0."""
+        # pred tokens: {hello}, GT tokens: {hello, world} → 1/2
+        assert compute_containment("hello", "hello world") == 0.5
+
+    def test_containment_case_insensitive(self):
+        """Case insensitive matching."""
+        assert compute_containment("HELLO WORLD", "hello world") == 1.0
+
+    def test_containment_punctuation_normalization(self):
+        """Punctuation stripped before tokenizing."""
+        assert compute_containment('"ESCROW AGREEMENT".', "ESCROW AGREEMENT") == 1.0
 
 
 class TestSpanCoverage:

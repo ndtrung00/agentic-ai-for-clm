@@ -19,6 +19,7 @@ from typing import Any, Callable, Awaitable
 from tqdm.auto import tqdm
 
 from src.evaluation.metrics import (
+    compute_containment,
     compute_grounding_rate,
     compute_jaccard,
     compute_span_coverage,
@@ -80,6 +81,14 @@ def _evaluate_sample(sample: Any, output: ExtractionOutput) -> dict[str, Any]:
         if sample.has_clause and has_prediction
         else 0.0
     )
+    containment = (
+        max(
+            compute_containment(predicted_text, gt)
+            for gt in sample.ground_truth_spans
+        )
+        if sample.has_clause and has_prediction and sample.ground_truth_spans
+        else 0.0
+    )
     grounding = (
         compute_grounding_rate(output.extracted_clauses, sample.contract_text)
         if has_prediction
@@ -90,6 +99,7 @@ def _evaluate_sample(sample: Any, output: ExtractionOutput) -> dict[str, Any]:
         "classification": classification,
         "jaccard": jacc,
         "span_coverage": span_cov,
+        "containment": containment,
         "grounding_rate": grounding,
     }
 

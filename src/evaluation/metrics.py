@@ -160,6 +160,33 @@ def compute_jaccard(prediction: str, ground_truth: str) -> float:
     return len(intersection) / len(union)
 
 
+def compute_containment(prediction: str, ground_truth: str) -> float:
+    """Fraction of ground truth tokens found in prediction (asymmetric).
+
+    Unlike Jaccard (symmetric), containment only measures how well the
+    prediction *captures* the ground truth — extra tokens in the prediction
+    are not penalized.  This is useful when the model extracts full sentences
+    while CUAD ground truth contains only key phrases.
+
+    Args:
+        prediction: Predicted text.
+        ground_truth: Ground truth text.
+
+    Returns:
+        Containment score (0-1).  1.0 means every GT token appears in
+        the prediction.
+    """
+    if not ground_truth or not ground_truth.strip():
+        return 0.0
+    if not prediction or not prediction.strip():
+        return 0.0
+    pred_tokens = _normalize_tokens(prediction)
+    truth_tokens = _normalize_tokens(ground_truth)
+    if not truth_tokens:
+        return 0.0
+    return len(pred_tokens & truth_tokens) / len(truth_tokens)
+
+
 def compute_span_coverage(predicted_text: str, truth_spans: list[str]) -> float:
     """Fraction of ground truth spans fully covered by the prediction.
 

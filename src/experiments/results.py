@@ -59,15 +59,25 @@ def compute_aggregate_metrics(results: list[dict]) -> dict[str, Any]:
         for r in results
         if r["ground_truth"]["has_clause"] and "span_coverage" in r["evaluation"]
     ]
+    containment_scores = [
+        r["evaluation"]["containment"]
+        for r in results
+        if r["ground_truth"]["has_clause"] and "containment" in r["evaluation"]
+    ]
     avg_jaccard = sum(jaccard_scores) / len(jaccard_scores) if jaccard_scores else 0.0
     avg_span_coverage = (
         sum(span_coverage_scores) / len(span_coverage_scores)
         if span_coverage_scores
         else 0.0
     )
+    avg_containment = (
+        sum(containment_scores) / len(containment_scores)
+        if containment_scores
+        else 0.0
+    )
     laziness_rate = laziness_count / total_positive if total_positive > 0 else 0.0
 
-    metrics = {
+    return {
         "tp": tp,
         "fp": fp,
         "fn": fn,
@@ -78,13 +88,9 @@ def compute_aggregate_metrics(results: list[dict]) -> dict[str, Any]:
         "f2": f2,
         "avg_jaccard": avg_jaccard,
         "avg_span_coverage": avg_span_coverage,
+        "avg_containment": avg_containment,
         "laziness_rate": laziness_rate,
     }
-
-    if f1 > 0.8 and avg_jaccard < 0.4:
-        metrics["warning"] = "F1/Jaccard divergence: review TP classification"
-
-    return metrics
 
 
 def compute_per_tier_metrics(results: list[dict]) -> dict[str, dict[str, Any]]:
@@ -113,6 +119,11 @@ def compute_per_tier_metrics(results: list[dict]) -> dict[str, dict[str, Any]]:
             for r in tr
             if r["ground_truth"]["has_clause"] and "span_coverage" in r["evaluation"]
         ]
+        t_containments = [
+            r["evaluation"]["containment"]
+            for r in tr
+            if r["ground_truth"]["has_clause"] and "containment" in r["evaluation"]
+        ]
         per_tier[tier] = {
             "tp": t_tp,
             "fp": t_fp,
@@ -122,6 +133,7 @@ def compute_per_tier_metrics(results: list[dict]) -> dict[str, dict[str, Any]]:
             "f2": compute_f2(t_tp, t_fp, t_fn),
             "avg_jaccard": sum(t_jaccs) / len(t_jaccs) if t_jaccs else 0.0,
             "avg_span_coverage": sum(t_span_covs) / len(t_span_covs) if t_span_covs else 0.0,
+            "avg_containment": sum(t_containments) / len(t_containments) if t_containments else 0.0,
         }
     return per_tier
 
@@ -156,6 +168,7 @@ def print_metrics(
     print(f"  F1:            {metrics['f1']:.3f}")
     print(f"  F2:            {metrics['f2']:.3f}")
     print(f"  Avg Jaccard:   {metrics['avg_jaccard']:.3f}")
+    print(f"  Containment:   {metrics['avg_containment']:.3f}")
     print(f"  Span Coverage: {metrics['avg_span_coverage']:.3f}")
     print(f"  Laziness rate: {metrics['laziness_rate']:.1%} "
           f"({int(metrics['laziness_rate'] * (metrics['tp'] + metrics['fn']))}/"
@@ -168,14 +181,15 @@ def print_metrics(
     print(f"\n{'=' * 70}")
     print(f"  Per-Tier Breakdown")
     print(f"{'=' * 70}")
-    print(f"  {'Tier':<10} {'TP':>4} {'FP':>4} {'FN':>4} {'TN':>4} {'F1':>7} {'F2':>7} {'Jaccard':>8} {'SpanCov':>8}")
-    print(f"  {'-' * 68}")
+    print(f"  {'Tier':<10} {'TP':>4} {'FP':>4} {'FN':>4} {'TN':>4} {'F1':>7} {'F2':>7} {'Jaccard':>8} {'Contain':>8} {'SpanCov':>8}")
+    print(f"  {'-' * 78}")
 
     for tier in ["common", "moderate", "rare"]:
         t = per_tier[tier]
         print(
             f"  {tier:<10} {t['tp']:>4} {t['fp']:>4} {t['fn']:>4} {t['tn']:>4} "
-            f"{t['f1']:>7.3f} {t['f2']:>7.3f} {t['avg_jaccard']:>8.3f} {t['avg_span_coverage']:>8.3f}"
+            f"{t['f1']:>7.3f} {t['f2']:>7.3f} {t['avg_jaccard']:>8.3f} "
+            f"{t['avg_containment']:>8.3f} {t['avg_span_coverage']:>8.3f}"
         )
 
 
@@ -305,12 +319,13 @@ def save_experiment(
     if architecture is not None:
         summary["architecture"] = architecture
 
-    summary_metrics: dict[str, Any] = {
+    summary["metrics"] = {
         "precision": metrics["precision"],
         "recall": metrics["recall"],
         "f1": metrics["f1"],
         "f2": metrics["f2"],
         "avg_jaccard": metrics["avg_jaccard"],
+        "avg_containment": metrics["avg_containment"],
         "avg_span_coverage": metrics["avg_span_coverage"],
         "laziness_rate": metrics["laziness_rate"],
         "tp": metrics["tp"],
@@ -318,9 +333,6 @@ def save_experiment(
         "fn": metrics["fn"],
         "tn": metrics["tn"],
     }
-    if "warning" in metrics:
-        summary_metrics["warning"] = metrics["warning"]
-    summary["metrics"] = summary_metrics
     summary["per_tier"] = per_tier
 
     # Compact per-sample view
@@ -339,6 +351,8 @@ def save_experiment(
             "output_tokens": r["usage"]["output_tokens"],
             "latency_s": r["usage"]["latency_s"],
         }
+        if "containment" in r["evaluation"]:
+            entry["containment"] = r["evaluation"]["containment"]
         if "span_coverage" in r["evaluation"]:
             entry["span_coverage"] = r["evaluation"]["span_coverage"]
         samples_compact.append(entry)

@@ -218,8 +218,8 @@ class ChainOfThoughtBaseline(BaseAgent):
             stripped = line.strip()
             if not stripped:
                 continue
-            # Skip preamble/commentary lines (short, no quotes, looks like intro)
-            if re.match(r"(?i)^(the |these |here |a lawyer |relevant |extracted )", stripped) and len(stripped) < 120 and '"' not in stripped:
+            # Skip preamble/commentary lines (very short, no quotes, looks like intro)
+            if re.match(r"(?i)^(the |these |here |a lawyer |relevant |extracted )", stripped) and len(stripped) < 60 and '"' not in stripped:
                 continue
             clause_lines.append(stripped)
 

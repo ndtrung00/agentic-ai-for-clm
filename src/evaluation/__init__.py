@@ -1,6 +1,7 @@
 """Evaluation metrics and statistical analysis."""
 
 from src.evaluation.metrics import (
+    compute_containment,
     compute_f1,
     compute_f2,
     compute_jaccard,
@@ -19,6 +20,7 @@ from src.evaluation.statistical import (
 )
 
 __all__ = [
+    "compute_containment",
     "compute_f1",
     "compute_f2",
     "compute_jaccard",
