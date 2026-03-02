@@ -8,6 +8,13 @@ from src.experiments.results import (
     save_experiment,
 )
 from src.experiments.runner import ExtractionOutput, run_extraction
+from src.experiments.pipeline import (
+    ExperimentConfig,
+    ExperimentResult,
+    run_experiment_pipeline,
+    run_batch,
+    load_and_select_samples,
+)
 
 __all__ = [
     "compute_aggregate_metrics",
@@ -17,4 +24,9 @@ __all__ = [
     "save_experiment",
     "ExtractionOutput",
     "run_extraction",
+    "ExperimentConfig",
+    "ExperimentResult",
+    "run_experiment_pipeline",
+    "run_batch",
+    "load_and_select_samples",
 ]
