@@ -1,6 +1,7 @@
 {
   "experiment_id": "zero_shot_gpt-4.1-mini_20260302_002539",
   "start_time": "2026-03-02T00:25:39.709734",
+  "run_mode": "official",
   "summary": {
     "experiment_id": "zero_shot_gpt-4.1-mini_20260302_002539",
     "total_calls": 900,
