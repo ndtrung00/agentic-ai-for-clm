@@ -89,6 +89,18 @@ _google_client = None
 _ollama_clients: dict[str, Any] = {}
 
 
+def reset_clients() -> None:
+    """Clear cached SDK clients so the next call creates fresh ones.
+
+    Useful after code changes in a long-running notebook kernel.
+    """
+    global _anthropic_client, _openai_client, _google_client, _ollama_clients
+    _anthropic_client = None
+    _openai_client = None
+    _google_client = None
+    _ollama_clients = {}
+
+
 def _get_anthropic_client():
     """Get or create async Anthropic client."""
     global _anthropic_client
