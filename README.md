@@ -222,6 +222,12 @@ The Next.js dashboard provides interactive visualization of experiment results:
 - **Config View** -- system prompts (baselines), architecture details (M1: specialist prompts, routing table, workflow)
 - **Diagnostics** -- token usage, cost breakdown, latency statistics
 
+<img width="1582" height="984" alt="image" src="https://github.com/user-attachments/assets/3912bd83-5705-4a16-a8be-769df69b2d6c" />
+<img width="1430" height="768" alt="image" src="https://github.com/user-attachments/assets/3be2deb8-2027-40f9-99e4-dd39b82e18ad" />
+<img width="1563" height="980" alt="image" src="https://github.com/user-attachments/assets/8a07ac2a-e648-42cc-a5ce-2cc9acd8ca32" />
+<img width="1563" height="992" alt="image" src="https://github.com/user-attachments/assets/188e5abb-f844-4f87-8866-ccb5d9feb2bb" />
+
+
 ## Development
 
 ```bash
