@@ -1,0 +1,100 @@
+{
+  "run_id": "test_zero_shot_gemini-2.5-flash_20260306_200751",
+  "timestamp": "2026-03-06T20:07:53.147404",
+  "config": {
+    "model_key": "gemini-2.5-flash",
+    "model_id": "gemini-2.5-flash",
+    "provider": "google",
+    "run_mode": "test",
+    "samples_per_tier": 20,
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "max_contract_chars": 100000,
+    "include_negative": true,
+    "baseline_type": "B1",
+    "baseline_label": "zero_shot"
+  },
+  "prompt": {
+    "system_prompt": null,
+    "prompt_template": "You are an assistant with strong legal knowledge, supporting senior lawyers by preparing reference materials. Given a Context and a Question, extract and return only the sentence(s) from the Context that directly address or relate to the Question. Do not rephrase or summarize in any way\u2014respond with exact sentences from the Context relevant to the Question. If a relevant sentence contains unrelated elements such as page numbers or whitespace, include them exactly as they appear. If no part of the Context is relevant to the Question, respond with: \"No related clause.\"\n",
+    "template_name": "zero_shot"
+  },
+  "metrics": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "f2": 0.0,
+    "avg_jaccard": 0.0,
+    "avg_containment": 0.0,
+    "avg_span_coverage": 0.0,
+    "laziness_rate": 0.0,
+    "tp": 0,
+    "fp": 0,
+    "fn": 0,
+    "tn": 0
+  },
+  "per_tier": {
+    "common": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "f1": 0.0,
+      "f2": 0.0,
+      "avg_jaccard": 0.0,
+      "avg_span_coverage": 0.0,
+      "avg_containment": 0.0
+    },
+    "moderate": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "f1": 0.0,
+      "f2": 0.0,
+      "avg_jaccard": 0.0,
+      "avg_span_coverage": 0.0,
+      "avg_containment": 0.0
+    },
+    "rare": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "f1": 0.0,
+      "f2": 0.0,
+      "avg_jaccard": 0.0,
+      "avg_span_coverage": 0.0,
+      "avg_containment": 0.0
+    }
+  },
+  "samples": [],
+  "diagnostics": {
+    "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_200751",
+    "total_calls": 90,
+    "successful_calls": 0,
+    "failed_calls": 90,
+    "success_rate": 0.0,
+    "total_input_tokens": 0,
+    "total_output_tokens": 0,
+    "total_tokens": 0,
+    "total_cost_usd": 0,
+    "avg_latency_ms": 0,
+    "min_latency_ms": 0,
+    "max_latency_ms": 0,
+    "by_model": {
+      "gemini-2.5-flash": {
+        "calls": 90,
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cost_usd": 0.0,
+        "avg_latency_ms": 0
+      }
+    },
+    "by_agent": {
+      "zero_shot": 90
+    },
+    "duration_seconds": 1.775082
+  },
+  "intermediate_file": "../experiments/results/test_zero_shot_gemini-2.5-flash_20260306_200751_intermediate.jsonl"
+}

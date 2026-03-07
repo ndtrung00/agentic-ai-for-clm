@@ -103,7 +103,7 @@ class TestRiskLiabilityAgent:
     def test_handles_category(self, agent):
         """Test category handling."""
         assert agent.handles_category("Uncapped Liability")
-        assert agent.handles_category("Cap on Liability")
+        assert agent.handles_category("Cap On Liability")
         assert not agent.handles_category("Governing Law")
 
     def test_get_prompt(self, agent):
@@ -156,15 +156,46 @@ class TestIPCommercialAgent:
 class TestOrchestrator:
     """Tests for orchestrator agent."""
 
-    def test_route_category_known(self):
-        """Test routing known categories."""
-        orchestrator = Orchestrator(specialists={})
-        assert orchestrator.route_category("Governing Law") == "temporal_renewal"
-        assert orchestrator.route_category("Cap on Liability") == "risk_liability"
-        assert orchestrator.route_category("License Grant") == "ip_commercial"
+    def test_get_expected_specialist_known(self):
+        """Test ground-truth specialist lookup for known categories."""
+        assert Orchestrator.get_expected_specialist("Governing Law") == "temporal_renewal"
+        assert Orchestrator.get_expected_specialist("Cap On Liability") == "risk_liability"
+        assert Orchestrator.get_expected_specialist("License Grant") == "ip_commercial"
 
-    def test_route_category_unknown(self):
-        """Test routing unknown category raises error."""
-        orchestrator = Orchestrator(specialists={})
+    def test_get_expected_specialist_case_insensitive(self):
+        """Test ground-truth lookup handles case mismatches gracefully."""
+        assert Orchestrator.get_expected_specialist("Cap on Liability") == "risk_liability"
+        assert Orchestrator.get_expected_specialist("Change of Control") == "risk_liability"
+        assert Orchestrator.get_expected_specialist("Termination for Convenience") == "temporal_renewal"
+
+    def test_get_expected_specialist_unknown(self):
+        """Test ground-truth lookup for unknown category raises error."""
         with pytest.raises(ValueError, match="Unknown category"):
-            orchestrator.route_category("Nonexistent Category")
+            Orchestrator.get_expected_specialist("Nonexistent Category")
+
+    def test_parse_routing_response_valid(self):
+        """Test parsing clean JSON routing response."""
+        specialist, reasoning = Orchestrator._parse_routing_response(
+            '{"specialist": "risk_liability", "reasoning": "liability question"}'
+        )
+        assert specialist == "risk_liability"
+        assert reasoning == "liability question"
+
+    def test_parse_routing_response_no_reasoning(self):
+        """Test parsing JSON without reasoning field."""
+        specialist, reasoning = Orchestrator._parse_routing_response(
+            '{"specialist": "risk_liability"}'
+        )
+        assert specialist == "risk_liability"
+        assert reasoning == ""
+
+    def test_parse_routing_response_with_text(self):
+        """Test parsing routing response with surrounding text."""
+        raw = 'Based on the question, {"specialist": "ip_commercial"} is best.'
+        specialist, _ = Orchestrator._parse_routing_response(raw)
+        assert specialist == "ip_commercial"
+
+    def test_parse_routing_response_invalid(self):
+        """Test parsing invalid routing response raises error."""
+        with pytest.raises(ValueError, match="Could not parse"):
+            Orchestrator._parse_routing_response("I'm not sure which specialist to use")

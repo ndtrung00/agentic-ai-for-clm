@@ -135,7 +135,7 @@ class ExperimentConfig:
     def effective_concurrency(self) -> int:
         if self.concurrency is not None:
             return self.concurrency
-        return 1 if self.run_type == "M1" else 5
+        return 3 if self.run_type == "M1" else 5
 
 
 @dataclass
@@ -288,11 +288,11 @@ async def run_experiment_pipeline(
 
     elif config.run_type == "M1":
         diagnostics, extract_fn, orchestrator, specialists = (
-            _make_m1_extract_fn(config)
+            _make_m1_extract_fn(config, run_id=run_id)
         )
 
     elif config.run_type == "M6":
-        diagnostics, extract_fn, m6_baseline = _make_m6_extract_fn(config)
+        diagnostics, extract_fn, m6_baseline = _make_m6_extract_fn(config, run_id=run_id)
 
     else:
         raise NotImplementedError(f"{config.run_type} is not implemented")
@@ -357,10 +357,10 @@ async def run_experiment_pipeline(
         architecture = {
             "type": "multi_agent",
             "description": (
-                "LangGraph orchestrator routes to specialist by category, "
-                "then validation"
+                "LangGraph orchestrator uses LLM reasoning to route "
+                "questions to specialists, then validation"
             ),
-            "workflow": ["route", "specialist", "validate", "finalize"],
+            "workflow": ["route (LLM)", "specialist", "validate", "finalize"],
             "specialists": list(specialists.keys()),  # type: ignore[possibly-undefined]
             "validation_enabled": orchestrator.validation_agent is not None,  # type: ignore[possibly-undefined]
             "routing_table": CATEGORY_ROUTING,
@@ -615,7 +615,7 @@ def _make_baseline_extract_fn(
     return extract_fn
 
 
-def _make_m1_extract_fn(config: ExperimentConfig):
+def _make_m1_extract_fn(config: ExperimentConfig, *, run_id: str):
     """Build an async extract_fn for M1 (full multi-agent).
 
     Returns (diagnostics, extract_fn, orchestrator, specialists).
@@ -627,7 +627,8 @@ def _make_m1_extract_fn(config: ExperimentConfig):
         TemporalRenewalAgent,
     )
 
-    diagnostics = ModelDiagnostics()
+    run_mode = "official" if config.is_official else "test"
+    diagnostics = ModelDiagnostics(experiment_id=run_id, run_mode=run_mode)
 
     risk_cfg = AgentConfig(
         name="risk_liability",
@@ -661,12 +662,13 @@ def _make_m1_extract_fn(config: ExperimentConfig):
         specialists=specialists,
         validation_agent=None,
         config=AgentConfig(name="orchestrator", model_key=config.model_key),
+        diagnostics=diagnostics,
     )
 
     async def extract_fn(sample: CUADSample) -> ExtractionOutput:
         n_calls_before = len(diagnostics.calls)
 
-        result = await orchestrator.extract(
+        result, trace = await orchestrator.extract(
             contract_text=sample.contract_text,
             category=sample.category,
             question=sample.question,
@@ -684,6 +686,12 @@ def _make_m1_extract_fn(config: ExperimentConfig):
         agg_output = sum(c.usage.output_tokens for c in recent_calls)
         trace_nodes = [c.agent_name for c in recent_calls]
 
+        # Extract routing info from trace
+        route_entry = next((t for t in trace if t.get("node") == "route"), None)
+        agent_routed_to = route_entry.get("routed_to") if route_entry else None
+        routing_reasoning = route_entry.get("routing_reasoning") if route_entry else None
+        routing_correct = route_entry.get("routing_correct") if route_entry else None
+
         return ExtractionOutput(
             extracted_clauses=result.extracted_clauses,
             raw_response=result.reasoning,
@@ -694,17 +702,21 @@ def _make_m1_extract_fn(config: ExperimentConfig):
             input_tokens=agg_input,
             output_tokens=agg_output,
             trace_nodes=trace_nodes,
+            agent_routed_to=agent_routed_to,
+            routing_reasoning=routing_reasoning,
+            routing_correct=routing_correct,
         )
 
     return diagnostics, extract_fn, orchestrator, specialists
 
 
-def _make_m6_extract_fn(config: ExperimentConfig):
+def _make_m6_extract_fn(config: ExperimentConfig, *, run_id: str):
     """Build an async extract_fn for M6 (combined prompts ablation).
 
     Returns (diagnostics, extract_fn, m6_baseline).
     """
-    diagnostics = ModelDiagnostics()
+    run_mode = "official" if config.is_official else "test"
+    diagnostics = ModelDiagnostics(experiment_id=run_id, run_mode=run_mode)
 
     m6_baseline = CombinedPromptsBaseline(
         config=AgentConfig(name="combined_prompts", model_key=config.model_key),

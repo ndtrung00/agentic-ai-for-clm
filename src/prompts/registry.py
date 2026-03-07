@@ -68,7 +68,15 @@ class PromptTemplate:
         Returns:
             List of indicator strings.
         """
-        return self.category_indicators.get(category, [])
+        indicators = self.category_indicators.get(category)
+        if indicators is not None:
+            return indicators
+        # Case-insensitive fallback
+        cat_lower = category.lower()
+        for key, val in self.category_indicators.items():
+            if key.lower() == cat_lower:
+                return val
+        return []
 
     def format_indicators(self, category: str) -> str:
         """Format indicators as a bullet list.

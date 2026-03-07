@@ -1,28 +1,65 @@
 """Orchestrator agent using LangGraph for workflow management."""
 
+import json
+import re
 from typing import Any
 from dataclasses import dataclass, field
 
-from langfuse import observe
+from src.models.client import get_observe_decorator, invoke_model
+
+observe = get_observe_decorator()
 from langgraph.graph import StateGraph, END, START
 
 from src.agents.base import AgentConfig, ExtractionResult
+from src.models.diagnostics import ModelDiagnostics
 
 
-# Category to specialist mapping
+# ── Routing prompt ────────────────────────────────────────────────────────────
+
+ROUTING_SYSTEM_PROMPT = """\
+You are a routing agent for a contract analysis system. Your job is to read a \
+question about a contract clause and decide which specialist should handle it.
+
+Available specialists:
+
+1. **risk_liability** — Expert in risk allocation, liability, and protective \
+provisions. Covers: liability caps and uncapped liability, liquidated damages, \
+insurance requirements, warranty duration, audit rights, non-disparagement, \
+covenants not to sue, third-party beneficiaries, most favored nation clauses, \
+change of control provisions, post-termination services, and minimum commitments.
+
+2. **temporal_renewal** — Expert in temporal aspects, document identification, \
+and contract lifecycle. Covers: document name and party identification, \
+agreement/effective/expiration dates, renewal terms and notice periods for \
+renewal termination, termination for convenience, anti-assignment provisions, \
+rights of first refusal/offer/negotiation, and governing law.
+
+3. **ip_commercial** — Expert in intellectual property rights and commercial \
+restrictions. Covers: IP ownership and assignment, joint IP ownership, license \
+grants (including transferability, affiliate licenses, unlimited/perpetual \
+licenses), source code escrow, exclusivity, non-compete and non-solicitation \
+clauses, competitive restriction exceptions, revenue/profit sharing, price \
+restrictions, and volume restrictions.
+
+Respond with ONLY a JSON object:
+{"specialist": "<name>", "reasoning": "<brief explanation of why this specialist is the best fit>"}
+Do not include any other text."""
+
+# ── Ground truth routing (for accuracy measurement) ───────────────────────────
+
 CATEGORY_ROUTING: dict[str, str] = {
     # Risk & Liability (13 categories)
     "Uncapped Liability": "risk_liability",
-    "Cap on Liability": "risk_liability",
+    "Cap On Liability": "risk_liability",
     "Liquidated Damages": "risk_liability",
     "Insurance": "risk_liability",
     "Warranty Duration": "risk_liability",
     "Audit Rights": "risk_liability",
     "Non-Disparagement": "risk_liability",
-    "Covenant Not to Sue": "risk_liability",
+    "Covenant Not To Sue": "risk_liability",
     "Third Party Beneficiary": "risk_liability",
     "Most Favored Nation": "risk_liability",
-    "Change of Control": "risk_liability",
+    "Change Of Control": "risk_liability",
     "Post-Termination Services": "risk_liability",
     "Minimum Commitment": "risk_liability",
     # Temporal/Renewal (11 categories)
@@ -32,8 +69,8 @@ CATEGORY_ROUTING: dict[str, str] = {
     "Effective Date": "temporal_renewal",
     "Expiration Date": "temporal_renewal",
     "Renewal Term": "temporal_renewal",
-    "Notice Period to Terminate Renewal": "temporal_renewal",
-    "Termination for Convenience": "temporal_renewal",
+    "Notice Period To Terminate Renewal": "temporal_renewal",
+    "Termination For Convenience": "temporal_renewal",
     "Anti-Assignment": "temporal_renewal",
     "Rofr/Rofo/Rofn": "temporal_renewal",
     "Governing Law": "temporal_renewal",
@@ -94,7 +131,7 @@ class Orchestrator:
     """LangGraph-based orchestrator for multi-agent contract extraction.
 
     The workflow is:
-    1. START -> route_to_specialist (determine which specialist handles category)
+    1. START -> route_to_specialist (LLM reasons about which specialist)
     2. route_to_specialist -> specialist_node (call appropriate specialist)
     3. specialist_node -> validation_node (validate extraction)
     4. validation_node -> END (return final result)
@@ -105,6 +142,7 @@ class Orchestrator:
         specialists: dict[str, Any],  # BaseAgent instances
         validation_agent: Any | None = None,  # ValidationAgent instance
         config: AgentConfig | None = None,
+        diagnostics: ModelDiagnostics | None = None,
     ) -> None:
         """Initialize the orchestrator.
 
@@ -112,10 +150,12 @@ class Orchestrator:
             specialists: Dict mapping specialist names to agent instances.
             validation_agent: Optional validation agent for grounding checks.
             config: Optional orchestrator configuration.
+            diagnostics: Optional diagnostics tracker for routing LLM calls.
         """
         self.specialists = specialists
         self.validation_agent = validation_agent
         self.config = config or AgentConfig(name="orchestrator")
+        self.diagnostics = diagnostics
         self._graph = self._build_graph()
         self._compiled_graph = self._graph.compile()
 
@@ -164,8 +204,11 @@ class Orchestrator:
 
         return graph
 
-    def _route_node(self, state: GraphState) -> dict[str, Any]:
-        """Route to the appropriate specialist based on category.
+    async def _route_node(self, state: GraphState) -> dict[str, Any]:
+        """Route to the appropriate specialist via LLM reasoning.
+
+        The orchestrator LLM reads the question and decides which specialist
+        domain is most appropriate, without seeing the category label directly.
 
         Args:
             state: Current graph state.
@@ -174,25 +217,93 @@ class Orchestrator:
             Updated state with specialist_name set.
         """
         category = state.category
-        specialist = CATEGORY_ROUTING.get(category)
+        question = state.question
 
-        trace_entry = {
-            "node": "route",
-            "category": category,
-            "routed_to": specialist,
-        }
+        # Ground truth for routing accuracy measurement
+        expected_specialist = CATEGORY_ROUTING.get(category)
 
-        if specialist is None:
+        # Ask the LLM to route based on the question
+        messages = [{"role": "user", "content": f"Question: {question}"}]
+
+        try:
+            raw_response, _usage = await invoke_model(
+                model_key=self.config.model_key,
+                messages=messages,
+                system=ROUTING_SYSTEM_PROMPT,
+                temperature=0.0,
+                max_tokens=150,
+                json_mode=True,
+                diagnostics=self.diagnostics,
+                agent_name="orchestrator_router",
+                category=category,
+            )
+
+            specialist, routing_reasoning = self._parse_routing_response(raw_response)
+
+            trace_entry = {
+                "node": "route",
+                "category": category,
+                "question": question,
+                "routed_to": specialist,
+                "routing_reasoning": routing_reasoning,
+                "expected_specialist": expected_specialist,
+                "routing_correct": specialist == expected_specialist,
+                "raw_routing_response": raw_response,
+            }
+
+            if specialist not in self.specialists:
+                return {
+                    "specialist_name": "",
+                    "error": (
+                        f"LLM routed to unknown specialist: {specialist!r}. "
+                        f"Available: {list(self.specialists.keys())}"
+                    ),
+                    "trace": state.trace + [trace_entry],
+                }
+
             return {
-                "specialist_name": "",
-                "error": f"Unknown category: {category}",
+                "specialist_name": specialist,
                 "trace": state.trace + [trace_entry],
             }
 
-        return {
-            "specialist_name": specialist,
-            "trace": state.trace + [trace_entry],
-        }
+        except Exception as e:
+            trace_entry = {
+                "node": "route",
+                "category": category,
+                "error": str(e),
+                "expected_specialist": expected_specialist,
+            }
+            return {
+                "specialist_name": "",
+                "error": f"Routing failed: {e}",
+                "trace": state.trace + [trace_entry],
+            }
+
+    @staticmethod
+    def _parse_routing_response(raw: str) -> tuple[str, str]:
+        """Extract specialist name and reasoning from LLM routing response.
+
+        Handles both clean JSON and JSON embedded in markdown/text.
+
+        Returns:
+            Tuple of (specialist_name, reasoning).
+        """
+        # Try direct JSON parse first
+        try:
+            data = json.loads(raw.strip())
+            return data["specialist"], data.get("reasoning", "")
+        except (json.JSONDecodeError, KeyError):
+            pass
+
+        # Fallback: extract JSON from surrounding text
+        match = re.search(r'\{[^}]*"specialist"\s*:\s*"([^"]+)"[^}]*\}', raw)
+        if match:
+            # Try to also extract reasoning from the match
+            reasoning_match = re.search(r'"reasoning"\s*:\s*"([^"]*)"', raw)
+            reasoning = reasoning_match.group(1) if reasoning_match else ""
+            return match.group(1), reasoning
+
+        raise ValueError(f"Could not parse routing response: {raw!r}")
 
     def _get_specialist_route(self, state: GraphState) -> str:
         """Determine routing based on state.
@@ -338,19 +449,28 @@ class Orchestrator:
             "trace": state.trace + [trace_entry],
         }
 
-    def route_category(self, category: str) -> str:
-        """Determine which specialist handles a category.
+    @staticmethod
+    def get_expected_specialist(category: str) -> str:
+        """Look up the ground-truth specialist for a category.
+
+        Used for routing accuracy measurement, not for actual routing decisions.
 
         Args:
-            category: The CUAD category to route.
+            category: The CUAD category.
 
         Returns:
-            The specialist name that handles this category.
+            The expected specialist name.
 
         Raises:
             ValueError: If category is not recognized.
         """
         specialist = CATEGORY_ROUTING.get(category)
+        if specialist is None:
+            cat_lower = category.lower()
+            for key, val in CATEGORY_ROUTING.items():
+                if key.lower() == cat_lower:
+                    specialist = val
+                    break
         if specialist is None:
             raise ValueError(f"Unknown category: {category}")
         return specialist
@@ -361,7 +481,7 @@ class Orchestrator:
         contract_text: str,
         category: str,
         question: str,
-    ) -> ExtractionResult:
+    ) -> tuple[ExtractionResult, list[dict[str, Any]]]:
         """Run the full extraction workflow.
 
         Args:
@@ -370,7 +490,8 @@ class Orchestrator:
             question: The question prompt for this category.
 
         Returns:
-            Final extraction result after specialist and validation.
+            Tuple of (extraction_result, trace). Trace contains routing
+            reasoning, accuracy, and node execution history.
         """
         # Initialize state
         initial_state = GraphState(
@@ -382,15 +503,16 @@ class Orchestrator:
         # Run the graph
         final_state = await self._compiled_graph.ainvoke(initial_state)
 
+        trace = final_state.get("trace", [])
+
         # Extract result
         if final_state.get("error"):
-            # Return empty result on error
             return ExtractionResult(
                 extracted_clauses=[],
                 reasoning=f"Error: {final_state['error']}",
                 confidence=0.0,
                 category=category,
-            )
+            ), trace
 
         result = final_state.get("final_result")
         if result is None:
@@ -399,9 +521,9 @@ class Orchestrator:
                 reasoning="No result produced",
                 confidence=0.0,
                 category=category,
-            )
+            ), trace
 
-        return result
+        return result, trace
 
     def get_trace(self, state: GraphState) -> list[dict[str, Any]]:
         """Get the execution trace from a completed state.

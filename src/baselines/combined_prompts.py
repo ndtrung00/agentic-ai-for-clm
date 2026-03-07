@@ -12,7 +12,9 @@ If M1 > M6, architecture provides genuine benefit beyond prompting.
 import yaml
 from pathlib import Path
 
-from langfuse import observe
+from src.models.client import get_observe_decorator
+
+observe = get_observe_decorator()
 
 from src.agents.base import AgentConfig, BaseAgent, ExtractionResult
 from src.baselines.chain_of_thought import ChainOfThoughtBaseline
@@ -43,7 +45,14 @@ for _yaml_file in _SPECIALIST_DIR.glob("*.yaml"):
 
 def _get_indicators(category: str) -> str:
     """Format indicators as a bullet list for a category."""
-    indicators = _CATEGORY_INDICATORS.get(category, [])
+    indicators = _CATEGORY_INDICATORS.get(category)
+    if indicators is None:
+        # Case-insensitive fallback
+        cat_lower = category.lower()
+        for key, val in _CATEGORY_INDICATORS.items():
+            if key.lower() == cat_lower:
+                indicators = val
+                break
     if not indicators:
         return "No specific indicators defined."
     return "\n".join(f"- {ind}" for ind in indicators)
@@ -51,7 +60,13 @@ def _get_indicators(category: str) -> str:
 
 def _get_domain(category: str) -> str:
     """Get the domain name for a category."""
-    return CATEGORY_ROUTING.get(category, "unknown")
+    domain = CATEGORY_ROUTING.get(category)
+    if domain is None:
+        cat_lower = category.lower()
+        for key, val in CATEGORY_ROUTING.items():
+            if key.lower() == cat_lower:
+                return val
+    return domain or "unknown"
 
 
 # ---------------------------------------------------------------------------

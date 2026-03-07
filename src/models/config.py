@@ -14,6 +14,7 @@ class ModelProvider(str, Enum):
     ANTHROPIC = "anthropic"
     OPENAI = "openai"
     GOOGLE = "google"
+    VERTEX_AI = "vertex_ai"
     OLLAMA = "ollama"
 
 
@@ -118,11 +119,11 @@ MODEL_REGISTRY: dict[str, ModelConfig] = {
         output_cost_per_1k=0.0016,
     ),
 
-    # Google
+    # Google (via Vertex AI — uses OAuth2/ADC, set GOOGLE_CLOUD_PROJECT)
     "gemini-2.5-pro": ModelConfig(
         name="Gemini 2.5 Pro",
-        model_id="gemini-2.5-pro-preview-05-06",
-        provider=ModelProvider.GOOGLE,
+        model_id="google/gemini-2.5-pro-preview-05-06",
+        provider=ModelProvider.VERTEX_AI,
         max_tokens=8192,
         context_window=1048576,
         input_cost_per_1k=0.00125,
@@ -130,8 +131,8 @@ MODEL_REGISTRY: dict[str, ModelConfig] = {
     ),
     "gemini-2.5-flash": ModelConfig(
         name="Gemini 2.5 Flash",
-        model_id="gemini-2.5-flash",
-        provider=ModelProvider.GOOGLE,
+        model_id="google/gemini-2.5-flash",
+        provider=ModelProvider.VERTEX_AI,
         max_tokens=8192,
         context_window=1048576,
         input_cost_per_1k=0.0003,
@@ -139,8 +140,8 @@ MODEL_REGISTRY: dict[str, ModelConfig] = {
     ),
     "gemini-3-flash": ModelConfig(
         name="Gemini 3 Flash Preview",
-        model_id="gemini-3-flash-preview",
-        provider=ModelProvider.GOOGLE,
+        model_id="google/gemini-3-flash-preview",
+        provider=ModelProvider.VERTEX_AI,
         max_tokens=64000,
         context_window=1048576,
         input_cost_per_1k=0.0005,
@@ -148,8 +149,8 @@ MODEL_REGISTRY: dict[str, ModelConfig] = {
     ),
     "gemini-3.1-pro": ModelConfig(
         name="Gemini 3.1 Pro Preview",
-        model_id="gemini-3.1-pro-preview",
-        provider=ModelProvider.GOOGLE,
+        model_id="google/gemini-3.1-pro-preview",
+        provider=ModelProvider.VERTEX_AI,
         max_tokens=64000,
         context_window=1048576,
         input_cost_per_1k=0.002,

@@ -15,6 +15,13 @@ export function MetricsGrid({ metrics }: MetricsGridProps) {
       <MetricCard label="Recall" value={fixed(metrics.recall)} />
       <MetricCard label="Avg Jaccard" value={fixed(metrics.avg_jaccard)} />
       <MetricCard label="Laziness Rate" value={pct(metrics.laziness_rate)} sublabel={`${metrics.fn} FN / ${metrics.tp + metrics.fn} positive`} />
+      {metrics.routing_accuracy != null && (
+        <MetricCard
+          label="Routing Accuracy"
+          value={pct(metrics.routing_accuracy)}
+          sublabel={`${metrics.routing_correct ?? 0}/${metrics.routing_total ?? 0} correct`}
+        />
+      )}
     </div>
   );
 }

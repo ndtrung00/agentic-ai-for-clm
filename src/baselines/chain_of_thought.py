@@ -3,7 +3,9 @@
 import logging
 import re
 
-from langfuse import observe
+from src.models.client import get_observe_decorator
+
+observe = get_observe_decorator()
 
 from src.agents.base import AgentConfig, BaseAgent, ExtractionResult
 from src.models import ModelDiagnostics

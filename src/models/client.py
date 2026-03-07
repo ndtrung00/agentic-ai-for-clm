@@ -70,6 +70,30 @@ class _NoOpGeneration:
         pass
 
 
+def _noop_observe(*args, **kwargs):
+    """No-op replacement for ``langfuse.observe``.
+
+    Handles both ``@observe`` and ``@observe(name="...")`` usage.
+    """
+    if args and callable(args[0]):
+        # Used as @observe (without parentheses)
+        return args[0]
+    # Used as @observe(name="...") — return identity decorator
+    return lambda fn: fn
+
+
+def get_observe_decorator():
+    """Return langfuse.observe if Langfuse is configured, else a no-op decorator.
+
+    Use this instead of ``from langfuse import observe`` to avoid the
+    'client initialized without public_key' warning when keys aren't set.
+    """
+    if _is_langfuse_enabled():
+        from langfuse import observe
+        return observe
+    return _noop_observe
+
+
 @contextmanager
 def _langfuse_generation(**kwargs: Any):
     """Yield a Langfuse generation span, or a no-op if Langfuse is disabled."""
@@ -86,6 +110,8 @@ def _langfuse_generation(**kwargs: Any):
 _anthropic_client = None
 _openai_client = None
 _google_client = None
+_vertex_client = None
+_vertex_token_expiry: float = 0.0
 _ollama_clients: dict[str, Any] = {}
 
 
@@ -94,10 +120,12 @@ def reset_clients() -> None:
 
     Useful after code changes in a long-running notebook kernel.
     """
-    global _anthropic_client, _openai_client, _google_client, _ollama_clients
+    global _anthropic_client, _openai_client, _google_client, _vertex_client, _vertex_token_expiry, _ollama_clients
     _anthropic_client = None
     _openai_client = None
     _google_client = None
+    _vertex_client = None
+    _vertex_token_expiry = 0.0
     _ollama_clients = {}
 
 
@@ -132,6 +160,57 @@ def _get_google_client():
     return _google_client
 
 
+def _get_vertex_client():
+    """Get or create async Vertex AI client (OpenAI-compatible endpoint).
+
+    Uses Application Default Credentials (ADC) for OAuth2 authentication.
+    Requires:
+    - ``google-auth`` package
+    - ``VERTEX_AI_PROJECT`` env var (GCP project ID)
+    - ``VERTEX_AI_LOCATION`` env var (default: ``us-central1``)
+    - One of: ``gcloud auth application-default login``, service account JSON
+      via ``GOOGLE_APPLICATION_CREDENTIALS``, or Workload Identity.
+    """
+    global _vertex_client, _vertex_token_expiry
+
+    # Refresh client if token is about to expire (within 60s)
+    if _vertex_client is not None and time.time() < _vertex_token_expiry - 60:
+        return _vertex_client
+
+    import google.auth
+    import google.auth.transport.requests
+
+    project = os.environ.get("GOOGLE_CLOUD_PROJECT") or os.environ.get("VERTEX_AI_PROJECT", "")
+    location = os.environ.get("GOOGLE_CLOUD_REGION") or os.environ.get("VERTEX_AI_LOCATION", "us-central1")
+
+    if not project:
+        raise ValueError(
+            "GOOGLE_CLOUD_PROJECT (or VERTEX_AI_PROJECT) env var is required "
+            "for Vertex AI. Set it to your GCP project ID."
+        )
+
+    # Get OAuth2 access token via ADC
+    credentials, _ = google.auth.default(
+        scopes=["https://www.googleapis.com/auth/cloud-platform"]
+    )
+    credentials.refresh(google.auth.transport.requests.Request())
+    access_token = credentials.token
+    _vertex_token_expiry = credentials.expiry.timestamp() if credentials.expiry else time.time() + 3600
+
+    from openai import AsyncOpenAI
+
+    base_url = (
+        f"https://{location}-aiplatform.googleapis.com/v1beta1/"
+        f"projects/{project}/locations/{location}/endpoints/openapi"
+    )
+
+    _vertex_client = AsyncOpenAI(
+        base_url=base_url,
+        api_key=access_token,
+    )
+    return _vertex_client
+
+
 def _get_ollama_client(base_url: str = "http://localhost:11434/v1"):
     """Get or create async Ollama client (OpenAI-compatible).
 
@@ -161,6 +240,8 @@ def get_client(provider: ModelProvider, base_url: str | None = None):
         return _get_openai_client()
     if provider == ModelProvider.GOOGLE:
         return _get_google_client()
+    if provider == ModelProvider.VERTEX_AI:
+        return _get_vertex_client()
     if provider == ModelProvider.OLLAMA:
         return _get_ollama_client(base_url or "http://localhost:11434/v1")
     raise ValueError(f"Unknown provider: {provider}")
@@ -215,7 +296,7 @@ async def invoke_model(
                 max_tokens=tokens,
                 max_retries=max_retries,
             )
-        elif config.provider in (ModelProvider.OPENAI, ModelProvider.GOOGLE, ModelProvider.OLLAMA):
+        elif config.provider in (ModelProvider.OPENAI, ModelProvider.GOOGLE, ModelProvider.VERTEX_AI, ModelProvider.OLLAMA):
             response_text, usage = await _invoke_openai_compatible(
                 config=config,
                 messages=messages,
@@ -386,6 +467,8 @@ async def _invoke_openai_compatible(
         client = _get_ollama_client(config.base_url or "http://localhost:11434/v1")
     elif config.provider == ModelProvider.GOOGLE:
         client = _get_google_client()
+    elif config.provider == ModelProvider.VERTEX_AI:
+        client = _get_vertex_client()
     else:
         client = _get_openai_client()
 

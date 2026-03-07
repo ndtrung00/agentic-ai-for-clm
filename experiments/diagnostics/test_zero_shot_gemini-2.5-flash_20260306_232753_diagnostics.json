@@ -1,0 +1,1744 @@
+{
+  "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232753",
+  "run_mode": "test",
+  "start_time": "2026-03-06T23:27:53.264346",
+  "summary": {
+    "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232753",
+    "total_calls": 90,
+    "successful_calls": 0,
+    "failed_calls": 90,
+    "success_rate": 0.0,
+    "total_input_tokens": 0,
+    "total_output_tokens": 0,
+    "total_tokens": 0,
+    "total_cost_usd": 0,
+    "avg_latency_ms": 0,
+    "min_latency_ms": 0,
+    "max_latency_ms": 0,
+    "by_model": {
+      "gemini-2.5-flash": {
+        "calls": 90,
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cost_usd": 0.0,
+        "avg_latency_ms": 0
+      }
+    },
+    "by_agent": {
+      "zero_shot": 90
+    },
+    "duration_seconds": 1.074109
+  },
+  "calls": [
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:27:53.435090",
+      "latency_ms": 163.59491599723697,
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost_usd": 0,
+      "success": false,
+      "error": "Error code: 400 - [{'error': {'code': 400, 'message': 'Missing or invalid Authorization header.', 'status': 'INVALID_ARGUMENT'}}]",
+      "category": "Expiration Date",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232753"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:27:53.464875",
+      "latency_ms": 188.43062499945518,
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost_usd": 0,
+      "success": false,
+      "error": "Error code: 400 - [{'error': {'code': 400, 'message': 'Missing or invalid Authorization header.', 'status': 'INVALID_ARGUMENT'}}]",
+      "category": "Effective Date",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232753"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:27:53.474127",
+      "latency_ms": 199.75354199414141,
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost_usd": 0,
+      "success": false,
+      "error": "Error code: 400 - [{'error': {'code': 400, 'message': 'Missing or invalid Authorization header.', 'status': 'INVALID_ARGUMENT'}}]",
+      "category": "Parties",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232753"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:27:53.477591",
+      "latency_ms": 203.77875000122003,
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost_usd": 0,
+      "success": false,
+      "error": "Error code: 400 - [{'error': {'code': 400, 'message': 'Missing or invalid Authorization header.', 'status': 'INVALID_ARGUMENT'}}]",
+      "category": "Parties",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232753"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:27:53.483028",
+      "latency_ms": 214.05358299671207,
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost_usd": 0,
+      "success": false,
+      "error": "Error code: 400 - [{'error': {'code': 400, 'message': 'Missing or invalid Authorization header.', 'status': 'INVALID_ARGUMENT'}}]",
+      "category": "Agreement Date",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232753"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:27:53.483745",
+      "latency_ms": 206.77879199502058,
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost_usd": 0,
+      "success": false,
+      "error": "Error code: 400 - [{'error': {'code': 400, 'message': 'Missing or invalid Authorization header.', 'status': 'INVALID_ARGUMENT'}}]",
+      "category": "Document Name",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232753"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:27:53.488335",
+      "latency_ms": 216.06820900342427,
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost_usd": 0,
+      "success": false,
+      "error": "Error code: 400 - [{'error': {'code': 400, 'message': 'Missing or invalid Authorization header.', 'status': 'INVALID_ARGUMENT'}}]",
+      "category": "Parties",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232753"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:27:53.489106",
+      "latency_ms": 214.1534170077648,
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost_usd": 0,
+      "success": false,
+      "error": "Error code: 400 - [{'error': {'code': 400, 'message': 'Missing or invalid Authorization header.', 'status': 'INVALID_ARGUMENT'}}]",
+      "category": "Governing Law",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232753"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:27:53.492793",
+      "latency_ms": 217.04087499529123,
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost_usd": 0,
+      "success": false,
+      "error": "Error code: 400 - [{'error': {'code': 400, 'message': 'Missing or invalid Authorization header.', 'status': 'INVALID_ARGUMENT'}}]",
+      "category": "Agreement Date",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232753"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:27:53.500671",
+      "latency_ms": 227.52462500648107,
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost_usd": 0,
+      "success": false,
+      "error": "Error code: 400 - [{'error': {'code': 400, 'message': 'Missing or invalid Authorization header.', 'status': 'INVALID_ARGUMENT'}}]",
+      "category": "Document Name",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232753"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:27:53.541792",
+      "latency_ms": 55.692333000479266,
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost_usd": 0,
+      "success": false,
+      "error": "Error code: 400 - [{'error': {'code': 400, 'message': 'Missing or invalid Authorization header.', 'status': 'INVALID_ARGUMENT'}}]",
+      "category": "Expiration Date",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232753"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:27:53.554491",
+      "latency_ms": 118.48945899691898,
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost_usd": 0,
+      "success": false,
+      "error": "Error code: 400 - [{'error': {'code': 400, 'message': 'Missing or invalid Authorization header.', 'status': 'INVALID_ARGUMENT'}}]",
+      "category": "Governing Law",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232753"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:27:53.566560",
+      "latency_ms": 88.37125000718515,
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost_usd": 0,
+      "success": false,
+      "error": "Error code: 400 - [{'error': {'code': 400, 'message': 'Missing or invalid Authorization header.', 'status': 'INVALID_ARGUMENT'}}]",
+      "category": "Effective Date",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232753"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:27:53.569249",
+      "latency_ms": 94.05716600304004,
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost_usd": 0,
+      "success": false,
+      "error": "Error code: 400 - [{'error': {'code': 400, 'message': 'Missing or invalid Authorization header.', 'status': 'INVALID_ARGUMENT'}}]",
+      "category": "Document Name",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232753"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:27:53.584803",
+      "latency_ms": 42.134499992243946,
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost_usd": 0,
+      "success": false,
+      "error": "Error code: 400 - [{'error': {'code': 400, 'message': 'Missing or invalid Authorization header.', 'status': 'INVALID_ARGUMENT'}}]",
+      "category": "Effective Date",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232753"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:27:53.594569",
+      "latency_ms": 93.50916600669734,
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost_usd": 0,
+      "success": false,
+      "error": "Error code: 400 - [{'error': {'code': 400, 'message': 'Missing or invalid Authorization header.', 'status': 'INVALID_ARGUMENT'}}]",
+      "category": "Agreement Date",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232753"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:27:53.598104",
+      "latency_ms": 132.61070899898186,
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost_usd": 0,
+      "success": false,
+      "error": "Error code: 400 - [{'error': {'code': 400, 'message': 'Missing or invalid Authorization header.', 'status': 'INVALID_ARGUMENT'}}]",
+      "category": "Agreement Date",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232753"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:27:53.602802",
+      "latency_ms": 118.5625830112258,
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost_usd": 0,
+      "success": false,
+      "error": "Error code: 400 - [{'error': {'code': 400, 'message': 'Missing or invalid Authorization header.', 'status': 'INVALID_ARGUMENT'}}]",
+      "category": "Agreement Date",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232753"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:27:53.606629",
+      "latency_ms": 36.70095800771378,
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost_usd": 0,
+      "success": false,
+      "error": "Error code: 400 - [{'error': {'code': 400, 'message': 'Missing or invalid Authorization header.', 'status': 'INVALID_ARGUMENT'}}]",
+      "category": "Effective Date",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232753"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:27:53.613001",
+      "latency_ms": 123.06179199367762,
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost_usd": 0,
+      "success": false,
+      "error": "Error code: 400 - [{'error': {'code': 400, 'message': 'Missing or invalid Authorization header.', 'status': 'INVALID_ARGUMENT'}}]",
+      "category": "Governing Law",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232753"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:27:53.625195",
+      "latency_ms": 39.4887909933459,
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost_usd": 0,
+      "success": false,
+      "error": "Error code: 400 - [{'error': {'code': 400, 'message': 'Missing or invalid Authorization header.', 'status': 'INVALID_ARGUMENT'}}]",
+      "category": "Governing Law",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232753"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:27:53.634658",
+      "latency_ms": 36.13733299425803,
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost_usd": 0,
+      "success": false,
+      "error": "Error code: 400 - [{'error': {'code': 400, 'message': 'Missing or invalid Authorization header.', 'status': 'INVALID_ARGUMENT'}}]",
+      "category": "Expiration Date",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232753"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:27:53.650327",
+      "latency_ms": 159.54866600804962,
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost_usd": 0,
+      "success": false,
+      "error": "Error code: 400 - [{'error': {'code': 400, 'message': 'Missing or invalid Authorization header.', 'status': 'INVALID_ARGUMENT'}}]",
+      "category": "Document Name",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232753"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:27:53.653970",
+      "latency_ms": 46.99600000458304,
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost_usd": 0,
+      "success": false,
+      "error": "Error code: 400 - [{'error': {'code': 400, 'message': 'Missing or invalid Authorization header.', 'status': 'INVALID_ARGUMENT'}}]",
+      "category": "Expiration Date",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232753"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:27:53.656032",
+      "latency_ms": 42.60029099532403,
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost_usd": 0,
+      "success": false,
+      "error": "Error code: 400 - [{'error': {'code': 400, 'message': 'Missing or invalid Authorization header.', 'status': 'INVALID_ARGUMENT'}}]",
+      "category": "Governing Law",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232753"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:27:53.676180",
+      "latency_ms": 182.9440000001341,
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost_usd": 0,
+      "success": false,
+      "error": "Error code: 400 - [{'error': {'code': 400, 'message': 'Missing or invalid Authorization header.', 'status': 'INVALID_ARGUMENT'}}]",
+      "category": "Parties",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232753"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:27:53.773949",
+      "latency_ms": 218.86516700033098,
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost_usd": 0,
+      "success": false,
+      "error": "Error code: 400 - [{'error': {'code': 400, 'message': 'Missing or invalid Authorization header.', 'status': 'INVALID_ARGUMENT'}}]",
+      "category": "Expiration Date",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232753"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:27:53.775690",
+      "latency_ms": 149.99333300511353,
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost_usd": 0,
+      "success": false,
+      "error": "Error code: 400 - [{'error': {'code': 400, 'message': 'Missing or invalid Authorization header.', 'status': 'INVALID_ARGUMENT'}}]",
+      "category": "License Grant",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232753"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:27:53.778482",
+      "latency_ms": 175.26020800869446,
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost_usd": 0,
+      "success": false,
+      "error": "Error code: 400 - [{'error': {'code': 400, 'message': 'Missing or invalid Authorization header.', 'status': 'INVALID_ARGUMENT'}}]",
+      "category": "Agreement Date",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232753"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:27:53.779108",
+      "latency_ms": 184.04125000233762,
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost_usd": 0,
+      "success": false,
+      "error": "Error code: 400 - [{'error': {'code': 400, 'message': 'Missing or invalid Authorization header.', 'status': 'INVALID_ARGUMENT'}}]",
+      "category": "Effective Date",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232753"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:27:53.779962",
+      "latency_ms": 212.84004100016318,
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost_usd": 0,
+      "success": false,
+      "error": "Error code: 400 - [{'error': {'code': 400, 'message': 'Missing or invalid Authorization header.', 'status': 'INVALID_ARGUMENT'}}]",
+      "category": "Expiration Date",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232753"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:27:53.812196",
+      "latency_ms": 160.9110419958597,
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost_usd": 0,
+      "success": false,
+      "error": "Error code: 400 - [{'error': {'code': 400, 'message': 'Missing or invalid Authorization header.', 'status': 'INVALID_ARGUMENT'}}]",
+      "category": "Anti-Assignment",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232753"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:27:53.814284",
+      "latency_ms": 137.6653330080444,
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost_usd": 0,
+      "success": false,
+      "error": "Error code: 400 - [{'error': {'code': 400, 'message': 'Missing or invalid Authorization header.', 'status': 'INVALID_ARGUMENT'}}]",
+      "category": "Non-Transferable License",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232753"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:27:53.824081",
+      "latency_ms": 188.90054200892337,
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost_usd": 0,
+      "success": false,
+      "error": "Error code: 400 - [{'error': {'code': 400, 'message': 'Missing or invalid Authorization header.', 'status': 'INVALID_ARGUMENT'}}]",
+      "category": "Audit Rights",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232753"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:27:53.829650",
+      "latency_ms": 49.15495800378267,
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost_usd": 0,
+      "success": false,
+      "error": "Error code: 400 - [{'error': {'code': 400, 'message': 'Missing or invalid Authorization header.', 'status': 'INVALID_ARGUMENT'}}]",
+      "category": "Termination For Convenience",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232753"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:27:53.833779",
+      "latency_ms": 57.67549999291077,
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost_usd": 0,
+      "success": false,
+      "error": "Error code: 400 - [{'error': {'code': 400, 'message': 'Missing or invalid Authorization header.', 'status': 'INVALID_ARGUMENT'}}]",
+      "category": "Cap On Liability",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232753"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:27:53.839179",
+      "latency_ms": 184.21150000358466,
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost_usd": 0,
+      "success": false,
+      "error": "Error code: 400 - [{'error': {'code': 400, 'message': 'Missing or invalid Authorization header.', 'status': 'INVALID_ARGUMENT'}}]",
+      "category": "Renewal Term",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232753"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:27:53.843561",
+      "latency_ms": 187.03758400806691,
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost_usd": 0,
+      "success": false,
+      "error": "Error code: 400 - [{'error': {'code': 400, 'message': 'Missing or invalid Authorization header.', 'status': 'INVALID_ARGUMENT'}}]",
+      "category": "Exclusivity",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232753"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:27:53.845050",
+      "latency_ms": 70.62070799292997,
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost_usd": 0,
+      "success": false,
+      "error": "Error code: 400 - [{'error': {'code': 400, 'message': 'Missing or invalid Authorization header.', 'status': 'INVALID_ARGUMENT'}}]",
+      "category": "Exclusivity",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232753"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:27:53.856244",
+      "latency_ms": 43.179750005947426,
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost_usd": 0,
+      "success": false,
+      "error": "Error code: 400 - [{'error': {'code': 400, 'message': 'Missing or invalid Authorization header.', 'status': 'INVALID_ARGUMENT'}}]",
+      "category": "Cap On Liability",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232753"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:27:53.866963",
+      "latency_ms": 85.17558300809469,
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost_usd": 0,
+      "success": false,
+      "error": "Error code: 400 - [{'error': {'code': 400, 'message': 'Missing or invalid Authorization header.', 'status': 'INVALID_ARGUMENT'}}]",
+      "category": "Audit Rights",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232753"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:27:53.881583",
+      "latency_ms": 47.49908301164396,
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost_usd": 0,
+      "success": false,
+      "error": "Error code: 400 - [{'error': {'code': 400, 'message': 'Missing or invalid Authorization header.', 'status': 'INVALID_ARGUMENT'}}]",
+      "category": "Ip Ownership Assignment",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232753"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:27:53.885390",
+      "latency_ms": 70.65358299587388,
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost_usd": 0,
+      "success": false,
+      "error": "Error code: 400 - [{'error': {'code': 400, 'message': 'Missing or invalid Authorization header.', 'status': 'INVALID_ARGUMENT'}}]",
+      "category": "Cap On Liability",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232753"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:27:53.889367",
+      "latency_ms": 45.281166007043794,
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost_usd": 0,
+      "success": false,
+      "error": "Error code: 400 - [{'error': {'code': 400, 'message': 'Missing or invalid Authorization header.', 'status': 'INVALID_ARGUMENT'}}]",
+      "category": "Anti-Assignment",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232753"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:27:53.900420",
+      "latency_ms": 75.91249998949934,
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost_usd": 0,
+      "success": false,
+      "error": "Error code: 400 - [{'error': {'code': 400, 'message': 'Missing or invalid Authorization header.', 'status': 'INVALID_ARGUMENT'}}]",
+      "category": "Non-Transferable License",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232753"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:27:53.907763",
+      "latency_ms": 77.70570799766574,
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost_usd": 0,
+      "success": false,
+      "error": "Error code: 400 - [{'error': {'code': 400, 'message': 'Missing or invalid Authorization header.', 'status': 'INVALID_ARGUMENT'}}]",
+      "category": "Audit Rights",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232753"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:27:53.909506",
+      "latency_ms": 42.199792005703785,
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost_usd": 0,
+      "success": false,
+      "error": "Error code: 400 - [{'error': {'code': 400, 'message': 'Missing or invalid Authorization header.', 'status': 'INVALID_ARGUMENT'}}]",
+      "category": "Audit Rights",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232753"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:27:53.923604",
+      "latency_ms": 78.0810420110356,
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost_usd": 0,
+      "success": false,
+      "error": "Error code: 400 - [{'error': {'code': 400, 'message': 'Missing or invalid Authorization header.', 'status': 'INVALID_ARGUMENT'}}]",
+      "category": "Insurance",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232753"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:27:53.926281",
+      "latency_ms": 145.15645799110644,
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost_usd": 0,
+      "success": false,
+      "error": "Error code: 400 - [{'error': {'code': 400, 'message': 'Missing or invalid Authorization header.', 'status': 'INVALID_ARGUMENT'}}]",
+      "category": "Change Of Control",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232753"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:27:53.928200",
+      "latency_ms": 46.2416249938542,
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost_usd": 0,
+      "success": false,
+      "error": "Error code: 400 - [{'error': {'code': 400, 'message': 'Missing or invalid Authorization header.', 'status': 'INVALID_ARGUMENT'}}]",
+      "category": "Non-Transferable License",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232753"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:27:53.940597",
+      "latency_ms": 50.940624991199,
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost_usd": 0,
+      "success": false,
+      "error": "Error code: 400 - [{'error': {'code': 400, 'message': 'Missing or invalid Authorization header.', 'status': 'INVALID_ARGUMENT'}}]",
+      "category": "Insurance",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232753"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:27:53.943002",
+      "latency_ms": 103.50916600145865,
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost_usd": 0,
+      "success": false,
+      "error": "Error code: 400 - [{'error': {'code': 400, 'message': 'Missing or invalid Authorization header.', 'status': 'INVALID_ARGUMENT'}}]",
+      "category": "Post-Termination Services",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232753"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:27:53.948948",
+      "latency_ms": 40.657874997123145,
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost_usd": 0,
+      "success": false,
+      "error": "Error code: 400 - [{'error': {'code': 400, 'message': 'Missing or invalid Authorization header.', 'status': 'INVALID_ARGUMENT'}}]",
+      "category": "Insurance",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232753"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:27:53.954692",
+      "latency_ms": 44.823874995927326,
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost_usd": 0,
+      "success": false,
+      "error": "Error code: 400 - [{'error': {'code': 400, 'message': 'Missing or invalid Authorization header.', 'status': 'INVALID_ARGUMENT'}}]",
+      "category": "Non-Transferable License",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232753"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:27:53.956812",
+      "latency_ms": 56.019499999820255,
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost_usd": 0,
+      "success": false,
+      "error": "Error code: 400 - [{'error': {'code': 400, 'message': 'Missing or invalid Authorization header.', 'status': 'INVALID_ARGUMENT'}}]",
+      "category": "Non-Compete",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232753"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:27:53.959369",
+      "latency_ms": 73.6232080089394,
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost_usd": 0,
+      "success": false,
+      "error": "Error code: 400 - [{'error': {'code': 400, 'message': 'Missing or invalid Authorization header.', 'status': 'INVALID_ARGUMENT'}}]",
+      "category": "No-Solicit Of Customers",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232753"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:27:53.959973",
+      "latency_ms": 103.29379100585356,
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost_usd": 0,
+      "success": false,
+      "error": "Error code: 400 - [{'error': {'code': 400, 'message': 'Missing or invalid Authorization header.', 'status': 'INVALID_ARGUMENT'}}]",
+      "category": "Change Of Control",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232753"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:27:53.972073",
+      "latency_ms": 43.46287499356549,
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost_usd": 0,
+      "success": false,
+      "error": "Error code: 400 - [{'error': {'code': 400, 'message': 'Missing or invalid Authorization header.', 'status': 'INVALID_ARGUMENT'}}]",
+      "category": "Insurance",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232753"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:27:53.974004",
+      "latency_ms": 46.852917002979666,
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost_usd": 0,
+      "success": false,
+      "error": "Error code: 400 - [{'error': {'code': 400, 'message': 'Missing or invalid Authorization header.', 'status': 'INVALID_ARGUMENT'}}]",
+      "category": "Renewal Term",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232753"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:27:53.996937",
+      "latency_ms": 72.43924999784213,
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost_usd": 0,
+      "success": false,
+      "error": "Error code: 400 - [{'error': {'code': 400, 'message': 'Missing or invalid Authorization header.', 'status': 'INVALID_ARGUMENT'}}]",
+      "category": "Post-Termination Services",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232753"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:27:54.001418",
+      "latency_ms": 44.23612500249874,
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost_usd": 0,
+      "success": false,
+      "error": "Error code: 400 - [{'error': {'code': 400, 'message': 'Missing or invalid Authorization header.', 'status': 'INVALID_ARGUMENT'}}]",
+      "category": "Volume Restriction",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232753"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:27:54.047062",
+      "latency_ms": 72.51966599142179,
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost_usd": 0,
+      "success": false,
+      "error": "Error code: 400 - [{'error': {'code': 400, 'message': 'Missing or invalid Authorization header.', 'status': 'INVALID_ARGUMENT'}}]",
+      "category": "Affiliate License-Licensee",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232753"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:27:54.049365",
+      "latency_ms": 88.80695900006685,
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost_usd": 0,
+      "success": false,
+      "error": "Error code: 400 - [{'error': {'code': 400, 'message': 'Missing or invalid Authorization header.', 'status': 'INVALID_ARGUMENT'}}]",
+      "category": "Volume Restriction",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232753"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:27:54.051849",
+      "latency_ms": 96.44579100131523,
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost_usd": 0,
+      "success": false,
+      "error": "Error code: 400 - [{'error': {'code': 400, 'message': 'Missing or invalid Authorization header.', 'status': 'INVALID_ARGUMENT'}}]",
+      "category": "Notice Period To Terminate Renewal",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232753"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:27:54.060317",
+      "latency_ms": 119.31708299380261,
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost_usd": 0,
+      "success": false,
+      "error": "Error code: 400 - [{'error': {'code': 400, 'message': 'Missing or invalid Authorization header.', 'status': 'INVALID_ARGUMENT'}}]",
+      "category": "Volume Restriction",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232753"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:27:54.069786",
+      "latency_ms": 67.9444579873234,
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost_usd": 0,
+      "success": false,
+      "error": "Error code: 400 - [{'error': {'code': 400, 'message': 'Missing or invalid Authorization header.', 'status': 'INVALID_ARGUMENT'}}]",
+      "category": "Non-Disparagement",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232753"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:27:54.082565",
+      "latency_ms": 121.10987499181647,
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost_usd": 0,
+      "success": false,
+      "error": "Error code: 400 - [{'error': {'code': 400, 'message': 'Missing or invalid Authorization header.', 'status': 'INVALID_ARGUMENT'}}]",
+      "category": "Joint Ip Ownership",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232753"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:27:54.085486",
+      "latency_ms": 88.00095900369342,
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost_usd": 0,
+      "success": false,
+      "error": "Error code: 400 - [{'error': {'code': 400, 'message': 'Missing or invalid Authorization header.', 'status': 'INVALID_ARGUMENT'}}]",
+      "category": "Revenue/Profit Sharing",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232753"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:27:54.086054",
+      "latency_ms": 136.80083300278056,
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost_usd": 0,
+      "success": false,
+      "error": "Error code: 400 - [{'error': {'code': 400, 'message': 'Missing or invalid Authorization header.', 'status': 'INVALID_ARGUMENT'}}]",
+      "category": "Covenant Not To Sue",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232753"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:27:54.137062",
+      "latency_ms": 89.05604199389927,
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost_usd": 0,
+      "success": false,
+      "error": "Error code: 400 - [{'error': {'code': 400, 'message': 'Missing or invalid Authorization header.', 'status': 'INVALID_ARGUMENT'}}]",
+      "category": "Revenue/Profit Sharing",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232753"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:27:54.140197",
+      "latency_ms": 196.73362500907388,
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost_usd": 0,
+      "success": false,
+      "error": "Error code: 400 - [{'error': {'code': 400, 'message': 'Missing or invalid Authorization header.', 'status': 'INVALID_ARGUMENT'}}]",
+      "category": "Minimum Commitment",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232753"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:27:54.140697",
+      "latency_ms": 167.69941699749324,
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost_usd": 0,
+      "success": false,
+      "error": "Error code: 400 - [{'error': {'code': 400, 'message': 'Missing or invalid Authorization header.', 'status': 'INVALID_ARGUMENT'}}]",
+      "category": "Uncapped Liability",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232753"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:27:54.141512",
+      "latency_ms": 88.78804100095294,
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost_usd": 0,
+      "success": false,
+      "error": "Error code: 400 - [{'error': {'code': 400, 'message': 'Missing or invalid Authorization header.', 'status': 'INVALID_ARGUMENT'}}]",
+      "category": "Covenant Not To Sue",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232753"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:27:54.142276",
+      "latency_ms": 72.05412500479724,
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost_usd": 0,
+      "success": false,
+      "error": "Error code: 400 - [{'error': {'code': 400, 'message': 'Missing or invalid Authorization header.', 'status': 'INVALID_ARGUMENT'}}]",
+      "category": "Notice Period To Terminate Renewal",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232753"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:27:54.142961",
+      "latency_ms": 93.07954199903179,
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost_usd": 0,
+      "success": false,
+      "error": "Error code: 400 - [{'error': {'code': 400, 'message': 'Missing or invalid Authorization header.', 'status': 'INVALID_ARGUMENT'}}]",
+      "category": "Non-Disparagement",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232753"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:27:54.147156",
+      "latency_ms": 60.49879200872965,
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost_usd": 0,
+      "success": false,
+      "error": "Error code: 400 - [{'error': {'code': 400, 'message': 'Missing or invalid Authorization header.', 'status': 'INVALID_ARGUMENT'}}]",
+      "category": "Volume Restriction",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232753"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:27:54.150020",
+      "latency_ms": 89.14275000279304,
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost_usd": 0,
+      "success": false,
+      "error": "Error code: 400 - [{'error': {'code': 400, 'message': 'Missing or invalid Authorization header.', 'status': 'INVALID_ARGUMENT'}}]",
+      "category": "Revenue/Profit Sharing",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232753"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:27:54.161296",
+      "latency_ms": 73.92191699182149,
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost_usd": 0,
+      "success": false,
+      "error": "Error code: 400 - [{'error': {'code': 400, 'message': 'Missing or invalid Authorization header.', 'status': 'INVALID_ARGUMENT'}}]",
+      "category": "Revenue/Profit Sharing",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232753"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:27:54.168486",
+      "latency_ms": 84.37070899526589,
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost_usd": 0,
+      "success": false,
+      "error": "Error code: 400 - [{'error': {'code': 400, 'message': 'Missing or invalid Authorization header.', 'status': 'INVALID_ARGUMENT'}}]",
+      "category": "Liquidated Damages",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232753"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:27:54.196004",
+      "latency_ms": 58.385916010593064,
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost_usd": 0,
+      "success": false,
+      "error": "Error code: 400 - [{'error': {'code': 400, 'message': 'Missing or invalid Authorization header.', 'status': 'INVALID_ARGUMENT'}}]",
+      "category": "Covenant Not To Sue",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232753"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:27:54.198279",
+      "latency_ms": 54.67899999348447,
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost_usd": 0,
+      "success": false,
+      "error": "Error code: 400 - [{'error': {'code': 400, 'message': 'Missing or invalid Authorization header.', 'status': 'INVALID_ARGUMENT'}}]",
+      "category": "Price Restrictions",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232753"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:27:54.205218",
+      "latency_ms": 53.01266600145027,
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost_usd": 0,
+      "success": false,
+      "error": "Error code: 400 - [{'error': {'code': 400, 'message': 'Missing or invalid Authorization header.', 'status': 'INVALID_ARGUMENT'}}]",
+      "category": "Non-Disparagement",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232753"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:27:54.206224",
+      "latency_ms": 58.47749998793006,
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost_usd": 0,
+      "success": false,
+      "error": "Error code: 400 - [{'error': {'code': 400, 'message': 'Missing or invalid Authorization header.', 'status': 'INVALID_ARGUMENT'}}]",
+      "category": "Unlimited/All-You-Can-Eat-License",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232753"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:27:54.208939",
+      "latency_ms": 64.4658750097733,
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost_usd": 0,
+      "success": false,
+      "error": "Error code: 400 - [{'error': {'code': 400, 'message': 'Missing or invalid Authorization header.', 'status': 'INVALID_ARGUMENT'}}]",
+      "category": "Uncapped Liability",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232753"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:27:54.302595",
+      "latency_ms": 140.818792002392,
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost_usd": 0,
+      "success": false,
+      "error": "Error code: 400 - [{'error': {'code': 400, 'message': 'Missing or invalid Authorization header.', 'status': 'INVALID_ARGUMENT'}}]",
+      "category": "Source Code Escrow",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232753"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:27:54.304172",
+      "latency_ms": 158.25849999964703,
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost_usd": 0,
+      "success": false,
+      "error": "Error code: 400 - [{'error': {'code': 400, 'message': 'Missing or invalid Authorization header.', 'status': 'INVALID_ARGUMENT'}}]",
+      "category": "Uncapped Liability",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232753"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:27:54.306191",
+      "latency_ms": 109.71795899968129,
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost_usd": 0,
+      "success": false,
+      "error": "Error code: 400 - [{'error': {'code': 400, 'message': 'Missing or invalid Authorization header.', 'status': 'INVALID_ARGUMENT'}}]",
+      "category": "Covenant Not To Sue",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232753"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:27:54.307088",
+      "latency_ms": 138.21562500379514,
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost_usd": 0,
+      "success": false,
+      "error": "Error code: 400 - [{'error': {'code': 400, 'message': 'Missing or invalid Authorization header.', 'status': 'INVALID_ARGUMENT'}}]",
+      "category": "Volume Restriction",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232753"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:27:54.333238",
+      "latency_ms": 188.08845899184234,
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost_usd": 0,
+      "success": false,
+      "error": "Error code: 400 - [{'error': {'code': 400, 'message': 'Missing or invalid Authorization header.', 'status': 'INVALID_ARGUMENT'}}]",
+      "category": "Notice Period To Terminate Renewal",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232753"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:27:54.336554",
+      "latency_ms": 190.15004200628027,
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost_usd": 0,
+      "success": false,
+      "error": "Error code: 400 - [{'error': {'code': 400, 'message': 'Missing or invalid Authorization header.', 'status': 'INVALID_ARGUMENT'}}]",
+      "category": "Uncapped Liability",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232753"
+    }
+  ]
+}

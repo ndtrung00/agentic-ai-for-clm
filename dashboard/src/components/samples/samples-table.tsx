@@ -149,7 +149,9 @@ export function SamplesTable({ samples, runId, routingTable }: SamplesTableProps
           </TableHeader>
           <TableBody>
             {paged.map((s) => {
-              const agent = routingTable?.[s.category];
+              // Prefer actual routing from LLM, fall back to static table
+              const agent = s.agent_routed_to ?? routingTable?.[s.category];
+              const isActualRouting = !!s.agent_routed_to;
               return (
                 <TableRow
                   key={s.id}
@@ -164,9 +166,14 @@ export function SamplesTable({ samples, runId, routingTable }: SamplesTableProps
                   {hasRouting && (
                     <TableCell>
                       {agent ? (
-                        <Badge variant="outline" className="text-xs">
-                          {AGENT_SHORT[agent] ?? agent}
-                        </Badge>
+                        <span className="flex items-center gap-1">
+                          <Badge variant="outline" className="text-xs">
+                            {AGENT_SHORT[agent] ?? agent}
+                          </Badge>
+                          {isActualRouting && s.routing_correct === false && (
+                            <span className="text-destructive text-xs" title="Misrouted">✗</span>
+                          )}
+                        </span>
                       ) : (
                         <span className="text-muted-foreground text-xs">N/A</span>
                       )}

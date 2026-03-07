@@ -22,6 +22,7 @@ dependencies = [
     "pandas>=2.2.0",
     "tqdm>=4.66.0",
     "tenacity>=9.0.0",
+    "google-auth>=2.48.0",
 ]
 
 [project.optional-dependencies]
@@ -62,3 +63,8 @@ warn_unused_ignores = true
 asyncio_mode = "auto"
 testpaths = ["tests"]
 addopts = "-v --tb=short"
+
+[dependency-groups]
+dev = [
+    "matplotlib>=3.10.8",
+]
