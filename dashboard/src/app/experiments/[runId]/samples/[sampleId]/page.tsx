@@ -125,7 +125,7 @@ export default async function SampleDetailPage({ params }: Props) {
           <CardHeader>
             <CardTitle className="text-sm">Agent Trace</CardTitle>
           </CardHeader>
-          <CardContent className="space-y-2">
+          <CardContent className="space-y-3">
             <div className="flex items-center gap-2 text-sm">
               {sample.trace.nodes_visited.map((node, i) => (
                 <span key={i} className="flex items-center gap-1">
@@ -137,6 +137,27 @@ export default async function SampleDetailPage({ params }: Props) {
             <p className="text-xs text-muted-foreground">
               {sample.trace.num_llm_calls} LLM call{sample.trace.num_llm_calls !== 1 ? "s" : ""}
             </p>
+
+            {/* Routing decision */}
+            {sample.trace.agent_routed_to && (
+              <div className="border-t pt-3 space-y-1">
+                <div className="flex items-center gap-2 text-sm">
+                  <span className="font-medium">Routed to:</span>
+                  <Badge variant="outline">{sample.trace.agent_routed_to}</Badge>
+                  {sample.trace.routing_correct === true && (
+                    <span className="text-green-600 text-xs font-medium">Correct</span>
+                  )}
+                  {sample.trace.routing_correct === false && (
+                    <span className="text-destructive text-xs font-medium">Misrouted</span>
+                  )}
+                </div>
+                {sample.trace.routing_reasoning && (
+                  <p className="text-xs text-muted-foreground italic">
+                    &ldquo;{sample.trace.routing_reasoning}&rdquo;
+                  </p>
+                )}
+              </div>
+            )}
           </CardContent>
         </Card>
       )}

@@ -45,6 +45,10 @@ class ExtractionOutput:
     cache_read_tokens: int = 0
     cache_creation_tokens: int = 0
     trace_nodes: list[str] | None = None  # M1 only
+    # Routing trace (M1 only)
+    agent_routed_to: str | None = None
+    routing_reasoning: str | None = None
+    routing_correct: bool | None = None
 
 
 # ---------------------------------------------------------------------------
@@ -169,6 +173,9 @@ def _build_record(
         record["trace"] = {
             "nodes_visited": output.trace_nodes,
             "num_llm_calls": len(output.trace_nodes),
+            "agent_routed_to": output.agent_routed_to,
+            "routing_reasoning": output.routing_reasoning,
+            "routing_correct": output.routing_correct,
         }
 
     return record

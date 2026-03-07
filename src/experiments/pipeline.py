@@ -357,10 +357,10 @@ async def run_experiment_pipeline(
         architecture = {
             "type": "multi_agent",
             "description": (
-                "LangGraph orchestrator routes to specialist by category, "
-                "then validation"
+                "LangGraph orchestrator uses LLM reasoning to route "
+                "questions to specialists, then validation"
             ),
-            "workflow": ["route", "specialist", "validate", "finalize"],
+            "workflow": ["route (LLM)", "specialist", "validate", "finalize"],
             "specialists": list(specialists.keys()),  # type: ignore[possibly-undefined]
             "validation_enabled": orchestrator.validation_agent is not None,  # type: ignore[possibly-undefined]
             "routing_table": CATEGORY_ROUTING,
@@ -662,12 +662,13 @@ def _make_m1_extract_fn(config: ExperimentConfig, *, run_id: str):
         specialists=specialists,
         validation_agent=None,
         config=AgentConfig(name="orchestrator", model_key=config.model_key),
+        diagnostics=diagnostics,
     )
 
     async def extract_fn(sample: CUADSample) -> ExtractionOutput:
         n_calls_before = len(diagnostics.calls)
 
-        result = await orchestrator.extract(
+        result, trace = await orchestrator.extract(
             contract_text=sample.contract_text,
             category=sample.category,
             question=sample.question,
@@ -685,6 +686,12 @@ def _make_m1_extract_fn(config: ExperimentConfig, *, run_id: str):
         agg_output = sum(c.usage.output_tokens for c in recent_calls)
         trace_nodes = [c.agent_name for c in recent_calls]
 
+        # Extract routing info from trace
+        route_entry = next((t for t in trace if t.get("node") == "route"), None)
+        agent_routed_to = route_entry.get("routed_to") if route_entry else None
+        routing_reasoning = route_entry.get("routing_reasoning") if route_entry else None
+        routing_correct = route_entry.get("routing_correct") if route_entry else None
+
         return ExtractionOutput(
             extracted_clauses=result.extracted_clauses,
             raw_response=result.reasoning,
@@ -695,6 +702,9 @@ def _make_m1_extract_fn(config: ExperimentConfig, *, run_id: str):
             input_tokens=agg_input,
             output_tokens=agg_output,
             trace_nodes=trace_nodes,
+            agent_routed_to=agent_routed_to,
+            routing_reasoning=routing_reasoning,
+            routing_correct=routing_correct,
         )
 
     return diagnostics, extract_fn, orchestrator, specialists

@@ -1,0 +1,1744 @@
+{
+  "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232314",
+  "run_mode": "test",
+  "start_time": "2026-03-06T23:23:14.417094",
+  "summary": {
+    "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232314",
+    "total_calls": 90,
+    "successful_calls": 90,
+    "failed_calls": 0,
+    "success_rate": 1.0,
+    "total_input_tokens": 691977,
+    "total_output_tokens": 16280,
+    "total_tokens": 708257,
+    "total_cost_usd": 0.24829310000000004,
+    "avg_latency_ms": 5470.6368670336415,
+    "min_latency_ms": 1147.7446249919012,
+    "max_latency_ms": 17542.07262500131,
+    "by_model": {
+      "gemini-2.5-flash": {
+        "calls": 90,
+        "input_tokens": 691977,
+        "output_tokens": 16280,
+        "cost_usd": 0.24829310000000004,
+        "avg_latency_ms": 5470.6368670336415
+      }
+    },
+    "by_agent": {
+      "zero_shot": 90
+    },
+    "duration_seconds": 57.815953
+  },
+  "calls": [
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:23:17.276998",
+      "latency_ms": 2507.6007500028936,
+      "usage": {
+        "input_tokens": 15309,
+        "output_tokens": 75,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 15384
+      },
+      "cost_usd": 0.004780199999999999,
+      "success": true,
+      "error": null,
+      "category": "Governing Law",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232314"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:23:17.678143",
+      "latency_ms": 2910.1338330074213,
+      "usage": {
+        "input_tokens": 1517,
+        "output_tokens": 30,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1547
+      },
+      "cost_usd": 0.0005300999999999999,
+      "success": true,
+      "error": null,
+      "category": "Expiration Date",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232314"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:23:18.205283",
+      "latency_ms": 3436.6770420019748,
+      "usage": {
+        "input_tokens": 10222,
+        "output_tokens": 131,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 10353
+      },
+      "cost_usd": 0.0033940999999999997,
+      "success": true,
+      "error": null,
+      "category": "Document Name",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232314"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:23:18.800109",
+      "latency_ms": 1519.3981249904027,
+      "usage": {
+        "input_tokens": 4163,
+        "output_tokens": 36,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 4199
+      },
+      "cost_usd": 0.0013389,
+      "success": true,
+      "error": null,
+      "category": "Governing Law",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232314"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:23:19.248141",
+      "latency_ms": 4477.9971670068335,
+      "usage": {
+        "input_tokens": 5614,
+        "output_tokens": 160,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 5774
+      },
+      "cost_usd": 0.0020842,
+      "success": true,
+      "error": null,
+      "category": "Effective Date",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232314"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:23:19.897398",
+      "latency_ms": 1689.323583006626,
+      "usage": {
+        "input_tokens": 6705,
+        "output_tokens": 91,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 6796
+      },
+      "cost_usd": 0.0022389999999999997,
+      "success": true,
+      "error": null,
+      "category": "Document Name",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232314"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:23:20.625391",
+      "latency_ms": 5855.593915999634,
+      "usage": {
+        "input_tokens": 13231,
+        "output_tokens": 84,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 13315
+      },
+      "cost_usd": 0.0041792999999999995,
+      "success": true,
+      "error": null,
+      "category": "Agreement Date",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232314"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:23:20.820878",
+      "latency_ms": 6050.459666003007,
+      "usage": {
+        "input_tokens": 12117,
+        "output_tokens": 168,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 12285
+      },
+      "cost_usd": 0.0040551,
+      "success": true,
+      "error": null,
+      "category": "Document Name",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232314"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:23:20.885713",
+      "latency_ms": 6442.666125003598,
+      "usage": {
+        "input_tokens": 6961,
+        "output_tokens": 208,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 7169
+      },
+      "cost_usd": 0.0026083,
+      "success": true,
+      "error": null,
+      "category": "Agreement Date",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232314"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:23:21.229158",
+      "latency_ms": 3549.1509580024285,
+      "usage": {
+        "input_tokens": 6958,
+        "output_tokens": 247,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 7205
+      },
+      "cost_usd": 0.0027048999999999997,
+      "success": true,
+      "error": null,
+      "category": "Agreement Date",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232314"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:23:22.071191",
+      "latency_ms": 3269.6977910090936,
+      "usage": {
+        "input_tokens": 5928,
+        "output_tokens": 567,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 6495
+      },
+      "cost_usd": 0.0031958999999999998,
+      "success": true,
+      "error": null,
+      "category": "Effective Date",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232314"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:23:22.265973",
+      "latency_ms": 1639.4760830007726,
+      "usage": {
+        "input_tokens": 4429,
+        "output_tokens": 39,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 4468
+      },
+      "cost_usd": 0.0014261999999999999,
+      "success": true,
+      "error": null,
+      "category": "Governing Law",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232314"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:23:22.465281",
+      "latency_ms": 3214.9784579960397,
+      "usage": {
+        "input_tokens": 7196,
+        "output_tokens": 198,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 7394
+      },
+      "cost_usd": 0.0026537999999999996,
+      "success": true,
+      "error": null,
+      "category": "Agreement Date",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232314"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:23:23.989127",
+      "latency_ms": 3166.4360409922665,
+      "usage": {
+        "input_tokens": 14379,
+        "output_tokens": 129,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 14508
+      },
+      "cost_usd": 0.004636199999999999,
+      "success": true,
+      "error": null,
+      "category": "Document Name",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232314"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:23:24.687214",
+      "latency_ms": 9918.904500009376,
+      "usage": {
+        "input_tokens": 13287,
+        "output_tokens": 230,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 13517
+      },
+      "cost_usd": 0.0045611,
+      "success": true,
+      "error": null,
+      "category": "Parties",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232314"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:23:25.567678",
+      "latency_ms": 1577.5635839963797,
+      "usage": {
+        "input_tokens": 393,
+        "output_tokens": 13,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 406
+      },
+      "cost_usd": 0.0001504,
+      "success": true,
+      "error": null,
+      "category": "Effective Date",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232314"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:23:26.300068",
+      "latency_ms": 1611.0912500007544,
+      "usage": {
+        "input_tokens": 941,
+        "output_tokens": 38,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 979
+      },
+      "cost_usd": 0.0003773,
+      "success": true,
+      "error": null,
+      "category": "Governing Law",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232314"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:23:26.450771",
+      "latency_ms": 3983.3677079877816,
+      "usage": {
+        "input_tokens": 13290,
+        "output_tokens": 4,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 13294
+      },
+      "cost_usd": 0.003996999999999999,
+      "success": true,
+      "error": null,
+      "category": "Expiration Date",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232314"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:23:26.918968",
+      "latency_ms": 5688.3597080013715,
+      "usage": {
+        "input_tokens": 7787,
+        "output_tokens": 513,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 8300
+      },
+      "cost_usd": 0.0036185999999999996,
+      "success": true,
+      "error": null,
+      "category": "Agreement Date",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232314"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:23:27.113887",
+      "latency_ms": 7213.317415997153,
+      "usage": {
+        "input_tokens": 7894,
+        "output_tokens": 4,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 7898
+      },
+      "cost_usd": 0.0023782,
+      "success": true,
+      "error": null,
+      "category": "Expiration Date",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232314"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:23:28.160116",
+      "latency_ms": 1857.4147499894025,
+      "usage": {
+        "input_tokens": 1022,
+        "output_tokens": 4,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1026
+      },
+      "cost_usd": 0.0003166,
+      "success": true,
+      "error": null,
+      "category": "Expiration Date",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232314"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:23:28.259860",
+      "latency_ms": 1323.7270829995396,
+      "usage": {
+        "input_tokens": 436,
+        "output_tokens": 37,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 473
+      },
+      "cost_usd": 0.00022329999999999998,
+      "success": true,
+      "error": null,
+      "category": "Expiration Date",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232314"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:23:28.263307",
+      "latency_ms": 1147.7446249919012,
+      "usage": {
+        "input_tokens": 2631,
+        "output_tokens": 4,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 2635
+      },
+      "cost_usd": 0.0007992999999999999,
+      "success": true,
+      "error": null,
+      "category": "Governing Law",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232314"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:23:28.749643",
+      "latency_ms": 2298.183124992647,
+      "usage": {
+        "input_tokens": 8396,
+        "output_tokens": 103,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 8499
+      },
+      "cost_usd": 0.0027762999999999998,
+      "success": true,
+      "error": null,
+      "category": "Agreement Date",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232314"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:23:29.893311",
+      "latency_ms": 15124.188208006672,
+      "usage": {
+        "input_tokens": 6083,
+        "output_tokens": 106,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 6189
+      },
+      "cost_usd": 0.0020899,
+      "success": true,
+      "error": null,
+      "category": "Parties",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232314"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:23:30.586027",
+      "latency_ms": 1834.058541993727,
+      "usage": {
+        "input_tokens": 7498,
+        "output_tokens": 69,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 7567
+      },
+      "cost_usd": 0.0024219,
+      "success": true,
+      "error": null,
+      "category": "Renewal Term",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232314"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:23:30.591881",
+      "latency_ms": 2327.9395830031717,
+      "usage": {
+        "input_tokens": 11626,
+        "output_tokens": 56,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 11682
+      },
+      "cost_usd": 0.0036277999999999996,
+      "success": true,
+      "error": null,
+      "category": "Anti-Assignment",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232314"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:23:31.111588",
+      "latency_ms": 16342.741790998843,
+      "usage": {
+        "input_tokens": 6124,
+        "output_tokens": 161,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 6285
+      },
+      "cost_usd": 0.0022397,
+      "success": true,
+      "error": null,
+      "category": "Parties",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232314"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:23:31.307753",
+      "latency_ms": 3046.555459004594,
+      "usage": {
+        "input_tokens": 15323,
+        "output_tokens": 85,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 15408
+      },
+      "cost_usd": 0.0048094,
+      "success": true,
+      "error": null,
+      "category": "Audit Rights",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232314"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:23:31.677459",
+      "latency_ms": 3516.680124987033,
+      "usage": {
+        "input_tokens": 14601,
+        "output_tokens": 188,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 14789
+      },
+      "cost_usd": 0.0048503,
+      "success": true,
+      "error": null,
+      "category": "License Grant",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232314"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:23:32.484991",
+      "latency_ms": 10412.363834009739,
+      "usage": {
+        "input_tokens": 3806,
+        "output_tokens": 670,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 4476
+      },
+      "cost_usd": 0.0028168,
+      "success": true,
+      "error": null,
+      "category": "Effective Date",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232314"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:23:33.117271",
+      "latency_ms": 2528.4530419885414,
+      "usage": {
+        "input_tokens": 5747,
+        "output_tokens": 202,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 5949
+      },
+      "cost_usd": 0.0022291,
+      "success": true,
+      "error": null,
+      "category": "Non-Transferable License",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232314"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:23:33.402640",
+      "latency_ms": 2090.925625001546,
+      "usage": {
+        "input_tokens": 1838,
+        "output_tokens": 52,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1890
+      },
+      "cost_usd": 0.0006814,
+      "success": true,
+      "error": null,
+      "category": "Termination For Convenience",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232314"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:23:33.814147",
+      "latency_ms": 1327.927833001013,
+      "usage": {
+        "input_tokens": 4211,
+        "output_tokens": 84,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 4295
+      },
+      "cost_usd": 0.0014732999999999999,
+      "success": true,
+      "error": null,
+      "category": "Audit Rights",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232314"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:23:34.458555",
+      "latency_ms": 3344.557000003988,
+      "usage": {
+        "input_tokens": 5883,
+        "output_tokens": 87,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 5970
+      },
+      "cost_usd": 0.0019823999999999996,
+      "success": true,
+      "error": null,
+      "category": "Cap On Liability",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232314"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:23:34.462809",
+      "latency_ms": 12195.258833002299,
+      "usage": {
+        "input_tokens": 12201,
+        "output_tokens": 277,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 12478
+      },
+      "cost_usd": 0.0043528,
+      "success": true,
+      "error": null,
+      "category": "Expiration Date",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232314"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:23:36.076814",
+      "latency_ms": 15189.50212499476,
+      "usage": {
+        "input_tokens": 13235,
+        "output_tokens": 164,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 13399
+      },
+      "cost_usd": 0.004380499999999999,
+      "success": true,
+      "error": null,
+      "category": "Parties",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232314"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:23:36.549134",
+      "latency_ms": 2082.8844999923604,
+      "usage": {
+        "input_tokens": 6496,
+        "output_tokens": 69,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 6565
+      },
+      "cost_usd": 0.0021213,
+      "success": true,
+      "error": null,
+      "category": "Audit Rights",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232314"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:23:36.604402",
+      "latency_ms": 6010.437167002237,
+      "usage": {
+        "input_tokens": 3699,
+        "output_tokens": 188,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 3887
+      },
+      "cost_usd": 0.0015796999999999999,
+      "success": true,
+      "error": null,
+      "category": "Exclusivity",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232314"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:23:36.904449",
+      "latency_ms": 5224.802500000806,
+      "usage": {
+        "input_tokens": 14798,
+        "output_tokens": 51,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 14849
+      },
+      "cost_usd": 0.0045669,
+      "success": true,
+      "error": null,
+      "category": "Change Of Control",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232314"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:23:36.954081",
+      "latency_ms": 11384.465541006648,
+      "usage": {
+        "input_tokens": 12121,
+        "output_tokens": 615,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 12736
+      },
+      "cost_usd": 0.0051738,
+      "success": true,
+      "error": null,
+      "category": "Effective Date",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232314"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:23:37.150547",
+      "latency_ms": 4030.9386250009993,
+      "usage": {
+        "input_tokens": 4036,
+        "output_tokens": 382,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 4418
+      },
+      "cost_usd": 0.0021658,
+      "success": true,
+      "error": null,
+      "category": "Cap On Liability",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232314"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:23:37.929281",
+      "latency_ms": 4111.980750007206,
+      "usage": {
+        "input_tokens": 8726,
+        "output_tokens": 85,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 8811
+      },
+      "cost_usd": 0.0028303,
+      "success": true,
+      "error": null,
+      "category": "Non-Transferable License",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232314"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:23:38.337550",
+      "latency_ms": 1786.2750409985892,
+      "usage": {
+        "input_tokens": 4045,
+        "output_tokens": 30,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 4075
+      },
+      "cost_usd": 0.0012885,
+      "success": true,
+      "error": null,
+      "category": "Anti-Assignment",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232314"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:23:38.659552",
+      "latency_ms": 1506.2414580024779,
+      "usage": {
+        "input_tokens": 3274,
+        "output_tokens": 4,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 3278
+      },
+      "cost_usd": 0.0009922,
+      "success": true,
+      "error": null,
+      "category": "Non-Transferable License",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232314"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:23:38.663718",
+      "latency_ms": 4195.0419999921,
+      "usage": {
+        "input_tokens": 5450,
+        "output_tokens": 373,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 5823
+      },
+      "cost_usd": 0.0025675,
+      "success": true,
+      "error": null,
+      "category": "Ip Ownership Assignment",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232314"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:23:38.725084",
+      "latency_ms": 8830.123334002565,
+      "usage": {
+        "input_tokens": 11854,
+        "output_tokens": 459,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 12313
+      },
+      "cost_usd": 0.0047037,
+      "success": true,
+      "error": null,
+      "category": "Exclusivity",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232314"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:23:38.872488",
+      "latency_ms": 2266.3894160068594,
+      "usage": {
+        "input_tokens": 6346,
+        "output_tokens": 78,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 6424
+      },
+      "cost_usd": 0.0020987999999999996,
+      "success": true,
+      "error": null,
+      "category": "Insurance",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232314"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:23:38.975637",
+      "latency_ms": 2019.5005829882575,
+      "usage": {
+        "input_tokens": 1391,
+        "output_tokens": 4,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1395
+      },
+      "cost_usd": 0.0004273,
+      "success": true,
+      "error": null,
+      "category": "Audit Rights",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232314"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:23:40.345676",
+      "latency_ms": 1368.8511250074953,
+      "usage": {
+        "input_tokens": 3815,
+        "output_tokens": 4,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 3819
+      },
+      "cost_usd": 0.0011545,
+      "success": true,
+      "error": null,
+      "category": "Renewal Term",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232314"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:23:40.546156",
+      "latency_ms": 3639.2844160000095,
+      "usage": {
+        "input_tokens": 15833,
+        "output_tokens": 162,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 15995
+      },
+      "cost_usd": 0.0051549,
+      "success": true,
+      "error": null,
+      "category": "Change Of Control",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232314"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:23:40.746576",
+      "latency_ms": 2020.2560000034282,
+      "usage": {
+        "input_tokens": 2337,
+        "output_tokens": 86,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 2423
+      },
+      "cost_usd": 0.0009161,
+      "success": true,
+      "error": null,
+      "category": "Non-Transferable License",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232314"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:23:41.598236",
+      "latency_ms": 1251.3786670024274,
+      "usage": {
+        "input_tokens": 519,
+        "output_tokens": 4,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 523
+      },
+      "cost_usd": 0.0001657,
+      "success": true,
+      "error": null,
+      "category": "Insurance",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232314"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:23:41.843688",
+      "latency_ms": 3178.601083011017,
+      "usage": {
+        "input_tokens": 636,
+        "output_tokens": 4,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 640
+      },
+      "cost_usd": 0.00020079999999999997,
+      "success": true,
+      "error": null,
+      "category": "Insurance",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232314"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:23:42.724963",
+      "latency_ms": 9321.40529199387,
+      "usage": {
+        "input_tokens": 9404,
+        "output_tokens": 179,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 9583
+      },
+      "cost_usd": 0.0032687,
+      "success": true,
+      "error": null,
+      "category": "Cap On Liability",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232314"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:23:43.692439",
+      "latency_ms": 1848.1377919961233,
+      "usage": {
+        "input_tokens": 7443,
+        "output_tokens": 68,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 7511
+      },
+      "cost_usd": 0.0024029,
+      "success": true,
+      "error": null,
+      "category": "Notice Period To Terminate Renewal",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232314"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:23:44.536527",
+      "latency_ms": 5875.540124994586,
+      "usage": {
+        "input_tokens": 5494,
+        "output_tokens": 163,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 5657
+      },
+      "cost_usd": 0.0020556999999999997,
+      "success": true,
+      "error": null,
+      "category": "Non-Compete",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232314"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:23:45.546742",
+      "latency_ms": 7615.35783301224,
+      "usage": {
+        "input_tokens": 11856,
+        "output_tokens": 4,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 11860
+      },
+      "cost_usd": 0.0035667999999999997,
+      "success": true,
+      "error": null,
+      "category": "No-Solicit Of Customers",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232314"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:23:46.135744",
+      "latency_ms": 7797.140708004008,
+      "usage": {
+        "input_tokens": 4595,
+        "output_tokens": 158,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 4753
+      },
+      "cost_usd": 0.0017734999999999997,
+      "success": true,
+      "error": null,
+      "category": "Insurance",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232314"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:23:46.312490",
+      "latency_ms": 5564.096250003786,
+      "usage": {
+        "input_tokens": 14449,
+        "output_tokens": 562,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 15011
+      },
+      "cost_usd": 0.0057396999999999995,
+      "success": true,
+      "error": null,
+      "category": "Minimum Commitment",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232314"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:23:47.213038",
+      "latency_ms": 11133.82108299993,
+      "usage": {
+        "input_tokens": 7720,
+        "output_tokens": 593,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 8313
+      },
+      "cost_usd": 0.0037985,
+      "success": true,
+      "error": null,
+      "category": "Post-Termination Services",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232314"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:23:47.462125",
+      "latency_ms": 5862.6324590004515,
+      "usage": {
+        "input_tokens": 14411,
+        "output_tokens": 117,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 14528
+      },
+      "cost_usd": 0.0046158,
+      "success": true,
+      "error": null,
+      "category": "Covenant Not To Sue",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232314"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:23:48.249914",
+      "latency_ms": 5523.215957990033,
+      "usage": {
+        "input_tokens": 3524,
+        "output_tokens": 262,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 3786
+      },
+      "cost_usd": 0.0017122,
+      "success": true,
+      "error": null,
+      "category": "Volume Restriction",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232314"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:23:48.420141",
+      "latency_ms": 3882.479499996407,
+      "usage": {
+        "input_tokens": 13937,
+        "output_tokens": 769,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 14706
+      },
+      "cost_usd": 0.006103599999999999,
+      "success": true,
+      "error": null,
+      "category": "Joint Ip Ownership",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232314"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:23:48.664331",
+      "latency_ms": 1449.717542011058,
+      "usage": {
+        "input_tokens": 5892,
+        "output_tokens": 77,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 5969
+      },
+      "cost_usd": 0.0019601,
+      "success": true,
+      "error": null,
+      "category": "Non-Disparagement",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232314"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:23:49.459855",
+      "latency_ms": 3145.4313329886645,
+      "usage": {
+        "input_tokens": 6136,
+        "output_tokens": 248,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 6384
+      },
+      "cost_usd": 0.0024608,
+      "success": true,
+      "error": null,
+      "category": "Revenue/Profit Sharing",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232314"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:23:49.770179",
+      "latency_ms": 1516.8752500030678,
+      "usage": {
+        "input_tokens": 15749,
+        "output_tokens": 33,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 15782
+      },
+      "cost_usd": 0.0048072,
+      "success": true,
+      "error": null,
+      "category": "Non-Disparagement",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232314"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:23:50.770642",
+      "latency_ms": 1307.9489579977235,
+      "usage": {
+        "input_tokens": 3595,
+        "output_tokens": 56,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 3651
+      },
+      "cost_usd": 0.0012185,
+      "success": true,
+      "error": null,
+      "category": "Notice Period To Terminate Renewal",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232314"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:23:51.230435",
+      "latency_ms": 12355.962583009386,
+      "usage": {
+        "input_tokens": 7648,
+        "output_tokens": 565,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 8213
+      },
+      "cost_usd": 0.0037069,
+      "success": true,
+      "error": null,
+      "category": "Post-Termination Services",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232314"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:23:51.911524",
+      "latency_ms": 3487.7449170016916,
+      "usage": {
+        "input_tokens": 3968,
+        "output_tokens": 160,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 4128
+      },
+      "cost_usd": 0.0015903999999999998,
+      "success": true,
+      "error": null,
+      "category": "Covenant Not To Sue",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232314"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:23:52.084107",
+      "latency_ms": 11535.018750000745,
+      "usage": {
+        "input_tokens": 15032,
+        "output_tokens": 230,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 15262
+      },
+      "cost_usd": 0.0050846,
+      "success": true,
+      "error": null,
+      "category": "Volume Restriction",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232314"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:23:53.476458",
+      "latency_ms": 2245.0416250067065,
+      "usage": {
+        "input_tokens": 9329,
+        "output_tokens": 29,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 9358
+      },
+      "cost_usd": 0.0028712,
+      "success": true,
+      "error": null,
+      "category": "Revenue/Profit Sharing",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232314"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:23:54.014149",
+      "latency_ms": 10320.34725000267,
+      "usage": {
+        "input_tokens": 9956,
+        "output_tokens": 61,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 10017
+      },
+      "cost_usd": 0.0031392999999999994,
+      "success": true,
+      "error": null,
+      "category": "Volume Restriction",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232314"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:23:54.611131",
+      "latency_ms": 7146.490915998584,
+      "usage": {
+        "input_tokens": 9954,
+        "output_tokens": 694,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 10648
+      },
+      "cost_usd": 0.0047212,
+      "success": true,
+      "error": null,
+      "category": "Revenue/Profit Sharing",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232314"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:23:55.253660",
+      "latency_ms": 6586.269457999151,
+      "usage": {
+        "input_tokens": 8310,
+        "output_tokens": 644,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 8954
+      },
+      "cost_usd": 0.004103,
+      "success": true,
+      "error": null,
+      "category": "Revenue/Profit Sharing",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232314"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:23:55.751504",
+      "latency_ms": 9614.30620799365,
+      "usage": {
+        "input_tokens": 13061,
+        "output_tokens": 922,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 13983
+      },
+      "cost_usd": 0.006223299999999999,
+      "success": true,
+      "error": null,
+      "category": "Affiliate License-Licensee",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232314"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:23:56.139574",
+      "latency_ms": 2661.5116670000134,
+      "usage": {
+        "input_tokens": 991,
+        "output_tokens": 114,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1105
+      },
+      "cost_usd": 0.0005823,
+      "success": true,
+      "error": null,
+      "category": "Uncapped Liability",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232314"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:23:56.683619",
+      "latency_ms": 2668.2898750004824,
+      "usage": {
+        "input_tokens": 18442,
+        "output_tokens": 76,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 18518
+      },
+      "cost_usd": 0.0057225999999999996,
+      "success": true,
+      "error": null,
+      "category": "Notice Period To Terminate Renewal",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232314"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:23:56.879053",
+      "latency_ms": 7107.663999995566,
+      "usage": {
+        "input_tokens": 15869,
+        "output_tokens": 83,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 15952
+      },
+      "cost_usd": 0.0049682,
+      "success": true,
+      "error": null,
+      "category": "Liquidated Damages",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232314"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:23:58.681971",
+      "latency_ms": 7910.395375001826,
+      "usage": {
+        "input_tokens": 2943,
+        "output_tokens": 119,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 3062
+      },
+      "cost_usd": 0.0011803999999999999,
+      "success": true,
+      "error": null,
+      "category": "Volume Restriction",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232314"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:23:59.284735",
+      "latency_ms": 3530.4531670117285,
+      "usage": {
+        "input_tokens": 4980,
+        "output_tokens": 4,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 4984
+      },
+      "cost_usd": 0.0015040000000000001,
+      "success": true,
+      "error": null,
+      "category": "Unlimited/All-You-Can-Eat-License",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232314"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:23:59.442968",
+      "latency_ms": 3301.173625004594,
+      "usage": {
+        "input_tokens": 2857,
+        "output_tokens": 4,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 2861
+      },
+      "cost_usd": 0.0008671,
+      "success": true,
+      "error": null,
+      "category": "Non-Disparagement",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232314"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:23:59.776502",
+      "latency_ms": 3090.688374999445,
+      "usage": {
+        "input_tokens": 1914,
+        "output_tokens": 4,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1918
+      },
+      "cost_usd": 0.0005842,
+      "success": true,
+      "error": null,
+      "category": "Source Code Escrow",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232314"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:24:02.571365",
+      "latency_ms": 10656.950082993717,
+      "usage": {
+        "input_tokens": 10165,
+        "output_tokens": 143,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 10308
+      },
+      "cost_usd": 0.0034069999999999994,
+      "success": true,
+      "error": null,
+      "category": "Covenant Not To Sue",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232314"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:24:02.646228",
+      "latency_ms": 10558.55737499951,
+      "usage": {
+        "input_tokens": 3815,
+        "output_tokens": 318,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 4133
+      },
+      "cost_usd": 0.0019394999999999998,
+      "success": true,
+      "error": null,
+      "category": "Price Restrictions",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232314"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:24:03.092076",
+      "latency_ms": 17542.07262500131,
+      "usage": {
+        "input_tokens": 12401,
+        "output_tokens": 164,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 12565
+      },
+      "cost_usd": 0.0041303,
+      "success": true,
+      "error": null,
+      "category": "Uncapped Liability",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232314"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:24:03.973041",
+      "latency_ms": 7090.908708007191,
+      "usage": {
+        "input_tokens": 6988,
+        "output_tokens": 4,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 6992
+      },
+      "cost_usd": 0.0021064,
+      "success": true,
+      "error": null,
+      "category": "Volume Restriction",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232314"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:24:06.848550",
+      "latency_ms": 8165.073333992041,
+      "usage": {
+        "input_tokens": 5377,
+        "output_tokens": 4,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 5381
+      },
+      "cost_usd": 0.0016230999999999997,
+      "success": true,
+      "error": null,
+      "category": "Covenant Not To Sue",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232314"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:24:10.047423",
+      "latency_ms": 15433.30237500777,
+      "usage": {
+        "input_tokens": 6147,
+        "output_tokens": 575,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 6722
+      },
+      "cost_usd": 0.0032816,
+      "success": true,
+      "error": null,
+      "category": "Uncapped Liability",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232314"
+    },
+    {
+      "model_key": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "timestamp": "2026-03-06T23:24:12.226590",
+      "latency_ms": 16967.428165997262,
+      "usage": {
+        "input_tokens": 13267,
+        "output_tokens": 162,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 13429
+      },
+      "cost_usd": 0.004385099999999999,
+      "success": true,
+      "error": null,
+      "category": "Uncapped Liability",
+      "agent_name": "zero_shot",
+      "experiment_id": "test_zero_shot_gemini-2.5-flash_20260306_232314"
+    }
+  ]
+}

@@ -335,6 +335,17 @@ def save_experiment(
     }
     summary["per_tier"] = per_tier
 
+    # Add routing accuracy for M1 runs
+    routing_results = [
+        r["trace"]["routing_correct"]
+        for r in results
+        if "trace" in r and r["trace"].get("routing_correct") is not None
+    ]
+    if routing_results:
+        summary["metrics"]["routing_accuracy"] = sum(routing_results) / len(routing_results)
+        summary["metrics"]["routing_total"] = len(routing_results)
+        summary["metrics"]["routing_correct"] = sum(routing_results)
+
     # Compact per-sample view
     samples_compact = []
     for r in results:
@@ -355,6 +366,10 @@ def save_experiment(
             entry["containment"] = r["evaluation"]["containment"]
         if "span_coverage" in r["evaluation"]:
             entry["span_coverage"] = r["evaluation"]["span_coverage"]
+        # Include routing info for M1
+        if "trace" in r and r["trace"].get("agent_routed_to"):
+            entry["agent_routed_to"] = r["trace"]["agent_routed_to"]
+            entry["routing_correct"] = r["trace"].get("routing_correct")
         samples_compact.append(entry)
     summary["samples"] = samples_compact
     summary["diagnostics"] = diag_summary
