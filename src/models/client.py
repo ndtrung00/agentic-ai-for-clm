@@ -43,6 +43,11 @@ def _is_retryable(exc: BaseException) -> bool:
         return True
     if type(exc).__name__ in ("APIConnectionError", "APITimeoutError"):
         return True
+    # google-genai ClientError with retryable status codes
+    if type(exc).__name__ == "ClientError":
+        exc_str = str(exc)
+        if "429" in exc_str or "500" in exc_str or "503" in exc_str:
+            return True
     return False
 
 
@@ -111,7 +116,6 @@ _anthropic_client = None
 _openai_client = None
 _google_client = None
 _vertex_client = None
-_vertex_token_expiry: float = 0.0
 _ollama_clients: dict[str, Any] = {}
 
 
@@ -120,12 +124,11 @@ def reset_clients() -> None:
 
     Useful after code changes in a long-running notebook kernel.
     """
-    global _anthropic_client, _openai_client, _google_client, _vertex_client, _vertex_token_expiry, _ollama_clients
+    global _anthropic_client, _openai_client, _google_client, _vertex_client, _ollama_clients
     _anthropic_client = None
     _openai_client = None
     _google_client = None
     _vertex_client = None
-    _vertex_token_expiry = 0.0
     _ollama_clients = {}
 
 
@@ -161,52 +164,29 @@ def _get_google_client():
 
 
 def _get_vertex_client():
-    """Get or create async Vertex AI client (OpenAI-compatible endpoint).
+    """Get or create Vertex AI client (native google-genai SDK).
 
-    Uses Application Default Credentials (ADC) for OAuth2 authentication.
-    Requires:
-    - ``google-auth`` package
-    - ``VERTEX_AI_PROJECT`` env var (GCP project ID)
-    - ``VERTEX_AI_LOCATION`` env var (default: ``us-central1``)
-    - One of: ``gcloud auth application-default login``, service account JSON
-      via ``GOOGLE_APPLICATION_CREDENTIALS``, or Workload Identity.
+    Uses a Vertex AI API key for authentication.
+    Requires ``VERTEX_AI_API_KEY`` env var.
     """
-    global _vertex_client, _vertex_token_expiry
+    global _vertex_client
 
-    # Refresh client if token is about to expire (within 60s)
-    if _vertex_client is not None and time.time() < _vertex_token_expiry - 60:
+    if _vertex_client is not None:
         return _vertex_client
 
-    import google.auth
-    import google.auth.transport.requests
+    from google import genai
 
-    project = os.environ.get("GOOGLE_CLOUD_PROJECT") or os.environ.get("VERTEX_AI_PROJECT", "")
-    location = os.environ.get("GOOGLE_CLOUD_REGION") or os.environ.get("VERTEX_AI_LOCATION", "us-central1")
-
-    if not project:
+    api_key = os.environ.get("VERTEX_AI_API_KEY", "")
+    if not api_key:
         raise ValueError(
-            "GOOGLE_CLOUD_PROJECT (or VERTEX_AI_PROJECT) env var is required "
-            "for Vertex AI. Set it to your GCP project ID."
+            "VERTEX_AI_API_KEY env var is required for Vertex AI. "
+            "Create one at https://console.cloud.google.com/vertex-ai/studio/apikey"
         )
 
-    # Get OAuth2 access token via ADC
-    credentials, _ = google.auth.default(
-        scopes=["https://www.googleapis.com/auth/cloud-platform"]
-    )
-    credentials.refresh(google.auth.transport.requests.Request())
-    access_token = credentials.token
-    _vertex_token_expiry = credentials.expiry.timestamp() if credentials.expiry else time.time() + 3600
-
-    from openai import AsyncOpenAI
-
-    base_url = (
-        f"https://{location}-aiplatform.googleapis.com/v1beta1/"
-        f"projects/{project}/locations/{location}/endpoints/openapi"
-    )
-
-    _vertex_client = AsyncOpenAI(
-        base_url=base_url,
-        api_key=access_token,
+    _vertex_client = genai.Client(
+        api_key=api_key,
+        http_options={"api_version": "v1"},
+        vertexai=True,
     )
     return _vertex_client
 
@@ -296,7 +276,17 @@ async def invoke_model(
                 max_tokens=tokens,
                 max_retries=max_retries,
             )
-        elif config.provider in (ModelProvider.OPENAI, ModelProvider.GOOGLE, ModelProvider.VERTEX_AI, ModelProvider.OLLAMA):
+        elif config.provider == ModelProvider.VERTEX_AI:
+            response_text, usage = await _invoke_vertex(
+                config=config,
+                messages=messages,
+                system=system,
+                temperature=temp,
+                max_tokens=tokens,
+                json_mode=json_mode,
+                max_retries=max_retries,
+            )
+        elif config.provider in (ModelProvider.OPENAI, ModelProvider.GOOGLE, ModelProvider.OLLAMA):
             response_text, usage = await _invoke_openai_compatible(
                 config=config,
                 messages=messages,
@@ -440,6 +430,111 @@ async def _invoke_anthropic(
     return response_text, usage
 
 
+async def _invoke_vertex(
+    config: ModelConfig,
+    messages: list[dict[str, str]],
+    system: str | None,
+    temperature: float,
+    max_tokens: int,
+    json_mode: bool = False,
+    max_retries: int = DEFAULT_MAX_RETRIES,
+) -> tuple[str, TokenUsage]:
+    """Invoke Vertex AI via native google-genai SDK with Langfuse tracking.
+
+    Args:
+        config: Model configuration.
+        messages: Message list.
+        system: System prompt.
+        temperature: Temperature setting.
+        max_tokens: Max output tokens.
+        json_mode: Request JSON output.
+        max_retries: Max retry attempts for transient errors.
+
+    Returns:
+        Tuple of (response_text, token_usage).
+    """
+    from google.genai import types
+
+    client = _get_vertex_client()
+
+    # Strip "google/" prefix for native SDK — it expects bare model names
+    model_id = config.model_id
+    if model_id.startswith("google/"):
+        model_id = model_id[len("google/"):]
+
+    # Build config
+    gen_config = types.GenerateContentConfig(
+        temperature=temperature,
+        max_output_tokens=max_tokens,
+    )
+    if system:
+        gen_config.system_instruction = system
+    if json_mode:
+        gen_config.response_mime_type = "application/json"
+
+    # Convert OpenAI-style messages to Gemini contents
+    contents = []
+    for msg in messages:
+        role = "user" if msg["role"] == "user" else "model"
+        contents.append(types.Content(
+            role=role,
+            parts=[types.Part(text=msg["content"])],
+        ))
+
+    with _langfuse_generation(
+        name="vertex-ai-completion",
+        model=config.model_id,
+        input=messages,
+        metadata={"system": system, "temperature": temperature, "max_tokens": max_tokens, "json_mode": json_mode},
+    ) as generation:
+        @retry(
+            stop=stop_after_attempt(max_retries),
+            wait=wait_exponential(multiplier=1, min=1, max=60),
+            retry=retry_if_exception(_is_retryable),
+            before_sleep=before_sleep_log(logger, logging.WARNING),
+            reraise=True,
+        )
+        async def _call_with_retry():
+            return await client.aio.models.generate_content(
+                model=model_id,
+                contents=contents,
+                config=gen_config,
+            )
+
+        response = await _call_with_retry()
+
+        # Extract response
+        response_text = response.text or ""
+
+        # Extract usage
+        meta = response.usage_metadata
+        input_tokens = meta.prompt_token_count if meta else 0
+        output_tokens = meta.candidates_token_count if meta else 0
+
+        # Calculate costs
+        input_cost = (input_tokens / 1000) * config.input_cost_per_1k
+        output_cost = (output_tokens / 1000) * config.output_cost_per_1k
+
+        generation.update(
+            output=response_text,
+            usage_details={
+                "input": input_tokens,
+                "output": output_tokens,
+            },
+            cost_details={
+                "input": input_cost,
+                "output": output_cost,
+            },
+        )
+
+    usage = TokenUsage(
+        input_tokens=input_tokens,
+        output_tokens=output_tokens,
+    )
+
+    return response_text, usage
+
+
 async def _invoke_openai_compatible(
     config: ModelConfig,
     messages: list[dict[str, str]],
@@ -467,8 +562,6 @@ async def _invoke_openai_compatible(
         client = _get_ollama_client(config.base_url or "http://localhost:11434/v1")
     elif config.provider == ModelProvider.GOOGLE:
         client = _get_google_client()
-    elif config.provider == ModelProvider.VERTEX_AI:
-        client = _get_vertex_client()
     else:
         client = _get_openai_client()
 
