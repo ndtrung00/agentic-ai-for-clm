@@ -3,6 +3,7 @@ import Link from "next/link";
 import { getExperiment } from "@/lib/data-loader";
 import { formatDate } from "@/lib/format";
 import { Badge } from "@/components/ui/badge";
+import { RefreshButton } from "@/components/ui/refresh-button";
 import { ExperimentTabs } from "./tabs";
 
 export const dynamic = "force-dynamic";
@@ -37,6 +38,7 @@ export default async function ExperimentDetailPage({ params }: Props) {
             <Badge variant="outline" className="ml-2">{experiment.format} format</Badge>
           </div>
         </div>
+        <RefreshButton />
       </div>
 
       {/* Tabs */}
