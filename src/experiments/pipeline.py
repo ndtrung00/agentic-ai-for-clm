@@ -106,6 +106,7 @@ class ExperimentConfig:
     samples_per_tier: int = 200
     include_negative: bool = True
     max_contract_chars: int = 100_000
+    min_contract_chars: int = 0
     temperature: float = 0.0
     max_tokens: int = 4096
     concurrency: int | None = None  # None = auto (5 for baselines, 1 for M1)
@@ -162,6 +163,7 @@ def load_and_select_samples(
     samples_per_tier: int,
     include_negative: bool,
     max_contract_chars: int,
+    min_contract_chars: int = 0,
     seed: int = 42,
 ) -> list[CUADSample]:
     """Load CUAD data and perform stratified sampling.
@@ -175,7 +177,8 @@ def load_and_select_samples(
 
     by_tier: dict[str, list[CUADSample]] = defaultdict(list)
     for s in all_samples:
-        if len(s.contract_text) <= max_contract_chars:
+        length = len(s.contract_text)
+        if min_contract_chars <= length <= max_contract_chars:
             by_tier[s.tier].append(s)
 
     selected: list[CUADSample] = []
@@ -266,6 +269,7 @@ async def run_experiment_pipeline(
             samples_per_tier=config.samples_per_tier,
             include_negative=config.include_negative,
             max_contract_chars=config.max_contract_chars,
+            min_contract_chars=config.min_contract_chars,
         )
 
     # ── 2. Resolve model config ──
@@ -395,6 +399,7 @@ async def run_experiment_pipeline(
         max_tokens=config.max_tokens,
         samples_per_tier=config.samples_per_tier,
         max_contract_chars=config.max_contract_chars,
+        min_contract_chars=config.min_contract_chars,
         include_negative=config.include_negative,
         prompt=prompt_info,
         architecture=architecture,
@@ -482,6 +487,7 @@ async def run_batch(
             samples_per_tier=ref.samples_per_tier,
             include_negative=ref.include_negative,
             max_contract_chars=ref.max_contract_chars,
+            min_contract_chars=ref.min_contract_chars,
         )
         print(f"  {len(samples)} samples selected in {time.monotonic() - t0:.1f}s\n")
 

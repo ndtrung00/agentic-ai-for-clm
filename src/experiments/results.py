@@ -247,7 +247,8 @@ def save_experiment(
     max_tokens: int,
     samples_per_tier: int,
     max_contract_chars: int,
-    include_negative: bool,
+    min_contract_chars: int = 0,
+    include_negative: bool = True,
     prompt: dict[str, Any] | None = None,
     architecture: dict[str, Any] | None = None,
     is_official: bool = False,
@@ -297,6 +298,7 @@ def save_experiment(
         "temperature": temperature,
         "max_tokens": max_tokens,
         "max_contract_chars": max_contract_chars,
+        "min_contract_chars": min_contract_chars,
         "include_negative": include_negative,
     }
 

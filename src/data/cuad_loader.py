@@ -126,6 +126,7 @@ class CUADDataLoader:
         split: str = "test",
         local_path: Path | str | None = None,
         use_huggingface: bool = False,
+        min_contract_length: int | None = None,
     ) -> None:
         """Initialize the CUAD loader.
 
@@ -133,10 +134,13 @@ class CUADDataLoader:
             split: Dataset split to load ('train', 'validation', 'test').
             local_path: Path to local CUAD JSON file. If None, uses default.
             use_huggingface: If True, load from HuggingFace instead of local.
+            min_contract_length: If set, only include samples from contracts
+                with at least this many characters. E.g., 100_000 for >100k.
         """
         self.split = split
         self.local_path = Path(local_path) if local_path else LOCAL_CUAD_PATH
         self.use_huggingface = use_huggingface
+        self.min_contract_length = min_contract_length
         self._samples: list[CUADSample] = []
         self._loaded = False
 
@@ -146,7 +150,34 @@ class CUADDataLoader:
             self._load_from_huggingface()
         else:
             self._load_from_local()
+
+        if self.min_contract_length is not None:
+            self._filter_by_contract_length(self.min_contract_length)
+
         self._loaded = True
+
+    def _filter_by_contract_length(self, min_length: int) -> None:
+        """Keep only samples from contracts with at least min_length characters."""
+        # Build set of contract titles that meet the threshold
+        contract_lengths: dict[str, int] = {}
+        for s in self._samples:
+            if s.contract_title not in contract_lengths:
+                contract_lengths[s.contract_title] = len(s.contract_text)
+
+        qualifying = {
+            title for title, length in contract_lengths.items()
+            if length >= min_length
+        }
+
+        before = len(self._samples)
+        self._samples = [s for s in self._samples if s.contract_title in qualifying]
+        after = len(self._samples)
+
+        print(
+            f"Filtered by contract length >= {min_length:,} chars: "
+            f"{len(qualifying)}/{len(contract_lengths)} contracts, "
+            f"{after}/{before} samples"
+        )
 
     def _load_from_local(self) -> None:
         """Load from local JSON file."""
