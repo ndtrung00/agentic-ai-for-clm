@@ -87,8 +87,9 @@ def get_category_tier(category: str) -> str:
     return "unknown"
 
 
-# Default local data path
-LOCAL_CUAD_PATH = Path(__file__).parent.parent.parent / "data" / "cuad" / "CUAD_v1.json"
+# Default local data path — use test.json (102 contracts, 4182 samples)
+# to match ContractEval's evaluation set. CUAD_v1.json has all 510 contracts.
+LOCAL_CUAD_PATH = Path(__file__).parent.parent.parent / "data" / "cuad" / "test.json"
 
 
 @dataclass

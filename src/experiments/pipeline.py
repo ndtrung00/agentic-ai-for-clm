@@ -169,7 +169,9 @@ def load_and_select_samples(
     """Load CUAD data and perform stratified sampling.
 
     Args:
-        samples_per_tier: Total samples to draw per tier.
+        samples_per_tier: Total samples to draw per tier. Set to 0 to use
+            all available samples per tier (full test set) while still
+            applying neg_ratio.
         neg_ratio: Proportion of negative (no-clause) samples per tier.
             0.0 = positive only, 0.7 = 70% negative (CUAD natural distribution).
         max_contract_chars: Skip contracts longer than this.
@@ -196,16 +198,29 @@ def load_and_select_samples(
         positive = [s for s in tier_samples if s.has_clause]
         negative = [s for s in tier_samples if not s.has_clause]
 
-        # Split samples_per_tier between positive and negative by ratio
-        n_neg_target = round(samples_per_tier * neg_ratio)
-        n_pos_target = samples_per_tier - n_neg_target
+        if samples_per_tier == 0:
+            # Full test set: keep all positives, downsample negatives to match ratio
+            n_pos = len(positive)
+            if neg_ratio > 0 and n_pos > 0:
+                # neg_ratio = n_neg / (n_pos + n_neg) => n_neg = n_pos * neg_ratio / (1 - neg_ratio)
+                n_neg_target = round(n_pos * neg_ratio / (1 - neg_ratio))
+                n_neg = min(n_neg_target, len(negative))
+            else:
+                n_neg = 0
+            selected.extend(positive)
+            if n_neg > 0 and negative:
+                selected.extend(random.sample(negative, n_neg))
+        else:
+            # Subsampled: split samples_per_tier between positive and negative
+            n_neg_target = round(samples_per_tier * neg_ratio)
+            n_pos_target = samples_per_tier - n_neg_target
 
-        n_pos = min(n_pos_target, len(positive))
-        selected.extend(random.sample(positive, n_pos))
+            n_pos = min(n_pos_target, len(positive))
+            selected.extend(random.sample(positive, n_pos))
 
-        if n_neg_target > 0 and negative:
-            n_neg = min(n_neg_target, len(negative))
-            selected.extend(random.sample(negative, n_neg))
+            if n_neg_target > 0 and negative:
+                n_neg = min(n_neg_target, len(negative))
+                selected.extend(random.sample(negative, n_neg))
 
     return selected
 
