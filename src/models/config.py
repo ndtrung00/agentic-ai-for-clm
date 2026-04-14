@@ -118,6 +118,33 @@ MODEL_REGISTRY: dict[str, ModelConfig] = {
         input_cost_per_1k=0.0004,
         output_cost_per_1k=0.0016,
     ),
+    "gpt-4.1-nano": ModelConfig(
+        name="GPT 4.1 Nano",
+        model_id="gpt-4.1-nano",
+        provider=ModelProvider.OPENAI,
+        max_tokens=32768,
+        context_window=1047576,
+        input_cost_per_1k=0.0001,
+        output_cost_per_1k=0.0004,
+    ),
+    "o3": ModelConfig(
+        name="o3",
+        model_id="o3",
+        provider=ModelProvider.OPENAI,
+        max_tokens=100000,
+        context_window=200000,
+        input_cost_per_1k=0.002,
+        output_cost_per_1k=0.008,
+    ),
+    "o4-mini": ModelConfig(
+        name="o4 Mini",
+        model_id="o4-mini",
+        provider=ModelProvider.OPENAI,
+        max_tokens=100000,
+        context_window=200000,
+        input_cost_per_1k=0.0011,
+        output_cost_per_1k=0.0044,
+    ),
 
     # Google (via Vertex AI — uses OAuth2/ADC, set GOOGLE_CLOUD_PROJECT)
     "gemini-2.5-pro": ModelConfig(
