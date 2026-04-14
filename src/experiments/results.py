@@ -248,7 +248,7 @@ def save_experiment(
     samples_per_tier: int,
     max_contract_chars: int,
     min_contract_chars: int = 0,
-    include_negative: bool = True,
+    neg_ratio: float = 0.7,
     prompt: dict[str, Any] | None = None,
     architecture: dict[str, Any] | None = None,
     is_official: bool = False,
@@ -274,7 +274,7 @@ def save_experiment(
         max_tokens: Max output tokens used.
         samples_per_tier: Samples per tier used.
         max_contract_chars: Contract char limit used.
-        include_negative: Whether negative samples were included.
+        neg_ratio: Proportion of negative samples (0.0–1.0).
         prompt: Baseline prompt info dict (notebook 03). Mutually exclusive
             with *architecture*.
         architecture: Multi-agent architecture dict (notebook 04). Mutually
@@ -299,7 +299,7 @@ def save_experiment(
         "max_tokens": max_tokens,
         "max_contract_chars": max_contract_chars,
         "min_contract_chars": min_contract_chars,
-        "include_negative": include_negative,
+        "neg_ratio": neg_ratio,
     }
 
     if prompt is not None:

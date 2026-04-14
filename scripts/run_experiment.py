@@ -71,9 +71,10 @@ def parse_args() -> argparse.Namespace:
         help="Max output tokens (default: 4096)",
     )
     parser.add_argument(
-        "--no-negative",
-        action="store_true",
-        help="Exclude negative (no-clause) samples",
+        "--neg-ratio",
+        type=float,
+        default=0.7,
+        help="Proportion of negative samples per tier (0.0=positive only, 0.7=CUAD natural, default: 0.7)",
     )
     parser.add_argument(
         "--official",
@@ -111,7 +112,7 @@ async def run_from_args(args: argparse.Namespace) -> None:
         model_key=args.model_key,
         run_type=args.run_type,
         samples_per_tier=args.samples_per_tier,
-        include_negative=not args.no_negative,
+        neg_ratio=args.neg_ratio,
         max_contract_chars=args.max_contract_chars,
         temperature=args.temperature,
         max_tokens=args.max_tokens,

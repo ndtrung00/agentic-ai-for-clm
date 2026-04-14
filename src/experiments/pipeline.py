@@ -23,7 +23,7 @@ Parallel execution (different providers only — same provider shares rate limit
         ExperimentConfig, run_experiment_pipeline, load_and_select_samples,
     )
 
-    samples = load_and_select_samples(samples_per_tier=200, include_negative=True, max_contract_chars=100_000)
+    samples = load_and_select_samples(samples_per_tier=200, neg_ratio=0.7, max_contract_chars=100_000)
 
     # Safe to parallelize: different providers won't compete for rate limits
     openai_task  = run_experiment_pipeline(ExperimentConfig(model_key="gpt-4.1-mini", run_type="B1"), samples=samples)
@@ -104,7 +104,7 @@ class ExperimentConfig:
     model_key: str
     run_type: str  # "B1", "B4", "M1", "M6"
     samples_per_tier: int = 200
-    include_negative: bool = True
+    neg_ratio: float = 0.7  # proportion of negatives (0.0 = positive only, 0.7 = 70% neg)
     max_contract_chars: int = 100_000
     min_contract_chars: int = 0
     temperature: float = 0.0
@@ -161,15 +161,24 @@ class ExperimentResult:
 def load_and_select_samples(
     *,
     samples_per_tier: int,
-    include_negative: bool,
+    neg_ratio: float = 0.7,
     max_contract_chars: int,
     min_contract_chars: int = 0,
     seed: int = 42,
 ) -> list[CUADSample]:
     """Load CUAD data and perform stratified sampling.
 
-    Uses the same logic as notebooks 03/04 for reproducibility.
+    Args:
+        samples_per_tier: Total samples to draw per tier.
+        neg_ratio: Proportion of negative (no-clause) samples per tier.
+            0.0 = positive only, 0.7 = 70% negative (CUAD natural distribution).
+        max_contract_chars: Skip contracts longer than this.
+        min_contract_chars: Skip contracts shorter than this.
+        seed: Random seed for reproducibility.
     """
+    if not 0.0 <= neg_ratio <= 1.0:
+        raise ValueError(f"neg_ratio must be between 0.0 and 1.0, got {neg_ratio}")
+
     random.seed(seed)
     loader = CUADDataLoader()
     loader.load()
@@ -187,11 +196,15 @@ def load_and_select_samples(
         positive = [s for s in tier_samples if s.has_clause]
         negative = [s for s in tier_samples if not s.has_clause]
 
-        n_pos = min(samples_per_tier, len(positive))
+        # Split samples_per_tier between positive and negative by ratio
+        n_neg_target = round(samples_per_tier * neg_ratio)
+        n_pos_target = samples_per_tier - n_neg_target
+
+        n_pos = min(n_pos_target, len(positive))
         selected.extend(random.sample(positive, n_pos))
 
-        if include_negative and negative:
-            n_neg = min(max(1, samples_per_tier // 2), len(negative))
+        if n_neg_target > 0 and negative:
+            n_neg = min(n_neg_target, len(negative))
             selected.extend(random.sample(negative, n_neg))
 
     return selected
@@ -267,7 +280,7 @@ async def run_experiment_pipeline(
     if samples is None:
         samples = load_and_select_samples(
             samples_per_tier=config.samples_per_tier,
-            include_negative=config.include_negative,
+            neg_ratio=config.neg_ratio,
             max_contract_chars=config.max_contract_chars,
             min_contract_chars=config.min_contract_chars,
         )
@@ -400,7 +413,7 @@ async def run_experiment_pipeline(
         samples_per_tier=config.samples_per_tier,
         max_contract_chars=config.max_contract_chars,
         min_contract_chars=config.min_contract_chars,
-        include_negative=config.include_negative,
+        neg_ratio=config.neg_ratio,
         prompt=prompt_info,
         architecture=architecture,
         is_official=config.is_official,
@@ -485,7 +498,7 @@ async def run_batch(
         t0 = time.monotonic()
         samples = load_and_select_samples(
             samples_per_tier=ref.samples_per_tier,
-            include_negative=ref.include_negative,
+            neg_ratio=ref.neg_ratio,
             max_contract_chars=ref.max_contract_chars,
             min_contract_chars=ref.min_contract_chars,
         )
