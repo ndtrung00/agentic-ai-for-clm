@@ -142,7 +142,7 @@ export function ExperimentTabs({ experiment, runId }: ExperimentTabsProps) {
                 {experiment.config.max_contract_chars && (
                   <>
                     <dt className="text-muted-foreground">Max Contract Chars</dt>
-                    <dd>{experiment.config.max_contract_chars.toLocaleString()}</dd>
+                    <dd>{new Intl.NumberFormat('en-US').format(experiment.config.max_contract_chars)}</dd>
                   </>
                 )}
               </dl>

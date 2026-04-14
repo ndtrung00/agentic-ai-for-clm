@@ -172,7 +172,7 @@ export function ContractPreview({
       <summary className="cursor-pointer p-4 text-sm font-medium flex items-center gap-2">
         <span>Contract Text</span>
         <span className="text-xs text-muted-foreground font-normal">
-          {contractTitle} &middot; {charCount.toLocaleString()} chars
+          {contractTitle} &middot; {new Intl.NumberFormat('en-US').format(charCount)} chars
         </span>
       </summary>
       <div className="px-4 pb-4 space-y-2">
