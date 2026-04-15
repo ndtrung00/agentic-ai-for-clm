@@ -4,10 +4,10 @@
 
 | Model | Provider | B1 | B4 | M1 | M6 |
 |-------|----------|----|----|----|----|
-| Claude Sonnet 4 | Anthropic | ☑ | ☐ | ☐ | ☐ |
+| Claude Sonnet 4 | Anthropic | ☑ | ☑ | ☐ | ☐ |
 | Claude Sonnet 4.6 | Anthropic | ☑ | ☐ | ☐ | ☐ |
-| Claude Opus 4.6 | Anthropic | ☑ | ☐ | ☐ | ☐ |
-| Claude Haiku 4.5 | Anthropic | ☑ | ☐ | ☐ | ☐ |
+| Claude Opus 4.6 | Anthropic | ☑ | ☑ | ☐ | ☐ |
+| Claude Haiku 4.5 | Anthropic | ☑ | ☑ | ☐ | ☐ |
 | GPT 4.1 | OpenAI | ☑ | ☐ | ☐ | ☐ |
 | GPT 4.1 Mini | OpenAI | ☑ | ☐ | ☐ | ☐ |
 | GPT 4.1 Nano | OpenAI | ☑ | ☐ | ☐ | ☐ |
