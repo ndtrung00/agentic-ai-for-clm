@@ -143,6 +143,7 @@ class Orchestrator:
         validation_agent: Any | None = None,  # ValidationAgent instance
         config: AgentConfig | None = None,
         diagnostics: ModelDiagnostics | None = None,
+        use_static_routing: bool = False,
     ) -> None:
         """Initialize the orchestrator.
 
@@ -151,11 +152,14 @@ class Orchestrator:
             validation_agent: Optional validation agent for grounding checks.
             config: Optional orchestrator configuration.
             diagnostics: Optional diagnostics tracker for routing LLM calls.
+            use_static_routing: If True, route via CATEGORY_ROUTING dict
+                instead of LLM call. Used by M4 ablation.
         """
         self.specialists = specialists
         self.validation_agent = validation_agent
         self.config = config or AgentConfig(name="orchestrator")
         self.diagnostics = diagnostics
+        self.use_static_routing = use_static_routing
         self._graph = self._build_graph()
         self._compiled_graph = self._graph.compile()
 
@@ -222,7 +226,31 @@ class Orchestrator:
         # Ground truth for routing accuracy measurement
         expected_specialist = CATEGORY_ROUTING.get(category)
 
-        # Ask the LLM to route based on the question
+        # Static routing: skip LLM call, use CATEGORY_ROUTING dict directly
+        if self.use_static_routing:
+            specialist = expected_specialist or ""
+            trace_entry = {
+                "node": "route",
+                "category": category,
+                "question": question,
+                "routed_to": specialist,
+                "routing_reasoning": "Static routing via CATEGORY_ROUTING",
+                "expected_specialist": expected_specialist,
+                "routing_correct": True,
+                "static_routing": True,
+            }
+            if specialist not in self.specialists:
+                return {
+                    "specialist_name": "",
+                    "error": f"Static routing: unknown category {category!r}",
+                    "trace": state.trace + [trace_entry],
+                }
+            return {
+                "specialist_name": specialist,
+                "trace": state.trace + [trace_entry],
+            }
+
+        # LLM routing: ask the model to decide
         messages = [{"role": "user", "content": f"Question: {question}"}]
 
         try:

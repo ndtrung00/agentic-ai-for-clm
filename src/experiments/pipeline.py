@@ -92,7 +92,7 @@ RUN_TYPE_LABELS: dict[str, str] = {
 }
 
 BASELINE_TYPES = {"B1", "B4"}
-EXPERIMENT_TYPES = {"M0", "M1", "M6", "M7", "M8"}
+EXPERIMENT_TYPES = {"M0", "M1", "M4", "M6", "M7", "M8"}
 
 _PROMPT_TEMPLATES: dict[str, str] = {
     "B1": CONTRACTEVAL_PROMPT,
@@ -121,7 +121,7 @@ class ExperimentConfig:
                 f"Unknown run_type: {self.run_type!r}. "
                 f"Must be one of: {sorted(RUN_TYPE_LABELS)}"
             )
-        if self.run_type in {"M2", "M3", "M4", "M5"}:
+        if self.run_type in {"M2", "M3", "M5"}:
             raise NotImplementedError(
                 f"{self.run_type} ablation is not yet implemented. "
                 f"Currently available: B1, B4, M0, M1, M6, M7, M8."
@@ -139,7 +139,7 @@ class ExperimentConfig:
     def effective_concurrency(self) -> int:
         if self.concurrency is not None:
             return self.concurrency
-        return 3 if self.run_type in ("M0", "M1", "M7", "M8") else 5
+        return 3 if self.run_type in ("M0", "M1", "M4", "M7", "M8") else 5
 
 
 @dataclass
@@ -324,7 +324,7 @@ async def run_experiment_pipeline(
     elif config.run_type == "M0":
         diagnostics, extract_fn = _make_m0_extract_fn(config, run_id=run_id)
 
-    elif config.run_type == "M1":
+    elif config.run_type in ("M1", "M4"):
         diagnostics, extract_fn, orchestrator, specialists = (
             _make_m1_extract_fn(config, run_id=run_id)
         )
@@ -398,7 +398,7 @@ async def run_experiment_pipeline(
             "agents": ["classifier", "extractor"],
         }
 
-    elif config.run_type == "M1":
+    elif config.run_type in ("M1", "M4"):
         specialist_prompts = {}
         for name, agent in specialists.items():  # type: ignore[possibly-undefined]
             pt = agent.prompt_template
@@ -409,13 +409,20 @@ async def run_experiment_pipeline(
                 "categories": agent.config.categories,
                 "category_count": len(agent.config.categories),
             }
+        is_static = orchestrator.use_static_routing  # type: ignore[possibly-undefined]
         architecture = {
-            "type": "multi_agent",
+            "type": "multi_agent_static_routing" if is_static else "multi_agent",
             "description": (
+                "LangGraph with static CATEGORY_ROUTING dict (no LLM router call)"
+                if is_static else
                 "LangGraph orchestrator uses LLM reasoning to route "
                 "questions to specialists, then validation"
             ),
-            "workflow": ["route (LLM)", "specialist", "validate", "finalize"],
+            "workflow": (
+                ["route (static)", "specialist", "validate", "finalize"]
+                if is_static else
+                ["route (LLM)", "specialist", "validate", "finalize"]
+            ),
             "specialists": list(specialists.keys()),  # type: ignore[possibly-undefined]
             "validation_enabled": orchestrator.validation_agent is not None,  # type: ignore[possibly-undefined]
             "routing_table": CATEGORY_ROUTING,
@@ -872,7 +879,10 @@ def _make_m0_extract_fn(config: ExperimentConfig, *, run_id: str):
 
 
 def _make_m1_extract_fn(config: ExperimentConfig, *, run_id: str):
-    """Build an async extract_fn for M1 (full multi-agent).
+    """Build an async extract_fn for M1 or M4 (full multi-agent).
+
+    M1: LLM-based routing → specialist → validation
+    M4: Static routing (CATEGORY_ROUTING dict) → specialist → validation
 
     Returns (diagnostics, extract_fn, orchestrator, specialists).
     """
@@ -923,6 +933,7 @@ def _make_m1_extract_fn(config: ExperimentConfig, *, run_id: str):
         validation_agent=validation_agent,
         config=AgentConfig(name="orchestrator", model_key=config.model_key),
         diagnostics=diagnostics,
+        use_static_routing=(config.run_type == "M4"),
     )
 
     async def extract_fn(sample: CUADSample) -> ExtractionOutput:
@@ -935,6 +946,8 @@ def _make_m1_extract_fn(config: ExperimentConfig, *, run_id: str):
         )
 
         system_prompt = (
+            "M4 static-routing (specialist -> validation)"
+            if config.run_type == "M4" else
             "M1 multi-agent (orchestrator -> specialist -> validation)"
         )
         user_message = (
