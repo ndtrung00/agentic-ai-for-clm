@@ -692,9 +692,13 @@ def _make_m1_extract_fn(config: ExperimentConfig, *, run_id: str):
         ),
     }
 
+    from src.agents.validation import ValidationAgent
+
+    validation_agent = ValidationAgent()
+
     orchestrator = Orchestrator(
         specialists=specialists,
-        validation_agent=None,
+        validation_agent=validation_agent,
         config=AgentConfig(name="orchestrator", model_key=config.model_key),
         diagnostics=diagnostics,
     )

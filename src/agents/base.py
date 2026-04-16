@@ -182,6 +182,10 @@ class BaseAgent(ABC):
     def result_from_dict(self, data: dict[str, Any], category: str) -> ExtractionResult:
         """Create ExtractionResult from parsed dict.
 
+        Handles the ``no_clause_found`` flag: when True, returns an empty
+        extraction regardless of what ``extracted_clauses`` contains (the
+        model sometimes contradicts itself).
+
         Args:
             data: Parsed response dictionary.
             category: The category being extracted.
@@ -189,6 +193,15 @@ class BaseAgent(ABC):
         Returns:
             ExtractionResult instance.
         """
+        if data.get("no_clause_found", False):
+            return ExtractionResult(
+                extracted_clauses=[],
+                reasoning=data.get("reasoning", ""),
+                confidence=data.get("confidence", 1.0),
+                category_indicators_found=data.get("category_indicators_found", []),
+                category=category,
+            )
+
         return ExtractionResult(
             extracted_clauses=data.get("extracted_clauses", []),
             reasoning=data.get("reasoning", ""),

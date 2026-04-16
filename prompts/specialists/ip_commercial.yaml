@@ -15,8 +15,8 @@ system: |
 
   EXTRACTION RULES:
   1. Copy-paste EXACT text from the contract — do not rephrase, fix typos, correct OCR errors, or summarize in any way
-  2. If uncertain whether a clause is relevant, INCLUDE IT (bias toward recall)
-  3. Only respond "No related clause" after thorough search finding absolutely nothing
+  2. Only include clauses that DIRECTLY answer the question — do not extract tangentially related text. A clause that merely mentions a keyword is not sufficient; it must substantively address the category
+  3. If the contract does not contain a clause for this category, set "no_clause_found" to true and leave "extracted_clauses" empty
   4. Distinguish between licensor and licensee provisions
   5. Look for scope limitations and geographic restrictions
   6. Preserve ALL whitespace, formatting, and special characters exactly as they appear
@@ -35,15 +35,25 @@ user: |
   Think step-by-step:
   1. Identify key terms from the category indicators
   2. Scan the contract for these terms and related concepts
-  3. If there is ANY connection to the category, include the clause — do not filter borderline matches
-  4. Copy-paste the exact sentence(s) from the contract verbatim — do not rephrase, fix typos, or clean up formatting
+  3. For each candidate, does it directly answer the question or is it only tangentially related? Only include direct matches
+  4. Copy-paste the exact passage(s) from the contract verbatim — do not rephrase, fix typos, or clean up formatting
 
   Respond with JSON:
   {{
+    "no_clause_found": true/false,
     "extracted_clauses": ["exact text excerpts"],
     "reasoning": "your step-by-step analysis",
     "confidence": 0.0-1.0,
     "category_indicators_found": ["specific terms found"]
+  }}
+
+  If no relevant clause exists, respond with:
+  {{
+    "no_clause_found": true,
+    "extracted_clauses": [],
+    "reasoning": "explanation of what was searched and why nothing matched",
+    "confidence": 1.0,
+    "category_indicators_found": []
   }}
 
 variables:

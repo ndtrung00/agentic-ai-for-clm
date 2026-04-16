@@ -231,14 +231,18 @@ class Orchestrator:
                 messages=messages,
                 system=ROUTING_SYSTEM_PROMPT,
                 temperature=0.0,
-                max_tokens=150,
+                max_tokens=1024,
                 json_mode=True,
                 diagnostics=self.diagnostics,
                 agent_name="orchestrator_router",
                 category=category,
             )
 
-            specialist, routing_reasoning = self._parse_routing_response(raw_response)
+            try:
+                specialist, routing_reasoning = self._parse_routing_response(raw_response)
+            except ValueError:
+                specialist = expected_specialist
+                routing_reasoning = f"Static fallback (unparseable: {raw_response[:80]!r})"
 
             trace_entry = {
                 "node": "route",

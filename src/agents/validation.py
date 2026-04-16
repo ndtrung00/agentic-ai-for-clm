@@ -69,6 +69,11 @@ Respond with a JSON object containing:
     ) -> ExtractionResult:
         """Verify an extraction result for grounding and relevance.
 
+        Performs two checks without an LLM call:
+        1. Grounding: each extracted clause must appear verbatim in the contract
+        2. Reasoning contradiction: if the reasoning says "no clause found" but
+           clauses were extracted, drop the clauses
+
         Args:
             extraction_result: The result to validate.
             contract_text: Original contract for grounding check.
@@ -77,8 +82,46 @@ Respond with a JSON object containing:
         Returns:
             Validated (potentially corrected) ExtractionResult.
         """
-        # TODO: Implement validation logic with LLM
-        raise NotImplementedError("Validation not yet implemented")
+        if not extraction_result.extracted_clauses:
+            return extraction_result
+
+        # Check 1: Reasoning contradiction — only drop when model strongly
+        # says nothing exists (not when it's qualifying like "no specific X, but...")
+        reasoning_lower = extraction_result.reasoning.lower()
+        strong_negatives = [
+            "no related clause",
+            "no relevant clause",
+            "no clause found",
+            "found no relevant",
+            "found nothing relevant",
+            "nothing relevant",
+        ]
+        # Only trigger if a strong negative appears AND reasoning doesn't contain "but" / "however"
+        # which indicates the model is qualifying, not contradicting
+        has_strong_negative = any(phrase in reasoning_lower for phrase in strong_negatives)
+        has_qualifier = any(q in reasoning_lower for q in [" but ", " however ", " although ", " nonetheless "])
+        if has_strong_negative and not has_qualifier:
+            return ExtractionResult(
+                extracted_clauses=[],
+                reasoning=f"Validation: reasoning contradicts extraction. Original reasoning: {extraction_result.reasoning}",
+                confidence=extraction_result.confidence,
+                category_indicators_found=extraction_result.category_indicators_found,
+                category=extraction_result.category,
+            )
+
+        # Check 2: Grounding — keep only clauses that appear in the contract
+        grounded = []
+        for clause in extraction_result.extracted_clauses:
+            if self.check_grounding(clause, contract_text):
+                grounded.append(clause)
+
+        return ExtractionResult(
+            extracted_clauses=grounded,
+            reasoning=extraction_result.reasoning,
+            confidence=extraction_result.confidence,
+            category_indicators_found=extraction_result.category_indicators_found,
+            category=extraction_result.category,
+        )
 
     def check_grounding(self, clause: str, contract_text: str) -> bool:
         """Check if a clause appears verbatim in the contract.
