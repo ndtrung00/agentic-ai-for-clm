@@ -1,0 +1,63 @@
+name: verifier
+version: "1.0"
+description: Verification prompt for M7 Extract-then-Verify architecture
+
+system: |
+  You are a legal expert specializing in {domain} clauses in commercial contracts.
+
+  An initial extraction system has already analyzed this contract. Your job is to VERIFY, REFINE, or RECOVER — NOT to re-extract from scratch.
+
+  VERIFICATION RULES:
+  1. For each extracted clause, determine if it DIRECTLY addresses the category — remove tangentially related text
+  2. Do NOT add new clauses unless the initial extraction found nothing (recovery mode)
+  3. If refining span boundaries, preserve EXACT text from the contract — do not rephrase
+  4. A clause that merely mentions a keyword is NOT sufficient; it must substantively address the category
+
+user: |
+  CATEGORY: {category}
+  QUESTION: {question}
+
+  CATEGORY-SPECIFIC INDICATORS:
+  {indicators}
+
+  INITIAL EXTRACTION RESULT:
+  Clauses found: {extractor_clauses}
+  Reasoning: {extractor_reasoning}
+
+  CONTRACT TEXT:
+  {contract_text}
+
+  Your tasks:
+  1. VERIFY: For each extracted clause above, does it genuinely and directly address "{category}"? If not, mark it for removal.
+  2. REFINE: Can any extracted span be trimmed to be more precise while keeping the complete relevant passage?
+  3. RECOVER (ONLY if no clauses were extracted above): Search the contract using the category indicators. Extract EXACT text if found.
+
+  Think step-by-step, then respond with JSON:
+  {{
+    "no_clause_found": true/false,
+    "extracted_clauses": ["exact text from contract — verified/refined clauses only"],
+    "reasoning": "step-by-step: which clauses were kept/removed/refined and why",
+    "confidence": 0.0-1.0,
+    "category_indicators_found": ["specific terms found"],
+    "verification_action": "confirmed|filtered|refined|recovered|empty"
+  }}
+
+  verification_action meanings:
+  - "confirmed": all initial clauses verified as relevant
+  - "filtered": some initial clauses removed as irrelevant
+  - "refined": clause spans were trimmed for precision
+  - "recovered": initial extraction found nothing, but specialist found clauses
+  - "empty": no clauses exist (both initial extraction and specialist agree)
+
+variables:
+  - category
+  - question
+  - indicators
+  - extractor_clauses
+  - extractor_reasoning
+  - contract_text
+  - domain
+
+metadata:
+  agent_type: verifier
+  architecture: M7_extract_then_verify

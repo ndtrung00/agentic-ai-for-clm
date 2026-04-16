@@ -80,16 +80,19 @@ from src.models.diagnostics import ModelDiagnostics
 RUN_TYPE_LABELS: dict[str, str] = {
     "B1": "zero_shot",
     "B4": "cot",
+    "M0": "classify_then_extract",
     "M1": "multiagent",
     "M2": "ablation_no_validation",
     "M3": "ablation_single_specialist",
     "M4": "ablation_no_routing",
     "M5": "ablation_no_specialist_prompts",
     "M6": "combined_prompts",
+    "M7": "extract_then_verify",
+    "M8": "ensemble",
 }
 
 BASELINE_TYPES = {"B1", "B4"}
-EXPERIMENT_TYPES = {"M1", "M6"}
+EXPERIMENT_TYPES = {"M0", "M1", "M6", "M7", "M8"}
 
 _PROMPT_TEMPLATES: dict[str, str] = {
     "B1": CONTRACTEVAL_PROMPT,
@@ -121,7 +124,7 @@ class ExperimentConfig:
         if self.run_type in {"M2", "M3", "M4", "M5"}:
             raise NotImplementedError(
                 f"{self.run_type} ablation is not yet implemented. "
-                f"Currently available: B1, B4, M1, M6."
+                f"Currently available: B1, B4, M0, M1, M6, M7, M8."
             )
 
     @property
@@ -136,7 +139,7 @@ class ExperimentConfig:
     def effective_concurrency(self) -> int:
         if self.concurrency is not None:
             return self.concurrency
-        return 3 if self.run_type == "M1" else 5
+        return 3 if self.run_type in ("M0", "M1", "M7", "M8") else 5
 
 
 @dataclass
@@ -318,6 +321,9 @@ async def run_experiment_pipeline(
         diagnostics = ModelDiagnostics(experiment_id=run_id)
         extract_fn = _make_baseline_extract_fn(config, diagnostics)
 
+    elif config.run_type == "M0":
+        diagnostics, extract_fn = _make_m0_extract_fn(config, run_id=run_id)
+
     elif config.run_type == "M1":
         diagnostics, extract_fn, orchestrator, specialists = (
             _make_m1_extract_fn(config, run_id=run_id)
@@ -325,6 +331,12 @@ async def run_experiment_pipeline(
 
     elif config.run_type == "M6":
         diagnostics, extract_fn, m6_baseline = _make_m6_extract_fn(config, run_id=run_id)
+
+    elif config.run_type == "M7":
+        diagnostics, extract_fn = _make_m7_extract_fn(config, run_id=run_id)
+
+    elif config.run_type == "M8":
+        diagnostics, extract_fn = _make_m8_extract_fn(config, run_id=run_id)
 
     else:
         raise NotImplementedError(f"{config.run_type} is not implemented")
@@ -375,6 +387,17 @@ async def run_experiment_pipeline(
             "template_name": config.run_label,
         }
 
+    elif config.run_type == "M0":
+        architecture = {
+            "type": "classify_then_extract",
+            "description": (
+                "Two-stage pipeline: Agent 1 classifies whether a clause exists, "
+                "Agent 2 extracts the exact span (only if classified as present)"
+            ),
+            "workflow": ["classify", "extract (conditional)"],
+            "agents": ["classifier", "extractor"],
+        }
+
     elif config.run_type == "M1":
         specialist_prompts = {}
         for name, agent in specialists.items():  # type: ignore[possibly-undefined]
@@ -408,6 +431,50 @@ async def run_experiment_pipeline(
             ),
             "workflow": ["combined_prompt"],
             "system_prompt": M6_SYSTEM_PROMPT,
+        }
+
+    elif config.run_type == "M7":
+        architecture = {
+            "type": "extract_then_verify",
+            "description": (
+                "B4 (CoT) extracts, deterministic triage decides if "
+                "specialist verification is needed, specialist verifies/"
+                "refines/recovers, grounding check finalizes"
+            ),
+            "workflow": [
+                "extract (B4 CoT)",
+                "triage (deterministic)",
+                "verify (specialist, conditional)",
+                "grounding (non-LLM)",
+                "finalize",
+            ],
+            "agents": ["m7_extractor (B4)", "m7_verifier (specialist)"],
+            "routing_table": CATEGORY_ROUTING,
+            "validation_enabled": True,
+        }
+
+    elif config.run_type == "M8":
+        architecture = {
+            "type": "ensemble",
+            "description": (
+                "Conservative (B4 CoT) and aggressive (specialist) agents "
+                "extract in parallel. A merge node detects agreement; a "
+                "resolver LLM adjudicates disagreements with conservative bias"
+            ),
+            "workflow": [
+                "extract_both (parallel: B4 + specialist)",
+                "merge (deterministic)",
+                "resolve (LLM, conditional)",
+                "grounding (non-LLM)",
+                "finalize",
+            ],
+            "agents": [
+                "m8_conservative (B4)",
+                "m8_aggressive (specialist)",
+                "m8_resolver (conditional)",
+            ],
+            "routing_table": CATEGORY_ROUTING,
+            "validation_enabled": True,
         }
 
     # ── 8. Save ──
@@ -649,6 +716,161 @@ def _make_baseline_extract_fn(
     return extract_fn
 
 
+# ── M0: Classify-then-Extract prompts ─────────────────────────────────────
+
+M0_CLASSIFIER_SYSTEM = """You are a legal expert reviewing commercial contracts. Your task is to determine whether a contract contains a clause related to a specific category.
+
+Given a contract and a question about a clause category, determine whether the contract contains a relevant clause.
+
+Rules:
+1. Read the ENTIRE contract carefully before answering
+2. A clause must DIRECTLY address the category — merely mentioning a keyword is not sufficient
+3. Respond with JSON only
+
+Respond with:
+{"has_clause": true, "reasoning": "brief explanation of why"}
+or
+{"has_clause": false, "reasoning": "brief explanation of what was searched and why nothing matched"}"""
+
+M0_EXTRACTOR_SYSTEM = """You are a legal expert extracting specific clauses from commercial contracts.
+
+A classifier has already determined that this contract contains a clause related to the question below. Your job is to find and extract the EXACT text.
+
+Rules:
+1. Copy-paste EXACT text from the contract — do not rephrase, fix typos, or summarize
+2. Extract the COMPLETE passage — include surrounding text needed for the clause to make sense
+3. If a relevant passage contains unrelated elements such as page numbers or whitespace, include them exactly as they appear
+4. You may extract multiple clauses if several passages are relevant
+
+Respond with JSON:
+{
+  "extracted_clauses": ["exact text from contract"],
+  "reasoning": "brief explanation",
+  "confidence": 0.0-1.0
+}"""
+
+
+def _make_m0_extract_fn(config: ExperimentConfig, *, run_id: str):
+    """Build an async extract_fn for M0 (classify-then-extract).
+
+    Two-stage pipeline:
+    1. Classifier agent determines if a clause exists (cheap, short output)
+    2. Extractor agent extracts the exact span (only runs on positives)
+
+    Returns (diagnostics, extract_fn).
+    """
+    import json as _json
+
+    run_mode = "official" if config.is_official else "test"
+    diagnostics = ModelDiagnostics(experiment_id=run_id, run_mode=run_mode)
+
+    async def extract_fn(sample: CUADSample) -> ExtractionOutput:
+        n_calls_before = len(diagnostics.calls)
+
+        # ── Stage 1: Classify ──
+        classify_user = (
+            f"CONTRACT:\n{sample.contract_text}\n\n"
+            f"QUESTION:\n{sample.question}"
+        )
+        classify_response, _ = await model_invoke(
+            model_key=config.model_key,
+            messages=[{"role": "user", "content": classify_user}],
+            system=M0_CLASSIFIER_SYSTEM,
+            temperature=config.temperature,
+            max_tokens=1024,
+            json_mode=True,
+            diagnostics=diagnostics,
+            agent_name="m0_classifier",
+            category=sample.category,
+        )
+
+        # Parse classifier output
+        has_clause = False
+        classify_reasoning = classify_response
+        try:
+            # Try direct JSON
+            cls_data = _json.loads(classify_response.strip())
+            has_clause = cls_data.get("has_clause", False)
+            classify_reasoning = cls_data.get("reasoning", classify_response)
+        except _json.JSONDecodeError:
+            # Try extracting JSON from text
+            import re
+            json_match = re.search(r'\{[\s\S]*\}', classify_response)
+            if json_match:
+                try:
+                    cls_data = _json.loads(json_match.group(0))
+                    has_clause = cls_data.get("has_clause", False)
+                    classify_reasoning = cls_data.get("reasoning", classify_response)
+                except _json.JSONDecodeError:
+                    pass
+
+        # ── Stage 2: Extract (only if classified as positive) ──
+        extracted_clauses: list[str] = []
+        extract_reasoning = ""
+        confidence = 1.0 if not has_clause else 0.0
+
+        if has_clause:
+            extract_user = (
+                f"CONTRACT:\n{sample.contract_text}\n\n"
+                f"QUESTION:\n{sample.question}"
+            )
+            extract_response, _ = await model_invoke(
+                model_key=config.model_key,
+                messages=[{"role": "user", "content": extract_user}],
+                system=M0_EXTRACTOR_SYSTEM,
+                temperature=config.temperature,
+                max_tokens=config.max_tokens,
+                json_mode=True,
+                diagnostics=diagnostics,
+                agent_name="m0_extractor",
+                category=sample.category,
+            )
+
+            # Parse extractor output
+            try:
+                ext_data = _json.loads(extract_response.strip())
+                extracted_clauses = ext_data.get("extracted_clauses", [])
+                extract_reasoning = ext_data.get("reasoning", "")
+                confidence = ext_data.get("confidence", 0.8)
+            except _json.JSONDecodeError:
+                import re
+                json_match = re.search(r'\{[\s\S]*\}', extract_response)
+                if json_match:
+                    try:
+                        ext_data = _json.loads(json_match.group(0))
+                        extracted_clauses = ext_data.get("extracted_clauses", [])
+                        extract_reasoning = ext_data.get("reasoning", "")
+                        confidence = ext_data.get("confidence", 0.8)
+                    except _json.JSONDecodeError:
+                        extracted_clauses = [extract_response]
+                        extract_reasoning = "Failed to parse JSON"
+                        confidence = 0.5
+
+        # ── Build output ──
+        full_reasoning = f"Classifier: {classify_reasoning}"
+        if has_clause:
+            full_reasoning += f"\nExtractor: {extract_reasoning}"
+
+        recent_calls = diagnostics.calls[n_calls_before:]
+        agg_input = sum(c.usage.input_tokens for c in recent_calls)
+        agg_output = sum(c.usage.output_tokens for c in recent_calls)
+        trace_nodes = [c.agent_name for c in recent_calls]
+
+        return ExtractionOutput(
+            extracted_clauses=extracted_clauses,
+            raw_response=full_reasoning,
+            reasoning=full_reasoning,
+            confidence=confidence,
+            system_prompt="M0 classify-then-extract",
+            user_message_length=len(classify_user),
+            input_tokens=agg_input,
+            output_tokens=agg_output,
+            trace_nodes=trace_nodes,
+        )
+
+    return diagnostics, extract_fn
+
+
 def _make_m1_extract_fn(config: ExperimentConfig, *, run_id: str):
     """Build an async extract_fn for M1 (full multi-agent).
 
@@ -804,3 +1026,131 @@ def _make_m6_extract_fn(config: ExperimentConfig, *, run_id: str):
         )
 
     return diagnostics, extract_fn, m6_baseline
+
+
+def _make_m7_extract_fn(config: ExperimentConfig, *, run_id: str):
+    """Build an async extract_fn for M7 (extract-then-verify).
+
+    Two-stage pipeline:
+    1. B4 (CoT) extracts clauses.
+    2. Triage decides if specialist verification is needed.
+    3. Specialist verifies/refines/recovers.
+    4. Grounding check finalizes.
+
+    Returns (diagnostics, extract_fn).
+    """
+    from src.agents.verify_orchestrator import VerifyOrchestrator
+
+    run_mode = "official" if config.is_official else "test"
+    diagnostics = ModelDiagnostics(experiment_id=run_id, run_mode=run_mode)
+
+    orchestrator = VerifyOrchestrator(
+        model_key=config.model_key,
+        diagnostics=diagnostics,
+        temperature=config.temperature,
+        max_tokens=config.max_tokens,
+    )
+
+    async def extract_fn(sample: CUADSample) -> ExtractionOutput:
+        n_calls_before = len(diagnostics.calls)
+
+        result, trace = await orchestrator.extract(
+            contract_text=sample.contract_text,
+            category=sample.category,
+            question=sample.question,
+        )
+
+        system_prompt = "M7 extract-then-verify (B4 -> triage -> specialist -> grounding)"
+        user_message = f"Category: {sample.category}\nQuestion: {sample.question}"
+
+        recent_calls = diagnostics.calls[n_calls_before:]
+        agg_input = sum(c.usage.input_tokens for c in recent_calls)
+        agg_output = sum(c.usage.output_tokens for c in recent_calls)
+        trace_nodes = [c.agent_name for c in recent_calls]
+
+        # Extract verification info from trace
+        triage_entry = next((t for t in trace if t.get("node") == "triage"), None)
+        verify_entry = next((t for t in trace if t.get("node") == "verify"), None)
+
+        return ExtractionOutput(
+            extracted_clauses=result.extracted_clauses,
+            raw_response=result.reasoning,
+            reasoning=result.reasoning,
+            confidence=result.confidence,
+            system_prompt=system_prompt,
+            user_message_length=len(user_message),
+            input_tokens=agg_input,
+            output_tokens=agg_output,
+            trace_nodes=trace_nodes,
+            agent_routed_to=(
+                triage_entry.get("verification_reason") if triage_entry else None
+            ),
+            routing_reasoning=(
+                verify_entry.get("verification_action") if verify_entry else None
+            ),
+        )
+
+    return diagnostics, extract_fn
+
+
+def _make_m8_extract_fn(config: ExperimentConfig, *, run_id: str):
+    """Build an async extract_fn for M8 (ensemble).
+
+    Two agents extract in parallel, a merge detects agreement/disagreement,
+    and a resolver adjudicates disagreements.
+
+    Returns (diagnostics, extract_fn).
+    """
+    from src.agents.ensemble_orchestrator import EnsembleOrchestrator
+
+    run_mode = "official" if config.is_official else "test"
+    diagnostics = ModelDiagnostics(experiment_id=run_id, run_mode=run_mode)
+
+    orchestrator = EnsembleOrchestrator(
+        model_key=config.model_key,
+        diagnostics=diagnostics,
+        temperature=config.temperature,
+        max_tokens=config.max_tokens,
+    )
+
+    async def extract_fn(sample: CUADSample) -> ExtractionOutput:
+        n_calls_before = len(diagnostics.calls)
+
+        result, trace = await orchestrator.extract(
+            contract_text=sample.contract_text,
+            category=sample.category,
+            question=sample.question,
+        )
+
+        system_prompt = "M8 ensemble (conservative B4 + aggressive specialist + resolver)"
+        user_message = f"Category: {sample.category}\nQuestion: {sample.question}"
+
+        recent_calls = diagnostics.calls[n_calls_before:]
+        agg_input = sum(c.usage.input_tokens for c in recent_calls)
+        agg_output = sum(c.usage.output_tokens for c in recent_calls)
+        trace_nodes = [c.agent_name for c in recent_calls]
+
+        # Extract merge info from trace
+        merge_entry = next((t for t in trace if t.get("node") == "merge"), None)
+
+        return ExtractionOutput(
+            extracted_clauses=result.extracted_clauses,
+            raw_response=result.reasoning,
+            reasoning=result.reasoning,
+            confidence=result.confidence,
+            system_prompt=system_prompt,
+            user_message_length=len(user_message),
+            input_tokens=agg_input,
+            output_tokens=agg_output,
+            trace_nodes=trace_nodes,
+            agent_routed_to=(
+                merge_entry.get("agreement_type") if merge_entry else None
+            ),
+            routing_reasoning=(
+                f"needs_resolution={merge_entry.get('needs_resolution')}"
+                if merge_entry
+                else None
+            ),
+        )
+
+    return diagnostics, extract_fn

@@ -75,6 +75,97 @@ configurations:
       null_hypothesis: "Multi-agent architecture provides no benefit beyond prompts"
       significance_level: 0.05
 
+  M7_extract_then_verify:
+    name: Extract-then-Verify
+    description: |
+      Two-stage pipeline: B4 (CoT) extracts, specialist verifies/refines/recovers.
+      Triage routes rare-tier negatives to specialist for laziness recovery.
+      Common/moderate negatives skip verification (trust B4).
+      Tests whether targeted specialist verification improves over pure B4.
+    type: extract_then_verify
+    model: claude-sonnet-4-20250514
+    temperature: 0.0
+    max_tokens: 4096
+
+    agents:
+      extractor:
+        type: chain_of_thought
+        role: "Initial clause extraction"
+
+      verifier:
+        type: specialist
+        role: "Verify, refine, or recover clauses"
+        prompt_config: prompts/specialists/verifier.yaml
+
+      triage:
+        type: deterministic
+        role: "Route to verification or skip based on extraction result and tier"
+        rules:
+          - "has_clauses -> verify"
+          - "no_clauses AND rare_tier -> verify (laziness recovery)"
+          - "no_clauses AND common/moderate -> finalize (trust B4)"
+
+    success_criteria:
+      f2: "> 0.86"  # Must beat B4's 0.854
+      f2_rare: "> 0.76"  # Must beat B4's 0.757 on rare
+      laziness_rate: "< 0.05"
+      grounding_rate: "> 0.95"
+      trace_completeness: "> 0.90"
+
+    hypotheses:
+      H1: "M7.F2 > B4.F2 (p < 0.05)"
+      H2: "ΔF2_rare > ΔF2_common (specialist helps rare most)"
+      H3: "M7 > M6 (two-stage architecture > combined prompt)"
+      H4: "Trace completeness > 90%"
+
+    analysis:
+      key_comparison: M7 vs B4 and M7 vs M6
+      cost_target: "~1.5 LLM calls per sample on average"
+
+  M8_ensemble:
+    name: Ensemble Multi-Agent
+    description: |
+      Two agents with different strategies extract in parallel:
+      Conservative (B4 CoT) + Aggressive (domain specialist).
+      Merge detects agreement/disagreement.
+      Resolver LLM adjudicates disagreements with conservative bias.
+      Tests whether ensemble voting outperforms single-agent approaches.
+    type: ensemble
+    model: claude-sonnet-4-20250514
+    temperature: 0.0
+    max_tokens: 4096
+
+    agents:
+      conservative:
+        type: chain_of_thought
+        role: "High-precision extraction with natural 'no clause' behavior"
+
+      aggressive:
+        type: specialist
+        role: "Domain-specific extraction with indicator-driven broader recall"
+
+      resolver:
+        type: adjudicator
+        role: "Resolve disagreements with conservative bias"
+        prompt_config: prompts/system/ensemble_resolver.yaml
+
+    success_criteria:
+      f2: "> 0.86"  # Must beat B4's 0.854
+      f2_rare: "> 0.76"
+      laziness_rate: "< 0.05"
+      grounding_rate: "> 0.95"
+      trace_completeness: "> 0.90"
+
+    hypotheses:
+      H1: "M8.F2 > B4.F2 (p < 0.05)"
+      H2: "ΔF2_rare > ΔF2_common"
+      H3: "M8 > M6 (ensemble architecture > combined prompt)"
+      H4: "Trace completeness > 90%"
+
+    analysis:
+      key_comparison: M8 vs B4, M8 vs M7, M8 vs M6
+      cost_target: "~2.3 LLM calls per sample on average"
+
 evaluation:
   metrics:
     - f1

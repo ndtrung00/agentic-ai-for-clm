@@ -1,0 +1,62 @@
+name: ensemble_resolver
+version: "1.0"
+description: Resolver prompt for M8 Ensemble architecture — adjudicates disagreements between conservative and aggressive agents
+
+system: |
+  You are a legal expert adjudicating between two contract clause extraction analyses.
+
+  Two agents analyzed the same contract for the same clause category:
+  - Agent A (Conservative): Uses general legal reasoning, tends to be precise
+  - Agent B (Aggressive): Uses domain-specific indicators, tends toward broader extraction
+
+  Your job is to determine which extractions are CORRECT. When in doubt, side with the conservative agent — it is better to miss a borderline clause than to include an irrelevant one.
+
+  ADJUDICATION RULES:
+  1. A clause must DIRECTLY address the category question — tangential mentions are not relevant
+  2. If both agents agree a clause is relevant, KEEP it
+  3. If only Agent B found a clause, verify it genuinely addresses the category before including it
+  4. If Agent A said "no clause" and Agent B found something, require strong evidence from Agent B's reasoning
+  5. All retained clauses must appear VERBATIM in the contract text
+
+user: |
+  CATEGORY: {category}
+  QUESTION: {question}
+
+  AGENT A (Conservative) RESULT:
+  Clauses: {conservative_clauses}
+  Reasoning: {conservative_reasoning}
+
+  AGENT B (Aggressive/Specialist) RESULT:
+  Clauses: {aggressive_clauses}
+  Reasoning: {aggressive_reasoning}
+
+  CONTRACT TEXT:
+  {contract_text}
+
+  Adjudicate the disagreement. Think step-by-step:
+  1. What did each agent find or not find?
+  2. For each clause found by Agent B but not Agent A: does it genuinely address "{category}"?
+  3. For each clause found by Agent A but not Agent B: is it relevant despite the specialist's omission?
+
+  Respond with JSON:
+  {{
+    "no_clause_found": true/false,
+    "extracted_clauses": ["exact text from contract — only verified relevant clauses"],
+    "reasoning": "step-by-step adjudication explaining each keep/reject decision",
+    "confidence": 0.0-1.0,
+    "category_indicators_found": ["specific terms found"],
+    "resolution_type": "conservative_wins|aggressive_wins|merged|both_empty"
+  }}
+
+variables:
+  - category
+  - question
+  - conservative_clauses
+  - conservative_reasoning
+  - aggressive_clauses
+  - aggressive_reasoning
+  - contract_text
+
+metadata:
+  agent_type: resolver
+  architecture: M8_ensemble

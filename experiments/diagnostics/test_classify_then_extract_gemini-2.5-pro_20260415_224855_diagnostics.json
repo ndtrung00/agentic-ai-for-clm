@@ -1,0 +1,1744 @@
+{
+  "experiment_id": "test_classify_then_extract_gemini-2.5-pro_20260415_224855",
+  "run_mode": "test",
+  "start_time": "2026-04-15T22:48:55.535364",
+  "summary": {
+    "experiment_id": "test_classify_then_extract_gemini-2.5-pro_20260415_224855",
+    "total_calls": 90,
+    "successful_calls": 88,
+    "failed_calls": 2,
+    "success_rate": 0.9777777777777777,
+    "total_input_tokens": 817351,
+    "total_output_tokens": 647,
+    "total_tokens": 817998,
+    "total_cost_usd": 1.0281587500000002,
+    "avg_latency_ms": 7720.208528898432,
+    "min_latency_ms": 2490.9489580022637,
+    "max_latency_ms": 55621.09704100294,
+    "by_model": {
+      "gemini-2.5-pro": {
+        "calls": 90,
+        "input_tokens": 817351,
+        "output_tokens": 647,
+        "cost_usd": 1.0281587500000002,
+        "avg_latency_ms": 7720.208528898432
+      }
+    },
+    "by_agent": {
+      "m0_classifier": 90
+    },
+    "duration_seconds": 97.620762
+  },
+  "calls": [
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T22:49:09.728107",
+      "latency_ms": 13494.72291598795,
+      "usage": {
+        "input_tokens": 1315,
+        "output_tokens": 7,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1322
+      },
+      "cost_usd": 0.00171375,
+      "success": true,
+      "error": null,
+      "category": "Effective Date",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_gemini-2.5-pro_20260415_224855"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T22:49:09.731168",
+      "latency_ms": 13495.198874996277,
+      "usage": {
+        "input_tokens": 4003,
+        "output_tokens": 6,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 4009
+      },
+      "cost_usd": 0.0050637500000000005,
+      "success": true,
+      "error": null,
+      "category": "Expiration Date",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_gemini-2.5-pro_20260415_224855"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T22:49:09.733602",
+      "latency_ms": 13497.258499992313,
+      "usage": {
+        "input_tokens": 4165,
+        "output_tokens": 16,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 4181
+      },
+      "cost_usd": 0.00536625,
+      "success": true,
+      "error": null,
+      "category": "Governing Law",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_gemini-2.5-pro_20260415_224855"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T22:49:09.928014",
+      "latency_ms": 13693.498500011628,
+      "usage": {
+        "input_tokens": 3914,
+        "output_tokens": 9,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 3923
+      },
+      "cost_usd": 0.0049825,
+      "success": true,
+      "error": null,
+      "category": "Document Name",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_gemini-2.5-pro_20260415_224855"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T22:49:09.938290",
+      "latency_ms": 13704.416833003052,
+      "usage": {
+        "input_tokens": 2470,
+        "output_tokens": 9,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 2479
+      },
+      "cost_usd": 0.0031775,
+      "success": true,
+      "error": null,
+      "category": "Document Name",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_gemini-2.5-pro_20260415_224855"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T22:49:09.949511",
+      "latency_ms": 13713.83799999603,
+      "usage": {
+        "input_tokens": 627,
+        "output_tokens": 8,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 635
+      },
+      "cost_usd": 0.00086375,
+      "success": true,
+      "error": null,
+      "category": "Parties",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_gemini-2.5-pro_20260415_224855"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T22:49:10.300368",
+      "latency_ms": 14063.624792004703,
+      "usage": {
+        "input_tokens": 6990,
+        "output_tokens": 8,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 6998
+      },
+      "cost_usd": 0.0088175,
+      "success": true,
+      "error": null,
+      "category": "Expiration Date",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_gemini-2.5-pro_20260415_224855"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T22:49:10.306686",
+      "latency_ms": 14071.633917017607,
+      "usage": {
+        "input_tokens": 10909,
+        "output_tokens": 9,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 10918
+      },
+      "cost_usd": 0.01372625,
+      "success": true,
+      "error": null,
+      "category": "Expiration Date",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_gemini-2.5-pro_20260415_224855"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T22:49:12.707986",
+      "latency_ms": 2975.5585409875493,
+      "usage": {
+        "input_tokens": 630,
+        "output_tokens": 8,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 638
+      },
+      "cost_usd": 0.0008675,
+      "success": true,
+      "error": null,
+      "category": "Expiration Date",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_gemini-2.5-pro_20260415_224855"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T22:49:12.870571",
+      "latency_ms": 2562.693375017261,
+      "usage": {
+        "input_tokens": 490,
+        "output_tokens": 6,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 496
+      },
+      "cost_usd": 0.0006725,
+      "success": true,
+      "error": null,
+      "category": "Effective Date",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_gemini-2.5-pro_20260415_224855"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T22:49:13.004520",
+      "latency_ms": 17240.143083006842,
+      "usage": {
+        "input_tokens": 49645,
+        "output_tokens": 8,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 49653
+      },
+      "cost_usd": 0.062136250000000004,
+      "success": true,
+      "error": null,
+      "category": "Parties",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_gemini-2.5-pro_20260415_224855"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T22:49:13.156194",
+      "latency_ms": 3227.28725001798,
+      "usage": {
+        "input_tokens": 1951,
+        "output_tokens": 7,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1958
+      },
+      "cost_usd": 0.00250875,
+      "success": true,
+      "error": null,
+      "category": "Expiration Date",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_gemini-2.5-pro_20260415_224855"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T22:49:13.173322",
+      "latency_ms": 3223.2030000013765,
+      "usage": {
+        "input_tokens": 2482,
+        "output_tokens": 7,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 2489
+      },
+      "cost_usd": 0.0031725000000000004,
+      "success": true,
+      "error": null,
+      "category": "Effective Date",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_gemini-2.5-pro_20260415_224855"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T22:49:13.191136",
+      "latency_ms": 3252.291500015417,
+      "usage": {
+        "input_tokens": 2774,
+        "output_tokens": 9,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 2783
+      },
+      "cost_usd": 0.0035575,
+      "success": true,
+      "error": null,
+      "category": "Agreement Date",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_gemini-2.5-pro_20260415_224855"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T22:49:13.208320",
+      "latency_ms": 3473.7682090199087,
+      "usage": {
+        "input_tokens": 1344,
+        "output_tokens": 8,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1352
+      },
+      "cost_usd": 0.00176,
+      "success": true,
+      "error": null,
+      "category": "Expiration Date",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_gemini-2.5-pro_20260415_224855"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T22:49:13.394881",
+      "latency_ms": 3092.2734579944517,
+      "usage": {
+        "input_tokens": 13266,
+        "output_tokens": 5,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 13271
+      },
+      "cost_usd": 0.0166325,
+      "success": true,
+      "error": null,
+      "category": "Governing Law",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_gemini-2.5-pro_20260415_224855"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T22:49:16.016395",
+      "latency_ms": 3307.6292919868138,
+      "usage": {
+        "input_tokens": 373,
+        "output_tokens": 7,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 380
+      },
+      "cost_usd": 0.00053625,
+      "success": true,
+      "error": null,
+      "category": "Expiration Date",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_gemini-2.5-pro_20260415_224855"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T22:49:16.309948",
+      "latency_ms": 3303.596916986862,
+      "usage": {
+        "input_tokens": 636,
+        "output_tokens": 8,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 644
+      },
+      "cost_usd": 0.000875,
+      "success": true,
+      "error": null,
+      "category": "Agreement Date",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_gemini-2.5-pro_20260415_224855"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T22:49:16.315510",
+      "latency_ms": 3157.592667004792,
+      "usage": {
+        "input_tokens": 1948,
+        "output_tokens": 7,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1955
+      },
+      "cost_usd": 0.0025050000000000003,
+      "success": true,
+      "error": null,
+      "category": "Effective Date",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_gemini-2.5-pro_20260415_224855"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T22:49:16.540529",
+      "latency_ms": 20306.312291009817,
+      "usage": {
+        "input_tokens": 2811,
+        "output_tokens": 9,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 2820
+      },
+      "cost_usd": 0.0036037499999999997,
+      "success": true,
+      "error": null,
+      "category": "Document Name",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_gemini-2.5-pro_20260415_224855"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T22:49:17.186573",
+      "latency_ms": 3994.7926249878947,
+      "usage": {
+        "input_tokens": 13315,
+        "output_tokens": 7,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 13322
+      },
+      "cost_usd": 0.01671375,
+      "success": true,
+      "error": null,
+      "category": "Expiration Date",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_gemini-2.5-pro_20260415_224855"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T22:49:17.257880",
+      "latency_ms": 4081.3182500132825,
+      "usage": {
+        "input_tokens": 22365,
+        "output_tokens": 7,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 22372
+      },
+      "cost_usd": 0.02802625,
+      "success": true,
+      "error": null,
+      "category": "Agreement Date",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_gemini-2.5-pro_20260415_224855"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T22:49:18.380588",
+      "latency_ms": 5509.084624995012,
+      "usage": {
+        "input_tokens": 63584,
+        "output_tokens": 1,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 63585
+      },
+      "cost_usd": 0.07949,
+      "success": true,
+      "error": null,
+      "category": "Agreement Date",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_gemini-2.5-pro_20260415_224855"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T22:49:19.161244",
+      "latency_ms": 3143.494500021916,
+      "usage": {
+        "input_tokens": 646,
+        "output_tokens": 9,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 655
+      },
+      "cost_usd": 0.0008975000000000001,
+      "success": true,
+      "error": null,
+      "category": "Governing Law",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_gemini-2.5-pro_20260415_224855"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T22:49:19.524814",
+      "latency_ms": 3213.542542012874,
+      "usage": {
+        "input_tokens": 2474,
+        "output_tokens": 8,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 2482
+      },
+      "cost_usd": 0.0031725000000000004,
+      "success": true,
+      "error": null,
+      "category": "Effective Date",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_gemini-2.5-pro_20260415_224855"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T22:49:20.757394",
+      "latency_ms": 3498.8723340211436,
+      "usage": {
+        "input_tokens": 4773,
+        "output_tokens": 9,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 4782
+      },
+      "cost_usd": 0.006056249999999999,
+      "success": true,
+      "error": null,
+      "category": "Renewal Term",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_gemini-2.5-pro_20260415_224855"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T22:49:22.190540",
+      "latency_ms": 3028.3544170088135,
+      "usage": {
+        "input_tokens": 4702,
+        "output_tokens": 2,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 4704
+      },
+      "cost_usd": 0.0058975,
+      "success": true,
+      "error": null,
+      "category": "Exclusivity",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_gemini-2.5-pro_20260415_224855"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T22:49:22.665612",
+      "latency_ms": 5478.364167007385,
+      "usage": {
+        "input_tokens": 49655,
+        "output_tokens": 9,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 49664
+      },
+      "cost_usd": 0.062158750000000006,
+      "success": true,
+      "error": null,
+      "category": "Anti-Assignment",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_gemini-2.5-pro_20260415_224855"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T22:49:22.710483",
+      "latency_ms": 12980.987416987773,
+      "usage": {
+        "input_tokens": 1321,
+        "output_tokens": 9,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1330
+      },
+      "cost_usd": 0.00174125,
+      "success": true,
+      "error": null,
+      "category": "Governing Law",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_gemini-2.5-pro_20260415_224855"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T22:49:23.000556",
+      "latency_ms": 3473.556125012692,
+      "usage": {
+        "input_tokens": 5652,
+        "output_tokens": 8,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 5660
+      },
+      "cost_usd": 0.007145,
+      "success": true,
+      "error": null,
+      "category": "Anti-Assignment",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_gemini-2.5-pro_20260415_224855"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T22:49:24.157704",
+      "latency_ms": 3399.1945409798063,
+      "usage": {
+        "input_tokens": 5103,
+        "output_tokens": 6,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 5109
+      },
+      "cost_usd": 0.00643875,
+      "success": true,
+      "error": null,
+      "category": "Audit Rights",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_gemini-2.5-pro_20260415_224855"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T22:49:25.254766",
+      "latency_ms": 2588.337749999482,
+      "usage": {
+        "input_tokens": 2683,
+        "output_tokens": 9,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 2692
+      },
+      "cost_usd": 0.0034437499999999998,
+      "success": true,
+      "error": null,
+      "category": "License Grant",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_gemini-2.5-pro_20260415_224855"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T22:49:25.269195",
+      "latency_ms": 3076.9333750067744,
+      "usage": {
+        "input_tokens": 14236,
+        "output_tokens": 4,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 14240
+      },
+      "cost_usd": 0.017835,
+      "success": true,
+      "error": null,
+      "category": "Non-Compete",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_gemini-2.5-pro_20260415_224855"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T22:49:25.990690",
+      "latency_ms": 2988.6650840053335,
+      "usage": {
+        "input_tokens": 893,
+        "output_tokens": 7,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 900
+      },
+      "cost_usd": 0.00118625,
+      "success": true,
+      "error": null,
+      "category": "Non-Compete",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_gemini-2.5-pro_20260415_224855"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T22:49:26.394743",
+      "latency_ms": 13185.622249991866,
+      "usage": {
+        "input_tokens": 2680,
+        "output_tokens": 6,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 2686
+      },
+      "cost_usd": 0.0034100000000000003,
+      "success": true,
+      "error": null,
+      "category": "Agreement Date",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_gemini-2.5-pro_20260415_224855"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T22:49:27.207469",
+      "latency_ms": 13811.476208007662,
+      "usage": {
+        "input_tokens": 22732,
+        "output_tokens": 9,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 22741
+      },
+      "cost_usd": 0.028505,
+      "success": true,
+      "error": null,
+      "category": "Expiration Date",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_gemini-2.5-pro_20260415_224855"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T22:49:27.292121",
+      "latency_ms": 3132.246666995343,
+      "usage": {
+        "input_tokens": 4239,
+        "output_tokens": 7,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 4246
+      },
+      "cost_usd": 0.005368749999999999,
+      "success": true,
+      "error": null,
+      "category": "Non-Compete",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_gemini-2.5-pro_20260415_224855"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T22:49:28.598646",
+      "latency_ms": 3341.763583011925,
+      "usage": {
+        "input_tokens": 4852,
+        "output_tokens": 8,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 4860
+      },
+      "cost_usd": 0.006145000000000001,
+      "success": true,
+      "error": null,
+      "category": "No-Solicit Of Customers",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_gemini-2.5-pro_20260415_224855"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T22:49:28.689003",
+      "latency_ms": 3419.1314580093604,
+      "usage": {
+        "input_tokens": 5129,
+        "output_tokens": 1,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 5130
+      },
+      "cost_usd": 0.006421249999999999,
+      "success": true,
+      "error": null,
+      "category": "Change Of Control",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_gemini-2.5-pro_20260415_224855"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T22:49:29.367056",
+      "latency_ms": 3374.9173329852056,
+      "usage": {
+        "input_tokens": 4595,
+        "output_tokens": 9,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 4604
+      },
+      "cost_usd": 0.0058337499999999995,
+      "success": true,
+      "error": null,
+      "category": "Warranty Duration",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_gemini-2.5-pro_20260415_224855"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T22:49:29.777946",
+      "latency_ms": 3382.5701249879785,
+      "usage": {
+        "input_tokens": 2618,
+        "output_tokens": 9,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 2627
+      },
+      "cost_usd": 0.0033624999999999996,
+      "success": true,
+      "error": null,
+      "category": "No-Solicit Of Employees",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_gemini-2.5-pro_20260415_224855"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T22:49:29.873119",
+      "latency_ms": 13331.39508398017,
+      "usage": {
+        "input_tokens": 2034,
+        "output_tokens": 7,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 2041
+      },
+      "cost_usd": 0.0026125,
+      "success": true,
+      "error": null,
+      "category": "Effective Date",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_gemini-2.5-pro_20260415_224855"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T22:49:29.921889",
+      "latency_ms": 13605.852624983527,
+      "usage": {
+        "input_tokens": 496,
+        "output_tokens": 9,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 505
+      },
+      "cost_usd": 0.00071,
+      "success": true,
+      "error": null,
+      "category": "Governing Law",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_gemini-2.5-pro_20260415_224855"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T22:49:31.551550",
+      "latency_ms": 4258.852458006004,
+      "usage": {
+        "input_tokens": 18899,
+        "output_tokens": 7,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 18906
+      },
+      "cost_usd": 0.023693750000000003,
+      "success": true,
+      "error": null,
+      "category": "Warranty Duration",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_gemini-2.5-pro_20260415_224855"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T22:49:31.903781",
+      "latency_ms": 3302.2576670045964,
+      "usage": {
+        "input_tokens": 5709,
+        "output_tokens": 8,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 5717
+      },
+      "cost_usd": 0.00721625,
+      "success": true,
+      "error": null,
+      "category": "Exclusivity",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_gemini-2.5-pro_20260415_224855"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T22:49:32.066505",
+      "latency_ms": 3375.209082994843,
+      "usage": {
+        "input_tokens": 455,
+        "output_tokens": 9,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 464
+      },
+      "cost_usd": 0.00065875,
+      "success": true,
+      "error": null,
+      "category": "Non-Compete",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_gemini-2.5-pro_20260415_224855"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T22:49:32.634709",
+      "latency_ms": 2711.4040830056183,
+      "usage": {
+        "input_tokens": 1246,
+        "output_tokens": 3,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1249
+      },
+      "cost_usd": 0.0015875000000000002,
+      "success": true,
+      "error": null,
+      "category": "No-Solicit Of Employees",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_gemini-2.5-pro_20260415_224855"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T22:49:33.939300",
+      "latency_ms": 15557.874999998603,
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost_usd": 0,
+      "success": false,
+      "error": "unsupported operand type(s) for /: 'NoneType' and 'int'",
+      "category": "Exclusivity",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_gemini-2.5-pro_20260415_224855"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T22:49:34.044019",
+      "latency_ms": 2490.9489580022637,
+      "usage": {
+        "input_tokens": 1892,
+        "output_tokens": 8,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1900
+      },
+      "cost_usd": 0.002445,
+      "success": true,
+      "error": null,
+      "category": "Audit Rights",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_gemini-2.5-pro_20260415_224855"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T22:49:35.795189",
+      "latency_ms": 3159.680542012211,
+      "usage": {
+        "input_tokens": 5101,
+        "output_tokens": 7,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 5108
+      },
+      "cost_usd": 0.00644625,
+      "success": true,
+      "error": null,
+      "category": "Warranty Duration",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_gemini-2.5-pro_20260415_224855"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T22:49:36.243481",
+      "latency_ms": 13532.430833001854,
+      "usage": {
+        "input_tokens": 5496,
+        "output_tokens": 6,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 5502
+      },
+      "cost_usd": 0.006930000000000001,
+      "success": true,
+      "error": null,
+      "category": "Anti-Assignment",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_gemini-2.5-pro_20260415_224855"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T22:49:36.470407",
+      "latency_ms": 4565.822959004436,
+      "usage": {
+        "input_tokens": 22743,
+        "output_tokens": 7,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 22750
+      },
+      "cost_usd": 0.02849875,
+      "success": true,
+      "error": null,
+      "category": "Non-Transferable License",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_gemini-2.5-pro_20260415_224855"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T22:49:36.714728",
+      "latency_ms": 6839.635374984937,
+      "usage": {
+        "input_tokens": 2495,
+        "output_tokens": 8,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 2503
+      },
+      "cost_usd": 0.00319875,
+      "success": true,
+      "error": null,
+      "category": "Renewal Term",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_gemini-2.5-pro_20260415_224855"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T22:49:37.300260",
+      "latency_ms": 3255.1495420048013,
+      "usage": {
+        "input_tokens": 3929,
+        "output_tokens": 6,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 3935
+      },
+      "cost_usd": 0.00497125,
+      "success": true,
+      "error": null,
+      "category": "Irrevocable Or Perpetual License",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_gemini-2.5-pro_20260415_224855"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T22:49:37.523353",
+      "latency_ms": 8155.029417015612,
+      "usage": {
+        "input_tokens": 27188,
+        "output_tokens": 8,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 27196
+      },
+      "cost_usd": 0.034065,
+      "success": true,
+      "error": null,
+      "category": "Exclusivity",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_gemini-2.5-pro_20260415_224855"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T22:49:39.193457",
+      "latency_ms": 3396.992833004333,
+      "usage": {
+        "input_tokens": 5671,
+        "output_tokens": 8,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 5679
+      },
+      "cost_usd": 0.007168750000000001,
+      "success": true,
+      "error": null,
+      "category": "No-Solicit Of Employees",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_gemini-2.5-pro_20260415_224855"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T22:49:39.941713",
+      "latency_ms": 3470.562750007957,
+      "usage": {
+        "input_tokens": 8612,
+        "output_tokens": 7,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 8619
+      },
+      "cost_usd": 0.010835000000000001,
+      "success": true,
+      "error": null,
+      "category": "Minimum Commitment",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_gemini-2.5-pro_20260415_224855"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T22:49:39.962174",
+      "latency_ms": 3717.668291996233,
+      "usage": {
+        "input_tokens": 10947,
+        "output_tokens": 6,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 10953
+      },
+      "cost_usd": 0.013743749999999999,
+      "success": true,
+      "error": null,
+      "category": "Most Favored Nation",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_gemini-2.5-pro_20260415_224855"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T22:49:40.744768",
+      "latency_ms": 3443.611416994827,
+      "usage": {
+        "input_tokens": 16373,
+        "output_tokens": 5,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 16378
+      },
+      "cost_usd": 0.020516250000000003,
+      "success": true,
+      "error": null,
+      "category": "Minimum Commitment",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_gemini-2.5-pro_20260415_224855"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T22:49:40.985919",
+      "latency_ms": 4269.360749982297,
+      "usage": {
+        "input_tokens": 32356,
+        "output_tokens": 9,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 32365
+      },
+      "cost_usd": 0.040535,
+      "success": true,
+      "error": null,
+      "category": "Affiliate License-Licensee",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_gemini-2.5-pro_20260415_224855"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T22:49:42.851329",
+      "latency_ms": 3656.825415993808,
+      "usage": {
+        "input_tokens": 21929,
+        "output_tokens": 7,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 21936
+      },
+      "cost_usd": 0.02748125,
+      "success": true,
+      "error": null,
+      "category": "Minimum Commitment",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_gemini-2.5-pro_20260415_224855"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T22:49:43.379603",
+      "latency_ms": 13600.402334006503,
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost_usd": 0,
+      "success": false,
+      "error": "unsupported operand type(s) for /: 'NoneType' and 'int'",
+      "category": "Anti-Assignment",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_gemini-2.5-pro_20260415_224855"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T22:49:44.150567",
+      "latency_ms": 3163.9528750092722,
+      "usage": {
+        "input_tokens": 2838,
+        "output_tokens": 3,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 2841
+      },
+      "cost_usd": 0.0035775000000000004,
+      "success": true,
+      "error": null,
+      "category": "Affiliate License-Licensee",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_gemini-2.5-pro_20260415_224855"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T22:49:44.185338",
+      "latency_ms": 3438.9532920031343,
+      "usage": {
+        "input_tokens": 32338,
+        "output_tokens": 4,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 32342
+      },
+      "cost_usd": 0.0404625,
+      "success": true,
+      "error": null,
+      "category": "Notice Period To Terminate Renewal",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_gemini-2.5-pro_20260415_224855"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T22:49:44.759860",
+      "latency_ms": 4796.3804170140065,
+      "usage": {
+        "input_tokens": 55008,
+        "output_tokens": 8,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 55016
+      },
+      "cost_usd": 0.06884,
+      "success": true,
+      "error": null,
+      "category": "Covenant Not To Sue",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_gemini-2.5-pro_20260415_224855"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T22:49:45.730093",
+      "latency_ms": 2878.082582989009,
+      "usage": {
+        "input_tokens": 2052,
+        "output_tokens": 9,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 2061
+      },
+      "cost_usd": 0.002655,
+      "success": true,
+      "error": null,
+      "category": "Competitive Restriction Exception",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_gemini-2.5-pro_20260415_224855"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T22:49:46.751060",
+      "latency_ms": 3369.060749973869,
+      "usage": {
+        "input_tokens": 7769,
+        "output_tokens": 9,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 7778
+      },
+      "cost_usd": 0.009801250000000001,
+      "success": true,
+      "error": null,
+      "category": "Affiliate License-Licensor",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_gemini-2.5-pro_20260415_224855"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T22:49:46.948007",
+      "latency_ms": 13007.924625009764,
+      "usage": {
+        "input_tokens": 1381,
+        "output_tokens": 9,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1390
+      },
+      "cost_usd": 0.0018162500000000002,
+      "success": true,
+      "error": null,
+      "category": "Rofr/Rofo/Rofn",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_gemini-2.5-pro_20260415_224855"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T22:49:47.583616",
+      "latency_ms": 3397.754249977879,
+      "usage": {
+        "input_tokens": 4429,
+        "output_tokens": 7,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 4436
+      },
+      "cost_usd": 0.00560625,
+      "success": true,
+      "error": null,
+      "category": "Joint Ip Ownership",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_gemini-2.5-pro_20260415_224855"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T22:49:48.694981",
+      "latency_ms": 8751.996874983888,
+      "usage": {
+        "input_tokens": 27138,
+        "output_tokens": 8,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 27146
+      },
+      "cost_usd": 0.0340025,
+      "success": true,
+      "error": null,
+      "category": "Liquidated Damages",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_gemini-2.5-pro_20260415_224855"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T22:49:48.898962",
+      "latency_ms": 4138.431291998131,
+      "usage": {
+        "input_tokens": 5871,
+        "output_tokens": 9,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 5880
+      },
+      "cost_usd": 0.0074287500000000005,
+      "success": true,
+      "error": null,
+      "category": "Non-Disparagement",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_gemini-2.5-pro_20260415_224855"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T22:49:49.998732",
+      "latency_ms": 4267.884333996335,
+      "usage": {
+        "input_tokens": 9136,
+        "output_tokens": 9,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 9145
+      },
+      "cost_usd": 0.01151,
+      "success": true,
+      "error": null,
+      "category": "Non-Disparagement",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_gemini-2.5-pro_20260415_224855"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T22:49:50.205216",
+      "latency_ms": 3453.5108750278596,
+      "usage": {
+        "input_tokens": 5665,
+        "output_tokens": 7,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 5672
+      },
+      "cost_usd": 0.00715125,
+      "success": true,
+      "error": null,
+      "category": "Affiliate License-Licensee",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_gemini-2.5-pro_20260415_224855"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T22:49:50.656305",
+      "latency_ms": 3706.5643329988234,
+      "usage": {
+        "input_tokens": 5712,
+        "output_tokens": 7,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 5719
+      },
+      "cost_usd": 0.007209999999999999,
+      "success": true,
+      "error": null,
+      "category": "Non-Disparagement",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_gemini-2.5-pro_20260415_224855"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T22:49:50.862527",
+      "latency_ms": 3277.9300829861313,
+      "usage": {
+        "input_tokens": 454,
+        "output_tokens": 8,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 462
+      },
+      "cost_usd": 0.0006475000000000001,
+      "success": true,
+      "error": null,
+      "category": "Affiliate License-Licensor",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_gemini-2.5-pro_20260415_224855"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T22:49:51.855373",
+      "latency_ms": 3159.348790999502,
+      "usage": {
+        "input_tokens": 2890,
+        "output_tokens": 8,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 2898
+      },
+      "cost_usd": 0.0036925000000000005,
+      "success": true,
+      "error": null,
+      "category": "Volume Restriction",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_gemini-2.5-pro_20260415_224855"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T22:49:53.050161",
+      "latency_ms": 4148.967749992153,
+      "usage": {
+        "input_tokens": 22402,
+        "output_tokens": 9,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 22411
+      },
+      "cost_usd": 0.028092500000000003,
+      "success": true,
+      "error": null,
+      "category": "Source Code Escrow",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_gemini-2.5-pro_20260415_224855"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T22:49:53.432682",
+      "latency_ms": 3432.4411249835975,
+      "usage": {
+        "input_tokens": 4180,
+        "output_tokens": 8,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 4188
+      },
+      "cost_usd": 0.005305,
+      "success": true,
+      "error": null,
+      "category": "Competitive Restriction Exception",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_gemini-2.5-pro_20260415_224855"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T22:49:53.443169",
+      "latency_ms": 3237.187915976392,
+      "usage": {
+        "input_tokens": 3863,
+        "output_tokens": 8,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 3871
+      },
+      "cost_usd": 0.00490875,
+      "success": true,
+      "error": null,
+      "category": "Uncapped Liability",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_gemini-2.5-pro_20260415_224855"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T22:49:53.929373",
+      "latency_ms": 3064.651082997443,
+      "usage": {
+        "input_tokens": 672,
+        "output_tokens": 8,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 680
+      },
+      "cost_usd": 0.00092,
+      "success": true,
+      "error": null,
+      "category": "Uncapped Liability",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_gemini-2.5-pro_20260415_224855"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T22:49:55.210207",
+      "latency_ms": 3352.9227919934783,
+      "usage": {
+        "input_tokens": 6386,
+        "output_tokens": 7,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 6393
+      },
+      "cost_usd": 0.0080525,
+      "success": true,
+      "error": null,
+      "category": "Third Party Beneficiary",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_gemini-2.5-pro_20260415_224855"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T22:49:56.611968",
+      "latency_ms": 3167.9781670100056,
+      "usage": {
+        "input_tokens": 5882,
+        "output_tokens": 9,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 5891
+      },
+      "cost_usd": 0.0074424999999999995,
+      "success": true,
+      "error": null,
+      "category": "Liquidated Damages",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_gemini-2.5-pro_20260415_224855"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T22:49:56.696946",
+      "latency_ms": 3644.0652919991408,
+      "usage": {
+        "input_tokens": 4658,
+        "output_tokens": 9,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 4667
+      },
+      "cost_usd": 0.0059125,
+      "success": true,
+      "error": null,
+      "category": "Third Party Beneficiary",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_gemini-2.5-pro_20260415_224855"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T22:49:57.343319",
+      "latency_ms": 3908.811917004641,
+      "usage": {
+        "input_tokens": 13861,
+        "output_tokens": 6,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 13867
+      },
+      "cost_usd": 0.017386250000000002,
+      "success": true,
+      "error": null,
+      "category": "Competitive Restriction Exception",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_gemini-2.5-pro_20260415_224855"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T22:49:57.670995",
+      "latency_ms": 3740.4649170057382,
+      "usage": {
+        "input_tokens": 21932,
+        "output_tokens": 7,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 21939
+      },
+      "cost_usd": 0.027485,
+      "success": true,
+      "error": null,
+      "category": "Unlimited/All-You-Can-Eat-License",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_gemini-2.5-pro_20260415_224855"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T22:49:59.636189",
+      "latency_ms": 32427.91041600867,
+      "usage": {
+        "input_tokens": 647,
+        "output_tokens": 7,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 654
+      },
+      "cost_usd": 0.00087875,
+      "success": true,
+      "error": null,
+      "category": "Audit Rights",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_gemini-2.5-pro_20260415_224855"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T22:50:03.987907",
+      "latency_ms": 13329.439125023782,
+      "usage": {
+        "input_tokens": 972,
+        "output_tokens": 6,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 978
+      },
+      "cost_usd": 0.0012749999999999999,
+      "success": true,
+      "error": null,
+      "category": "Joint Ip Ownership",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_gemini-2.5-pro_20260415_224855"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T22:50:17.527773",
+      "latency_ms": 45460.263666987885,
+      "usage": {
+        "input_tokens": 1101,
+        "output_tokens": 8,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1109
+      },
+      "cost_usd": 0.00145625,
+      "success": true,
+      "error": null,
+      "category": "Non-Compete",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_gemini-2.5-pro_20260415_224855"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T22:50:32.688405",
+      "latency_ms": 48535.916584020015,
+      "usage": {
+        "input_tokens": 4655,
+        "output_tokens": 2,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 4657
+      },
+      "cost_usd": 0.00583875,
+      "success": true,
+      "error": null,
+      "category": "Affiliate License-Licensee",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_gemini-2.5-pro_20260415_224855"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T22:50:33.145599",
+      "latency_ms": 55621.09704100294,
+      "usage": {
+        "input_tokens": 18898,
+        "output_tokens": 8,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 18906
+      },
+      "cost_usd": 0.0237025,
+      "success": true,
+      "error": null,
+      "category": "Volume Restriction",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_gemini-2.5-pro_20260415_224855"
+    }
+  ]
+}

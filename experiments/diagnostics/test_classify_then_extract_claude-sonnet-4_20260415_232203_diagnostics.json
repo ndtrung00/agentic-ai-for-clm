@@ -1,0 +1,4215 @@
+{
+  "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203",
+  "run_mode": "test",
+  "start_time": "2026-04-15T23:22:03.390543",
+  "summary": {
+    "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203",
+    "total_calls": 220,
+    "successful_calls": 220,
+    "failed_calls": 0,
+    "success_rate": 1.0,
+    "total_input_tokens": 2635349,
+    "total_output_tokens": 47634,
+    "total_tokens": 2682983,
+    "total_cost_usd": 8.620557000000003,
+    "avg_latency_ms": 6538.313260232495,
+    "min_latency_ms": 1862.5197910005227,
+    "max_latency_ms": 34779.1933749977,
+    "by_model": {
+      "claude-sonnet-4": {
+        "calls": 220,
+        "input_tokens": 2635349,
+        "output_tokens": 47634,
+        "cost_usd": 8.620557000000003,
+        "avg_latency_ms": 6538.313260232495
+      }
+    },
+    "by_agent": {
+      "m0_classifier": 150,
+      "m0_extractor": 70
+    },
+    "duration_seconds": 153.957167
+  },
+  "calls": [
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:22:05.428619",
+      "latency_ms": 2002.596958016511,
+      "usage": {
+        "input_tokens": 1366,
+        "output_tokens": 47,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1413
+      },
+      "cost_usd": 0.004803,
+      "success": true,
+      "error": null,
+      "category": "Effective Date",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:22:06.323692",
+      "latency_ms": 2896.5566249971744,
+      "usage": {
+        "input_tokens": 2575,
+        "output_tokens": 64,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 2639
+      },
+      "cost_usd": 0.008685000000000002,
+      "success": true,
+      "error": null,
+      "category": "Document Name",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:22:06.426552",
+      "latency_ms": 2999.107042007381,
+      "usage": {
+        "input_tokens": 3312,
+        "output_tokens": 72,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 3384
+      },
+      "cost_usd": 0.011016,
+      "success": true,
+      "error": null,
+      "category": "Document Name",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:22:07.045935",
+      "latency_ms": 3615.3831660049036,
+      "usage": {
+        "input_tokens": 667,
+        "output_tokens": 113,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 780
+      },
+      "cost_usd": 0.003696,
+      "success": true,
+      "error": null,
+      "category": "Parties",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:22:07.329989",
+      "latency_ms": 3898.6493330157828,
+      "usage": {
+        "input_tokens": 4024,
+        "output_tokens": 102,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 4126
+      },
+      "cost_usd": 0.013602000000000001,
+      "success": true,
+      "error": null,
+      "category": "Parties",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:22:07.439612",
+      "latency_ms": 4009.682875010185,
+      "usage": {
+        "input_tokens": 11701,
+        "output_tokens": 72,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 11773
+      },
+      "cost_usd": 0.036183,
+      "success": true,
+      "error": null,
+      "category": "Expiration Date",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:22:07.554528",
+      "latency_ms": 4126.267666986678,
+      "usage": {
+        "input_tokens": 4297,
+        "output_tokens": 82,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 4379
+      },
+      "cost_usd": 0.014121,
+      "success": true,
+      "error": null,
+      "category": "Document Name",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:22:07.853442",
+      "latency_ms": 4422.363374993438,
+      "usage": {
+        "input_tokens": 4493,
+        "output_tokens": 60,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 4553
+      },
+      "cost_usd": 0.014379000000000001,
+      "success": true,
+      "error": null,
+      "category": "Governing Law",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:22:07.941481",
+      "latency_ms": 2512.8282499790657,
+      "usage": {
+        "input_tokens": 1406,
+        "output_tokens": 87,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1493
+      },
+      "cost_usd": 0.005522999999999999,
+      "success": true,
+      "error": null,
+      "category": "Effective Date",
+      "agent_name": "m0_extractor",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:22:08.433333",
+      "latency_ms": 5002.512582985219,
+      "usage": {
+        "input_tokens": 4372,
+        "output_tokens": 126,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 4498
+      },
+      "cost_usd": 0.015005999999999999,
+      "success": true,
+      "error": null,
+      "category": "Expiration Date",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:22:08.906680",
+      "latency_ms": 2480.087250005454,
+      "usage": {
+        "input_tokens": 3352,
+        "output_tokens": 62,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 3414
+      },
+      "cost_usd": 0.010986,
+      "success": true,
+      "error": null,
+      "category": "Document Name",
+      "agent_name": "m0_extractor",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:22:09.217498",
+      "latency_ms": 2893.7621250224765,
+      "usage": {
+        "input_tokens": 2615,
+        "output_tokens": 76,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 2691
+      },
+      "cost_usd": 0.008985000000000002,
+      "success": true,
+      "error": null,
+      "category": "Document Name",
+      "agent_name": "m0_extractor",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:22:10.478624",
+      "latency_ms": 2923.874000000069,
+      "usage": {
+        "input_tokens": 4337,
+        "output_tokens": 97,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 4434
+      },
+      "cost_usd": 0.014466,
+      "success": true,
+      "error": null,
+      "category": "Document Name",
+      "agent_name": "m0_extractor",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:22:11.712851",
+      "latency_ms": 3859.3900840205606,
+      "usage": {
+        "input_tokens": 4533,
+        "output_tokens": 161,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 4694
+      },
+      "cost_usd": 0.016014,
+      "success": true,
+      "error": null,
+      "category": "Governing Law",
+      "agent_name": "m0_extractor",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:22:11.734524",
+      "latency_ms": 2825.311334017897,
+      "usage": {
+        "input_tokens": 12679,
+        "output_tokens": 78,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 12757
+      },
+      "cost_usd": 0.039207,
+      "success": true,
+      "error": null,
+      "category": "Governing Law",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:22:11.856857",
+      "latency_ms": 3911.4099580037873,
+      "usage": {
+        "input_tokens": 7871,
+        "output_tokens": 112,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 7983
+      },
+      "cost_usd": 0.025293000000000003,
+      "success": true,
+      "error": null,
+      "category": "Governing Law",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:22:12.078849",
+      "latency_ms": 3644.4511669978965,
+      "usage": {
+        "input_tokens": 6615,
+        "output_tokens": 92,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 6707
+      },
+      "cost_usd": 0.021225,
+      "success": true,
+      "error": null,
+      "category": "Expiration Date",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:22:12.234756",
+      "latency_ms": 5188.787749997573,
+      "usage": {
+        "input_tokens": 707,
+        "output_tokens": 413,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1120
+      },
+      "cost_usd": 0.008315999999999999,
+      "success": true,
+      "error": null,
+      "category": "Parties",
+      "agent_name": "m0_extractor",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:22:12.388739",
+      "latency_ms": 4949.086542008445,
+      "usage": {
+        "input_tokens": 11741,
+        "output_tokens": 161,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 11902
+      },
+      "cost_usd": 0.037638,
+      "success": true,
+      "error": null,
+      "category": "Expiration Date",
+      "agent_name": "m0_extractor",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:22:13.390706",
+      "latency_ms": 9967.45408300194,
+      "usage": {
+        "input_tokens": 53856,
+        "output_tokens": 238,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 54094
+      },
+      "cost_usd": 0.165138,
+      "success": true,
+      "error": null,
+      "category": "Parties",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:22:13.453710",
+      "latency_ms": 4235.196207999252,
+      "usage": {
+        "input_tokens": 34622,
+        "output_tokens": 99,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 34721
+      },
+      "cost_usd": 0.105351,
+      "success": true,
+      "error": null,
+      "category": "Document Name",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:22:13.620478",
+      "latency_ms": 3139.151417009998,
+      "usage": {
+        "input_tokens": 4408,
+        "output_tokens": 89,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 4497
+      },
+      "cost_usd": 0.014559,
+      "success": true,
+      "error": null,
+      "category": "Parties",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:22:14.797103",
+      "latency_ms": 3083.17770800204,
+      "usage": {
+        "input_tokens": 2754,
+        "output_tokens": 91,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 2845
+      },
+      "cost_usd": 0.009627,
+      "success": true,
+      "error": null,
+      "category": "Effective Date",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:22:15.376820",
+      "latency_ms": 3141.2993340054527,
+      "usage": {
+        "input_tokens": 1372,
+        "output_tokens": 100,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1472
+      },
+      "cost_usd": 0.005616000000000001,
+      "success": true,
+      "error": null,
+      "category": "Governing Law",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:22:15.718675",
+      "latency_ms": 3861.792542011244,
+      "usage": {
+        "input_tokens": 7911,
+        "output_tokens": 140,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 8051
+      },
+      "cost_usd": 0.025833000000000002,
+      "success": true,
+      "error": null,
+      "category": "Governing Law",
+      "agent_name": "m0_extractor",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:22:15.727521",
+      "latency_ms": 8397.501499974169,
+      "usage": {
+        "input_tokens": 4064,
+        "output_tokens": 380,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 4444
+      },
+      "cost_usd": 0.017891999999999998,
+      "success": true,
+      "error": null,
+      "category": "Parties",
+      "agent_name": "m0_extractor",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:22:16.245401",
+      "latency_ms": 3854.675499984296,
+      "usage": {
+        "input_tokens": 548,
+        "output_tokens": 89,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 637
+      },
+      "cost_usd": 0.002979,
+      "success": true,
+      "error": null,
+      "category": "Effective Date",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:22:17.537325",
+      "latency_ms": 5458.443833020283,
+      "usage": {
+        "input_tokens": 6655,
+        "output_tokens": 178,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 6833
+      },
+      "cost_usd": 0.022635,
+      "success": true,
+      "error": null,
+      "category": "Expiration Date",
+      "agent_name": "m0_extractor",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:22:17.626952",
+      "latency_ms": 4173.180749989115,
+      "usage": {
+        "input_tokens": 34662,
+        "output_tokens": 122,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 34784
+      },
+      "cost_usd": 0.105816,
+      "success": true,
+      "error": null,
+      "category": "Document Name",
+      "agent_name": "m0_extractor",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:22:17.923752",
+      "latency_ms": 2545.408582984237,
+      "usage": {
+        "input_tokens": 389,
+        "output_tokens": 94,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 483
+      },
+      "cost_usd": 0.0025770000000000003,
+      "success": true,
+      "error": null,
+      "category": "Expiration Date",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:22:18.145117",
+      "latency_ms": 2415.419083001325,
+      "usage": {
+        "input_tokens": 676,
+        "output_tokens": 84,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 760
+      },
+      "cost_usd": 0.003288,
+      "success": true,
+      "error": null,
+      "category": "Agreement Date",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:22:18.763587",
+      "latency_ms": 2516.755374992499,
+      "usage": {
+        "input_tokens": 2056,
+        "output_tokens": 72,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 2128
+      },
+      "cost_usd": 0.007247999999999999,
+      "success": true,
+      "error": null,
+      "category": "Effective Date",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:22:18.920936",
+      "latency_ms": 4123.7939579878,
+      "usage": {
+        "input_tokens": 2794,
+        "output_tokens": 209,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 3003
+      },
+      "cost_usd": 0.011517,
+      "success": true,
+      "error": null,
+      "category": "Effective Date",
+      "agent_name": "m0_extractor",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:22:20.069801",
+      "latency_ms": 8335.255999991205,
+      "usage": {
+        "input_tokens": 12719,
+        "output_tokens": 267,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 12986
+      },
+      "cost_usd": 0.042162,
+      "success": true,
+      "error": null,
+      "category": "Governing Law",
+      "agent_name": "m0_extractor",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:22:21.672426",
+      "latency_ms": 3527.2613340057433,
+      "usage": {
+        "input_tokens": 716,
+        "output_tokens": 168,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 884
+      },
+      "cost_usd": 0.004668,
+      "success": true,
+      "error": null,
+      "category": "Agreement Date",
+      "agent_name": "m0_extractor",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:22:21.720072",
+      "latency_ms": 4179.403749993071,
+      "usage": {
+        "input_tokens": 24003,
+        "output_tokens": 87,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 24090
+      },
+      "cost_usd": 0.073314,
+      "success": true,
+      "error": null,
+      "category": "Agreement Date",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:22:21.797657",
+      "latency_ms": 8177.151667012367,
+      "usage": {
+        "input_tokens": 4448,
+        "output_tokens": 508,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 4956
+      },
+      "cost_usd": 0.020964000000000003,
+      "success": true,
+      "error": null,
+      "category": "Parties",
+      "agent_name": "m0_extractor",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:22:22.018154",
+      "latency_ms": 3254.5113330124877,
+      "usage": {
+        "input_tokens": 2096,
+        "output_tokens": 109,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 2205
+      },
+      "cost_usd": 0.007923,
+      "success": true,
+      "error": null,
+      "category": "Effective Date",
+      "agent_name": "m0_extractor",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:22:22.101686",
+      "latency_ms": 4470.012667006813,
+      "usage": {
+        "input_tokens": 6375,
+        "output_tokens": 131,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 6506
+      },
+      "cost_usd": 0.02109,
+      "success": true,
+      "error": null,
+      "category": "Governing Law",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:22:22.588630",
+      "latency_ms": 4663.52800000459,
+      "usage": {
+        "input_tokens": 14396,
+        "output_tokens": 130,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 14526
+      },
+      "cost_usd": 0.045138000000000005,
+      "success": true,
+      "error": null,
+      "category": "Expiration Date",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:22:22.663876",
+      "latency_ms": 3741.015999985393,
+      "usage": {
+        "input_tokens": 2890,
+        "output_tokens": 112,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 3002
+      },
+      "cost_usd": 0.010350000000000002,
+      "success": true,
+      "error": null,
+      "category": "Agreement Date",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:22:24.230726",
+      "latency_ms": 2128.4884169872385,
+      "usage": {
+        "input_tokens": 2177,
+        "output_tokens": 65,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 2242
+      },
+      "cost_usd": 0.0075060000000000005,
+      "success": true,
+      "error": null,
+      "category": "Effective Date",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:22:24.989704",
+      "latency_ms": 3189.315166993765,
+      "usage": {
+        "input_tokens": 2579,
+        "output_tokens": 81,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 2660
+      },
+      "cost_usd": 0.008952000000000002,
+      "success": true,
+      "error": null,
+      "category": "Effective Date",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:22:25.515168",
+      "latency_ms": 5444.3334589886945,
+      "usage": {
+        "input_tokens": 25936,
+        "output_tokens": 139,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 26075
+      },
+      "cost_usd": 0.079893,
+      "success": true,
+      "error": null,
+      "category": "Expiration Date",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:22:25.776407",
+      "latency_ms": 3186.8364170077257,
+      "usage": {
+        "input_tokens": 1454,
+        "output_tokens": 106,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1560
+      },
+      "cost_usd": 0.005951999999999999,
+      "success": true,
+      "error": null,
+      "category": "Expiration Date",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:22:26.208170",
+      "latency_ms": 4534.595707984408,
+      "usage": {
+        "input_tokens": 686,
+        "output_tokens": 95,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 781
+      },
+      "cost_usd": 0.0034830000000000004,
+      "success": true,
+      "error": null,
+      "category": "Governing Law",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:22:26.213982",
+      "latency_ms": 4195.070125017082,
+      "usage": {
+        "input_tokens": 6369,
+        "output_tokens": 124,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 6493
+      },
+      "cost_usd": 0.020967,
+      "success": true,
+      "error": null,
+      "category": "Effective Date",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:22:27.477970",
+      "latency_ms": 4814.054874994326,
+      "usage": {
+        "input_tokens": 2930,
+        "output_tokens": 171,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 3101
+      },
+      "cost_usd": 0.011355,
+      "success": true,
+      "error": null,
+      "category": "Agreement Date",
+      "agent_name": "m0_extractor",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:22:27.865694",
+      "latency_ms": 12143.329584010644,
+      "usage": {
+        "input_tokens": 68397,
+        "output_tokens": 396,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 68793
+      },
+      "cost_usd": 0.211131,
+      "success": true,
+      "error": null,
+      "category": "Agreement Date",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:22:28.300948",
+      "latency_ms": 2785.007750004297,
+      "usage": {
+        "input_tokens": 544,
+        "output_tokens": 54,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 598
+      },
+      "cost_usd": 0.002442,
+      "success": true,
+      "error": null,
+      "category": "Agreement Date",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:22:29.254473",
+      "latency_ms": 5023.709291999694,
+      "usage": {
+        "input_tokens": 2217,
+        "output_tokens": 226,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 2443
+      },
+      "cost_usd": 0.010041000000000001,
+      "success": true,
+      "error": null,
+      "category": "Effective Date",
+      "agent_name": "m0_extractor",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:22:29.704506",
+      "latency_ms": 3494.354916998418,
+      "usage": {
+        "input_tokens": 671,
+        "output_tokens": 123,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 794
+      },
+      "cost_usd": 0.003858,
+      "success": true,
+      "error": null,
+      "category": "Expiration Date",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:22:30.163485",
+      "latency_ms": 1862.5197910005227,
+      "usage": {
+        "input_tokens": 584,
+        "output_tokens": 69,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 653
+      },
+      "cost_usd": 0.002787,
+      "success": true,
+      "error": null,
+      "category": "Agreement Date",
+      "agent_name": "m0_extractor",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:22:30.227189",
+      "latency_ms": 8507.07408299786,
+      "usage": {
+        "input_tokens": 24043,
+        "output_tokens": 284,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 24327
+      },
+      "cost_usd": 0.076389,
+      "success": true,
+      "error": null,
+      "category": "Agreement Date",
+      "agent_name": "m0_extractor",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:22:30.782910",
+      "latency_ms": 5005.970458005322,
+      "usage": {
+        "input_tokens": 1030,
+        "output_tokens": 84,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1114
+      },
+      "cost_usd": 0.004350000000000001,
+      "success": true,
+      "error": null,
+      "category": "Effective Date",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:22:31.065090",
+      "latency_ms": 3586.3878339878283,
+      "usage": {
+        "input_tokens": 21147,
+        "output_tokens": 79,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 21226
+      },
+      "cost_usd": 0.064626,
+      "success": true,
+      "error": null,
+      "category": "Agreement Date",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:22:31.123100",
+      "latency_ms": 6133.334833022673,
+      "usage": {
+        "input_tokens": 2619,
+        "output_tokens": 217,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 2836
+      },
+      "cost_usd": 0.011112,
+      "success": true,
+      "error": null,
+      "category": "Effective Date",
+      "agent_name": "m0_extractor",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:22:32.312564",
+      "latency_ms": 6098.553584015463,
+      "usage": {
+        "input_tokens": 6409,
+        "output_tokens": 226,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 6635
+      },
+      "cost_usd": 0.022617,
+      "success": true,
+      "error": null,
+      "category": "Effective Date",
+      "agent_name": "m0_extractor",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:22:32.726681",
+      "latency_ms": 3020.2003750018775,
+      "usage": {
+        "input_tokens": 5387,
+        "output_tokens": 88,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 5475
+      },
+      "cost_usd": 0.017480999999999997,
+      "success": true,
+      "error": null,
+      "category": "Expiration Date",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:22:33.890838",
+      "latency_ms": 3107.901832991047,
+      "usage": {
+        "input_tokens": 1070,
+        "output_tokens": 175,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1245
+      },
+      "cost_usd": 0.005835,
+      "success": true,
+      "error": null,
+      "category": "Effective Date",
+      "agent_name": "m0_extractor",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:22:33.958819",
+      "latency_ms": 4703.684459003853,
+      "usage": {
+        "input_tokens": 6212,
+        "output_tokens": 137,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 6349
+      },
+      "cost_usd": 0.020691,
+      "success": true,
+      "error": null,
+      "category": "Effective Date",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:22:34.618490",
+      "latency_ms": 3494.5997090253513,
+      "usage": {
+        "input_tokens": 3316,
+        "output_tokens": 98,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 3414
+      },
+      "cost_usd": 0.011418000000000001,
+      "success": true,
+      "error": null,
+      "category": "Effective Date",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:22:34.970966",
+      "latency_ms": 4806.848334003007,
+      "usage": {
+        "input_tokens": 15051,
+        "output_tokens": 183,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 15234
+      },
+      "cost_usd": 0.047897999999999996,
+      "success": true,
+      "error": null,
+      "category": "Expiration Date",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:22:35.147637",
+      "latency_ms": 4919.044000009308,
+      "usage": {
+        "input_tokens": 1245,
+        "output_tokens": 108,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1353
+      },
+      "cost_usd": 0.005355,
+      "success": true,
+      "error": null,
+      "category": "Governing Law",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:22:36.594696",
+      "latency_ms": 4280.6066670164,
+      "usage": {
+        "input_tokens": 29549,
+        "output_tokens": 86,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 29635
+      },
+      "cost_usd": 0.089937,
+      "success": true,
+      "error": null,
+      "category": "Effective Date",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:22:37.214464",
+      "latency_ms": 3323.0090840079356,
+      "usage": {
+        "input_tokens": 809,
+        "output_tokens": 102,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 911
+      },
+      "cost_usd": 0.0039570000000000004,
+      "success": true,
+      "error": null,
+      "category": "Governing Law",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:22:37.259009",
+      "latency_ms": 6193.886791996192,
+      "usage": {
+        "input_tokens": 21187,
+        "output_tokens": 220,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 21407
+      },
+      "cost_usd": 0.066861,
+      "success": true,
+      "error": null,
+      "category": "Agreement Date",
+      "agent_name": "m0_extractor",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:22:37.896762",
+      "latency_ms": 2746.387167018838,
+      "usage": {
+        "input_tokens": 1373,
+        "output_tokens": 81,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1454
+      },
+      "cost_usd": 0.005334,
+      "success": true,
+      "error": null,
+      "category": "Governing Law",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:22:38.676571",
+      "latency_ms": 3704.917209019186,
+      "usage": {
+        "input_tokens": 1370,
+        "output_tokens": 104,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1474
+      },
+      "cost_usd": 0.0056700000000000006,
+      "success": true,
+      "error": null,
+      "category": "Expiration Date",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:22:39.838998",
+      "latency_ms": 26448.1442910037,
+      "usage": {
+        "input_tokens": 53896,
+        "output_tokens": 849,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 54745
+      },
+      "cost_usd": 0.174423,
+      "success": true,
+      "error": null,
+      "category": "Parties",
+      "agent_name": "m0_extractor",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:22:40.670738",
+      "latency_ms": 6711.874750006245,
+      "usage": {
+        "input_tokens": 6252,
+        "output_tokens": 240,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 6492
+      },
+      "cost_usd": 0.022355999999999997,
+      "success": true,
+      "error": null,
+      "category": "Effective Date",
+      "agent_name": "m0_extractor",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:22:41.661464",
+      "latency_ms": 4445.839124993654,
+      "usage": {
+        "input_tokens": 2060,
+        "output_tokens": 104,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 2164
+      },
+      "cost_usd": 0.00774,
+      "success": true,
+      "error": null,
+      "category": "Expiration Date",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:22:42.272701",
+      "latency_ms": 3595.251791004557,
+      "usage": {
+        "input_tokens": 385,
+        "output_tokens": 101,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 486
+      },
+      "cost_usd": 0.00267,
+      "success": true,
+      "error": null,
+      "category": "Effective Date",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:22:42.681304",
+      "latency_ms": 4783.491792011773,
+      "usage": {
+        "input_tokens": 1184,
+        "output_tokens": 128,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1312
+      },
+      "cost_usd": 0.005472,
+      "success": true,
+      "error": null,
+      "category": "Expiration Date",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:22:43.298365",
+      "latency_ms": 8679.845874983585,
+      "usage": {
+        "input_tokens": 3356,
+        "output_tokens": 420,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 3776
+      },
+      "cost_usd": 0.016368,
+      "success": true,
+      "error": null,
+      "category": "Effective Date",
+      "agent_name": "m0_extractor",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:22:43.513677",
+      "latency_ms": 6252.234290994238,
+      "usage": {
+        "input_tokens": 14392,
+        "output_tokens": 239,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 14631
+      },
+      "cost_usd": 0.046761,
+      "success": true,
+      "error": null,
+      "category": "Effective Date",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:22:43.733406",
+      "latency_ms": 2069.73995899898,
+      "usage": {
+        "input_tokens": 2187,
+        "output_tokens": 76,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 2263
+      },
+      "cost_usd": 0.0077009999999999995,
+      "success": true,
+      "error": null,
+      "category": "Anti-Assignment",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:22:44.032235",
+      "latency_ms": 4184.385166008724,
+      "usage": {
+        "input_tokens": 2930,
+        "output_tokens": 124,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 3054
+      },
+      "cost_usd": 0.010650000000000001,
+      "success": true,
+      "error": null,
+      "category": "Expiration Date",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:22:44.730746",
+      "latency_ms": 4057.1213329967577,
+      "usage": {
+        "input_tokens": 32732,
+        "output_tokens": 91,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 32823
+      },
+      "cost_usd": 0.09956100000000001,
+      "success": true,
+      "error": null,
+      "category": "No-Solicit Of Employees",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:22:46.332893",
+      "latency_ms": 3650.565208023181,
+      "usage": {
+        "input_tokens": 4041,
+        "output_tokens": 71,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 4112
+      },
+      "cost_usd": 0.013188000000000002,
+      "success": true,
+      "error": null,
+      "category": "Termination For Convenience",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:22:46.653202",
+      "latency_ms": 2919.7624170046765,
+      "usage": {
+        "input_tokens": 2227,
+        "output_tokens": 103,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 2330
+      },
+      "cost_usd": 0.008225999999999999,
+      "success": true,
+      "error": null,
+      "category": "Anti-Assignment",
+      "agent_name": "m0_extractor",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:22:47.261183",
+      "latency_ms": 14534.42174999509,
+      "usage": {
+        "input_tokens": 5427,
+        "output_tokens": 515,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 5942
+      },
+      "cost_usd": 0.024006,
+      "success": true,
+      "error": null,
+      "category": "Expiration Date",
+      "agent_name": "m0_extractor",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:22:47.387412",
+      "latency_ms": 5114.073000004282,
+      "usage": {
+        "input_tokens": 4502,
+        "output_tokens": 131,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 4633
+      },
+      "cost_usd": 0.015470999999999999,
+      "success": true,
+      "error": null,
+      "category": "Non-Transferable License",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:22:48.002005",
+      "latency_ms": 20136.157125001773,
+      "usage": {
+        "input_tokens": 68437,
+        "output_tokens": 582,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 69019
+      },
+      "cost_usd": 0.21404099999999998,
+      "success": true,
+      "error": null,
+      "category": "Agreement Date",
+      "agent_name": "m0_extractor",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:22:48.097169",
+      "latency_ms": 4797.405999997864,
+      "usage": {
+        "input_tokens": 20526,
+        "output_tokens": 116,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 20642
+      },
+      "cost_usd": 0.063318,
+      "success": true,
+      "error": null,
+      "category": "License Grant",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:22:48.474879",
+      "latency_ms": 4442.0914170041215,
+      "usage": {
+        "input_tokens": 15027,
+        "output_tokens": 122,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 15149
+      },
+      "cost_usd": 0.046910999999999994,
+      "success": true,
+      "error": null,
+      "category": "Audit Rights",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:22:49.834496",
+      "latency_ms": 6318.933790986193,
+      "usage": {
+        "input_tokens": 68417,
+        "output_tokens": 77,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 68494
+      },
+      "cost_usd": 0.206406,
+      "success": true,
+      "error": null,
+      "category": "Renewal Term",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:22:50.718181",
+      "latency_ms": 5987.342959007947,
+      "usage": {
+        "input_tokens": 32772,
+        "output_tokens": 193,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 32965
+      },
+      "cost_usd": 0.101211,
+      "success": true,
+      "error": null,
+      "category": "No-Solicit Of Employees",
+      "agent_name": "m0_extractor",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:22:50.909084",
+      "latency_ms": 3645.950125006493,
+      "usage": {
+        "input_tokens": 6087,
+        "output_tokens": 95,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 6182
+      },
+      "cost_usd": 0.019686,
+      "success": true,
+      "error": null,
+      "category": "Audit Rights",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:22:52.707478",
+      "latency_ms": 6052.324499993119,
+      "usage": {
+        "input_tokens": 5867,
+        "output_tokens": 181,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 6048
+      },
+      "cost_usd": 0.020316,
+      "success": true,
+      "error": null,
+      "category": "License Grant",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:22:53.479350",
+      "latency_ms": 7146.421416022349,
+      "usage": {
+        "input_tokens": 4081,
+        "output_tokens": 222,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 4303
+      },
+      "cost_usd": 0.015573000000000002,
+      "success": true,
+      "error": null,
+      "category": "Termination For Convenience",
+      "agent_name": "m0_extractor",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:22:54.714267",
+      "latency_ms": 3992.7327090117615,
+      "usage": {
+        "input_tokens": 5993,
+        "output_tokens": 110,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 6103
+      },
+      "cost_usd": 0.019629,
+      "success": true,
+      "error": null,
+      "category": "Insurance",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:22:56.412227",
+      "latency_ms": 7937.3009169939905,
+      "usage": {
+        "input_tokens": 15067,
+        "output_tokens": 269,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 15336
+      },
+      "cost_usd": 0.049236,
+      "success": true,
+      "error": null,
+      "category": "Audit Rights",
+      "agent_name": "m0_extractor",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:22:58.378135",
+      "latency_ms": 10990.67341699265,
+      "usage": {
+        "input_tokens": 4542,
+        "output_tokens": 395,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 4937
+      },
+      "cost_usd": 0.019551,
+      "success": true,
+      "error": null,
+      "category": "Non-Transferable License",
+      "agent_name": "m0_extractor",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:22:59.760028",
+      "latency_ms": 6274.939499999164,
+      "usage": {
+        "input_tokens": 7872,
+        "output_tokens": 164,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 8036
+      },
+      "cost_usd": 0.026076000000000002,
+      "success": true,
+      "error": null,
+      "category": "License Grant",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:23:01.002435",
+      "latency_ms": 24407.703583012335,
+      "usage": {
+        "input_tokens": 29589,
+        "output_tokens": 1139,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 30728
+      },
+      "cost_usd": 0.105852,
+      "success": true,
+      "error": null,
+      "category": "Effective Date",
+      "agent_name": "m0_extractor",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:23:01.020326",
+      "latency_ms": 10111.197582999012,
+      "usage": {
+        "input_tokens": 6127,
+        "output_tokens": 280,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 6407
+      },
+      "cost_usd": 0.022580999999999997,
+      "success": true,
+      "error": null,
+      "category": "Audit Rights",
+      "agent_name": "m0_extractor",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:23:01.071927",
+      "latency_ms": 13062.069874984445,
+      "usage": {
+        "input_tokens": 60373,
+        "output_tokens": 150,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 60523
+      },
+      "cost_usd": 0.183369,
+      "success": true,
+      "error": null,
+      "category": "Audit Rights",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:23:01.749842",
+      "latency_ms": 3369.023917010054,
+      "usage": {
+        "input_tokens": 6751,
+        "output_tokens": 84,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 6835
+      },
+      "cost_usd": 0.021513,
+      "success": true,
+      "error": null,
+      "category": "Anti-Assignment",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:23:02.192262",
+      "latency_ms": 7477.950125001371,
+      "usage": {
+        "input_tokens": 6033,
+        "output_tokens": 268,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 6301
+      },
+      "cost_usd": 0.022119,
+      "success": true,
+      "error": null,
+      "category": "Insurance",
+      "agent_name": "m0_extractor",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:23:02.573285",
+      "latency_ms": 6157.860209001228,
+      "usage": {
+        "input_tokens": 35175,
+        "output_tokens": 154,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 35329
+      },
+      "cost_usd": 0.107835,
+      "success": true,
+      "error": null,
+      "category": "Ip Ownership Assignment",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:23:04.669856",
+      "latency_ms": 3663.808000012068,
+      "usage": {
+        "input_tokens": 29565,
+        "output_tokens": 79,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 29644
+      },
+      "cost_usd": 0.08988000000000002,
+      "success": true,
+      "error": null,
+      "category": "Renewal Term",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:23:05.003355",
+      "latency_ms": 3981.887291010935,
+      "usage": {
+        "input_tokens": 4318,
+        "output_tokens": 122,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 4440
+      },
+      "cost_usd": 0.014783999999999999,
+      "success": true,
+      "error": null,
+      "category": "Irrevocable Or Perpetual License",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:23:06.897531",
+      "latency_ms": 4703.358875005506,
+      "usage": {
+        "input_tokens": 5935,
+        "output_tokens": 100,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 6035
+      },
+      "cost_usd": 0.019305,
+      "success": true,
+      "error": null,
+      "category": "No-Solicit Of Employees",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:23:06.952991",
+      "latency_ms": 14245.451208000304,
+      "usage": {
+        "input_tokens": 5907,
+        "output_tokens": 533,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 6440
+      },
+      "cost_usd": 0.025716000000000003,
+      "success": true,
+      "error": null,
+      "category": "License Grant",
+      "agent_name": "m0_extractor",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:23:08.241292",
+      "latency_ms": 3236.6459160111845,
+      "usage": {
+        "input_tokens": 1468,
+        "output_tokens": 120,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1588
+      },
+      "cost_usd": 0.0062039999999999994,
+      "success": true,
+      "error": null,
+      "category": "Warranty Duration",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:23:09.435006",
+      "latency_ms": 21337.765291013056,
+      "usage": {
+        "input_tokens": 20566,
+        "output_tokens": 766,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 21332
+      },
+      "cost_usd": 0.073188,
+      "success": true,
+      "error": null,
+      "category": "License Grant",
+      "agent_name": "m0_extractor",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:23:10.102608",
+      "latency_ms": 8352.722167008324,
+      "usage": {
+        "input_tokens": 6791,
+        "output_tokens": 237,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 7028
+      },
+      "cost_usd": 0.023928,
+      "success": true,
+      "error": null,
+      "category": "Anti-Assignment",
+      "agent_name": "m0_extractor",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:23:11.294289",
+      "latency_ms": 4394.655957992654,
+      "usage": {
+        "input_tokens": 9757,
+        "output_tokens": 138,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 9895
+      },
+      "cost_usd": 0.031341,
+      "success": true,
+      "error": null,
+      "category": "Post-Termination Services",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:23:11.684918",
+      "latency_ms": 3443.5750839766115,
+      "usage": {
+        "input_tokens": 1508,
+        "output_tokens": 171,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1679
+      },
+      "cost_usd": 0.007089,
+      "success": true,
+      "error": null,
+      "category": "Warranty Duration",
+      "agent_name": "m0_extractor",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:23:12.405891",
+      "latency_ms": 7735.7498339843005,
+      "usage": {
+        "input_tokens": 29605,
+        "output_tokens": 270,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 29875
+      },
+      "cost_usd": 0.092865,
+      "success": true,
+      "error": null,
+      "category": "Renewal Term",
+      "agent_name": "m0_extractor",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:23:14.968250",
+      "latency_ms": 4861.597625014838,
+      "usage": {
+        "input_tokens": 19485,
+        "output_tokens": 125,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 19610
+      },
+      "cost_usd": 0.06033,
+      "success": true,
+      "error": null,
+      "category": "Post-Termination Services",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:23:15.156943",
+      "latency_ms": 5716.527333017439,
+      "usage": {
+        "input_tokens": 14421,
+        "output_tokens": 164,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 14585
+      },
+      "cost_usd": 0.04572299999999999,
+      "success": true,
+      "error": null,
+      "category": "No-Solicit Of Customers",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:23:15.798937",
+      "latency_ms": 3390.2587089978624,
+      "usage": {
+        "input_tokens": 1382,
+        "output_tokens": 102,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1484
+      },
+      "cost_usd": 0.005676,
+      "success": true,
+      "error": null,
+      "category": "Non-Transferable License",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:23:16.540407",
+      "latency_ms": 4854.606125009013,
+      "usage": {
+        "input_tokens": 5217,
+        "output_tokens": 128,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 5345
+      },
+      "cost_usd": 0.017571,
+      "success": true,
+      "error": null,
+      "category": "Non-Transferable License",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:23:16.732023",
+      "latency_ms": 26897.320832998957,
+      "usage": {
+        "input_tokens": 68457,
+        "output_tokens": 891,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 69348
+      },
+      "cost_usd": 0.21873599999999999,
+      "success": true,
+      "error": null,
+      "category": "Renewal Term",
+      "agent_name": "m0_extractor",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:23:16.786662",
+      "latency_ms": 17026.60066599492,
+      "usage": {
+        "input_tokens": 7912,
+        "output_tokens": 980,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 8892
+      },
+      "cost_usd": 0.038436,
+      "success": true,
+      "error": null,
+      "category": "License Grant",
+      "agent_name": "m0_extractor",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:23:17.583827",
+      "latency_ms": 10629.744167003082,
+      "usage": {
+        "input_tokens": 8449,
+        "output_tokens": 338,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 8787
+      },
+      "cost_usd": 0.030417,
+      "success": true,
+      "error": null,
+      "category": "Non-Compete",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:23:18.115349",
+      "latency_ms": 6821.018583985278,
+      "usage": {
+        "input_tokens": 9797,
+        "output_tokens": 267,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 10064
+      },
+      "cost_usd": 0.033396,
+      "success": true,
+      "error": null,
+      "category": "Post-Termination Services",
+      "agent_name": "m0_extractor",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:23:18.959326",
+      "latency_ms": 3989.1363750211895,
+      "usage": {
+        "input_tokens": 8863,
+        "output_tokens": 145,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 9008
+      },
+      "cost_usd": 0.028763999999999998,
+      "success": true,
+      "error": null,
+      "category": "Warranty Duration",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:23:20.250489",
+      "latency_ms": 4448.180375009542,
+      "usage": {
+        "input_tokens": 2605,
+        "output_tokens": 134,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 2739
+      },
+      "cost_usd": 0.009825,
+      "success": true,
+      "error": null,
+      "category": "Ip Ownership Assignment",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:23:20.397045",
+      "latency_ms": 3655.901124991942,
+      "usage": {
+        "input_tokens": 5349,
+        "output_tokens": 122,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 5471
+      },
+      "cost_usd": 0.017877,
+      "success": true,
+      "error": null,
+      "category": "License Grant",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:23:20.733183",
+      "latency_ms": 4190.188999986276,
+      "usage": {
+        "input_tokens": 4149,
+        "output_tokens": 116,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 4265
+      },
+      "cost_usd": 0.014187,
+      "success": true,
+      "error": null,
+      "category": "No-Solicit Of Employees",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:23:20.742749",
+      "latency_ms": 3952.547124994453,
+      "usage": {
+        "input_tokens": 4718,
+        "output_tokens": 113,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 4831
+      },
+      "cost_usd": 0.015849,
+      "success": true,
+      "error": null,
+      "category": "Change Of Control",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:23:21.598132",
+      "latency_ms": 4011.9736670167185,
+      "usage": {
+        "input_tokens": 1199,
+        "output_tokens": 117,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1316
+      },
+      "cost_usd": 0.005352000000000001,
+      "success": true,
+      "error": null,
+      "category": "Termination For Convenience",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:23:21.968119",
+      "latency_ms": 3851.5359169978183,
+      "usage": {
+        "input_tokens": 4697,
+        "output_tokens": 119,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 4816
+      },
+      "cost_usd": 0.015876,
+      "success": true,
+      "error": null,
+      "category": "Audit Rights",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:23:23.239224",
+      "latency_ms": 4279.268250014866,
+      "usage": {
+        "input_tokens": 5209,
+        "output_tokens": 124,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 5333
+      },
+      "cost_usd": 0.017487,
+      "success": true,
+      "error": null,
+      "category": "License Grant",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:23:24.591219",
+      "latency_ms": 9432.805249991361,
+      "usage": {
+        "input_tokens": 23377,
+        "output_tokens": 338,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 23715
+      },
+      "cost_usd": 0.075201,
+      "success": true,
+      "error": null,
+      "category": "Termination For Convenience",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:23:24.929913",
+      "latency_ms": 4196.163209009683,
+      "usage": {
+        "input_tokens": 2090,
+        "output_tokens": 104,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 2194
+      },
+      "cost_usd": 0.00783,
+      "success": true,
+      "error": null,
+      "category": "No-Solicit Of Employees",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:23:25.251132",
+      "latency_ms": 4852.858041995205,
+      "usage": {
+        "input_tokens": 6139,
+        "output_tokens": 112,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 6251
+      },
+      "cost_usd": 0.020097000000000004,
+      "success": true,
+      "error": null,
+      "category": "Insurance",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:23:25.814861",
+      "latency_ms": 5071.292665990768,
+      "usage": {
+        "input_tokens": 11720,
+        "output_tokens": 141,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 11861
+      },
+      "cost_usd": 0.037275,
+      "success": true,
+      "error": null,
+      "category": "Non-Compete",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:23:26.504412",
+      "latency_ms": 4535.537709016353,
+      "usage": {
+        "input_tokens": 8442,
+        "output_tokens": 146,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 8588
+      },
+      "cost_usd": 0.027516000000000002,
+      "success": true,
+      "error": null,
+      "category": "Renewal Term",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:23:26.694755",
+      "latency_ms": 5095.530583988875,
+      "usage": {
+        "input_tokens": 6029,
+        "output_tokens": 155,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 6184
+      },
+      "cost_usd": 0.020412,
+      "success": true,
+      "error": null,
+      "category": "Change Of Control",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:23:27.585609",
+      "latency_ms": 2333.0073750112206,
+      "usage": {
+        "input_tokens": 433,
+        "output_tokens": 85,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 518
+      },
+      "cost_usd": 0.002574,
+      "success": true,
+      "error": null,
+      "category": "Change Of Control",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:23:27.790504",
+      "latency_ms": 4549.381707998691,
+      "usage": {
+        "input_tokens": 5360,
+        "output_tokens": 113,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 5473
+      },
+      "cost_usd": 0.017775,
+      "success": true,
+      "error": null,
+      "category": "Warranty Duration",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:23:27.799688",
+      "latency_ms": 7546.210875007091,
+      "usage": {
+        "input_tokens": 4118,
+        "output_tokens": 172,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 4290
+      },
+      "cost_usd": 0.014934,
+      "success": true,
+      "error": null,
+      "category": "Exclusivity",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:23:27.835599",
+      "latency_ms": 3243.724707979709,
+      "usage": {
+        "input_tokens": 4442,
+        "output_tokens": 105,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 4547
+      },
+      "cost_usd": 0.014901000000000001,
+      "success": true,
+      "error": null,
+      "category": "No-Solicit Of Employees",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:23:28.625234",
+      "latency_ms": 3693.1006670056377,
+      "usage": {
+        "input_tokens": 474,
+        "output_tokens": 99,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 573
+      },
+      "cost_usd": 0.002907,
+      "success": true,
+      "error": null,
+      "category": "Non-Transferable License",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:23:28.949651",
+      "latency_ms": 27877.680749981664,
+      "usage": {
+        "input_tokens": 60413,
+        "output_tokens": 924,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 61337
+      },
+      "cost_usd": 0.195099,
+      "success": true,
+      "error": null,
+      "category": "Audit Rights",
+      "agent_name": "m0_extractor",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:23:29.513909",
+      "latency_ms": 3696.2259159772657,
+      "usage": {
+        "input_tokens": 7103,
+        "output_tokens": 107,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 7210
+      },
+      "cost_usd": 0.022913999999999997,
+      "success": true,
+      "error": null,
+      "category": "Renewal Term",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:23:29.987743",
+      "latency_ms": 3482.343374984339,
+      "usage": {
+        "input_tokens": 6246,
+        "output_tokens": 123,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 6369
+      },
+      "cost_usd": 0.020583,
+      "success": true,
+      "error": null,
+      "category": "No-Solicit Of Employees",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:23:30.884666",
+      "latency_ms": 3092.832250025822,
+      "usage": {
+        "input_tokens": 3355,
+        "output_tokens": 110,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 3465
+      },
+      "cost_usd": 0.011715,
+      "success": true,
+      "error": null,
+      "category": "Post-Termination Services",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:23:31.438343",
+      "latency_ms": 4740.6164160056505,
+      "usage": {
+        "input_tokens": 1476,
+        "output_tokens": 102,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1578
+      },
+      "cost_usd": 0.005958,
+      "success": true,
+      "error": null,
+      "category": "Ip Ownership Assignment",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:23:32.126757",
+      "latency_ms": 3172.7393330074847,
+      "usage": {
+        "input_tokens": 5587,
+        "output_tokens": 90,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 5677
+      },
+      "cost_usd": 0.018111,
+      "success": true,
+      "error": null,
+      "category": "Minimum Commitment",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:23:32.283469",
+      "latency_ms": 3656.090874981601,
+      "usage": {
+        "input_tokens": 5359,
+        "output_tokens": 107,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 5466
+      },
+      "cost_usd": 0.017682,
+      "success": true,
+      "error": null,
+      "category": "Irrevocable Or Perpetual License",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:23:32.545076",
+      "latency_ms": 4958.715040993411,
+      "usage": {
+        "input_tokens": 7880,
+        "output_tokens": 117,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 7997
+      },
+      "cost_usd": 0.025395,
+      "success": true,
+      "error": null,
+      "category": "Non-Transferable License",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:23:32.796067",
+      "latency_ms": 4959.54112499021,
+      "usage": {
+        "input_tokens": 32713,
+        "output_tokens": 137,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 32850
+      },
+      "cost_usd": 0.100194,
+      "success": true,
+      "error": null,
+      "category": "Non-Transferable License",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:23:33.626761",
+      "latency_ms": 4112.817999994149,
+      "usage": {
+        "input_tokens": 7143,
+        "output_tokens": 178,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 7321
+      },
+      "cost_usd": 0.024099,
+      "success": true,
+      "error": null,
+      "category": "Renewal Term",
+      "agent_name": "m0_extractor",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:23:35.410426",
+      "latency_ms": 4525.732834008522,
+      "usage": {
+        "input_tokens": 3395,
+        "output_tokens": 255,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 3650
+      },
+      "cost_usd": 0.01401,
+      "success": true,
+      "error": null,
+      "category": "Post-Termination Services",
+      "agent_name": "m0_extractor",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:23:36.472331",
+      "latency_ms": 5032.311125018168,
+      "usage": {
+        "input_tokens": 20537,
+        "output_tokens": 138,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 20675
+      },
+      "cost_usd": 0.063681,
+      "success": true,
+      "error": null,
+      "category": "Revenue/Profit Sharing",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:23:37.352530",
+      "latency_ms": 34779.1933749977,
+      "usage": {
+        "input_tokens": 35215,
+        "output_tokens": 1354,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 36569
+      },
+      "cost_usd": 0.125955,
+      "success": true,
+      "error": null,
+      "category": "Ip Ownership Assignment",
+      "agent_name": "m0_extractor",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:23:37.718235",
+      "latency_ms": 5432.369000016479,
+      "usage": {
+        "input_tokens": 5699,
+        "output_tokens": 155,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 5854
+      },
+      "cost_usd": 0.019422000000000002,
+      "success": true,
+      "error": null,
+      "category": "Revenue/Profit Sharing",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:23:38.442399",
+      "latency_ms": 4814.7806669876445,
+      "usage": {
+        "input_tokens": 15080,
+        "output_tokens": 135,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 15215
+      },
+      "cost_usd": 0.047265,
+      "success": true,
+      "error": null,
+      "category": "Minimum Commitment",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:23:38.591569",
+      "latency_ms": 10791.841250000289,
+      "usage": {
+        "input_tokens": 4158,
+        "output_tokens": 393,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 4551
+      },
+      "cost_usd": 0.018369,
+      "success": true,
+      "error": null,
+      "category": "Exclusivity",
+      "agent_name": "m0_extractor",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:23:40.136933",
+      "latency_ms": 10148.597833001986,
+      "usage": {
+        "input_tokens": 8868,
+        "output_tokens": 369,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 9237
+      },
+      "cost_usd": 0.032139,
+      "success": true,
+      "error": null,
+      "category": "Competitive Restriction Exception",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:23:43.468066",
+      "latency_ms": 11341.242750000674,
+      "usage": {
+        "input_tokens": 5627,
+        "output_tokens": 460,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 6087
+      },
+      "cost_usd": 0.023781,
+      "success": true,
+      "error": null,
+      "category": "Minimum Commitment",
+      "agent_name": "m0_extractor",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:23:43.814351",
+      "latency_ms": 5221.327500010375,
+      "usage": {
+        "input_tokens": 23175,
+        "output_tokens": 145,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 23320
+      },
+      "cost_usd": 0.0717,
+      "success": true,
+      "error": null,
+      "category": "Liquidated Damages",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:23:44.326912",
+      "latency_ms": 5883.817666006507,
+      "usage": {
+        "input_tokens": 7118,
+        "output_tokens": 167,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 7285
+      },
+      "cost_usd": 0.023859,
+      "success": true,
+      "error": null,
+      "category": "Covenant Not To Sue",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:23:44.555845",
+      "latency_ms": 7200.023083016276,
+      "usage": {
+        "input_tokens": 32720,
+        "output_tokens": 173,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 32893
+      },
+      "cost_usd": 0.100755,
+      "success": true,
+      "error": null,
+      "category": "Minimum Commitment",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:23:45.416903",
+      "latency_ms": 10005.552207992878,
+      "usage": {
+        "input_tokens": 50381,
+        "output_tokens": 331,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 50712
+      },
+      "cost_usd": 0.156108,
+      "success": true,
+      "error": null,
+      "category": "Non-Disparagement",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:23:46.093136",
+      "latency_ms": 13548.011541017331,
+      "usage": {
+        "input_tokens": 7920,
+        "output_tokens": 752,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 8672
+      },
+      "cost_usd": 0.03504,
+      "success": true,
+      "error": null,
+      "category": "Non-Transferable License",
+      "agent_name": "m0_extractor",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:23:49.235672",
+      "latency_ms": 9098.704666015692,
+      "usage": {
+        "input_tokens": 8908,
+        "output_tokens": 326,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 9234
+      },
+      "cost_usd": 0.031613999999999996,
+      "success": true,
+      "error": null,
+      "category": "Competitive Restriction Exception",
+      "agent_name": "m0_extractor",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:23:49.761078",
+      "latency_ms": 12042.764167010318,
+      "usage": {
+        "input_tokens": 5739,
+        "output_tokens": 502,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 6241
+      },
+      "cost_usd": 0.024746999999999998,
+      "success": true,
+      "error": null,
+      "category": "Revenue/Profit Sharing",
+      "agent_name": "m0_extractor",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:23:50.091060",
+      "latency_ms": 17294.94291698211,
+      "usage": {
+        "input_tokens": 32753,
+        "output_tokens": 620,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 33373
+      },
+      "cost_usd": 0.107559,
+      "success": true,
+      "error": null,
+      "category": "Non-Transferable License",
+      "agent_name": "m0_extractor",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:23:50.716062",
+      "latency_ms": 6386.341667006491,
+      "usage": {
+        "input_tokens": 60370,
+        "output_tokens": 120,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 60490
+      },
+      "cost_usd": 0.18291,
+      "success": true,
+      "error": null,
+      "category": "Revenue/Profit Sharing",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:23:51.581875",
+      "latency_ms": 5486.188749986468,
+      "usage": {
+        "input_tokens": 25960,
+        "output_tokens": 154,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 26114
+      },
+      "cost_usd": 0.08019000000000001,
+      "success": true,
+      "error": null,
+      "category": "Affiliate License-Licensee",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:23:53.355762",
+      "latency_ms": 3262.1897920034826,
+      "usage": {
+        "input_tokens": 9602,
+        "output_tokens": 88,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 9690
+      },
+      "cost_usd": 0.030126,
+      "success": true,
+      "error": null,
+      "category": "Joint Ip Ownership",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:23:53.794779",
+      "latency_ms": 8377.808374993037,
+      "usage": {
+        "input_tokens": 50421,
+        "output_tokens": 214,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 50635
+      },
+      "cost_usd": 0.154473,
+      "success": true,
+      "error": null,
+      "category": "Non-Disparagement",
+      "agent_name": "m0_extractor",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:23:53.840828",
+      "latency_ms": 4604.159915994387,
+      "usage": {
+        "input_tokens": 6641,
+        "output_tokens": 91,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 6732
+      },
+      "cost_usd": 0.021288,
+      "success": true,
+      "error": null,
+      "category": "Third Party Beneficiary",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:23:54.381068",
+      "latency_ms": 10910.857957991539,
+      "usage": {
+        "input_tokens": 21187,
+        "output_tokens": 460,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 21647
+      },
+      "cost_usd": 0.07046100000000001,
+      "success": true,
+      "error": null,
+      "category": "Uncapped Liability",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:23:55.900038",
+      "latency_ms": 6133.780082978774,
+      "usage": {
+        "input_tokens": 17081,
+        "output_tokens": 165,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 17246
+      },
+      "cost_usd": 0.053717999999999995,
+      "success": true,
+      "error": null,
+      "category": "Minimum Commitment",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:23:57.224241",
+      "latency_ms": 20751.867165992735,
+      "usage": {
+        "input_tokens": 20577,
+        "output_tokens": 681,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 21258
+      },
+      "cost_usd": 0.07194600000000001,
+      "success": true,
+      "error": null,
+      "category": "Revenue/Profit Sharing",
+      "agent_name": "m0_extractor",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:23:57.466417",
+      "latency_ms": 4110.621166997589,
+      "usage": {
+        "input_tokens": 9642,
+        "output_tokens": 104,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 9746
+      },
+      "cost_usd": 0.030486,
+      "success": true,
+      "error": null,
+      "category": "Joint Ip Ownership",
+      "agent_name": "m0_extractor",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:23:59.659488",
+      "latency_ms": 15103.609999991022,
+      "usage": {
+        "input_tokens": 32760,
+        "output_tokens": 464,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 33224
+      },
+      "cost_usd": 0.10523999999999999,
+      "success": true,
+      "error": null,
+      "category": "Minimum Commitment",
+      "agent_name": "m0_extractor",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:24:00.577072",
+      "latency_ms": 6736.220584018156,
+      "usage": {
+        "input_tokens": 6681,
+        "output_tokens": 289,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 6970
+      },
+      "cost_usd": 0.024378,
+      "success": true,
+      "error": null,
+      "category": "Third Party Beneficiary",
+      "agent_name": "m0_extractor",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:24:01.211312",
+      "latency_ms": 7411.582707980415,
+      "usage": {
+        "input_tokens": 12395,
+        "output_tokens": 248,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 12643
+      },
+      "cost_usd": 0.040905000000000004,
+      "success": true,
+      "error": null,
+      "category": "Minimum Commitment",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:24:01.225414",
+      "latency_ms": 3995.146583998576,
+      "usage": {
+        "input_tokens": 1261,
+        "output_tokens": 105,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1366
+      },
+      "cost_usd": 0.005358,
+      "success": true,
+      "error": null,
+      "category": "Minimum Commitment",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:24:01.625593",
+      "latency_ms": 4156.859124981565,
+      "usage": {
+        "input_tokens": 1480,
+        "output_tokens": 128,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1608
+      },
+      "cost_usd": 0.00636,
+      "success": true,
+      "error": null,
+      "category": "Third Party Beneficiary",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:24:02.769608",
+      "latency_ms": 18955.208083003527,
+      "usage": {
+        "input_tokens": 23215,
+        "output_tokens": 796,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 24011
+      },
+      "cost_usd": 0.081585,
+      "success": true,
+      "error": null,
+      "category": "Liquidated Damages",
+      "agent_name": "m0_extractor",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:24:03.853800",
+      "latency_ms": 4188.279415975558,
+      "usage": {
+        "input_tokens": 3007,
+        "output_tokens": 124,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 3131
+      },
+      "cost_usd": 0.010881000000000002,
+      "success": true,
+      "error": null,
+      "category": "Unlimited/All-You-Can-Eat-License",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:24:04.858924",
+      "latency_ms": 3639.888790989062,
+      "usage": {
+        "input_tokens": 3006,
+        "output_tokens": 124,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 3130
+      },
+      "cost_usd": 0.010878,
+      "success": true,
+      "error": null,
+      "category": "Affiliate License-Licensor",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:24:05.656057",
+      "latency_ms": 4424.731082981452,
+      "usage": {
+        "input_tokens": 2597,
+        "output_tokens": 122,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 2719
+      },
+      "cost_usd": 0.009621,
+      "success": true,
+      "error": null,
+      "category": "Volume Restriction",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:24:06.367544",
+      "latency_ms": 4741.1337080120575,
+      "usage": {
+        "input_tokens": 3084,
+        "output_tokens": 119,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 3203
+      },
+      "cost_usd": 0.011037,
+      "success": true,
+      "error": null,
+      "category": "Volume Restriction",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:24:06.532166",
+      "latency_ms": 5324.905834015226,
+      "usage": {
+        "input_tokens": 8462,
+        "output_tokens": 151,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 8613
+      },
+      "cost_usd": 0.027651,
+      "success": true,
+      "error": null,
+      "category": "Uncapped Liability",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:24:07.010675",
+      "latency_ms": 3155.4553330061026,
+      "usage": {
+        "input_tokens": 690,
+        "output_tokens": 113,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 803
+      },
+      "cost_usd": 0.0037649999999999997,
+      "success": true,
+      "error": null,
+      "category": "Competitive Restriction Exception",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:24:07.201124",
+      "latency_ms": 15619.16983302217,
+      "usage": {
+        "input_tokens": 26000,
+        "output_tokens": 678,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 26678
+      },
+      "cost_usd": 0.08817,
+      "success": true,
+      "error": null,
+      "category": "Affiliate License-Licensee",
+      "agent_name": "m0_extractor",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:24:07.626833",
+      "latency_ms": 4852.202166977804,
+      "usage": {
+        "input_tokens": 25950,
+        "output_tokens": 111,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 26061
+      },
+      "cost_usd": 0.079515,
+      "success": true,
+      "error": null,
+      "category": "Price Restrictions",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:24:08.854310",
+      "latency_ms": 3196.856124995975,
+      "usage": {
+        "input_tokens": 6162,
+        "output_tokens": 108,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 6270
+      },
+      "cost_usd": 0.020106,
+      "success": true,
+      "error": null,
+      "category": "Revenue/Profit Sharing",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:24:11.113377",
+      "latency_ms": 3904.0877919760533,
+      "usage": {
+        "input_tokens": 10525,
+        "output_tokens": 124,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 10649
+      },
+      "cost_usd": 0.033435,
+      "success": true,
+      "error": null,
+      "category": "Affiliate License-Licensor",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:24:11.583862",
+      "latency_ms": 5214.517749991501,
+      "usage": {
+        "input_tokens": 5907,
+        "output_tokens": 133,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 6040
+      },
+      "cost_usd": 0.019716,
+      "success": true,
+      "error": null,
+      "category": "Notice Period To Terminate Renewal",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:24:11.760695",
+      "latency_ms": 15860.613290977199,
+      "usage": {
+        "input_tokens": 17121,
+        "output_tokens": 455,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 17576
+      },
+      "cost_usd": 0.058188,
+      "success": true,
+      "error": null,
+      "category": "Minimum Commitment",
+      "agent_name": "m0_extractor",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:24:12.156694",
+      "latency_ms": 7282.286625006236,
+      "usage": {
+        "input_tokens": 19464,
+        "output_tokens": 188,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 19652
+      },
+      "cost_usd": 0.061212,
+      "success": true,
+      "error": null,
+      "category": "Price Restrictions",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:24:12.267595",
+      "latency_ms": 3412.5119999807794,
+      "usage": {
+        "input_tokens": 6058,
+        "output_tokens": 90,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 6148
+      },
+      "cost_usd": 0.019524,
+      "success": true,
+      "error": null,
+      "category": "Unlimited/All-You-Can-Eat-License",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:24:14.063387",
+      "latency_ms": 2478.350582998246,
+      "usage": {
+        "input_tokens": 573,
+        "output_tokens": 78,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 651
+      },
+      "cost_usd": 0.002889,
+      "success": true,
+      "error": null,
+      "category": "Liquidated Damages",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:24:14.102947",
+      "latency_ms": 2988.880541000981,
+      "usage": {
+        "input_tokens": 1072,
+        "output_tokens": 101,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1173
+      },
+      "cost_usd": 0.004731,
+      "success": true,
+      "error": null,
+      "category": "Most Favored Nation",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:24:14.228758",
+      "latency_ms": 6601.118583988864,
+      "usage": {
+        "input_tokens": 53898,
+        "output_tokens": 204,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 54102
+      },
+      "cost_usd": 0.164754,
+      "success": true,
+      "error": null,
+      "category": "Most Favored Nation",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:24:14.336934",
+      "latency_ms": 7325.560917000985,
+      "usage": {
+        "input_tokens": 4042,
+        "output_tokens": 135,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 4177
+      },
+      "cost_usd": 0.014151,
+      "success": true,
+      "error": null,
+      "category": "Volume Restriction",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:24:15.433616",
+      "latency_ms": 24717.510374990525,
+      "usage": {
+        "input_tokens": 60410,
+        "output_tokens": 910,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 61320
+      },
+      "cost_usd": 0.19488,
+      "success": true,
+      "error": null,
+      "category": "Revenue/Profit Sharing",
+      "agent_name": "m0_extractor",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:24:16.310302",
+      "latency_ms": 4040.7746670243796,
+      "usage": {
+        "input_tokens": 4501,
+        "output_tokens": 114,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 4615
+      },
+      "cost_usd": 0.015213,
+      "success": true,
+      "error": null,
+      "category": "Joint Ip Ownership",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:24:16.510750",
+      "latency_ms": 4746.943917009048,
+      "usage": {
+        "input_tokens": 21188,
+        "output_tokens": 155,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 21343
+      },
+      "cost_usd": 0.06588899999999999,
+      "success": true,
+      "error": null,
+      "category": "Source Code Escrow",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:24:16.834633",
+      "latency_ms": 22453.453750000335,
+      "usage": {
+        "input_tokens": 21227,
+        "output_tokens": 1177,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 22404
+      },
+      "cost_usd": 0.081336,
+      "success": true,
+      "error": null,
+      "category": "Uncapped Liability",
+      "agent_name": "m0_extractor",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:24:17.713027",
+      "latency_ms": 3648.042541986797,
+      "usage": {
+        "input_tokens": 2951,
+        "output_tokens": 115,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 3066
+      },
+      "cost_usd": 0.010578,
+      "success": true,
+      "error": null,
+      "category": "Unlimited/All-You-Can-Eat-License",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:24:17.744413",
+      "latency_ms": 3514.0688749961555,
+      "usage": {
+        "input_tokens": 3923,
+        "output_tokens": 101,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 4024
+      },
+      "cost_usd": 0.013284,
+      "success": true,
+      "error": null,
+      "category": "Non-Disparagement",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:24:17.973542",
+      "latency_ms": 11441.276458004722,
+      "usage": {
+        "input_tokens": 8502,
+        "output_tokens": 463,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 8965
+      },
+      "cost_usd": 0.032451,
+      "success": true,
+      "error": null,
+      "category": "Uncapped Liability",
+      "agent_name": "m0_extractor",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:24:18.709747",
+      "latency_ms": 4372.245916980319,
+      "usage": {
+        "input_tokens": 4505,
+        "output_tokens": 120,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 4625
+      },
+      "cost_usd": 0.015314999999999999,
+      "success": true,
+      "error": null,
+      "category": "Volume Restriction",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:24:18.757839",
+      "latency_ms": 2245.765957981348,
+      "usage": {
+        "input_tokens": 409,
+        "output_tokens": 71,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 480
+      },
+      "cost_usd": 0.0022919999999999998,
+      "success": true,
+      "error": null,
+      "category": "Affiliate License-Licensor",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:24:18.972172",
+      "latency_ms": 4868.248125014361,
+      "usage": {
+        "input_tokens": 3941,
+        "output_tokens": 126,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 4067
+      },
+      "cost_usd": 0.013713,
+      "success": true,
+      "error": null,
+      "category": "Affiliate License-Licensee",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:24:20.371011",
+      "latency_ms": 4930.482916010078,
+      "usage": {
+        "input_tokens": 6393,
+        "output_tokens": 140,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 6533
+      },
+      "cost_usd": 0.021279,
+      "success": true,
+      "error": null,
+      "category": "Unlimited/All-You-Can-Eat-License",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:24:20.704450",
+      "latency_ms": 4393.408458010526,
+      "usage": {
+        "input_tokens": 24030,
+        "output_tokens": 88,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 24118
+      },
+      "cost_usd": 0.07341,
+      "success": true,
+      "error": null,
+      "category": "Competitive Restriction Exception",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:24:22.829619",
+      "latency_ms": 4855.2051250007935,
+      "usage": {
+        "input_tokens": 5208,
+        "output_tokens": 134,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 5342
+      },
+      "cost_usd": 0.017634,
+      "success": true,
+      "error": null,
+      "category": "Notice Period To Terminate Renewal",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:24:22.956218",
+      "latency_ms": 5209.456749988021,
+      "usage": {
+        "input_tokens": 3386,
+        "output_tokens": 135,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 3521
+      },
+      "cost_usd": 0.012183,
+      "success": true,
+      "error": null,
+      "category": "Volume Restriction",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:24:23.181334",
+      "latency_ms": 4208.562665997306,
+      "usage": {
+        "input_tokens": 1262,
+        "output_tokens": 103,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1365
+      },
+      "cost_usd": 0.005331000000000001,
+      "success": true,
+      "error": null,
+      "category": "Competitive Restriction Exception",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:24:23.401559",
+      "latency_ms": 4642.832375015132,
+      "usage": {
+        "input_tokens": 6375,
+        "output_tokens": 132,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 6507
+      },
+      "cost_usd": 0.021105,
+      "success": true,
+      "error": null,
+      "category": "Notice Period To Terminate Renewal",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:24:24.270509",
+      "latency_ms": 6557.402915990679,
+      "usage": {
+        "input_tokens": 2991,
+        "output_tokens": 283,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 3274
+      },
+      "cost_usd": 0.013218,
+      "success": true,
+      "error": null,
+      "category": "Unlimited/All-You-Can-Eat-License",
+      "agent_name": "m0_extractor",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:24:25.125138",
+      "latency_ms": 8286.209291982232,
+      "usage": {
+        "input_tokens": 23160,
+        "output_tokens": 281,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 23441
+      },
+      "cost_usd": 0.073695,
+      "success": true,
+      "error": null,
+      "category": "Non-Disparagement",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:24:25.215882",
+      "latency_ms": 4842.732874996727,
+      "usage": {
+        "input_tokens": 5106,
+        "output_tokens": 132,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 5238
+      },
+      "cost_usd": 0.017298,
+      "success": true,
+      "error": null,
+      "category": "Affiliate License-Licensee",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:24:25.245467",
+      "latency_ms": 6534.7753330133855,
+      "usage": {
+        "input_tokens": 9728,
+        "output_tokens": 230,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 9958
+      },
+      "cost_usd": 0.032634,
+      "success": true,
+      "error": null,
+      "category": "Non-Disparagement",
+      "agent_name": "m0_classifier",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:24:31.723095",
+      "latency_ms": 19565.892875019927,
+      "usage": {
+        "input_tokens": 19504,
+        "output_tokens": 650,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 20154
+      },
+      "cost_usd": 0.068262,
+      "success": true,
+      "error": null,
+      "category": "Price Restrictions",
+      "agent_name": "m0_extractor",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:24:35.339125",
+      "latency_ms": 14634.62358401739,
+      "usage": {
+        "input_tokens": 24070,
+        "output_tokens": 582,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 24652
+      },
+      "cost_usd": 0.08094,
+      "success": true,
+      "error": null,
+      "category": "Competitive Restriction Exception",
+      "agent_name": "m0_extractor",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    },
+    {
+      "model_key": "claude-sonnet-4",
+      "model_id": "claude-sonnet-4-20250514",
+      "timestamp": "2026-04-15T23:24:37.337508",
+      "latency_ms": 14381.204667006386,
+      "usage": {
+        "input_tokens": 3426,
+        "output_tokens": 478,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 3904
+      },
+      "cost_usd": 0.017447999999999998,
+      "success": true,
+      "error": null,
+      "category": "Volume Restriction",
+      "agent_name": "m0_extractor",
+      "experiment_id": "test_classify_then_extract_claude-sonnet-4_20260415_232203"
+    }
+  ]
+}

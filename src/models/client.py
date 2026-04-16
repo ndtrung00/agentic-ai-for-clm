@@ -506,10 +506,10 @@ async def _invoke_vertex(
         # Extract response
         response_text = response.text or ""
 
-        # Extract usage
+        # Extract usage (fields can be None for truncated/errored responses)
         meta = response.usage_metadata
-        input_tokens = meta.prompt_token_count if meta else 0
-        output_tokens = meta.candidates_token_count if meta else 0
+        input_tokens = (meta.prompt_token_count or 0) if meta else 0
+        output_tokens = (meta.candidates_token_count or 0) if meta else 0
 
         # Calculate costs
         input_cost = (input_tokens / 1000) * config.input_cost_per_1k
