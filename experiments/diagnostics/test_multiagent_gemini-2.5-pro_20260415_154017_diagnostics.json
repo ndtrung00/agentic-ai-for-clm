@@ -1,0 +1,3457 @@
+{
+  "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017",
+  "run_mode": "test",
+  "start_time": "2026-04-15T15:40:17.675070",
+  "summary": {
+    "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017",
+    "total_calls": 180,
+    "successful_calls": 180,
+    "failed_calls": 0,
+    "success_rate": 1.0,
+    "total_input_tokens": 941007,
+    "total_output_tokens": 34713,
+    "total_tokens": 975720,
+    "total_cost_usd": 1.52338875,
+    "avg_latency_ms": 16166.200337921495,
+    "min_latency_ms": 3917.222624993883,
+    "max_latency_ms": 46105.242833000375,
+    "by_model": {
+      "gemini-2.5-pro": {
+        "calls": 180,
+        "input_tokens": 941007,
+        "output_tokens": 34713,
+        "cost_usd": 1.52338875,
+        "avg_latency_ms": 16166.200337921495
+      }
+    },
+    "by_agent": {
+      "orchestrator_router": 90,
+      "temporal_renewal": 38,
+      "ip_commercial": 31,
+      "risk_liability": 21
+    },
+    "duration_seconds": 303.501202
+  },
+  "calls": [
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:40:31.300389",
+      "latency_ms": 13609.938041015994,
+      "usage": {
+        "input_tokens": 336,
+        "output_tokens": 45,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 381
+      },
+      "cost_usd": 0.00087,
+      "success": true,
+      "error": null,
+      "category": "Parties",
+      "agent_name": "orchestrator_router",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:40:32.001530",
+      "latency_ms": 14303.242708003381,
+      "usage": {
+        "input_tokens": 332,
+        "output_tokens": 50,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 382
+      },
+      "cost_usd": 0.000915,
+      "success": true,
+      "error": null,
+      "category": "Document Name",
+      "agent_name": "orchestrator_router",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:40:32.461785",
+      "latency_ms": 14764.270209008828,
+      "usage": {
+        "input_tokens": 336,
+        "output_tokens": 60,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 396
+      },
+      "cost_usd": 0.00102,
+      "success": true,
+      "error": null,
+      "category": "Effective Date",
+      "agent_name": "orchestrator_router",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:40:32.462671",
+      "latency_ms": 14764.09608402173,
+      "usage": {
+        "input_tokens": 332,
+        "output_tokens": 50,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 382
+      },
+      "cost_usd": 0.000915,
+      "success": true,
+      "error": null,
+      "category": "Document Name",
+      "agent_name": "orchestrator_router",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:40:32.503910",
+      "latency_ms": 14804.654542007484,
+      "usage": {
+        "input_tokens": 336,
+        "output_tokens": 45,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 381
+      },
+      "cost_usd": 0.00087,
+      "success": true,
+      "error": null,
+      "category": "Parties",
+      "agent_name": "orchestrator_router",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:40:32.731434",
+      "latency_ms": 15031.527417013422,
+      "usage": {
+        "input_tokens": 342,
+        "output_tokens": 49,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 391
+      },
+      "cost_usd": 0.0009175,
+      "success": true,
+      "error": null,
+      "category": "Governing Law",
+      "agent_name": "orchestrator_router",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:40:32.760748",
+      "latency_ms": 15062.829333008267,
+      "usage": {
+        "input_tokens": 332,
+        "output_tokens": 49,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 381
+      },
+      "cost_usd": 0.000905,
+      "success": true,
+      "error": null,
+      "category": "Document Name",
+      "agent_name": "orchestrator_router",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:40:33.290115",
+      "latency_ms": 15588.120708009228,
+      "usage": {
+        "input_tokens": 339,
+        "output_tokens": 57,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 396
+      },
+      "cost_usd": 0.00099375,
+      "success": true,
+      "error": null,
+      "category": "Expiration Date",
+      "agent_name": "orchestrator_router",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:40:33.310558",
+      "latency_ms": 15611.609834013507,
+      "usage": {
+        "input_tokens": 339,
+        "output_tokens": 57,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 396
+      },
+      "cost_usd": 0.00099375,
+      "success": true,
+      "error": null,
+      "category": "Expiration Date",
+      "agent_name": "orchestrator_router",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:40:33.325510",
+      "latency_ms": 15625.949708977714,
+      "usage": {
+        "input_tokens": 339,
+        "output_tokens": 57,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 396
+      },
+      "cost_usd": 0.00099375,
+      "success": true,
+      "error": null,
+      "category": "Expiration Date",
+      "agent_name": "orchestrator_router",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:40:42.307649",
+      "latency_ms": 10304.596292000497,
+      "usage": {
+        "input_tokens": 3176,
+        "output_tokens": 258,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 3434
+      },
+      "cost_usd": 0.00655,
+      "success": true,
+      "error": null,
+      "category": "Document Name",
+      "agent_name": "temporal_renewal",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:40:43.171277",
+      "latency_ms": 10439.223082998069,
+      "usage": {
+        "input_tokens": 4528,
+        "output_tokens": 248,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 4776
+      },
+      "cost_usd": 0.00814,
+      "success": true,
+      "error": null,
+      "category": "Governing Law",
+      "agent_name": "temporal_renewal",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:40:43.894674",
+      "latency_ms": 11133.36233398877,
+      "usage": {
+        "input_tokens": 2835,
+        "output_tokens": 414,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 3249
+      },
+      "cost_usd": 0.00768375,
+      "success": true,
+      "error": null,
+      "category": "Document Name",
+      "agent_name": "temporal_renewal",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:40:46.092918",
+      "latency_ms": 13627.128666004864,
+      "usage": {
+        "input_tokens": 4279,
+        "output_tokens": 383,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 4662
+      },
+      "cost_usd": 0.00917875,
+      "success": true,
+      "error": null,
+      "category": "Document Name",
+      "agent_name": "temporal_renewal",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:40:48.189437",
+      "latency_ms": 15725.605541985715,
+      "usage": {
+        "input_tokens": 1673,
+        "output_tokens": 151,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1824
+      },
+      "cost_usd": 0.0036012500000000003,
+      "success": true,
+      "error": null,
+      "category": "Effective Date",
+      "agent_name": "temporal_renewal",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:40:51.334815",
+      "latency_ms": 18008.4130410105,
+      "usage": {
+        "input_tokens": 4369,
+        "output_tokens": 258,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 4627
+      },
+      "cost_usd": 0.00804125,
+      "success": true,
+      "error": null,
+      "category": "Expiration Date",
+      "agent_name": "temporal_renewal",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:40:52.707062",
+      "latency_ms": 20201.929500006372,
+      "usage": {
+        "input_tokens": 992,
+        "output_tokens": 332,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1324
+      },
+      "cost_usd": 0.00456,
+      "success": true,
+      "error": null,
+      "category": "Parties",
+      "agent_name": "temporal_renewal",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:40:56.626726",
+      "latency_ms": 3917.222624993883,
+      "usage": {
+        "input_tokens": 342,
+        "output_tokens": 49,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 391
+      },
+      "cost_usd": 0.0009175,
+      "success": true,
+      "error": null,
+      "category": "Governing Law",
+      "agent_name": "orchestrator_router",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:40:57.101183",
+      "latency_ms": 14753.586125007132,
+      "usage": {
+        "input_tokens": 342,
+        "output_tokens": 49,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 391
+      },
+      "cost_usd": 0.0009175,
+      "success": true,
+      "error": null,
+      "category": "Governing Law",
+      "agent_name": "orchestrator_router",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:40:57.186193",
+      "latency_ms": 14009.552250005072,
+      "usage": {
+        "input_tokens": 339,
+        "output_tokens": 65,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 404
+      },
+      "cost_usd": 0.00107375,
+      "success": true,
+      "error": null,
+      "category": "Expiration Date",
+      "agent_name": "orchestrator_router",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:40:57.413018",
+      "latency_ms": 24121.013958996627,
+      "usage": {
+        "input_tokens": 7356,
+        "output_tokens": 600,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 7956
+      },
+      "cost_usd": 0.015195,
+      "success": true,
+      "error": null,
+      "category": "Expiration Date",
+      "agent_name": "temporal_renewal",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:40:58.861536",
+      "latency_ms": 27559.456832997967,
+      "usage": {
+        "input_tokens": 50010,
+        "output_tokens": 933,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 50943
+      },
+      "cost_usd": 0.0718425,
+      "success": true,
+      "error": null,
+      "category": "Parties",
+      "agent_name": "temporal_renewal",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:40:59.385796",
+      "latency_ms": 15486.121458990965,
+      "usage": {
+        "input_tokens": 339,
+        "output_tokens": 57,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 396
+      },
+      "cost_usd": 0.00099375,
+      "success": true,
+      "error": null,
+      "category": "Expiration Date",
+      "agent_name": "orchestrator_router",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:40:59.725198",
+      "latency_ms": 26413.58987498097,
+      "usage": {
+        "input_tokens": 11275,
+        "output_tokens": 373,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 11648
+      },
+      "cost_usd": 0.01782375,
+      "success": true,
+      "error": null,
+      "category": "Expiration Date",
+      "agent_name": "temporal_renewal",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:41:01.392152",
+      "latency_ms": 15292.507875012234,
+      "usage": {
+        "input_tokens": 339,
+        "output_tokens": 57,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 396
+      },
+      "cost_usd": 0.00099375,
+      "success": true,
+      "error": null,
+      "category": "Expiration Date",
+      "agent_name": "orchestrator_router",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:41:02.433955",
+      "latency_ms": 14241.892999998527,
+      "usage": {
+        "input_tokens": 332,
+        "output_tokens": 58,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 390
+      },
+      "cost_usd": 0.000995,
+      "success": true,
+      "error": null,
+      "category": "Agreement Date",
+      "agent_name": "orchestrator_router",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:41:06.009586",
+      "latency_ms": 8906.213957990985,
+      "usage": {
+        "input_tokens": 1684,
+        "output_tokens": 192,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1876
+      },
+      "cost_usd": 0.004025,
+      "success": true,
+      "error": null,
+      "category": "Governing Law",
+      "agent_name": "temporal_renewal",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:41:06.402330",
+      "latency_ms": 15062.118166009896,
+      "usage": {
+        "input_tokens": 336,
+        "output_tokens": 66,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 402
+      },
+      "cost_usd": 0.00108,
+      "success": true,
+      "error": null,
+      "category": "Effective Date",
+      "agent_name": "orchestrator_router",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:41:06.825889",
+      "latency_ms": 7438.144124986138,
+      "usage": {
+        "input_tokens": 1710,
+        "output_tokens": 239,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1949
+      },
+      "cost_usd": 0.0045275,
+      "success": true,
+      "error": null,
+      "category": "Expiration Date",
+      "agent_name": "temporal_renewal",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:41:11.253979",
+      "latency_ms": 5240.398124995409,
+      "usage": {
+        "input_tokens": 332,
+        "output_tokens": 60,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 392
+      },
+      "cost_usd": 0.0010149999999999998,
+      "success": true,
+      "error": null,
+      "category": "Agreement Date",
+      "agent_name": "orchestrator_router",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:41:11.280863",
+      "latency_ms": 4451.021958026104,
+      "usage": {
+        "input_tokens": 336,
+        "output_tokens": 60,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 396
+      },
+      "cost_usd": 0.00102,
+      "success": true,
+      "error": null,
+      "category": "Effective Date",
+      "agent_name": "orchestrator_router",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:41:11.773175",
+      "latency_ms": 14354.75649998989,
+      "usage": {
+        "input_tokens": 336,
+        "output_tokens": 60,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 396
+      },
+      "cost_usd": 0.00102,
+      "success": true,
+      "error": null,
+      "category": "Effective Date",
+      "agent_name": "orchestrator_router",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:41:12.887947",
+      "latency_ms": 13995.517125003971,
+      "usage": {
+        "input_tokens": 339,
+        "output_tokens": 65,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 404
+      },
+      "cost_usd": 0.00107375,
+      "success": true,
+      "error": null,
+      "category": "Expiration Date",
+      "agent_name": "orchestrator_router",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:41:14.265353",
+      "latency_ms": 17636.889624991454,
+      "usage": {
+        "input_tokens": 13629,
+        "output_tokens": 229,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 13858
+      },
+      "cost_usd": 0.01932625,
+      "success": true,
+      "error": null,
+      "category": "Governing Law",
+      "agent_name": "temporal_renewal",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:41:15.024935",
+      "latency_ms": 17837.883290980244,
+      "usage": {
+        "input_tokens": 996,
+        "output_tokens": 164,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1160
+      },
+      "cost_usd": 0.0028850000000000004,
+      "success": true,
+      "error": null,
+      "category": "Expiration Date",
+      "agent_name": "temporal_renewal",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:41:15.492161",
+      "latency_ms": 15761.038416996598,
+      "usage": {
+        "input_tokens": 332,
+        "output_tokens": 52,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 384
+      },
+      "cost_usd": 0.000935,
+      "success": true,
+      "error": null,
+      "category": "Agreement Date",
+      "agent_name": "orchestrator_router",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:41:18.590564",
+      "latency_ms": 4313.376874983078,
+      "usage": {
+        "input_tokens": 332,
+        "output_tokens": 52,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 384
+      },
+      "cost_usd": 0.000935,
+      "success": true,
+      "error": null,
+      "category": "Agreement Date",
+      "agent_name": "orchestrator_router",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:41:19.112534",
+      "latency_ms": 4082.989416026976,
+      "usage": {
+        "input_tokens": 339,
+        "output_tokens": 65,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 404
+      },
+      "cost_usd": 0.00107375,
+      "success": true,
+      "error": null,
+      "category": "Expiration Date",
+      "agent_name": "orchestrator_router",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:41:19.208884",
+      "latency_ms": 16773.479416006012,
+      "usage": {
+        "input_tokens": 3136,
+        "output_tokens": 165,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 3301
+      },
+      "cost_usd": 0.00557,
+      "success": true,
+      "error": null,
+      "category": "Agreement Date",
+      "agent_name": "temporal_renewal",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:41:19.948772",
+      "latency_ms": 8665.49508299795,
+      "usage": {
+        "input_tokens": 2306,
+        "output_tokens": 188,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 2494
+      },
+      "cost_usd": 0.0047625,
+      "success": true,
+      "error": null,
+      "category": "Effective Date",
+      "agent_name": "temporal_renewal",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:41:20.501896",
+      "latency_ms": 19108.227207994787,
+      "usage": {
+        "input_tokens": 2317,
+        "output_tokens": 179,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 2496
+      },
+      "cost_usd": 0.00468625,
+      "success": true,
+      "error": null,
+      "category": "Expiration Date",
+      "agent_name": "temporal_renewal",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:41:21.831198",
+      "latency_ms": 10574.104917002842,
+      "usage": {
+        "input_tokens": 998,
+        "output_tokens": 178,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1176
+      },
+      "cost_usd": 0.0030275,
+      "success": true,
+      "error": null,
+      "category": "Agreement Date",
+      "agent_name": "temporal_renewal",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:41:26.686045",
+      "latency_ms": 20282.879874983337,
+      "usage": {
+        "input_tokens": 2840,
+        "output_tokens": 226,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 3066
+      },
+      "cost_usd": 0.00581,
+      "success": true,
+      "error": null,
+      "category": "Effective Date",
+      "agent_name": "temporal_renewal",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:41:29.601149",
+      "latency_ms": 17827.34387498931,
+      "usage": {
+        "input_tokens": 848,
+        "output_tokens": 166,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1014
+      },
+      "cost_usd": 0.00272,
+      "success": true,
+      "error": null,
+      "category": "Effective Date",
+      "agent_name": "temporal_renewal",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:41:30.894020",
+      "latency_ms": 18004.6586249955,
+      "usage": {
+        "input_tokens": 739,
+        "output_tokens": 171,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 910
+      },
+      "cost_usd": 0.0026337500000000002,
+      "success": true,
+      "error": null,
+      "category": "Expiration Date",
+      "agent_name": "temporal_renewal",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:41:34.626770",
+      "latency_ms": 5020.4530420014635,
+      "usage": {
+        "input_tokens": 336,
+        "output_tokens": 66,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 402
+      },
+      "cost_usd": 0.00108,
+      "success": true,
+      "error": null,
+      "category": "Effective Date",
+      "agent_name": "orchestrator_router",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:41:34.657317",
+      "latency_ms": 15445.210500009125,
+      "usage": {
+        "input_tokens": 332,
+        "output_tokens": 60,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 392
+      },
+      "cost_usd": 0.0010149999999999998,
+      "success": true,
+      "error": null,
+      "category": "Agreement Date",
+      "agent_name": "orchestrator_router",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:41:34.660987",
+      "latency_ms": 14710.304125008406,
+      "usage": {
+        "input_tokens": 339,
+        "output_tokens": 57,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 396
+      },
+      "cost_usd": 0.00099375,
+      "success": true,
+      "error": null,
+      "category": "Expiration Date",
+      "agent_name": "orchestrator_router",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:41:35.074207",
+      "latency_ms": 14567.112749995431,
+      "usage": {
+        "input_tokens": 342,
+        "output_tokens": 49,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 391
+      },
+      "cost_usd": 0.0009175,
+      "success": true,
+      "error": null,
+      "category": "Governing Law",
+      "agent_name": "orchestrator_router",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:41:36.996068",
+      "latency_ms": 15162.995791004505,
+      "usage": {
+        "input_tokens": 336,
+        "output_tokens": 61,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 397
+      },
+      "cost_usd": 0.00103,
+      "success": true,
+      "error": null,
+      "category": "Effective Date",
+      "agent_name": "orchestrator_router",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:41:37.518816",
+      "latency_ms": 6622.99441700452,
+      "usage": {
+        "input_tokens": 346,
+        "output_tokens": 66,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 412
+      },
+      "cost_usd": 0.0010925,
+      "success": true,
+      "error": null,
+      "category": "Anti-Assignment",
+      "agent_name": "orchestrator_router",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:41:39.297488",
+      "latency_ms": 20704.625124984886,
+      "usage": {
+        "input_tokens": 22727,
+        "output_tokens": 356,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 23083
+      },
+      "cost_usd": 0.03196875,
+      "success": true,
+      "error": null,
+      "category": "Agreement Date",
+      "agent_name": "temporal_renewal",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:41:41.381571",
+      "latency_ms": 14688.643875007983,
+      "usage": {
+        "input_tokens": 342,
+        "output_tokens": 49,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 391
+      },
+      "cost_usd": 0.0009175,
+      "success": true,
+      "error": null,
+      "category": "Governing Law",
+      "agent_name": "orchestrator_router",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:41:43.261264",
+      "latency_ms": 8185.472250013845,
+      "usage": {
+        "input_tokens": 1009,
+        "output_tokens": 154,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1163
+      },
+      "cost_usd": 0.00280125,
+      "success": true,
+      "error": null,
+      "category": "Governing Law",
+      "agent_name": "temporal_renewal",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:41:45.185218",
+      "latency_ms": 10557.593792007538,
+      "usage": {
+        "input_tokens": 2392,
+        "output_tokens": 351,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 2743
+      },
+      "cost_usd": 0.0065,
+      "success": true,
+      "error": null,
+      "category": "Effective Date",
+      "agent_name": "temporal_renewal",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:41:49.889648",
+      "latency_ms": 4698.446458001854,
+      "usage": {
+        "input_tokens": 406,
+        "output_tokens": 55,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 461
+      },
+      "cost_usd": 0.0010575,
+      "success": true,
+      "error": null,
+      "category": "Exclusivity",
+      "agent_name": "orchestrator_router",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:41:50.561187",
+      "latency_ms": 35067.914541985374,
+      "usage": {
+        "input_tokens": 63946,
+        "output_tokens": 608,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 64554
+      },
+      "cost_usd": 0.0860125,
+      "success": true,
+      "error": null,
+      "category": "Agreement Date",
+      "agent_name": "temporal_renewal",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:41:52.206149",
+      "latency_ms": 33092.793416028144,
+      "usage": {
+        "input_tokens": 13681,
+        "output_tokens": 217,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 13898
+      },
+      "cost_usd": 0.019271249999999997,
+      "success": true,
+      "error": null,
+      "category": "Expiration Date",
+      "agent_name": "temporal_renewal",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:41:55.124316",
+      "latency_ms": 15815.327832999174,
+      "usage": {
+        "input_tokens": 349,
+        "output_tokens": 65,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 414
+      },
+      "cost_usd": 0.00108625,
+      "success": true,
+      "error": null,
+      "category": "Renewal Term",
+      "agent_name": "orchestrator_router",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:41:56.033049",
+      "latency_ms": 21374.887334008235,
+      "usage": {
+        "input_tokens": 3042,
+        "output_tokens": 248,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 3290
+      },
+      "cost_usd": 0.0062825,
+      "success": true,
+      "error": null,
+      "category": "Agreement Date",
+      "agent_name": "temporal_renewal",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:41:57.375109",
+      "latency_ms": 20377.72987500648,
+      "usage": {
+        "input_tokens": 2832,
+        "output_tokens": 306,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 3138
+      },
+      "cost_usd": 0.0066,
+      "success": true,
+      "error": null,
+      "category": "Effective Date",
+      "agent_name": "temporal_renewal",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:42:00.203934",
+      "latency_ms": 18819.7695830022,
+      "usage": {
+        "input_tokens": 859,
+        "output_tokens": 145,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1004
+      },
+      "cost_usd": 0.00252375,
+      "success": true,
+      "error": null,
+      "category": "Governing Law",
+      "agent_name": "temporal_renewal",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:42:01.435235",
+      "latency_ms": 18169.895041995915,
+      "usage": {
+        "input_tokens": 406,
+        "output_tokens": 69,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 475
+      },
+      "cost_usd": 0.0011975000000000002,
+      "success": true,
+      "error": null,
+      "category": "Exclusivity",
+      "agent_name": "orchestrator_router",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:42:02.952991",
+      "latency_ms": 28291.24208400026,
+      "usage": {
+        "input_tokens": 23098,
+        "output_tokens": 1573,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 24671
+      },
+      "cost_usd": 0.0446025,
+      "success": true,
+      "error": null,
+      "category": "Expiration Date",
+      "agent_name": "temporal_renewal",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:42:02.993784",
+      "latency_ms": 6955.166416999418,
+      "usage": {
+        "input_tokens": 359,
+        "output_tokens": 68,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 427
+      },
+      "cost_usd": 0.00112875,
+      "success": true,
+      "error": null,
+      "category": "Non-Compete",
+      "agent_name": "orchestrator_router",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:42:03.881434",
+      "latency_ms": 26360.451375017874,
+      "usage": {
+        "input_tokens": 50021,
+        "output_tokens": 482,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 50503
+      },
+      "cost_usd": 0.06734625000000001,
+      "success": true,
+      "error": null,
+      "category": "Anti-Assignment",
+      "agent_name": "temporal_renewal",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:42:04.366278",
+      "latency_ms": 13782.914624986006,
+      "usage": {
+        "input_tokens": 346,
+        "output_tokens": 45,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 391
+      },
+      "cost_usd": 0.0008825,
+      "success": true,
+      "error": null,
+      "category": "Anti-Assignment",
+      "agent_name": "orchestrator_router",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:42:04.824087",
+      "latency_ms": 14932.823457987979,
+      "usage": {
+        "input_tokens": 5069,
+        "output_tokens": 682,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 5751
+      },
+      "cost_usd": 0.013156250000000001,
+      "success": true,
+      "error": null,
+      "category": "Exclusivity",
+      "agent_name": "ip_commercial",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:42:09.030468",
+      "latency_ms": 16819.645540992497,
+      "usage": {
+        "input_tokens": 356,
+        "output_tokens": 64,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 420
+      },
+      "cost_usd": 0.001085,
+      "success": true,
+      "error": null,
+      "category": "Audit Rights",
+      "agent_name": "orchestrator_router",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:42:12.575307",
+      "latency_ms": 15197.879291023128,
+      "usage": {
+        "input_tokens": 342,
+        "output_tokens": 50,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 392
+      },
+      "cost_usd": 0.0009275,
+      "success": true,
+      "error": null,
+      "category": "License Grant",
+      "agent_name": "orchestrator_router",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:42:14.979452",
+      "latency_ms": 19853.32749999361,
+      "usage": {
+        "input_tokens": 5139,
+        "output_tokens": 286,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 5425
+      },
+      "cost_usd": 0.00928375,
+      "success": true,
+      "error": null,
+      "category": "Renewal Term",
+      "agent_name": "temporal_renewal",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:42:15.382483",
+      "latency_ms": 15175.915291009005,
+      "usage": {
+        "input_tokens": 346,
+        "output_tokens": 48,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 394
+      },
+      "cost_usd": 0.0009125,
+      "success": true,
+      "error": null,
+      "category": "Anti-Assignment",
+      "agent_name": "orchestrator_router",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:42:17.893379",
+      "latency_ms": 14935.997958004009,
+      "usage": {
+        "input_tokens": 359,
+        "output_tokens": 62,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 421
+      },
+      "cost_usd": 0.00106875,
+      "success": true,
+      "error": null,
+      "category": "Non-Compete",
+      "agent_name": "orchestrator_router",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:42:18.508384",
+      "latency_ms": 14614.718583994545,
+      "usage": {
+        "input_tokens": 359,
+        "output_tokens": 62,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 421
+      },
+      "cost_usd": 0.00106875,
+      "success": true,
+      "error": null,
+      "category": "Non-Compete",
+      "agent_name": "orchestrator_router",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:42:20.972008",
+      "latency_ms": 5988.900791009655,
+      "usage": {
+        "input_tokens": 382,
+        "output_tokens": 58,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 440
+      },
+      "cost_usd": 0.0010575,
+      "success": true,
+      "error": null,
+      "category": "Change Of Control",
+      "agent_name": "orchestrator_router",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:42:21.644855",
+      "latency_ms": 16813.067790993955,
+      "usage": {
+        "input_tokens": 360,
+        "output_tokens": 63,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 423
+      },
+      "cost_usd": 0.00108,
+      "success": true,
+      "error": null,
+      "category": "No-Solicit Of Customers",
+      "agent_name": "orchestrator_router",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:42:22.278046",
+      "latency_ms": 6891.841165983351,
+      "usage": {
+        "input_tokens": 5862,
+        "output_tokens": 204,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 6066
+      },
+      "cost_usd": 0.0093675,
+      "success": true,
+      "error": null,
+      "category": "Anti-Assignment",
+      "agent_name": "temporal_renewal",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:42:23.675542",
+      "latency_ms": 20680.62891700538,
+      "usage": {
+        "input_tokens": 14609,
+        "output_tokens": 306,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 14915
+      },
+      "cost_usd": 0.02132125,
+      "success": true,
+      "error": null,
+      "category": "Non-Compete",
+      "agent_name": "ip_commercial",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:42:23.817048",
+      "latency_ms": 19448.939791007433,
+      "usage": {
+        "input_tokens": 6018,
+        "output_tokens": 243,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 6261
+      },
+      "cost_usd": 0.0099525,
+      "success": true,
+      "error": null,
+      "category": "Anti-Assignment",
+      "agent_name": "temporal_renewal",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:42:26.310836",
+      "latency_ms": 7801.2963340152055,
+      "usage": {
+        "input_tokens": 4612,
+        "output_tokens": 313,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 4925
+      },
+      "cost_usd": 0.008895,
+      "success": true,
+      "error": null,
+      "category": "Non-Compete",
+      "agent_name": "ip_commercial",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:42:29.722802",
+      "latency_ms": 20684.08191698836,
+      "usage": {
+        "input_tokens": 5477,
+        "output_tokens": 310,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 5787
+      },
+      "cost_usd": 0.00994625,
+      "success": true,
+      "error": null,
+      "category": "Audit Rights",
+      "agent_name": "risk_liability",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:42:33.463149",
+      "latency_ms": 20886.189541983185,
+      "usage": {
+        "input_tokens": 3059,
+        "output_tokens": 950,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 4009
+      },
+      "cost_usd": 0.01332375,
+      "success": true,
+      "error": null,
+      "category": "License Grant",
+      "agent_name": "ip_commercial",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:42:35.745215",
+      "latency_ms": 17849.53766700346,
+      "usage": {
+        "input_tokens": 1266,
+        "output_tokens": 189,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1455
+      },
+      "cost_usd": 0.0034725,
+      "success": true,
+      "error": null,
+      "category": "Non-Compete",
+      "agent_name": "ip_commercial",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:42:36.480405",
+      "latency_ms": 6753.61454198719,
+      "usage": {
+        "input_tokens": 406,
+        "output_tokens": 61,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 467
+      },
+      "cost_usd": 0.0011175,
+      "success": true,
+      "error": null,
+      "category": "Exclusivity",
+      "agent_name": "orchestrator_router",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:42:36.500105",
+      "latency_ms": 14854.610707989195,
+      "usage": {
+        "input_tokens": 5223,
+        "output_tokens": 182,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 5405
+      },
+      "cost_usd": 0.00834875,
+      "success": true,
+      "error": null,
+      "category": "No-Solicit Of Customers",
+      "agent_name": "ip_commercial",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:42:38.502724",
+      "latency_ms": 14683.239417005097,
+      "usage": {
+        "input_tokens": 356,
+        "output_tokens": 55,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 411
+      },
+      "cost_usd": 0.000995,
+      "success": true,
+      "error": null,
+      "category": "Audit Rights",
+      "agent_name": "orchestrator_router",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:42:40.020311",
+      "latency_ms": 19041.19316599099,
+      "usage": {
+        "input_tokens": 5500,
+        "output_tokens": 296,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 5796
+      },
+      "cost_usd": 0.009835,
+      "success": true,
+      "error": null,
+      "category": "Change Of Control",
+      "agent_name": "risk_liability",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:42:40.113588",
+      "latency_ms": 16433.3698329865,
+      "usage": {
+        "input_tokens": 368,
+        "output_tokens": 54,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 422
+      },
+      "cost_usd": 0.001,
+      "success": true,
+      "error": null,
+      "category": "No-Solicit Of Employees",
+      "agent_name": "orchestrator_router",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:42:40.556132",
+      "latency_ms": 18274.02216702467,
+      "usage": {
+        "input_tokens": 354,
+        "output_tokens": 54,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 408
+      },
+      "cost_usd": 0.0009824999999999999,
+      "success": true,
+      "error": null,
+      "category": "Warranty Duration",
+      "agent_name": "orchestrator_router",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:42:42.526942",
+      "latency_ms": 16213.806916988688,
+      "usage": {
+        "input_tokens": 354,
+        "output_tokens": 49,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 403
+      },
+      "cost_usd": 0.0009325,
+      "success": true,
+      "error": null,
+      "category": "Warranty Duration",
+      "agent_name": "orchestrator_router",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:42:44.096893",
+      "latency_ms": 7594.320416013943,
+      "usage": {
+        "input_tokens": 346,
+        "output_tokens": 48,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 394
+      },
+      "cost_usd": 0.0009125,
+      "success": true,
+      "error": null,
+      "category": "Anti-Assignment",
+      "agent_name": "orchestrator_router",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:42:47.543064",
+      "latency_ms": 46105.242833000375,
+      "usage": {
+        "input_tokens": 45945,
+        "output_tokens": 2152,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 48097
+      },
+      "cost_usd": 0.07895125,
+      "success": true,
+      "error": null,
+      "category": "Exclusivity",
+      "agent_name": "ip_commercial",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:42:49.993186",
+      "latency_ms": 16510.89504099218,
+      "usage": {
+        "input_tokens": 359,
+        "output_tokens": 61,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 420
+      },
+      "cost_usd": 0.00105875,
+      "success": true,
+      "error": null,
+      "category": "Non-Compete",
+      "agent_name": "orchestrator_router",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:42:52.422394",
+      "latency_ms": 16673.45833298168,
+      "usage": {
+        "input_tokens": 406,
+        "output_tokens": 61,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 467
+      },
+      "cost_usd": 0.0011175,
+      "success": true,
+      "error": null,
+      "category": "Exclusivity",
+      "agent_name": "orchestrator_router",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:42:53.861808",
+      "latency_ms": 11333.316083007958,
+      "usage": {
+        "input_tokens": 19266,
+        "output_tokens": 210,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 19476
+      },
+      "cost_usd": 0.0261825,
+      "success": true,
+      "error": null,
+      "category": "Warranty Duration",
+      "agent_name": "risk_liability",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:42:54.536711",
+      "latency_ms": 14513.783375005005,
+      "usage": {
+        "input_tokens": 349,
+        "output_tokens": 54,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 403
+      },
+      "cost_usd": 0.00097625,
+      "success": true,
+      "error": null,
+      "category": "Renewal Term",
+      "agent_name": "orchestrator_router",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:42:55.449458",
+      "latency_ms": 14891.901375027373,
+      "usage": {
+        "input_tokens": 4962,
+        "output_tokens": 294,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 5256
+      },
+      "cost_usd": 0.0091425,
+      "success": true,
+      "error": null,
+      "category": "Warranty Duration",
+      "agent_name": "risk_liability",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:42:58.228089",
+      "latency_ms": 19723.530374991242,
+      "usage": {
+        "input_tokens": 1021,
+        "output_tokens": 169,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1190
+      },
+      "cost_usd": 0.00296625,
+      "success": true,
+      "error": null,
+      "category": "Audit Rights",
+      "agent_name": "risk_liability",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:42:59.761850",
+      "latency_ms": 23280.227624985855,
+      "usage": {
+        "input_tokens": 6076,
+        "output_tokens": 548,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 6624
+      },
+      "cost_usd": 0.013075,
+      "success": true,
+      "error": null,
+      "category": "Exclusivity",
+      "agent_name": "ip_commercial",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:42:59.792454",
+      "latency_ms": 9798.218916985206,
+      "usage": {
+        "input_tokens": 828,
+        "output_tokens": 151,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 979
+      },
+      "cost_usd": 0.002545,
+      "success": true,
+      "error": null,
+      "category": "Non-Compete",
+      "agent_name": "ip_commercial",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:43:04.089456",
+      "latency_ms": 16537.05899999477,
+      "usage": {
+        "input_tokens": 368,
+        "output_tokens": 63,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 431
+      },
+      "cost_usd": 0.00109,
+      "success": true,
+      "error": null,
+      "category": "No-Solicit Of Employees",
+      "agent_name": "orchestrator_router",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:43:04.767935",
+      "latency_ms": 6537.697792024119,
+      "usage": {
+        "input_tokens": 359,
+        "output_tokens": 62,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 421
+      },
+      "cost_usd": 0.00106875,
+      "success": true,
+      "error": null,
+      "category": "Non-Compete",
+      "agent_name": "orchestrator_router",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:43:08.238285",
+      "latency_ms": 28123.87816698174,
+      "usage": {
+        "input_tokens": 2992,
+        "output_tokens": 236,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 3228
+      },
+      "cost_usd": 0.0061,
+      "success": true,
+      "error": null,
+      "category": "No-Solicit Of Employees",
+      "agent_name": "ip_commercial",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:43:10.356822",
+      "latency_ms": 16490.83170798258,
+      "usage": {
+        "input_tokens": 356,
+        "output_tokens": 62,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 418
+      },
+      "cost_usd": 0.001065,
+      "success": true,
+      "error": null,
+      "category": "Audit Rights",
+      "agent_name": "orchestrator_router",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:43:10.535323",
+      "latency_ms": 6444.350250007119,
+      "usage": {
+        "input_tokens": 1620,
+        "output_tokens": 163,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1783
+      },
+      "cost_usd": 0.0036550000000000003,
+      "success": true,
+      "error": null,
+      "category": "No-Solicit Of Employees",
+      "agent_name": "ip_commercial",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:43:13.191701",
+      "latency_ms": 17738.096167013282,
+      "usage": {
+        "input_tokens": 350,
+        "output_tokens": 52,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 402
+      },
+      "cost_usd": 0.0009574999999999999,
+      "success": true,
+      "error": null,
+      "category": "Non-Transferable License",
+      "agent_name": "orchestrator_router",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:43:14.091241",
+      "latency_ms": 14325.364499993157,
+      "usage": {
+        "input_tokens": 354,
+        "output_tokens": 54,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 408
+      },
+      "cost_usd": 0.0009824999999999999,
+      "success": true,
+      "error": null,
+      "category": "Warranty Duration",
+      "agent_name": "orchestrator_router",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:43:14.224418",
+      "latency_ms": 5981.58875000081,
+      "usage": {
+        "input_tokens": 347,
+        "output_tokens": 66,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 413
+      },
+      "cost_usd": 0.00109375,
+      "success": true,
+      "error": null,
+      "category": "Irrevocable Or Perpetual License",
+      "agent_name": "orchestrator_router",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:43:14.788021",
+      "latency_ms": 14994.015457981732,
+      "usage": {
+        "input_tokens": 376,
+        "output_tokens": 82,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 458
+      },
+      "cost_usd": 0.0012900000000000001,
+      "success": true,
+      "error": null,
+      "category": "Rofr/Rofo/Rofn",
+      "agent_name": "orchestrator_router",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:43:15.821760",
+      "latency_ms": 21283.819332980784,
+      "usage": {
+        "input_tokens": 2861,
+        "output_tokens": 185,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 3046
+      },
+      "cost_usd": 0.0054262500000000005,
+      "success": true,
+      "error": null,
+      "category": "Renewal Term",
+      "agent_name": "temporal_renewal",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:43:16.386878",
+      "latency_ms": 32288.153207977302,
+      "usage": {
+        "input_tokens": 13636,
+        "output_tokens": 928,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 14564
+      },
+      "cost_usd": 0.026325,
+      "success": true,
+      "error": null,
+      "category": "Anti-Assignment",
+      "agent_name": "temporal_renewal",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:43:17.093549",
+      "latency_ms": 6554.026500001783,
+      "usage": {
+        "input_tokens": 368,
+        "output_tokens": 54,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 422
+      },
+      "cost_usd": 0.001,
+      "success": true,
+      "error": null,
+      "category": "No-Solicit Of Employees",
+      "agent_name": "orchestrator_router",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:43:18.351145",
+      "latency_ms": 7992.850375012495,
+      "usage": {
+        "input_tokens": 2266,
+        "output_tokens": 133,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 2399
+      },
+      "cost_usd": 0.0041624999999999995,
+      "success": true,
+      "error": null,
+      "category": "Audit Rights",
+      "agent_name": "risk_liability",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:43:23.055354",
+      "latency_ms": 18285.881542018615,
+      "usage": {
+        "input_tokens": 1474,
+        "output_tokens": 159,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1633
+      },
+      "cost_usd": 0.0034325,
+      "success": true,
+      "error": null,
+      "category": "Non-Compete",
+      "agent_name": "ip_commercial",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:43:23.884346",
+      "latency_ms": 31459.96475001448,
+      "usage": {
+        "input_tokens": 27555,
+        "output_tokens": 507,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 28062
+      },
+      "cost_usd": 0.03951375,
+      "success": true,
+      "error": null,
+      "category": "Exclusivity",
+      "agent_name": "ip_commercial",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:43:25.024354",
+      "latency_ms": 10235.018708975986,
+      "usage": {
+        "input_tokens": 1754,
+        "output_tokens": 187,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1941
+      },
+      "cost_usd": 0.0040625,
+      "success": true,
+      "error": null,
+      "category": "Rofr/Rofo/Rofn",
+      "agent_name": "temporal_renewal",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:43:26.612973",
+      "latency_ms": 9517.656374984654,
+      "usage": {
+        "input_tokens": 6045,
+        "output_tokens": 191,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 6236
+      },
+      "cost_usd": 0.00946625,
+      "success": true,
+      "error": null,
+      "category": "No-Solicit Of Employees",
+      "agent_name": "ip_commercial",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:43:29.422703",
+      "latency_ms": 15330.697958008386,
+      "usage": {
+        "input_tokens": 5468,
+        "output_tokens": 451,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 5919
+      },
+      "cost_usd": 0.011345000000000001,
+      "success": true,
+      "error": null,
+      "category": "Warranty Duration",
+      "agent_name": "risk_liability",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:43:32.901260",
+      "latency_ms": 17075.08808298735,
+      "usage": {
+        "input_tokens": 377,
+        "output_tokens": 59,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 436
+      },
+      "cost_usd": 0.0010612500000000001,
+      "success": true,
+      "error": null,
+      "category": "Most Favored Nation",
+      "agent_name": "orchestrator_router",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:43:33.214197",
+      "latency_ms": 16822.612582996953,
+      "usage": {
+        "input_tokens": 355,
+        "output_tokens": 63,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 418
+      },
+      "cost_usd": 0.00107375,
+      "success": true,
+      "error": null,
+      "category": "Minimum Commitment",
+      "agent_name": "orchestrator_router",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:43:33.590524",
+      "latency_ms": 15235.869416996138,
+      "usage": {
+        "input_tokens": 359,
+        "output_tokens": 57,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 416
+      },
+      "cost_usd": 0.0010187500000000001,
+      "success": true,
+      "error": null,
+      "category": "Affiliate License-Licensee",
+      "agent_name": "orchestrator_router",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:43:34.365849",
+      "latency_ms": 20139.92237500497,
+      "usage": {
+        "input_tokens": 4300,
+        "output_tokens": 221,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 4521
+      },
+      "cost_usd": 0.007585,
+      "success": true,
+      "error": null,
+      "category": "Irrevocable Or Perpetual License",
+      "agent_name": "ip_commercial",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:43:37.768446",
+      "latency_ms": 14707.021125010215,
+      "usage": {
+        "input_tokens": 355,
+        "output_tokens": 46,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 401
+      },
+      "cost_usd": 0.00090375,
+      "success": true,
+      "error": null,
+      "category": "Minimum Commitment",
+      "agent_name": "orchestrator_router",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:43:37.822751",
+      "latency_ms": 24629.828208999243,
+      "usage": {
+        "input_tokens": 23117,
+        "output_tokens": 415,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 23532
+      },
+      "cost_usd": 0.03304625,
+      "success": true,
+      "error": null,
+      "category": "Non-Transferable License",
+      "agent_name": "ip_commercial",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:43:41.580512",
+      "latency_ms": 17687.65812498168,
+      "usage": {
+        "input_tokens": 353,
+        "output_tokens": 76,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 429
+      },
+      "cost_usd": 0.00120125,
+      "success": true,
+      "error": null,
+      "category": "Volume Restriction",
+      "agent_name": "orchestrator_router",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:43:42.753717",
+      "latency_ms": 16137.325916992268,
+      "usage": {
+        "input_tokens": 356,
+        "output_tokens": 48,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 404
+      },
+      "cost_usd": 0.000925,
+      "success": true,
+      "error": null,
+      "category": "Liquidated Damages",
+      "agent_name": "orchestrator_router",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:43:46.511227",
+      "latency_ms": 8736.47995799547,
+      "usage": {
+        "input_tokens": 16738,
+        "output_tokens": 300,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 17038
+      },
+      "cost_usd": 0.0239225,
+      "success": true,
+      "error": null,
+      "category": "Minimum Commitment",
+      "agent_name": "risk_liability",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:43:48.562749",
+      "latency_ms": 19134.819958999287,
+      "usage": {
+        "input_tokens": 364,
+        "output_tokens": 43,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 407
+      },
+      "cost_usd": 0.0008849999999999999,
+      "success": true,
+      "error": null,
+      "category": "Covenant Not To Sue",
+      "agent_name": "orchestrator_router",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:43:50.339408",
+      "latency_ms": 15967.88812498562,
+      "usage": {
+        "input_tokens": 341,
+        "output_tokens": 60,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 401
+      },
+      "cost_usd": 0.00102625,
+      "success": true,
+      "error": null,
+      "category": "Notice Period To Terminate Renewal",
+      "agent_name": "orchestrator_router",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:43:51.143358",
+      "latency_ms": 17927.846249978757,
+      "usage": {
+        "input_tokens": 8977,
+        "output_tokens": 239,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 9216
+      },
+      "cost_usd": 0.01361125,
+      "success": true,
+      "error": null,
+      "category": "Minimum Commitment",
+      "agent_name": "risk_liability",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:43:53.435040",
+      "latency_ms": 15603.816832997836,
+      "usage": {
+        "input_tokens": 359,
+        "output_tokens": 60,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 419
+      },
+      "cost_usd": 0.00104875,
+      "success": true,
+      "error": null,
+      "category": "Affiliate License-Licensee",
+      "agent_name": "orchestrator_router",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:43:54.114368",
+      "latency_ms": 29085.786667012144,
+      "usage": {
+        "input_tokens": 355,
+        "output_tokens": 46,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 401
+      },
+      "cost_usd": 0.00090375,
+      "success": true,
+      "error": null,
+      "category": "Minimum Commitment",
+      "agent_name": "orchestrator_router",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:43:57.636042",
+      "latency_ms": 14881.16683298722,
+      "usage": {
+        "input_tokens": 27508,
+        "output_tokens": 188,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 27696
+      },
+      "cost_usd": 0.036265,
+      "success": true,
+      "error": null,
+      "category": "Liquidated Damages",
+      "agent_name": "risk_liability",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:43:58.220931",
+      "latency_ms": 7070.230624987744,
+      "usage": {
+        "input_tokens": 358,
+        "output_tokens": 56,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 414
+      },
+      "cost_usd": 0.0010075000000000001,
+      "success": true,
+      "error": null,
+      "category": "Affiliate License-Licensor",
+      "agent_name": "orchestrator_router",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:44:00.055821",
+      "latency_ms": 27153.589416993782,
+      "usage": {
+        "input_tokens": 11315,
+        "output_tokens": 444,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 11759
+      },
+      "cost_usd": 0.01858375,
+      "success": true,
+      "error": null,
+      "category": "Most Favored Nation",
+      "agent_name": "risk_liability",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:44:01.988093",
+      "latency_ms": 11646.631832991261,
+      "usage": {
+        "input_tokens": 32711,
+        "output_tokens": 341,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 33052
+      },
+      "cost_usd": 0.044298750000000005,
+      "success": true,
+      "error": null,
+      "category": "Notice Period To Terminate Renewal",
+      "agent_name": "temporal_renewal",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:44:02.233289",
+      "latency_ms": 15712.629999994533,
+      "usage": {
+        "input_tokens": 354,
+        "output_tokens": 60,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 414
+      },
+      "cost_usd": 0.0010425,
+      "success": true,
+      "error": null,
+      "category": "Competitive Restriction Exception",
+      "agent_name": "orchestrator_router",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:44:03.519102",
+      "latency_ms": 5876.130499993451,
+      "usage": {
+        "input_tokens": 359,
+        "output_tokens": 61,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 420
+      },
+      "cost_usd": 0.00105875,
+      "success": true,
+      "error": null,
+      "category": "Affiliate License-Licensee",
+      "agent_name": "orchestrator_router",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:44:04.774595",
+      "latency_ms": 31183.322708995547,
+      "usage": {
+        "input_tokens": 32729,
+        "output_tokens": 697,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 33426
+      },
+      "cost_usd": 0.04788125,
+      "success": true,
+      "error": null,
+      "category": "Affiliate License-Licensee",
+      "agent_name": "ip_commercial",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:44:05.002168",
+      "latency_ms": 4941.609875007998,
+      "usage": {
+        "input_tokens": 348,
+        "output_tokens": 56,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 404
+      },
+      "cost_usd": 0.000995,
+      "success": true,
+      "error": null,
+      "category": "Joint Ip Ownership",
+      "agent_name": "orchestrator_router",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:44:06.031354",
+      "latency_ms": 17466.271124983905,
+      "usage": {
+        "input_tokens": 55373,
+        "output_tokens": 316,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 55689
+      },
+      "cost_usd": 0.07237624999999999,
+      "success": true,
+      "error": null,
+      "category": "Covenant Not To Sue",
+      "agent_name": "risk_liability",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:44:06.542309",
+      "latency_ms": 8320.563832996413,
+      "usage": {
+        "input_tokens": 8144,
+        "output_tokens": 221,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 8365
+      },
+      "cost_usd": 0.01239,
+      "success": true,
+      "error": null,
+      "category": "Affiliate License-Licensor",
+      "agent_name": "ip_commercial",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:44:09.160697",
+      "latency_ms": 27576.927165995585,
+      "usage": {
+        "input_tokens": 19267,
+        "output_tokens": 481,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 19748
+      },
+      "cost_usd": 0.028893750000000003,
+      "success": true,
+      "error": null,
+      "category": "Volume Restriction",
+      "agent_name": "ip_commercial",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:44:11.235615",
+      "latency_ms": 17799.46850001579,
+      "usage": {
+        "input_tokens": 3211,
+        "output_tokens": 150,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 3361
+      },
+      "cost_usd": 0.0055137499999999996,
+      "success": true,
+      "error": null,
+      "category": "Affiliate License-Licensee",
+      "agent_name": "ip_commercial",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:44:13.288564",
+      "latency_ms": 9768.765832995996,
+      "usage": {
+        "input_tokens": 5028,
+        "output_tokens": 171,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 5199
+      },
+      "cost_usd": 0.007995,
+      "success": true,
+      "error": null,
+      "category": "Affiliate License-Licensee",
+      "agent_name": "ip_commercial",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:44:19.007860",
+      "latency_ms": 17010.86391598801,
+      "usage": {
+        "input_tokens": 345,
+        "output_tokens": 56,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 401
+      },
+      "cost_usd": 0.00099125,
+      "success": true,
+      "error": null,
+      "category": "Non-Disparagement",
+      "agent_name": "orchestrator_router",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:44:19.454817",
+      "latency_ms": 14665.32658302458,
+      "usage": {
+        "input_tokens": 345,
+        "output_tokens": 55,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 400
+      },
+      "cost_usd": 0.00098125,
+      "success": true,
+      "error": null,
+      "category": "Non-Disparagement",
+      "agent_name": "orchestrator_router",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:44:22.637037",
+      "latency_ms": 16587.849666015245,
+      "usage": {
+        "input_tokens": 359,
+        "output_tokens": 59,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 418
+      },
+      "cost_usd": 0.00103875,
+      "success": true,
+      "error": null,
+      "category": "Affiliate License-Licensee",
+      "agent_name": "orchestrator_router",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:44:23.445808",
+      "latency_ms": 16898.94858401385,
+      "usage": {
+        "input_tokens": 345,
+        "output_tokens": 56,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 401
+      },
+      "cost_usd": 0.00099125,
+      "success": true,
+      "error": null,
+      "category": "Non-Disparagement",
+      "agent_name": "orchestrator_router",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:44:25.569222",
+      "latency_ms": 23334.310999984154,
+      "usage": {
+        "input_tokens": 2422,
+        "output_tokens": 173,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 2595
+      },
+      "cost_usd": 0.0047575000000000004,
+      "success": true,
+      "error": null,
+      "category": "Competitive Restriction Exception",
+      "agent_name": "ip_commercial",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:44:26.385261",
+      "latency_ms": 17220.847207994666,
+      "usage": {
+        "input_tokens": 358,
+        "output_tokens": 56,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 414
+      },
+      "cost_usd": 0.0010075000000000001,
+      "success": true,
+      "error": null,
+      "category": "Affiliate License-Licensor",
+      "agent_name": "orchestrator_router",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:44:26.860271",
+      "latency_ms": 21855.781582999043,
+      "usage": {
+        "input_tokens": 4799,
+        "output_tokens": 205,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 5004
+      },
+      "cost_usd": 0.00804875,
+      "success": true,
+      "error": null,
+      "category": "Joint Ip Ownership",
+      "agent_name": "ip_commercial",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:44:27.844209",
+      "latency_ms": 33728.69987500599,
+      "usage": {
+        "input_tokens": 22294,
+        "output_tokens": 591,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 22885
+      },
+      "cost_usd": 0.0337775,
+      "success": true,
+      "error": null,
+      "category": "Minimum Commitment",
+      "agent_name": "risk_liability",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:44:28.465907",
+      "latency_ms": 15172.025416017277,
+      "usage": {
+        "input_tokens": 369,
+        "output_tokens": 57,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 426
+      },
+      "cost_usd": 0.00103125,
+      "success": true,
+      "error": null,
+      "category": "Source Code Escrow",
+      "agent_name": "orchestrator_router",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:44:28.478872",
+      "latency_ms": 17239.2689580156,
+      "usage": {
+        "input_tokens": 353,
+        "output_tokens": 64,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 417
+      },
+      "cost_usd": 0.00108125,
+      "success": true,
+      "error": null,
+      "category": "Volume Restriction",
+      "agent_name": "orchestrator_router",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:44:30.501017",
+      "latency_ms": 11044.450707995566,
+      "usage": {
+        "input_tokens": 9505,
+        "output_tokens": 196,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 9701
+      },
+      "cost_usd": 0.013841250000000001,
+      "success": true,
+      "error": null,
+      "category": "Non-Disparagement",
+      "agent_name": "risk_liability",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:44:34.010050",
+      "latency_ms": 7147.577124997042,
+      "usage": {
+        "input_tokens": 368,
+        "output_tokens": 63,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 431
+      },
+      "cost_usd": 0.00109,
+      "success": true,
+      "error": null,
+      "category": "Uncapped Liability",
+      "agent_name": "orchestrator_router",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:44:34.456689",
+      "latency_ms": 11819.070750003448,
+      "usage": {
+        "input_tokens": 6038,
+        "output_tokens": 258,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 6296
+      },
+      "cost_usd": 0.010127500000000001,
+      "success": true,
+      "error": null,
+      "category": "Affiliate License-Licensee",
+      "agent_name": "ip_commercial",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:44:37.325001",
+      "latency_ms": 18316.087540995795,
+      "usage": {
+        "input_tokens": 6240,
+        "output_tokens": 155,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 6395
+      },
+      "cost_usd": 0.00935,
+      "success": true,
+      "error": null,
+      "category": "Non-Disparagement",
+      "agent_name": "risk_liability",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:44:37.805488",
+      "latency_ms": 11419.471291010268,
+      "usage": {
+        "input_tokens": 829,
+        "output_tokens": 220,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1049
+      },
+      "cost_usd": 0.0032362500000000004,
+      "success": true,
+      "error": null,
+      "category": "Affiliate License-Licensor",
+      "agent_name": "ip_commercial",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:44:39.260968",
+      "latency_ms": 15812.952250009403,
+      "usage": {
+        "input_tokens": 6081,
+        "output_tokens": 165,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 6246
+      },
+      "cost_usd": 0.00925125,
+      "success": true,
+      "error": null,
+      "category": "Non-Disparagement",
+      "agent_name": "risk_liability",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:44:40.948948",
+      "latency_ms": 12480.785791995004,
+      "usage": {
+        "input_tokens": 22769,
+        "output_tokens": 182,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 22951
+      },
+      "cost_usd": 0.030281249999999996,
+      "success": true,
+      "error": null,
+      "category": "Source Code Escrow",
+      "agent_name": "ip_commercial",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:44:41.298104",
+      "latency_ms": 15723.04266600986,
+      "usage": {
+        "input_tokens": 354,
+        "output_tokens": 60,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 414
+      },
+      "cost_usd": 0.0010425,
+      "success": true,
+      "error": null,
+      "category": "Competitive Restriction Exception",
+      "agent_name": "orchestrator_router",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:44:43.292178",
+      "latency_ms": 15439.010749978479,
+      "usage": {
+        "input_tokens": 348,
+        "output_tokens": 48,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 396
+      },
+      "cost_usd": 0.000915,
+      "success": true,
+      "error": null,
+      "category": "Joint Ip Ownership",
+      "agent_name": "orchestrator_router",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:44:46.983664",
+      "latency_ms": 16477.348542015534,
+      "usage": {
+        "input_tokens": 368,
+        "output_tokens": 67,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 435
+      },
+      "cost_usd": 0.00113,
+      "success": true,
+      "error": null,
+      "category": "Uncapped Liability",
+      "agent_name": "orchestrator_router",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:44:49.588302",
+      "latency_ms": 21107.200667000143,
+      "usage": {
+        "input_tokens": 3259,
+        "output_tokens": 188,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 3447
+      },
+      "cost_usd": 0.00595375,
+      "success": true,
+      "error": null,
+      "category": "Volume Restriction",
+      "agent_name": "ip_commercial",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:44:53.198473",
+      "latency_ms": 18739.965708984528,
+      "usage": {
+        "input_tokens": 362,
+        "output_tokens": 80,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 442
+      },
+      "cost_usd": 0.0012525000000000001,
+      "success": true,
+      "error": null,
+      "category": "Third Party Beneficiary",
+      "agent_name": "orchestrator_router",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:44:53.334177",
+      "latency_ms": 15524.883832986234,
+      "usage": {
+        "input_tokens": 354,
+        "output_tokens": 66,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 420
+      },
+      "cost_usd": 0.0011025,
+      "success": true,
+      "error": null,
+      "category": "Competitive Restriction Exception",
+      "agent_name": "orchestrator_router",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:44:55.177846",
+      "latency_ms": 17849.49466699618,
+      "usage": {
+        "input_tokens": 362,
+        "output_tokens": 80,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 442
+      },
+      "cost_usd": 0.0012525000000000001,
+      "success": true,
+      "error": null,
+      "category": "Third Party Beneficiary",
+      "agent_name": "orchestrator_router",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:44:55.703254",
+      "latency_ms": 16439.764584007207,
+      "usage": {
+        "input_tokens": 356,
+        "output_tokens": 52,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 408
+      },
+      "cost_usd": 0.0009649999999999999,
+      "success": true,
+      "error": null,
+      "category": "Liquidated Damages",
+      "agent_name": "orchestrator_router",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:44:57.492775",
+      "latency_ms": 16541.63445800077,
+      "usage": {
+        "input_tokens": 358,
+        "output_tokens": 61,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 419
+      },
+      "cost_usd": 0.0010574999999999998,
+      "success": true,
+      "error": null,
+      "category": "Unlimited/All-You-Can-Eat-License",
+      "agent_name": "orchestrator_router",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:44:59.443323",
+      "latency_ms": 16149.47583299363,
+      "usage": {
+        "input_tokens": 1342,
+        "output_tokens": 154,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1496
+      },
+      "cost_usd": 0.0032175,
+      "success": true,
+      "error": null,
+      "category": "Joint Ip Ownership",
+      "agent_name": "ip_commercial",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:44:59.907729",
+      "latency_ms": 25896.314707992133,
+      "usage": {
+        "input_tokens": 4238,
+        "output_tokens": 198,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 4436
+      },
+      "cost_usd": 0.007277500000000001,
+      "success": true,
+      "error": null,
+      "category": "Uncapped Liability",
+      "agent_name": "risk_liability",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:45:05.638583",
+      "latency_ms": 24338.629292004043,
+      "usage": {
+        "input_tokens": 4550,
+        "output_tokens": 228,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 4778
+      },
+      "cost_usd": 0.0079675,
+      "success": true,
+      "error": null,
+      "category": "Competitive Restriction Exception",
+      "agent_name": "ip_commercial",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:45:07.685362",
+      "latency_ms": 11979.867416986963,
+      "usage": {
+        "input_tokens": 6252,
+        "output_tokens": 238,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 6490
+      },
+      "cost_usd": 0.010195,
+      "success": true,
+      "error": null,
+      "category": "Liquidated Damages",
+      "agent_name": "risk_liability",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:45:08.213457",
+      "latency_ms": 21228.914666979108,
+      "usage": {
+        "input_tokens": 1047,
+        "output_tokens": 149,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1196
+      },
+      "cost_usd": 0.00279875,
+      "success": true,
+      "error": null,
+      "category": "Uncapped Liability",
+      "agent_name": "risk_liability",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:45:15.937645",
+      "latency_ms": 22601.407665992156,
+      "usage": {
+        "input_tokens": 14231,
+        "output_tokens": 270,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 14501
+      },
+      "cost_usd": 0.02048875,
+      "success": true,
+      "error": null,
+      "category": "Competitive Restriction Exception",
+      "agent_name": "ip_commercial",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:45:19.630690",
+      "latency_ms": 22136.355082999216,
+      "usage": {
+        "input_tokens": 22315,
+        "output_tokens": 236,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 22551
+      },
+      "cost_usd": 0.030253750000000003,
+      "success": true,
+      "error": null,
+      "category": "Unlimited/All-You-Can-Eat-License",
+      "agent_name": "ip_commercial",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:45:20.348546",
+      "latency_ms": 25168.839708989253,
+      "usage": {
+        "input_tokens": 5025,
+        "output_tokens": 208,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 5233
+      },
+      "cost_usd": 0.00836125,
+      "success": true,
+      "error": null,
+      "category": "Third Party Beneficiary",
+      "agent_name": "risk_liability",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "model_id": "google/gemini-2.5-pro",
+      "timestamp": "2026-04-15T15:45:21.165642",
+      "latency_ms": 27965.905375021975,
+      "usage": {
+        "input_tokens": 6753,
+        "output_tokens": 189,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 6942
+      },
+      "cost_usd": 0.01033125,
+      "success": true,
+      "error": null,
+      "category": "Third Party Beneficiary",
+      "agent_name": "risk_liability",
+      "experiment_id": "test_multiagent_gemini-2.5-pro_20260415_154017"
+    }
+  ]
+}
