@@ -18,7 +18,7 @@
 | Gemini 3 Flash Preview | Google    | ☑   | ☑   | ☐   | ☐   | ☐   | ☐   |
 | Gemini 3.1 Pro Preview | Google    | ☑   | ☑   | ☐   | ☐   | ☐   | ☐   |
 
-**Completed: 37 / 78** (13 models × 6 configs)
+**Completed: 43 / 78** (13 models × 6 configs)
 
 ## Config Key
 
