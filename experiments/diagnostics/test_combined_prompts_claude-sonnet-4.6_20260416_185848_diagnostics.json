@@ -1,0 +1,2884 @@
+{
+  "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848",
+  "run_mode": "test",
+  "start_time": "2026-04-16T18:58:48.877305",
+  "summary": {
+    "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848",
+    "total_calls": 150,
+    "successful_calls": 150,
+    "failed_calls": 0,
+    "success_rate": 1.0,
+    "total_input_tokens": 1643142,
+    "total_output_tokens": 70137,
+    "total_tokens": 1713279,
+    "total_cost_usd": 5.981481000000003,
+    "avg_latency_ms": 10307.424113840292,
+    "min_latency_ms": 4363.954832981108,
+    "max_latency_ms": 34039.891332999105,
+    "by_model": {
+      "claude-sonnet-4.6": {
+        "calls": 150,
+        "input_tokens": 1643142,
+        "output_tokens": 70137,
+        "cost_usd": 5.981481000000003,
+        "avg_latency_ms": 10307.424113840292
+      }
+    },
+    "by_agent": {
+      "combined_prompts": 150
+    },
+    "duration_seconds": 159.546262
+  },
+  "calls": [
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T18:58:54.800580",
+      "latency_ms": 5700.9564580221195,
+      "usage": {
+        "input_tokens": 2971,
+        "output_tokens": 212,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 3183
+      },
+      "cost_usd": 0.012093,
+      "success": true,
+      "error": null,
+      "category": "Document Name",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T18:58:55.710410",
+      "latency_ms": 6610.382832994219,
+      "usage": {
+        "input_tokens": 12100,
+        "output_tokens": 259,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 12359
+      },
+      "cost_usd": 0.040185,
+      "success": true,
+      "error": null,
+      "category": "Expiration Date",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T18:58:56.124586",
+      "latency_ms": 7024.663166987011,
+      "usage": {
+        "input_tokens": 4693,
+        "output_tokens": 307,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 5000
+      },
+      "cost_usd": 0.018684,
+      "success": true,
+      "error": null,
+      "category": "Document Name",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T18:58:56.163683",
+      "latency_ms": 7063.384459004737,
+      "usage": {
+        "input_tokens": 4888,
+        "output_tokens": 262,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 5150
+      },
+      "cost_usd": 0.018594,
+      "success": true,
+      "error": null,
+      "category": "Governing Law",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T18:58:56.359147",
+      "latency_ms": 7259.041207988048,
+      "usage": {
+        "input_tokens": 1069,
+        "output_tokens": 408,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1477
+      },
+      "cost_usd": 0.009326999999999998,
+      "success": true,
+      "error": null,
+      "category": "Parties",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T18:58:56.827105",
+      "latency_ms": 7727.578124991851,
+      "usage": {
+        "input_tokens": 1757,
+        "output_tokens": 312,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 2069
+      },
+      "cost_usd": 0.009951,
+      "success": true,
+      "error": null,
+      "category": "Effective Date",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T18:58:56.913506",
+      "latency_ms": 7813.713875017129,
+      "usage": {
+        "input_tokens": 3708,
+        "output_tokens": 283,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 3991
+      },
+      "cost_usd": 0.015369,
+      "success": true,
+      "error": null,
+      "category": "Document Name",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T18:58:57.927685",
+      "latency_ms": 8827.463749999879,
+      "usage": {
+        "input_tokens": 4771,
+        "output_tokens": 374,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 5145
+      },
+      "cost_usd": 0.019923,
+      "success": true,
+      "error": null,
+      "category": "Expiration Date",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T18:59:00.515495",
+      "latency_ms": 11415.12162500294,
+      "usage": {
+        "input_tokens": 4426,
+        "output_tokens": 498,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 4924
+      },
+      "cost_usd": 0.020748000000000003,
+      "success": true,
+      "error": null,
+      "category": "Parties",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T18:59:01.088302",
+      "latency_ms": 6286.487125005806,
+      "usage": {
+        "input_tokens": 8266,
+        "output_tokens": 289,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 8555
+      },
+      "cost_usd": 0.029133,
+      "success": true,
+      "error": null,
+      "category": "Governing Law",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T18:59:02.817980",
+      "latency_ms": 5903.348332998576,
+      "usage": {
+        "input_tokens": 1767,
+        "output_tokens": 300,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 2067
+      },
+      "cost_usd": 0.009801,
+      "success": true,
+      "error": null,
+      "category": "Governing Law",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T18:59:03.891740",
+      "latency_ms": 14792.279916990083,
+      "usage": {
+        "input_tokens": 54258,
+        "output_tokens": 515,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 54773
+      },
+      "cost_usd": 0.170499,
+      "success": true,
+      "error": null,
+      "category": "Parties",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T18:59:04.256754",
+      "latency_ms": 8091.580250009429,
+      "usage": {
+        "input_tokens": 35018,
+        "output_tokens": 295,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 35313
+      },
+      "cost_usd": 0.109479,
+      "success": true,
+      "error": null,
+      "category": "Document Name",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T18:59:04.527350",
+      "latency_ms": 6598.248374997638,
+      "usage": {
+        "input_tokens": 939,
+        "output_tokens": 303,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1242
+      },
+      "cost_usd": 0.007362,
+      "success": true,
+      "error": null,
+      "category": "Effective Date",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T18:59:05.576758",
+      "latency_ms": 9216.816333995666,
+      "usage": {
+        "input_tokens": 4810,
+        "output_tokens": 359,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 5169
+      },
+      "cost_usd": 0.019815,
+      "success": true,
+      "error": null,
+      "category": "Parties",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T18:59:05.858860",
+      "latency_ms": 5342.271416011499,
+      "usage": {
+        "input_tokens": 788,
+        "output_tokens": 300,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1088
+      },
+      "cost_usd": 0.006864,
+      "success": true,
+      "error": null,
+      "category": "Expiration Date",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T18:59:06.189001",
+      "latency_ms": 10063.389624992851,
+      "usage": {
+        "input_tokens": 13074,
+        "output_tokens": 418,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 13492
+      },
+      "cost_usd": 0.045492,
+      "success": true,
+      "error": null,
+      "category": "Governing Law",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T18:59:07.244614",
+      "latency_ms": 11531.242124998244,
+      "usage": {
+        "input_tokens": 7014,
+        "output_tokens": 462,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 7476
+      },
+      "cost_usd": 0.027972000000000004,
+      "success": true,
+      "error": null,
+      "category": "Expiration Date",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T18:59:07.883663",
+      "latency_ms": 11055.576250015292,
+      "usage": {
+        "input_tokens": 3145,
+        "output_tokens": 508,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 3653
+      },
+      "cost_usd": 0.017055,
+      "success": true,
+      "error": null,
+      "category": "Effective Date",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T18:59:10.058106",
+      "latency_ms": 7238.6098749993835,
+      "usage": {
+        "input_tokens": 1068,
+        "output_tokens": 356,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1424
+      },
+      "cost_usd": 0.008544,
+      "success": true,
+      "error": null,
+      "category": "Agreement Date",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T18:59:10.977628",
+      "latency_ms": 7079.546374996426,
+      "usage": {
+        "input_tokens": 2447,
+        "output_tokens": 284,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 2731
+      },
+      "cost_usd": 0.011601,
+      "success": true,
+      "error": null,
+      "category": "Effective Date",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T18:59:12.528040",
+      "latency_ms": 7999.990540993167,
+      "usage": {
+        "input_tokens": 6770,
+        "output_tokens": 350,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 7120
+      },
+      "cost_usd": 0.02556,
+      "success": true,
+      "error": null,
+      "category": "Governing Law",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T18:59:12.964085",
+      "latency_ms": 5718.360250000842,
+      "usage": {
+        "input_tokens": 1081,
+        "output_tokens": 274,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1355
+      },
+      "cost_usd": 0.007353,
+      "success": true,
+      "error": null,
+      "category": "Governing Law",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T18:59:13.723454",
+      "latency_ms": 7531.846166006289,
+      "usage": {
+        "input_tokens": 26335,
+        "output_tokens": 322,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 26657
+      },
+      "cost_usd": 0.083835,
+      "success": true,
+      "error": null,
+      "category": "Expiration Date",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T18:59:13.866077",
+      "latency_ms": 8006.310832977761,
+      "usage": {
+        "input_tokens": 3282,
+        "output_tokens": 348,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 3630
+      },
+      "cost_usd": 0.015066,
+      "success": true,
+      "error": null,
+      "category": "Agreement Date",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T18:59:15.060801",
+      "latency_ms": 10801.359707984375,
+      "usage": {
+        "input_tokens": 24395,
+        "output_tokens": 455,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 24850
+      },
+      "cost_usd": 0.08001,
+      "success": true,
+      "error": null,
+      "category": "Agreement Date",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T18:59:15.487320",
+      "latency_ms": 9909.518584026955,
+      "usage": {
+        "input_tokens": 14795,
+        "output_tokens": 399,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 15194
+      },
+      "cost_usd": 0.05037,
+      "success": true,
+      "error": null,
+      "category": "Expiration Date",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T18:59:16.534987",
+      "latency_ms": 15441.50241598254,
+      "usage": {
+        "input_tokens": 68789,
+        "output_tokens": 647,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 69436
+      },
+      "cost_usd": 0.216072,
+      "success": true,
+      "error": null,
+      "category": "Agreement Date",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T18:59:17.328885",
+      "latency_ms": 4363.954832981108,
+      "usage": {
+        "input_tokens": 936,
+        "output_tokens": 231,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1167
+      },
+      "cost_usd": 0.006273000000000001,
+      "success": true,
+      "error": null,
+      "category": "Agreement Date",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T18:59:18.344130",
+      "latency_ms": 10459.625916002551,
+      "usage": {
+        "input_tokens": 2970,
+        "output_tokens": 469,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 3439
+      },
+      "cost_usd": 0.015945,
+      "success": true,
+      "error": null,
+      "category": "Effective Date",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T18:59:19.743822",
+      "latency_ms": 7215.03170800861,
+      "usage": {
+        "input_tokens": 1853,
+        "output_tokens": 433,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 2286
+      },
+      "cost_usd": 0.012053999999999999,
+      "success": true,
+      "error": null,
+      "category": "Expiration Date",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T18:59:19.953820",
+      "latency_ms": 8975.442166003631,
+      "usage": {
+        "input_tokens": 2568,
+        "output_tokens": 481,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 3049
+      },
+      "cost_usd": 0.014918999999999998,
+      "success": true,
+      "error": null,
+      "category": "Effective Date",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T18:59:20.860459",
+      "latency_ms": 6993.502792000072,
+      "usage": {
+        "input_tokens": 1070,
+        "output_tokens": 353,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1423
+      },
+      "cost_usd": 0.008504999999999999,
+      "success": true,
+      "error": null,
+      "category": "Expiration Date",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T18:59:21.449978",
+      "latency_ms": 7725.0285419868305,
+      "usage": {
+        "input_tokens": 1421,
+        "output_tokens": 375,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1796
+      },
+      "cost_usd": 0.009888000000000001,
+      "success": true,
+      "error": null,
+      "category": "Effective Date",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T18:59:23.889270",
+      "latency_ms": 13830.255874985596,
+      "usage": {
+        "input_tokens": 6760,
+        "output_tokens": 655,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 7415
+      },
+      "cost_usd": 0.030105,
+      "success": true,
+      "error": null,
+      "category": "Effective Date",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T18:59:24.884435",
+      "latency_ms": 9822.188874997664,
+      "usage": {
+        "input_tokens": 21539,
+        "output_tokens": 478,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 22017
+      },
+      "cost_usd": 0.071787,
+      "success": true,
+      "error": null,
+      "category": "Agreement Date",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T18:59:25.114068",
+      "latency_ms": 7784.61437500664,
+      "usage": {
+        "input_tokens": 15450,
+        "output_tokens": 317,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 15767
+      },
+      "cost_usd": 0.051105,
+      "success": true,
+      "error": null,
+      "category": "Expiration Date",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T18:59:25.432587",
+      "latency_ms": 7087.694291985827,
+      "usage": {
+        "input_tokens": 1640,
+        "output_tokens": 288,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1928
+      },
+      "cost_usd": 0.009239999999999998,
+      "success": true,
+      "error": null,
+      "category": "Governing Law",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T18:59:26.048618",
+      "latency_ms": 10560.246584005654,
+      "usage": {
+        "input_tokens": 6603,
+        "output_tokens": 453,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 7056
+      },
+      "cost_usd": 0.026604,
+      "success": true,
+      "error": null,
+      "category": "Effective Date",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T18:59:26.294510",
+      "latency_ms": 9756.610999989789,
+      "usage": {
+        "input_tokens": 5786,
+        "output_tokens": 400,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 6186
+      },
+      "cost_usd": 0.023357999999999997,
+      "success": true,
+      "error": null,
+      "category": "Expiration Date",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T18:59:29.036914",
+      "latency_ms": 8175.377832987579,
+      "usage": {
+        "input_tokens": 1204,
+        "output_tokens": 379,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1583
+      },
+      "cost_usd": 0.009297,
+      "success": true,
+      "error": null,
+      "category": "Governing Law",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T18:59:29.622786",
+      "latency_ms": 5731.390666012885,
+      "usage": {
+        "input_tokens": 1768,
+        "output_tokens": 272,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 2040
+      },
+      "cost_usd": 0.009384,
+      "success": true,
+      "error": null,
+      "category": "Governing Law",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T18:59:29.862615",
+      "latency_ms": 8411.892250005621,
+      "usage": {
+        "input_tokens": 1769,
+        "output_tokens": 377,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 2146
+      },
+      "cost_usd": 0.010962,
+      "success": true,
+      "error": null,
+      "category": "Expiration Date",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T18:59:30.742826",
+      "latency_ms": 10786.00724998978,
+      "usage": {
+        "input_tokens": 29940,
+        "output_tokens": 566,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 30506
+      },
+      "cost_usd": 0.09831000000000001,
+      "success": true,
+      "error": null,
+      "category": "Effective Date",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T18:59:32.176950",
+      "latency_ms": 7289.160499989521,
+      "usage": {
+        "input_tokens": 2459,
+        "output_tokens": 321,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 2780
+      },
+      "cost_usd": 0.012192000000000001,
+      "success": true,
+      "error": null,
+      "category": "Expiration Date",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T18:59:32.935868",
+      "latency_ms": 6885.322333022486,
+      "usage": {
+        "input_tokens": 776,
+        "output_tokens": 451,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1227
+      },
+      "cost_usd": 0.009093,
+      "success": true,
+      "error": null,
+      "category": "Effective Date",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T18:59:33.791444",
+      "latency_ms": 8358.272500016028,
+      "usage": {
+        "input_tokens": 1583,
+        "output_tokens": 448,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 2031
+      },
+      "cost_usd": 0.011469,
+      "success": true,
+      "error": null,
+      "category": "Expiration Date",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T18:59:33.926999",
+      "latency_ms": 8810.646124999039,
+      "usage": {
+        "input_tokens": 14783,
+        "output_tokens": 514,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 15297
+      },
+      "cost_usd": 0.052059,
+      "success": true,
+      "error": null,
+      "category": "Effective Date",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T18:59:34.882935",
+      "latency_ms": 5259.172999998555,
+      "usage": {
+        "input_tokens": 2583,
+        "output_tokens": 167,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 2750
+      },
+      "cost_usd": 0.010254000000000001,
+      "success": true,
+      "error": null,
+      "category": "Anti-Assignment",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T18:59:35.327438",
+      "latency_ms": 15581.368083017878,
+      "usage": {
+        "input_tokens": 3707,
+        "output_tokens": 670,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 4377
+      },
+      "cost_usd": 0.021171,
+      "success": true,
+      "error": null,
+      "category": "Effective Date",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T18:59:36.380350",
+      "latency_ms": 7340.38608300034,
+      "usage": {
+        "input_tokens": 33134,
+        "output_tokens": 309,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 33443
+      },
+      "cost_usd": 0.104037,
+      "success": true,
+      "error": null,
+      "category": "No-Solicit Of Employees",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T18:59:36.548132",
+      "latency_ms": 10252.40433300496,
+      "usage": {
+        "input_tokens": 3329,
+        "output_tokens": 494,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 3823
+      },
+      "cost_usd": 0.017397000000000003,
+      "success": true,
+      "error": null,
+      "category": "Expiration Date",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T18:59:40.053744",
+      "latency_ms": 10189.69354199362,
+      "usage": {
+        "input_tokens": 4904,
+        "output_tokens": 739,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 5643
+      },
+      "cost_usd": 0.025797,
+      "success": true,
+      "error": null,
+      "category": "Non-Transferable License",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T18:59:42.876371",
+      "latency_ms": 12130.93499999377,
+      "usage": {
+        "input_tokens": 4442,
+        "output_tokens": 547,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 4989
+      },
+      "cost_usd": 0.021531,
+      "success": true,
+      "error": null,
+      "category": "Termination For Convenience",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T18:59:43.187808",
+      "latency_ms": 9394.714666996151,
+      "usage": {
+        "input_tokens": 15426,
+        "output_tokens": 398,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 15824
+      },
+      "cost_usd": 0.052248,
+      "success": true,
+      "error": null,
+      "category": "Audit Rights",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T18:59:44.976086",
+      "latency_ms": 8592.81758297584,
+      "usage": {
+        "input_tokens": 6399,
+        "output_tokens": 350,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 6749
+      },
+      "cost_usd": 0.024446999999999997,
+      "success": true,
+      "error": null,
+      "category": "Insurance",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T18:59:46.102103",
+      "latency_ms": 11217.99433400156,
+      "usage": {
+        "input_tokens": 6486,
+        "output_tokens": 437,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 6923
+      },
+      "cost_usd": 0.026013,
+      "success": true,
+      "error": null,
+      "category": "Audit Rights",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T18:59:48.998847",
+      "latency_ms": 6119.989791011903,
+      "usage": {
+        "input_tokens": 7147,
+        "output_tokens": 377,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 7524
+      },
+      "cost_usd": 0.027096000000000002,
+      "success": true,
+      "error": null,
+      "category": "Anti-Assignment",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T18:59:51.656403",
+      "latency_ms": 15107.457292004256,
+      "usage": {
+        "input_tokens": 8274,
+        "output_tokens": 890,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 9164
+      },
+      "cost_usd": 0.038172,
+      "success": true,
+      "error": null,
+      "category": "License Grant",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T18:59:52.623856",
+      "latency_ms": 9434.50470798416,
+      "usage": {
+        "input_tokens": 29964,
+        "output_tokens": 392,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 30356
+      },
+      "cost_usd": 0.095772,
+      "success": true,
+      "error": null,
+      "category": "Renewal Term",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T18:59:52.876602",
+      "latency_ms": 7898.9224580000155,
+      "usage": {
+        "input_tokens": 4726,
+        "output_tokens": 367,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 5093
+      },
+      "cost_usd": 0.019683,
+      "success": true,
+      "error": null,
+      "category": "Irrevocable Or Perpetual License",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T18:59:53.150710",
+      "latency_ms": 7046.548958984204,
+      "usage": {
+        "input_tokens": 6337,
+        "output_tokens": 297,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 6634
+      },
+      "cost_usd": 0.023466,
+      "success": true,
+      "error": null,
+      "category": "No-Solicit Of Employees",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T18:59:53.890261",
+      "latency_ms": 19961.269749997882,
+      "usage": {
+        "input_tokens": 6269,
+        "output_tokens": 887,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 7156
+      },
+      "cost_usd": 0.032112,
+      "success": true,
+      "error": null,
+      "category": "License Grant",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T18:59:55.496603",
+      "latency_ms": 20166.586667008232,
+      "usage": {
+        "input_tokens": 60772,
+        "output_tokens": 916,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 61688
+      },
+      "cost_usd": 0.196056,
+      "success": true,
+      "error": null,
+      "category": "Audit Rights",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T18:59:55.936552",
+      "latency_ms": 23758.80112501909,
+      "usage": {
+        "input_tokens": 20928,
+        "output_tokens": 1005,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 21933
+      },
+      "cost_usd": 0.07785900000000001,
+      "success": true,
+      "error": null,
+      "category": "License Grant",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T18:59:56.509267",
+      "latency_ms": 7509.067042003153,
+      "usage": {
+        "input_tokens": 1861,
+        "output_tokens": 383,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 2244
+      },
+      "cost_usd": 0.011328000000000001,
+      "success": true,
+      "error": null,
+      "category": "Warranty Duration",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T18:59:56.940402",
+      "latency_ms": 24001.640000002226,
+      "usage": {
+        "input_tokens": 68816,
+        "output_tokens": 943,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 69759
+      },
+      "cost_usd": 0.220593,
+      "success": true,
+      "error": null,
+      "category": "Renewal Term",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T19:00:01.061018",
+      "latency_ms": 5561.150833003921,
+      "usage": {
+        "input_tokens": 1784,
+        "output_tokens": 311,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 2095
+      },
+      "cost_usd": 0.010017,
+      "success": true,
+      "error": null,
+      "category": "Non-Transferable License",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T19:00:01.421637",
+      "latency_ms": 7530.18383300514,
+      "usage": {
+        "input_tokens": 5619,
+        "output_tokens": 393,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 6012
+      },
+      "cost_usd": 0.022752,
+      "success": true,
+      "error": null,
+      "category": "Non-Transferable License",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T19:00:02.671210",
+      "latency_ms": 9793.659374990966,
+      "usage": {
+        "input_tokens": 14821,
+        "output_tokens": 458,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 15279
+      },
+      "cost_usd": 0.051333000000000004,
+      "success": true,
+      "error": null,
+      "category": "No-Solicit Of Customers",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T19:00:03.635237",
+      "latency_ms": 11977.417542017065,
+      "usage": {
+        "input_tokens": 10155,
+        "output_tokens": 536,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 10691
+      },
+      "cost_usd": 0.038505,
+      "success": true,
+      "error": null,
+      "category": "Post-Termination Services",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T19:00:04.701830",
+      "latency_ms": 8762.889000005089,
+      "usage": {
+        "input_tokens": 9256,
+        "output_tokens": 324,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 9580
+      },
+      "cost_usd": 0.032628000000000004,
+      "success": true,
+      "error": null,
+      "category": "Warranty Duration",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T19:00:05.081767",
+      "latency_ms": 25026.492083998164,
+      "usage": {
+        "input_tokens": 35585,
+        "output_tokens": 1082,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 36667
+      },
+      "cost_usd": 0.12298500000000001,
+      "success": true,
+      "error": null,
+      "category": "Ip Ownership Assignment",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T19:00:05.448090",
+      "latency_ms": 12822.24424998276,
+      "usage": {
+        "input_tokens": 8847,
+        "output_tokens": 535,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 9382
+      },
+      "cost_usd": 0.034566,
+      "success": true,
+      "error": null,
+      "category": "Non-Compete",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T19:00:06.605765",
+      "latency_ms": 9644.464334007353,
+      "usage": {
+        "input_tokens": 3015,
+        "output_tokens": 422,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 3437
+      },
+      "cost_usd": 0.015375,
+      "success": true,
+      "error": null,
+      "category": "Ip Ownership Assignment",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T19:00:08.007905",
+      "latency_ms": 6945.04287498421,
+      "usage": {
+        "input_tokens": 4551,
+        "output_tokens": 304,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 4855
+      },
+      "cost_usd": 0.018213,
+      "success": true,
+      "error": null,
+      "category": "No-Solicit Of Employees",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T19:00:08.353342",
+      "latency_ms": 15201.781125011621,
+      "usage": {
+        "input_tokens": 19883,
+        "output_tokens": 671,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 20554
+      },
+      "cost_usd": 0.069714,
+      "success": true,
+      "error": null,
+      "category": "Post-Termination Services",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T19:00:10.458848",
+      "latency_ms": 9034.0242079983,
+      "usage": {
+        "input_tokens": 5751,
+        "output_tokens": 369,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 6120
+      },
+      "cost_usd": 0.022788000000000003,
+      "success": true,
+      "error": null,
+      "category": "License Grant",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T19:00:10.517761",
+      "latency_ms": 14007.715375017142,
+      "usage": {
+        "input_tokens": 23778,
+        "output_tokens": 635,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 24413
+      },
+      "cost_usd": 0.080859,
+      "success": true,
+      "error": null,
+      "category": "Termination For Convenience",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T19:00:11.100456",
+      "latency_ms": 7464.054291980574,
+      "usage": {
+        "input_tokens": 1600,
+        "output_tokens": 325,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1925
+      },
+      "cost_usd": 0.009675,
+      "success": true,
+      "error": null,
+      "category": "Termination For Convenience",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T19:00:12.329376",
+      "latency_ms": 9657.196541986195,
+      "usage": {
+        "input_tokens": 5113,
+        "output_tokens": 413,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 5526
+      },
+      "cost_usd": 0.021534,
+      "success": true,
+      "error": null,
+      "category": "Change Of Control",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T19:00:12.352614",
+      "latency_ms": 7649.955000000773,
+      "usage": {
+        "input_tokens": 5096,
+        "output_tokens": 393,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 5489
+      },
+      "cost_usd": 0.021183,
+      "success": true,
+      "error": null,
+      "category": "Audit Rights",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T19:00:14.787440",
+      "latency_ms": 8180.884332978167,
+      "usage": {
+        "input_tokens": 6545,
+        "output_tokens": 345,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 6890
+      },
+      "cost_usd": 0.02481,
+      "success": true,
+      "error": null,
+      "category": "Insurance",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T19:00:15.035584",
+      "latency_ms": 7026.580833015032,
+      "usage": {
+        "input_tokens": 2492,
+        "output_tokens": 286,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 2778
+      },
+      "cost_usd": 0.011765999999999999,
+      "success": true,
+      "error": null,
+      "category": "No-Solicit Of Employees",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T19:00:16.332579",
+      "latency_ms": 11244.72825002158,
+      "usage": {
+        "input_tokens": 5611,
+        "output_tokens": 457,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 6068
+      },
+      "cost_usd": 0.023688,
+      "success": true,
+      "error": null,
+      "category": "License Grant",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T19:00:18.745689",
+      "latency_ms": 8280.793750018347,
+      "usage": {
+        "input_tokens": 6424,
+        "output_tokens": 347,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 6771
+      },
+      "cost_usd": 0.024477,
+      "success": true,
+      "error": null,
+      "category": "Change Of Control",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T19:00:18.930743",
+      "latency_ms": 7829.077958012931,
+      "usage": {
+        "input_tokens": 5753,
+        "output_tokens": 326,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 6079
+      },
+      "cost_usd": 0.022149000000000002,
+      "success": true,
+      "error": null,
+      "category": "Warranty Duration",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T19:00:18.938965",
+      "latency_ms": 6585.314750001999,
+      "usage": {
+        "input_tokens": 876,
+        "output_tokens": 337,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1213
+      },
+      "cost_usd": 0.007683000000000001,
+      "success": true,
+      "error": null,
+      "category": "Non-Transferable License",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T19:00:19.014072",
+      "latency_ms": 8494.49154199101,
+      "usage": {
+        "input_tokens": 8841,
+        "output_tokens": 368,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 9209
+      },
+      "cost_usd": 0.032042999999999995,
+      "success": true,
+      "error": null,
+      "category": "Renewal Term",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T19:00:19.549102",
+      "latency_ms": 7218.224332988029,
+      "usage": {
+        "input_tokens": 4844,
+        "output_tokens": 321,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 5165
+      },
+      "cost_usd": 0.019347000000000003,
+      "success": true,
+      "error": null,
+      "category": "No-Solicit Of Employees",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T19:00:20.466620",
+      "latency_ms": 5678.4210829937365,
+      "usage": {
+        "input_tokens": 828,
+        "output_tokens": 293,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1121
+      },
+      "cost_usd": 0.006879,
+      "success": true,
+      "error": null,
+      "category": "Change Of Control",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T19:00:20.551616",
+      "latency_ms": 12196.919625013834,
+      "usage": {
+        "input_tokens": 12118,
+        "output_tokens": 486,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 12604
+      },
+      "cost_usd": 0.043644,
+      "success": true,
+      "error": null,
+      "category": "Non-Compete",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T19:00:23.287314",
+      "latency_ms": 6952.807875000872,
+      "usage": {
+        "input_tokens": 6648,
+        "output_tokens": 346,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 6994
+      },
+      "cost_usd": 0.025134,
+      "success": true,
+      "error": null,
+      "category": "No-Solicit Of Employees",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T19:00:24.370187",
+      "latency_ms": 9333.880207996117,
+      "usage": {
+        "input_tokens": 7502,
+        "output_tokens": 387,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 7889
+      },
+      "cost_usd": 0.028311,
+      "success": true,
+      "error": null,
+      "category": "Renewal Term",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T19:00:24.905728",
+      "latency_ms": 19456.416083994554,
+      "usage": {
+        "input_tokens": 4511,
+        "output_tokens": 876,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 5387
+      },
+      "cost_usd": 0.026673,
+      "success": true,
+      "error": null,
+      "category": "Exclusivity",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T19:00:25.304907",
+      "latency_ms": 6558.19691598299,
+      "usage": {
+        "input_tokens": 1886,
+        "output_tokens": 327,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 2213
+      },
+      "cost_usd": 0.010563,
+      "success": true,
+      "error": null,
+      "category": "Ip Ownership Assignment",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T19:00:26.479240",
+      "latency_ms": 7539.702000009129,
+      "usage": {
+        "input_tokens": 3753,
+        "output_tokens": 356,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 4109
+      },
+      "cost_usd": 0.016599,
+      "success": true,
+      "error": null,
+      "category": "Post-Termination Services",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T19:00:27.118952",
+      "latency_ms": 7569.184708001558,
+      "usage": {
+        "input_tokens": 5767,
+        "output_tokens": 361,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 6128
+      },
+      "cost_usd": 0.022716,
+      "success": true,
+      "error": null,
+      "category": "Irrevocable Or Perpetual License",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T19:00:27.123370",
+      "latency_ms": 8191.932125017047,
+      "usage": {
+        "input_tokens": 8282,
+        "output_tokens": 443,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 8725
+      },
+      "cost_usd": 0.031491,
+      "success": true,
+      "error": null,
+      "category": "Non-Transferable License",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T19:00:31.751606",
+      "latency_ms": 11198.58095800737,
+      "usage": {
+        "input_tokens": 9270,
+        "output_tokens": 522,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 9792
+      },
+      "cost_usd": 0.03564,
+      "success": true,
+      "error": null,
+      "category": "Competitive Restriction Exception",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T19:00:32.687055",
+      "latency_ms": 12219.023917015875,
+      "usage": {
+        "input_tokens": 5978,
+        "output_tokens": 639,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 6617
+      },
+      "cost_usd": 0.027519,
+      "success": true,
+      "error": null,
+      "category": "Minimum Commitment",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T19:00:34.079102",
+      "latency_ms": 8772.311167005682,
+      "usage": {
+        "input_tokens": 50774,
+        "output_tokens": 312,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 51086
+      },
+      "cost_usd": 0.157002,
+      "success": true,
+      "error": null,
+      "category": "Non-Disparagement",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T19:00:34.284811",
+      "latency_ms": 9377.653249975992,
+      "usage": {
+        "input_tokens": 15471,
+        "output_tokens": 357,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 15828
+      },
+      "cost_usd": 0.051768,
+      "success": true,
+      "error": null,
+      "category": "Minimum Commitment",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T19:00:34.928692",
+      "latency_ms": 8448.682375019416,
+      "usage": {
+        "input_tokens": 33111,
+        "output_tokens": 301,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 33412
+      },
+      "cost_usd": 0.103848,
+      "success": true,
+      "error": null,
+      "category": "Minimum Commitment",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T19:00:40.224207",
+      "latency_ms": 21209.15216699359,
+      "usage": {
+        "input_tokens": 33115,
+        "output_tokens": 884,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 33999
+      },
+      "cost_usd": 0.112605,
+      "success": true,
+      "error": null,
+      "category": "Non-Transferable License",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T19:00:41.953667",
+      "latency_ms": 14833.724583004368,
+      "usage": {
+        "input_tokens": 7510,
+        "output_tokens": 623,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 8133
+      },
+      "cost_usd": 0.031875,
+      "success": true,
+      "error": null,
+      "category": "Covenant Not To Sue",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T19:00:42.809686",
+      "latency_ms": 15684.233208012301,
+      "usage": {
+        "input_tokens": 23574,
+        "output_tokens": 800,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 24374
+      },
+      "cost_usd": 0.082722,
+      "success": true,
+      "error": null,
+      "category": "Liquidated Damages",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T19:00:42.957562",
+      "latency_ms": 8671.609082986834,
+      "usage": {
+        "input_tokens": 7037,
+        "output_tokens": 402,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 7439
+      },
+      "cost_usd": 0.027141000000000002,
+      "success": true,
+      "error": null,
+      "category": "Third Party Beneficiary",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T19:00:44.835226",
+      "latency_ms": 20463.681167020695,
+      "usage": {
+        "input_tokens": 6099,
+        "output_tokens": 986,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 7085
+      },
+      "cost_usd": 0.033087,
+      "success": true,
+      "error": null,
+      "category": "Revenue/Profit Sharing",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T19:00:45.056798",
+      "latency_ms": 21768.507542001316,
+      "usage": {
+        "input_tokens": 20937,
+        "output_tokens": 978,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 21915
+      },
+      "cost_usd": 0.07748100000000001,
+      "success": true,
+      "error": null,
+      "category": "Revenue/Profit Sharing",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T19:00:48.882078",
+      "latency_ms": 5923.121332976734,
+      "usage": {
+        "input_tokens": 1876,
+        "output_tokens": 344,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 2220
+      },
+      "cost_usd": 0.010787999999999999,
+      "success": true,
+      "error": null,
+      "category": "Third Party Beneficiary",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T19:00:49.024890",
+      "latency_ms": 8794.475417002104,
+      "usage": {
+        "input_tokens": 10000,
+        "output_tokens": 395,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 10395
+      },
+      "cost_usd": 0.035925,
+      "success": true,
+      "error": null,
+      "category": "Joint Ip Ownership",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T19:00:49.416349",
+      "latency_ms": 6603.445290995296,
+      "usage": {
+        "input_tokens": 1652,
+        "output_tokens": 306,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1958
+      },
+      "cost_usd": 0.009545999999999999,
+      "success": true,
+      "error": null,
+      "category": "Minimum Commitment",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T19:00:49.603345",
+      "latency_ms": 7647.485708002932,
+      "usage": {
+        "input_tokens": 12786,
+        "output_tokens": 335,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 13121
+      },
+      "cost_usd": 0.043383,
+      "success": true,
+      "error": null,
+      "category": "Minimum Commitment",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T19:00:52.239942",
+      "latency_ms": 17308.985040988773,
+      "usage": {
+        "input_tokens": 17472,
+        "output_tokens": 707,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 18179
+      },
+      "cost_usd": 0.06302100000000001,
+      "success": true,
+      "error": null,
+      "category": "Minimum Commitment",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T19:00:52.576558",
+      "latency_ms": 20823.603833006928,
+      "usage": {
+        "input_tokens": 21588,
+        "output_tokens": 1136,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 22724
+      },
+      "cost_usd": 0.081804,
+      "success": true,
+      "error": null,
+      "category": "Uncapped Liability",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T19:00:53.727512",
+      "latency_ms": 8890.176124987192,
+      "usage": {
+        "input_tokens": 3420,
+        "output_tokens": 398,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 3818
+      },
+      "cost_usd": 0.01623,
+      "success": true,
+      "error": null,
+      "category": "Unlimited/All-You-Can-Eat-License",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T19:00:57.548971",
+      "latency_ms": 8131.003791000694,
+      "usage": {
+        "input_tokens": 3480,
+        "output_tokens": 312,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 3792
+      },
+      "cost_usd": 0.01512,
+      "success": true,
+      "error": null,
+      "category": "Volume Restriction",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T19:00:57.978753",
+      "latency_ms": 5734.793416020693,
+      "usage": {
+        "input_tokens": 1092,
+        "output_tokens": 327,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1419
+      },
+      "cost_usd": 0.008181,
+      "success": true,
+      "error": null,
+      "category": "Competitive Restriction Exception",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T19:00:58.375810",
+      "latency_ms": 9492.723250004929,
+      "usage": {
+        "input_tokens": 3412,
+        "output_tokens": 420,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 3832
+      },
+      "cost_usd": 0.016536,
+      "success": true,
+      "error": null,
+      "category": "Affiliate License-Licensor",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T19:00:58.684117",
+      "latency_ms": 13623.671292007202,
+      "usage": {
+        "input_tokens": 8863,
+        "output_tokens": 648,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 9511
+      },
+      "cost_usd": 0.036308999999999994,
+      "success": true,
+      "error": null,
+      "category": "Uncapped Liability",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T19:01:01.722169",
+      "latency_ms": 12694.076834013686,
+      "usage": {
+        "input_tokens": 2993,
+        "output_tokens": 487,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 3480
+      },
+      "cost_usd": 0.016284,
+      "success": true,
+      "error": null,
+      "category": "Volume Restriction",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T19:01:02.239738",
+      "latency_ms": 12634.752290992765,
+      "usage": {
+        "input_tokens": 26350,
+        "output_tokens": 505,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 26855
+      },
+      "cost_usd": 0.08662500000000001,
+      "success": true,
+      "error": null,
+      "category": "Price Restrictions",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T19:01:02.391651",
+      "latency_ms": 29702.916374983033,
+      "usage": {
+        "input_tokens": 60770,
+        "output_tokens": 1443,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 62213
+      },
+      "cost_usd": 0.203955,
+      "success": true,
+      "error": null,
+      "category": "Revenue/Profit Sharing",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T19:01:02.614219",
+      "latency_ms": 8885.56162500754,
+      "usage": {
+        "input_tokens": 6562,
+        "output_tokens": 365,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 6927
+      },
+      "cost_usd": 0.025161000000000003,
+      "success": true,
+      "error": null,
+      "category": "Revenue/Profit Sharing",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T19:01:08.124120",
+      "latency_ms": 34039.891332999105,
+      "usage": {
+        "input_tokens": 26367,
+        "output_tokens": 2190,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 28557
+      },
+      "cost_usd": 0.111951,
+      "success": true,
+      "error": null,
+      "category": "Affiliate License-Licensee",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T19:01:08.228476",
+      "latency_ms": 9849.838624999393,
+      "usage": {
+        "input_tokens": 10931,
+        "output_tokens": 462,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 11393
+      },
+      "cost_usd": 0.039722999999999994,
+      "success": true,
+      "error": null,
+      "category": "Affiliate License-Licensor",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T19:01:08.456723",
+      "latency_ms": 6058.478499995545,
+      "usage": {
+        "input_tokens": 972,
+        "output_tokens": 320,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1292
+      },
+      "cost_usd": 0.007716,
+      "success": true,
+      "error": null,
+      "category": "Liquidated Damages",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T19:01:08.537039",
+      "latency_ms": 6293.185583985178,
+      "usage": {
+        "input_tokens": 1467,
+        "output_tokens": 328,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1795
+      },
+      "cost_usd": 0.009321,
+      "success": true,
+      "error": null,
+      "category": "Most Favored Nation",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T19:01:08.783951",
+      "latency_ms": 7061.0095000010915,
+      "usage": {
+        "input_tokens": 6471,
+        "output_tokens": 317,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 6788
+      },
+      "cost_usd": 0.024168,
+      "success": true,
+      "error": null,
+      "category": "Unlimited/All-You-Can-Eat-License",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T19:01:08.804977",
+      "latency_ms": 11253.584792022593,
+      "usage": {
+        "input_tokens": 6312,
+        "output_tokens": 416,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 6728
+      },
+      "cost_usd": 0.025176,
+      "success": true,
+      "error": null,
+      "category": "Notice Period To Terminate Renewal",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T19:01:09.171407",
+      "latency_ms": 10486.0113330069,
+      "usage": {
+        "input_tokens": 54293,
+        "output_tokens": 413,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 54706
+      },
+      "cost_usd": 0.169074,
+      "success": true,
+      "error": null,
+      "category": "Most Favored Nation",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T19:01:09.412350",
+      "latency_ms": 11431.46654200973,
+      "usage": {
+        "input_tokens": 4438,
+        "output_tokens": 440,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 4878
+      },
+      "cost_usd": 0.019914,
+      "success": true,
+      "error": null,
+      "category": "Volume Restriction",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T19:01:10.270974",
+      "latency_ms": 7655.1010000112,
+      "usage": {
+        "input_tokens": 21587,
+        "output_tokens": 366,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 21953
+      },
+      "cost_usd": 0.070251,
+      "success": true,
+      "error": null,
+      "category": "Source Code Escrow",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T19:01:13.889542",
+      "latency_ms": 21310.026249993825,
+      "usage": {
+        "input_tokens": 19864,
+        "output_tokens": 855,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 20719
+      },
+      "cost_usd": 0.07241700000000001,
+      "success": true,
+      "error": null,
+      "category": "Price Restrictions",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T19:01:14.823450",
+      "latency_ms": 6285.314790991833,
+      "usage": {
+        "input_tokens": 4316,
+        "output_tokens": 277,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 4593
+      },
+      "cost_usd": 0.017103,
+      "success": true,
+      "error": null,
+      "category": "Non-Disparagement",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T19:01:15.178297",
+      "latency_ms": 5762.904542003525,
+      "usage": {
+        "input_tokens": 815,
+        "output_tokens": 284,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1099
+      },
+      "cost_usd": 0.006704999999999999,
+      "success": true,
+      "error": null,
+      "category": "Affiliate License-Licensor",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T19:01:16.767953",
+      "latency_ms": 8635.930249991361,
+      "usage": {
+        "input_tokens": 4899,
+        "output_tokens": 339,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 5238
+      },
+      "cost_usd": 0.019782,
+      "success": true,
+      "error": null,
+      "category": "Joint Ip Ownership",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T19:01:17.582178",
+      "latency_ms": 8776.433958002599,
+      "usage": {
+        "input_tokens": 6806,
+        "output_tokens": 385,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 7191
+      },
+      "cost_usd": 0.026193,
+      "success": true,
+      "error": null,
+      "category": "Unlimited/All-You-Can-Eat-License",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T19:01:18.085705",
+      "latency_ms": 9301.01729099988,
+      "usage": {
+        "input_tokens": 4901,
+        "output_tokens": 377,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 5278
+      },
+      "cost_usd": 0.020357999999999998,
+      "success": true,
+      "error": null,
+      "category": "Volume Restriction",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T19:01:19.427305",
+      "latency_ms": 11197.767667006701,
+      "usage": {
+        "input_tokens": 3364,
+        "output_tokens": 477,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 3841
+      },
+      "cost_usd": 0.017247,
+      "success": true,
+      "error": null,
+      "category": "Unlimited/All-You-Can-Eat-License",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T19:01:19.909250",
+      "latency_ms": 10736.542957980419,
+      "usage": {
+        "input_tokens": 24432,
+        "output_tokens": 463,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 24895
+      },
+      "cost_usd": 0.080241,
+      "success": true,
+      "error": null,
+      "category": "Competitive Restriction Exception",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T19:01:20.934604",
+      "latency_ms": 10659.727082995232,
+      "usage": {
+        "input_tokens": 23553,
+        "output_tokens": 419,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 23972
+      },
+      "cost_usd": 0.076944,
+      "success": true,
+      "error": null,
+      "category": "Non-Disparagement",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T19:01:23.006589",
+      "latency_ms": 7827.769291994628,
+      "usage": {
+        "input_tokens": 10121,
+        "output_tokens": 310,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 10431
+      },
+      "cost_usd": 0.035013,
+      "success": true,
+      "error": null,
+      "category": "Non-Disparagement",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T19:01:23.718835",
+      "latency_ms": 6133.897584018996,
+      "usage": {
+        "input_tokens": 1664,
+        "output_tokens": 349,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 2013
+      },
+      "cost_usd": 0.010227,
+      "success": true,
+      "error": null,
+      "category": "Competitive Restriction Exception",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T19:01:24.453234",
+      "latency_ms": 9629.170166008407,
+      "usage": {
+        "input_tokens": 5613,
+        "output_tokens": 438,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 6051
+      },
+      "cost_usd": 0.023409000000000003,
+      "success": true,
+      "error": null,
+      "category": "Notice Period To Terminate Renewal",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T19:01:25.122807",
+      "latency_ms": 16663.99154200917,
+      "usage": {
+        "input_tokens": 4348,
+        "output_tokens": 732,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 5080
+      },
+      "cost_usd": 0.024024,
+      "success": true,
+      "error": null,
+      "category": "Affiliate License-Licensee",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T19:01:25.603957",
+      "latency_ms": 11712.141458003316,
+      "usage": {
+        "input_tokens": 3782,
+        "output_tokens": 551,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 4333
+      },
+      "cost_usd": 0.019611,
+      "success": true,
+      "error": null,
+      "category": "Volume Restriction",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T19:01:26.797569",
+      "latency_ms": 10028.791624994483,
+      "usage": {
+        "input_tokens": 6780,
+        "output_tokens": 489,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 7269
+      },
+      "cost_usd": 0.027674999999999998,
+      "success": true,
+      "error": null,
+      "category": "Notice Period To Terminate Renewal",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-sonnet-4.6",
+      "model_id": "claude-sonnet-4-6",
+      "timestamp": "2026-04-16T19:01:28.419226",
+      "latency_ms": 10332.714499993017,
+      "usage": {
+        "input_tokens": 5513,
+        "output_tokens": 447,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 5960
+      },
+      "cost_usd": 0.023244,
+      "success": true,
+      "error": null,
+      "category": "Affiliate License-Licensee",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-sonnet-4.6_20260416_185848"
+    }
+  ]
+}

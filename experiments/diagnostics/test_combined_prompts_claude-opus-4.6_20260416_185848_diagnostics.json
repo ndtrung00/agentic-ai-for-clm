@@ -1,0 +1,2884 @@
+{
+  "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848",
+  "run_mode": "test",
+  "start_time": "2026-04-16T18:58:48.880011",
+  "summary": {
+    "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848",
+    "total_calls": 150,
+    "successful_calls": 150,
+    "failed_calls": 0,
+    "success_rate": 1.0,
+    "total_input_tokens": 1643142,
+    "total_output_tokens": 62775,
+    "total_tokens": 1705917,
+    "total_cost_usd": 9.785084999999995,
+    "avg_latency_ms": 9828.619784724433,
+    "min_latency_ms": 4806.752707983833,
+    "max_latency_ms": 24598.29195801285,
+    "by_model": {
+      "claude-opus-4.6": {
+        "calls": 150,
+        "input_tokens": 1643142,
+        "output_tokens": 62775,
+        "cost_usd": 9.785084999999995,
+        "avg_latency_ms": 9828.619784724433
+      }
+    },
+    "by_agent": {
+      "combined_prompts": 150
+    },
+    "duration_seconds": 152.371476
+  },
+  "calls": [
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T18:58:54.263658",
+      "latency_ms": 5162.935542000923,
+      "usage": {
+        "input_tokens": 1757,
+        "output_tokens": 198,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1955
+      },
+      "cost_usd": 0.013735,
+      "success": true,
+      "error": null,
+      "category": "Effective Date",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T18:58:54.682305",
+      "latency_ms": 5581.487166986335,
+      "usage": {
+        "input_tokens": 2971,
+        "output_tokens": 217,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 3188
+      },
+      "cost_usd": 0.02028,
+      "success": true,
+      "error": null,
+      "category": "Document Name",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T18:58:55.736271",
+      "latency_ms": 6634.574333991623,
+      "usage": {
+        "input_tokens": 4888,
+        "output_tokens": 250,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 5138
+      },
+      "cost_usd": 0.030690000000000002,
+      "success": true,
+      "error": null,
+      "category": "Governing Law",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T18:58:56.217808",
+      "latency_ms": 7116.0333329753485,
+      "usage": {
+        "input_tokens": 4426,
+        "output_tokens": 318,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 4744
+      },
+      "cost_usd": 0.030080000000000003,
+      "success": true,
+      "error": null,
+      "category": "Parties",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T18:58:57.199527",
+      "latency_ms": 8098.338500014506,
+      "usage": {
+        "input_tokens": 1069,
+        "output_tokens": 415,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1484
+      },
+      "cost_usd": 0.01572,
+      "success": true,
+      "error": null,
+      "category": "Parties",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T18:58:57.719085",
+      "latency_ms": 8618.059791973792,
+      "usage": {
+        "input_tokens": 4693,
+        "output_tokens": 326,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 5019
+      },
+      "cost_usd": 0.031615000000000004,
+      "success": true,
+      "error": null,
+      "category": "Document Name",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T18:58:58.351152",
+      "latency_ms": 9250.217666995013,
+      "usage": {
+        "input_tokens": 3708,
+        "output_tokens": 459,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 4167
+      },
+      "cost_usd": 0.030015,
+      "success": true,
+      "error": null,
+      "category": "Document Name",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T18:58:58.403741",
+      "latency_ms": 9302.6306249958,
+      "usage": {
+        "input_tokens": 12100,
+        "output_tokens": 311,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 12411
+      },
+      "cost_usd": 0.068275,
+      "success": true,
+      "error": null,
+      "category": "Expiration Date",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T18:58:58.767699",
+      "latency_ms": 9666.43266598112,
+      "usage": {
+        "input_tokens": 4771,
+        "output_tokens": 332,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 5103
+      },
+      "cost_usd": 0.032155,
+      "success": true,
+      "error": null,
+      "category": "Expiration Date",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T18:59:01.848408",
+      "latency_ms": 6111.075958004221,
+      "usage": {
+        "input_tokens": 13074,
+        "output_tokens": 366,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 13440
+      },
+      "cost_usd": 0.07452,
+      "success": true,
+      "error": null,
+      "category": "Governing Law",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T18:59:02.838580",
+      "latency_ms": 8573.948458011728,
+      "usage": {
+        "input_tokens": 8266,
+        "output_tokens": 236,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 8502
+      },
+      "cost_usd": 0.04723,
+      "success": true,
+      "error": null,
+      "category": "Governing Law",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T18:59:04.204810",
+      "latency_ms": 5435.519666993059,
+      "usage": {
+        "input_tokens": 788,
+        "output_tokens": 181,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 969
+      },
+      "cost_usd": 0.008465,
+      "success": true,
+      "error": null,
+      "category": "Expiration Date",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T18:59:04.917218",
+      "latency_ms": 8698.090499994578,
+      "usage": {
+        "input_tokens": 35018,
+        "output_tokens": 332,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 35350
+      },
+      "cost_usd": 0.18339,
+      "success": true,
+      "error": null,
+      "category": "Document Name",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T18:59:04.924575",
+      "latency_ms": 6572.672790993238,
+      "usage": {
+        "input_tokens": 1767,
+        "output_tokens": 252,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 2019
+      },
+      "cost_usd": 0.015135,
+      "success": true,
+      "error": null,
+      "category": "Governing Law",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T18:59:05.981318",
+      "latency_ms": 7576.569917000597,
+      "usage": {
+        "input_tokens": 939,
+        "output_tokens": 290,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1229
+      },
+      "cost_usd": 0.011944999999999999,
+      "success": true,
+      "error": null,
+      "category": "Effective Date",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T18:59:06.497583",
+      "latency_ms": 8777.323125017574,
+      "usage": {
+        "input_tokens": 3145,
+        "output_tokens": 448,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 3593
+      },
+      "cost_usd": 0.026925,
+      "success": true,
+      "error": null,
+      "category": "Effective Date",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T18:59:06.571223",
+      "latency_ms": 17470.666250010254,
+      "usage": {
+        "input_tokens": 54258,
+        "output_tokens": 687,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 54945
+      },
+      "cost_usd": 0.288465,
+      "success": true,
+      "error": null,
+      "category": "Parties",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T18:59:07.176192",
+      "latency_ms": 9975.46291598701,
+      "usage": {
+        "input_tokens": 4810,
+        "output_tokens": 419,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 5229
+      },
+      "cost_usd": 0.034525,
+      "success": true,
+      "error": null,
+      "category": "Parties",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T18:59:07.772886",
+      "latency_ms": 13089.787625009194,
+      "usage": {
+        "input_tokens": 7014,
+        "output_tokens": 642,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 7656
+      },
+      "cost_usd": 0.051120000000000006,
+      "success": true,
+      "error": null,
+      "category": "Expiration Date",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T18:59:09.647115",
+      "latency_ms": 5440.6625000119675,
+      "usage": {
+        "input_tokens": 2447,
+        "output_tokens": 244,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 2691
+      },
+      "cost_usd": 0.018335,
+      "success": true,
+      "error": null,
+      "category": "Effective Date",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T18:59:10.907633",
+      "latency_ms": 8067.712291987846,
+      "usage": {
+        "input_tokens": 1068,
+        "output_tokens": 328,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1396
+      },
+      "cost_usd": 0.01354,
+      "success": true,
+      "error": null,
+      "category": "Agreement Date",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T18:59:12.681109",
+      "latency_ms": 10830.4861659999,
+      "usage": {
+        "input_tokens": 68789,
+        "output_tokens": 383,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 69172
+      },
+      "cost_usd": 0.35352,
+      "success": true,
+      "error": null,
+      "category": "Agreement Date",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T18:59:13.305032",
+      "latency_ms": 6126.567583996803,
+      "usage": {
+        "input_tokens": 1081,
+        "output_tokens": 273,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1354
+      },
+      "cost_usd": 0.012230000000000001,
+      "success": true,
+      "error": null,
+      "category": "Governing Law",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T18:59:14.533767",
+      "latency_ms": 9607.699957996374,
+      "usage": {
+        "input_tokens": 6770,
+        "output_tokens": 336,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 7106
+      },
+      "cost_usd": 0.042249999999999996,
+      "success": true,
+      "error": null,
+      "category": "Governing Law",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T18:59:15.500922",
+      "latency_ms": 10578.95541601465,
+      "usage": {
+        "input_tokens": 24395,
+        "output_tokens": 467,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 24862
+      },
+      "cost_usd": 0.13365,
+      "success": true,
+      "error": null,
+      "category": "Agreement Date",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T18:59:15.616386",
+      "latency_ms": 7842.221041995799,
+      "usage": {
+        "input_tokens": 2970,
+        "output_tokens": 394,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 3364
+      },
+      "cost_usd": 0.024700000000000003,
+      "success": true,
+      "error": null,
+      "category": "Effective Date",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T18:59:15.628237",
+      "latency_ms": 9129.82687499607,
+      "usage": {
+        "input_tokens": 3282,
+        "output_tokens": 368,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 3650
+      },
+      "cost_usd": 0.02561,
+      "success": true,
+      "error": null,
+      "category": "Agreement Date",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T18:59:17.310279",
+      "latency_ms": 11327.519792015664,
+      "usage": {
+        "input_tokens": 14795,
+        "output_tokens": 430,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 15225
+      },
+      "cost_usd": 0.084725,
+      "success": true,
+      "error": null,
+      "category": "Expiration Date",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T18:59:17.606359",
+      "latency_ms": 11030.948832980357,
+      "usage": {
+        "input_tokens": 26335,
+        "output_tokens": 359,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 26694
+      },
+      "cost_usd": 0.14065000000000003,
+      "success": true,
+      "error": null,
+      "category": "Expiration Date",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T18:59:17.922474",
+      "latency_ms": 7013.976000016555,
+      "usage": {
+        "input_tokens": 2568,
+        "output_tokens": 392,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 2960
+      },
+      "cost_usd": 0.02264,
+      "success": true,
+      "error": null,
+      "category": "Effective Date",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T18:59:18.177273",
+      "latency_ms": 4871.329874993535,
+      "usage": {
+        "input_tokens": 936,
+        "output_tokens": 191,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1127
+      },
+      "cost_usd": 0.009455000000000002,
+      "success": true,
+      "error": null,
+      "category": "Agreement Date",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T18:59:19.467424",
+      "latency_ms": 9819.323624979006,
+      "usage": {
+        "input_tokens": 6760,
+        "output_tokens": 449,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 7209
+      },
+      "cost_usd": 0.045024999999999996,
+      "success": true,
+      "error": null,
+      "category": "Effective Date",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T18:59:20.922306",
+      "latency_ms": 8230.28383302153,
+      "usage": {
+        "input_tokens": 1853,
+        "output_tokens": 383,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 2236
+      },
+      "cost_usd": 0.018840000000000003,
+      "success": true,
+      "error": null,
+      "category": "Expiration Date",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T18:59:22.743095",
+      "latency_ms": 7240.664500015555,
+      "usage": {
+        "input_tokens": 1070,
+        "output_tokens": 377,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1447
+      },
+      "cost_usd": 0.014775000000000002,
+      "success": true,
+      "error": null,
+      "category": "Expiration Date",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T18:59:24.207113",
+      "latency_ms": 9672.436708991881,
+      "usage": {
+        "input_tokens": 1421,
+        "output_tokens": 561,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1982
+      },
+      "cost_usd": 0.021130000000000003,
+      "success": true,
+      "error": null,
+      "category": "Effective Date",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T18:59:24.590556",
+      "latency_ms": 6662.814459006768,
+      "usage": {
+        "input_tokens": 1640,
+        "output_tokens": 272,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1912
+      },
+      "cost_usd": 0.015,
+      "success": true,
+      "error": null,
+      "category": "Governing Law",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T18:59:25.126849",
+      "latency_ms": 9509.568540990585,
+      "usage": {
+        "input_tokens": 21539,
+        "output_tokens": 439,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 21978
+      },
+      "cost_usd": 0.11867000000000001,
+      "success": true,
+      "error": null,
+      "category": "Agreement Date",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T18:59:27.245947",
+      "latency_ms": 11617.01020799228,
+      "usage": {
+        "input_tokens": 6603,
+        "output_tokens": 472,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 7075
+      },
+      "cost_usd": 0.044815,
+      "success": true,
+      "error": null,
+      "category": "Effective Date",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T18:59:27.636177",
+      "latency_ms": 6712.545208982192,
+      "usage": {
+        "input_tokens": 1204,
+        "output_tokens": 314,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1518
+      },
+      "cost_usd": 0.01387,
+      "success": true,
+      "error": null,
+      "category": "Governing Law",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T18:59:28.150105",
+      "latency_ms": 5405.766832991503,
+      "usage": {
+        "input_tokens": 1769,
+        "output_tokens": 223,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1992
+      },
+      "cost_usd": 0.01442,
+      "success": true,
+      "error": null,
+      "category": "Expiration Date",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T18:59:29.068658",
+      "latency_ms": 11461.709458992118,
+      "usage": {
+        "input_tokens": 15450,
+        "output_tokens": 465,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 15915
+      },
+      "cost_usd": 0.088875,
+      "success": true,
+      "error": null,
+      "category": "Expiration Date",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T18:59:29.308895",
+      "latency_ms": 11997.459415986668,
+      "usage": {
+        "input_tokens": 5786,
+        "output_tokens": 447,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 6233
+      },
+      "cost_usd": 0.040105,
+      "success": true,
+      "error": null,
+      "category": "Expiration Date",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T18:59:30.428794",
+      "latency_ms": 12250.679292017594,
+      "usage": {
+        "input_tokens": 3707,
+        "output_tokens": 860,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 4567
+      },
+      "cost_usd": 0.040035,
+      "success": true,
+      "error": null,
+      "category": "Effective Date",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T18:59:30.605606",
+      "latency_ms": 6014.239499985706,
+      "usage": {
+        "input_tokens": 2459,
+        "output_tokens": 246,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 2705
+      },
+      "cost_usd": 0.018445,
+      "success": true,
+      "error": null,
+      "category": "Expiration Date",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T18:59:30.704556",
+      "latency_ms": 6496.288249996724,
+      "usage": {
+        "input_tokens": 1768,
+        "output_tokens": 260,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 2028
+      },
+      "cost_usd": 0.015340000000000001,
+      "success": true,
+      "error": null,
+      "category": "Governing Law",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T18:59:31.152802",
+      "latency_ms": 11684.607416013023,
+      "usage": {
+        "input_tokens": 29940,
+        "output_tokens": 488,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 30428
+      },
+      "cost_usd": 0.1619,
+      "success": true,
+      "error": null,
+      "category": "Effective Date",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T18:59:35.101792",
+      "latency_ms": 5791.275582974777,
+      "usage": {
+        "input_tokens": 2583,
+        "output_tokens": 240,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 2823
+      },
+      "cost_usd": 0.018915,
+      "success": true,
+      "error": null,
+      "category": "Anti-Assignment",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T18:59:35.201757",
+      "latency_ms": 7564.732083003037,
+      "usage": {
+        "input_tokens": 776,
+        "output_tokens": 298,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1074
+      },
+      "cost_usd": 0.01133,
+      "success": true,
+      "error": null,
+      "category": "Effective Date",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T18:59:35.565825",
+      "latency_ms": 10436.873458995251,
+      "usage": {
+        "input_tokens": 14783,
+        "output_tokens": 488,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 15271
+      },
+      "cost_usd": 0.086115,
+      "success": true,
+      "error": null,
+      "category": "Effective Date",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T18:59:37.539697",
+      "latency_ms": 10292.759582982399,
+      "usage": {
+        "input_tokens": 1583,
+        "output_tokens": 425,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 2008
+      },
+      "cost_usd": 0.01854,
+      "success": true,
+      "error": null,
+      "category": "Expiration Date",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T18:59:38.638342",
+      "latency_ms": 10484.285999991698,
+      "usage": {
+        "input_tokens": 3329,
+        "output_tokens": 387,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 3716
+      },
+      "cost_usd": 0.026320000000000003,
+      "success": true,
+      "error": null,
+      "category": "Expiration Date",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T18:59:40.968830",
+      "latency_ms": 10362.203750002664,
+      "usage": {
+        "input_tokens": 4442,
+        "output_tokens": 519,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 4961
+      },
+      "cost_usd": 0.035185,
+      "success": true,
+      "error": null,
+      "category": "Termination For Convenience",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T18:59:41.742940",
+      "latency_ms": 12672.516666003503,
+      "usage": {
+        "input_tokens": 33134,
+        "output_tokens": 476,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 33610
+      },
+      "cost_usd": 0.17757,
+      "success": true,
+      "error": null,
+      "category": "No-Solicit Of Employees",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T18:59:43.403344",
+      "latency_ms": 12973.30954199424,
+      "usage": {
+        "input_tokens": 4904,
+        "output_tokens": 794,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 5698
+      },
+      "cost_usd": 0.04437000000000001,
+      "success": true,
+      "error": null,
+      "category": "Non-Transferable License",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T18:59:45.071721",
+      "latency_ms": 9504.871542012552,
+      "usage": {
+        "input_tokens": 6486,
+        "output_tokens": 448,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 6934
+      },
+      "cost_usd": 0.04363,
+      "success": true,
+      "error": null,
+      "category": "Audit Rights",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T18:59:45.698532",
+      "latency_ms": 14540.839499997674,
+      "usage": {
+        "input_tokens": 68816,
+        "output_tokens": 607,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 69423
+      },
+      "cost_usd": 0.359255,
+      "success": true,
+      "error": null,
+      "category": "Renewal Term",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T18:59:47.381075",
+      "latency_ms": 12277.660291001666,
+      "usage": {
+        "input_tokens": 15426,
+        "output_tokens": 471,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 15897
+      },
+      "cost_usd": 0.08890500000000001,
+      "success": true,
+      "error": null,
+      "category": "Audit Rights",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T18:59:47.908349",
+      "latency_ms": 12705.699582991656,
+      "usage": {
+        "input_tokens": 6269,
+        "output_tokens": 578,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 6847
+      },
+      "cost_usd": 0.045794999999999995,
+      "success": true,
+      "error": null,
+      "category": "License Grant",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T18:59:48.086561",
+      "latency_ms": 9447.353708004812,
+      "usage": {
+        "input_tokens": 6399,
+        "output_tokens": 552,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 6951
+      },
+      "cost_usd": 0.045795,
+      "success": true,
+      "error": null,
+      "category": "Insurance",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T18:59:52.413398",
+      "latency_ms": 9008.322832989506,
+      "usage": {
+        "input_tokens": 7147,
+        "output_tokens": 496,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 7643
+      },
+      "cost_usd": 0.048135000000000004,
+      "success": true,
+      "error": null,
+      "category": "Anti-Assignment",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T18:59:53.530515",
+      "latency_ms": 12560.505166999064,
+      "usage": {
+        "input_tokens": 8274,
+        "output_tokens": 736,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 9010
+      },
+      "cost_usd": 0.05977,
+      "success": true,
+      "error": null,
+      "category": "License Grant",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T18:59:53.673279",
+      "latency_ms": 6290.261125017423,
+      "usage": {
+        "input_tokens": 6337,
+        "output_tokens": 232,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 6569
+      },
+      "cost_usd": 0.037485,
+      "success": true,
+      "error": null,
+      "category": "No-Solicit Of Employees",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T18:59:53.768945",
+      "latency_ms": 8065.972916985629,
+      "usage": {
+        "input_tokens": 4726,
+        "output_tokens": 281,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 5007
+      },
+      "cost_usd": 0.030655,
+      "success": true,
+      "error": null,
+      "category": "Irrevocable Or Perpetual License",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T18:59:54.267342",
+      "latency_ms": 9194.174875010503,
+      "usage": {
+        "input_tokens": 29964,
+        "output_tokens": 331,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 30295
+      },
+      "cost_usd": 0.158095,
+      "success": true,
+      "error": null,
+      "category": "Renewal Term",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T18:59:55.303697",
+      "latency_ms": 24598.29195801285,
+      "usage": {
+        "input_tokens": 20928,
+        "output_tokens": 1032,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 21960
+      },
+      "cost_usd": 0.13044,
+      "success": true,
+      "error": null,
+      "category": "License Grant",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T18:59:56.547724",
+      "latency_ms": 8637.478207994718,
+      "usage": {
+        "input_tokens": 1861,
+        "output_tokens": 438,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 2299
+      },
+      "cost_usd": 0.020255000000000002,
+      "success": true,
+      "error": null,
+      "category": "Warranty Duration",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T18:59:57.121353",
+      "latency_ms": 9033.448000001954,
+      "usage": {
+        "input_tokens": 10155,
+        "output_tokens": 622,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 10777
+      },
+      "cost_usd": 0.066325,
+      "success": true,
+      "error": null,
+      "category": "Post-Termination Services",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T19:00:00.232840",
+      "latency_ms": 18487.561167014064,
+      "usage": {
+        "input_tokens": 35585,
+        "output_tokens": 903,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 36488
+      },
+      "cost_usd": 0.2005,
+      "success": true,
+      "error": null,
+      "category": "Ip Ownership Assignment",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T19:00:01.341047",
+      "latency_ms": 7071.860125026433,
+      "usage": {
+        "input_tokens": 1784,
+        "output_tokens": 264,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 2048
+      },
+      "cost_usd": 0.015520000000000003,
+      "success": true,
+      "error": null,
+      "category": "Non-Transferable License",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T19:00:01.545456",
+      "latency_ms": 7775.916583981598,
+      "usage": {
+        "input_tokens": 5619,
+        "output_tokens": 323,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 5942
+      },
+      "cost_usd": 0.03617,
+      "success": true,
+      "error": null,
+      "category": "Non-Transferable License",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T19:00:01.772826",
+      "latency_ms": 24232.14987499523,
+      "usage": {
+        "input_tokens": 60772,
+        "output_tokens": 1093,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 61865
+      },
+      "cost_usd": 0.331185,
+      "success": true,
+      "error": null,
+      "category": "Audit Rights",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T19:00:02.247447",
+      "latency_ms": 6939.732083003037,
+      "usage": {
+        "input_tokens": 9256,
+        "output_tokens": 276,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 9532
+      },
+      "cost_usd": 0.053180000000000005,
+      "success": true,
+      "error": null,
+      "category": "Warranty Duration",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T19:00:04.261536",
+      "latency_ms": 10729.477874992881,
+      "usage": {
+        "input_tokens": 14821,
+        "output_tokens": 339,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 15160
+      },
+      "cost_usd": 0.08258,
+      "success": true,
+      "error": null,
+      "category": "No-Solicit Of Customers",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T19:00:05.751672",
+      "latency_ms": 8628.375792002771,
+      "usage": {
+        "input_tokens": 3015,
+        "output_tokens": 365,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 3380
+      },
+      "cost_usd": 0.0242,
+      "success": true,
+      "error": null,
+      "category": "Ip Ownership Assignment",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T19:00:05.853249",
+      "latency_ms": 13438.81079100538,
+      "usage": {
+        "input_tokens": 8847,
+        "output_tokens": 410,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 9257
+      },
+      "cost_usd": 0.054485,
+      "success": true,
+      "error": null,
+      "category": "Non-Compete",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T19:00:06.350378",
+      "latency_ms": 9802.03008299577,
+      "usage": {
+        "input_tokens": 23778,
+        "output_tokens": 365,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 24143
+      },
+      "cost_usd": 0.128015,
+      "success": true,
+      "error": null,
+      "category": "Termination For Convenience",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T19:00:06.782030",
+      "latency_ms": 6542.212792002829,
+      "usage": {
+        "input_tokens": 4551,
+        "output_tokens": 222,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 4773
+      },
+      "cost_usd": 0.028305,
+      "success": true,
+      "error": null,
+      "category": "No-Solicit Of Employees",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T19:00:06.913180",
+      "latency_ms": 13238.965541997459,
+      "usage": {
+        "input_tokens": 19883,
+        "output_tokens": 584,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 20467
+      },
+      "cost_usd": 0.114015,
+      "success": true,
+      "error": null,
+      "category": "Post-Termination Services",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T19:00:07.719332",
+      "latency_ms": 5470.984000014141,
+      "usage": {
+        "input_tokens": 5096,
+        "output_tokens": 181,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 5277
+      },
+      "cost_usd": 0.030005000000000004,
+      "success": true,
+      "error": null,
+      "category": "Audit Rights",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T19:00:09.405046",
+      "latency_ms": 7626.613125001313,
+      "usage": {
+        "input_tokens": 1600,
+        "output_tokens": 344,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1944
+      },
+      "cost_usd": 0.0166,
+      "success": true,
+      "error": null,
+      "category": "Termination For Convenience",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T19:00:11.744085",
+      "latency_ms": 10197.435125010088,
+      "usage": {
+        "input_tokens": 5113,
+        "output_tokens": 403,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 5516
+      },
+      "cost_usd": 0.035640000000000005,
+      "success": true,
+      "error": null,
+      "category": "Change Of Control",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T19:00:12.313864",
+      "latency_ms": 5962.168291007401,
+      "usage": {
+        "input_tokens": 2492,
+        "output_tokens": 208,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 2700
+      },
+      "cost_usd": 0.017660000000000002,
+      "success": true,
+      "error": null,
+      "category": "No-Solicit Of Employees",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T19:00:12.375876",
+      "latency_ms": 6521.702750003897,
+      "usage": {
+        "input_tokens": 6545,
+        "output_tokens": 202,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 6747
+      },
+      "cost_usd": 0.037774999999999996,
+      "success": true,
+      "error": null,
+      "category": "Insurance",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T19:00:13.911332",
+      "latency_ms": 12566.382958990289,
+      "usage": {
+        "input_tokens": 5751,
+        "output_tokens": 296,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 6047
+      },
+      "cost_usd": 0.03615500000000001,
+      "success": true,
+      "error": null,
+      "category": "License Grant",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T19:00:16.465443",
+      "latency_ms": 9549.844957975438,
+      "usage": {
+        "input_tokens": 6424,
+        "output_tokens": 383,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 6807
+      },
+      "cost_usd": 0.041695,
+      "success": true,
+      "error": null,
+      "category": "Change Of Control",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T19:00:16.519681",
+      "latency_ms": 12257.07079100539,
+      "usage": {
+        "input_tokens": 5611,
+        "output_tokens": 430,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 6041
+      },
+      "cost_usd": 0.038805,
+      "success": true,
+      "error": null,
+      "category": "License Grant",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T19:00:16.765297",
+      "latency_ms": 9045.2845840191,
+      "usage": {
+        "input_tokens": 8841,
+        "output_tokens": 366,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 9207
+      },
+      "cost_usd": 0.05335499999999999,
+      "success": true,
+      "error": null,
+      "category": "Renewal Term",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T19:00:17.266818",
+      "latency_ms": 7860.228959005326,
+      "usage": {
+        "input_tokens": 5753,
+        "output_tokens": 300,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 6053
+      },
+      "cost_usd": 0.036265000000000006,
+      "success": true,
+      "error": null,
+      "category": "Warranty Duration",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T19:00:18.407316",
+      "latency_ms": 6092.197291989578,
+      "usage": {
+        "input_tokens": 876,
+        "output_tokens": 273,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1149
+      },
+      "cost_usd": 0.011205000000000001,
+      "success": true,
+      "error": null,
+      "category": "Non-Transferable License",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T19:00:18.420697",
+      "latency_ms": 11637.816624977859,
+      "usage": {
+        "input_tokens": 12118,
+        "output_tokens": 434,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 12552
+      },
+      "cost_usd": 0.07144,
+      "success": true,
+      "error": null,
+      "category": "Non-Compete",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T19:00:18.456175",
+      "latency_ms": 12703.537833003793,
+      "usage": {
+        "input_tokens": 4511,
+        "output_tokens": 774,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 5285
+      },
+      "cost_usd": 0.041905000000000005,
+      "success": true,
+      "error": null,
+      "category": "Exclusivity",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T19:00:19.443440",
+      "latency_ms": 7698.527667002054,
+      "usage": {
+        "input_tokens": 4844,
+        "output_tokens": 354,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 5198
+      },
+      "cost_usd": 0.03307,
+      "success": true,
+      "error": null,
+      "category": "No-Solicit Of Employees",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T19:00:19.517564",
+      "latency_ms": 7140.8384579990525,
+      "usage": {
+        "input_tokens": 828,
+        "output_tokens": 319,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1147
+      },
+      "cost_usd": 0.012115,
+      "success": true,
+      "error": null,
+      "category": "Change Of Control",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T19:00:22.801904",
+      "latency_ms": 6334.766790998401,
+      "usage": {
+        "input_tokens": 6648,
+        "output_tokens": 252,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 6900
+      },
+      "cost_usd": 0.03954,
+      "success": true,
+      "error": null,
+      "category": "No-Solicit Of Employees",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T19:00:23.321468",
+      "latency_ms": 6801.197499997215,
+      "usage": {
+        "input_tokens": 1886,
+        "output_tokens": 313,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 2199
+      },
+      "cost_usd": 0.017255,
+      "success": true,
+      "error": null,
+      "category": "Ip Ownership Assignment",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T19:00:24.835940",
+      "latency_ms": 7568.4580839879345,
+      "usage": {
+        "input_tokens": 3753,
+        "output_tokens": 383,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 4136
+      },
+      "cost_usd": 0.02834,
+      "success": true,
+      "error": null,
+      "category": "Post-Termination Services",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T19:00:25.442917",
+      "latency_ms": 11530.178290995536,
+      "usage": {
+        "input_tokens": 7502,
+        "output_tokens": 508,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 8010
+      },
+      "cost_usd": 0.050210000000000005,
+      "success": true,
+      "error": null,
+      "category": "Renewal Term",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T19:00:26.296087",
+      "latency_ms": 9529.0952079813,
+      "usage": {
+        "input_tokens": 8282,
+        "output_tokens": 491,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 8773
+      },
+      "cost_usd": 0.053685000000000004,
+      "success": true,
+      "error": null,
+      "category": "Non-Transferable License",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T19:00:26.511843",
+      "latency_ms": 8054.370333004044,
+      "usage": {
+        "input_tokens": 5978,
+        "output_tokens": 362,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 6340
+      },
+      "cost_usd": 0.03894,
+      "success": true,
+      "error": null,
+      "category": "Minimum Commitment",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T19:00:28.684802",
+      "latency_ms": 10262.467415974243,
+      "usage": {
+        "input_tokens": 5767,
+        "output_tokens": 378,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 6145
+      },
+      "cost_usd": 0.038285,
+      "success": true,
+      "error": null,
+      "category": "Irrevocable Or Perpetual License",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T19:00:33.570887",
+      "latency_ms": 14126.188666996313,
+      "usage": {
+        "input_tokens": 9270,
+        "output_tokens": 602,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 9872
+      },
+      "cost_usd": 0.061399999999999996,
+      "success": true,
+      "error": null,
+      "category": "Competitive Restriction Exception",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T19:00:34.568965",
+      "latency_ms": 11246.771541977068,
+      "usage": {
+        "input_tokens": 15471,
+        "output_tokens": 407,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 15878
+      },
+      "cost_usd": 0.08753000000000001,
+      "success": true,
+      "error": null,
+      "category": "Minimum Commitment",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T19:00:35.717661",
+      "latency_ms": 10880.484042019816,
+      "usage": {
+        "input_tokens": 50774,
+        "output_tokens": 317,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 51091
+      },
+      "cost_usd": 0.261795,
+      "success": true,
+      "error": null,
+      "category": "Non-Disparagement",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T19:00:35.855611",
+      "latency_ms": 17446.684124995954,
+      "usage": {
+        "input_tokens": 33115,
+        "output_tokens": 760,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 33875
+      },
+      "cost_usd": 0.184575,
+      "success": true,
+      "error": null,
+      "category": "Non-Transferable License",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T19:00:37.566828",
+      "latency_ms": 11269.76145899971,
+      "usage": {
+        "input_tokens": 7510,
+        "output_tokens": 526,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 8036
+      },
+      "cost_usd": 0.0507,
+      "success": true,
+      "error": null,
+      "category": "Covenant Not To Sue",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T19:00:38.552739",
+      "latency_ms": 13107.501624996075,
+      "usage": {
+        "input_tokens": 33111,
+        "output_tokens": 538,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 33649
+      },
+      "cost_usd": 0.17900499999999997,
+      "success": true,
+      "error": null,
+      "category": "Minimum Commitment",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T19:00:38.860724",
+      "latency_ms": 16057.910834002541,
+      "usage": {
+        "input_tokens": 6099,
+        "output_tokens": 611,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 6710
+      },
+      "cost_usd": 0.045770000000000005,
+      "success": true,
+      "error": null,
+      "category": "Revenue/Profit Sharing",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T19:00:39.460133",
+      "latency_ms": 19941.602082981262,
+      "usage": {
+        "input_tokens": 20937,
+        "output_tokens": 749,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 21686
+      },
+      "cost_usd": 0.12341000000000002,
+      "success": true,
+      "error": null,
+      "category": "Revenue/Profit Sharing",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T19:00:40.860841",
+      "latency_ms": 14348.095541994553,
+      "usage": {
+        "input_tokens": 23574,
+        "output_tokens": 744,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 24318
+      },
+      "cost_usd": 0.13647,
+      "success": true,
+      "error": null,
+      "category": "Liquidated Damages",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T19:00:42.666633",
+      "latency_ms": 13981.036250013858,
+      "usage": {
+        "input_tokens": 21588,
+        "output_tokens": 727,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 22315
+      },
+      "cost_usd": 0.126115,
+      "success": true,
+      "error": null,
+      "category": "Uncapped Liability",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T19:00:45.272335",
+      "latency_ms": 9551.44704200211,
+      "usage": {
+        "input_tokens": 7037,
+        "output_tokens": 502,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 7539
+      },
+      "cost_usd": 0.047735,
+      "success": true,
+      "error": null,
+      "category": "Third Party Beneficiary",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T19:00:45.929579",
+      "latency_ms": 7067.145459004678,
+      "usage": {
+        "input_tokens": 1652,
+        "output_tokens": 281,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1933
+      },
+      "cost_usd": 0.015285,
+      "success": true,
+      "error": null,
+      "category": "Minimum Commitment",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T19:00:46.767324",
+      "latency_ms": 8212.05774997361,
+      "usage": {
+        "input_tokens": 12786,
+        "output_tokens": 279,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 13065
+      },
+      "cost_usd": 0.070905,
+      "success": true,
+      "error": null,
+      "category": "Minimum Commitment",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T19:00:47.531492",
+      "latency_ms": 9961.408707982628,
+      "usage": {
+        "input_tokens": 10000,
+        "output_tokens": 380,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 10380
+      },
+      "cost_usd": 0.059500000000000004,
+      "success": true,
+      "error": null,
+      "category": "Joint Ip Ownership",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T19:00:47.688517",
+      "latency_ms": 8224.5112080127,
+      "usage": {
+        "input_tokens": 1876,
+        "output_tokens": 340,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 2216
+      },
+      "cost_usd": 0.01788,
+      "success": true,
+      "error": null,
+      "category": "Third Party Beneficiary",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T19:00:49.929474",
+      "latency_ms": 9066.762249975,
+      "usage": {
+        "input_tokens": 3420,
+        "output_tokens": 353,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 3773
+      },
+      "cost_usd": 0.025925,
+      "success": true,
+      "error": null,
+      "category": "Unlimited/All-You-Can-Eat-License",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T19:00:50.197692",
+      "latency_ms": 15627.253459009808,
+      "usage": {
+        "input_tokens": 26367,
+        "output_tokens": 710,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 27077
+      },
+      "cost_usd": 0.149585,
+      "success": true,
+      "error": null,
+      "category": "Affiliate License-Licensee",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T19:00:51.365910",
+      "latency_ms": 17793.143791990587,
+      "usage": {
+        "input_tokens": 60770,
+        "output_tokens": 774,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 61544
+      },
+      "cost_usd": 0.3232,
+      "success": true,
+      "error": null,
+      "category": "Revenue/Profit Sharing",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T19:00:52.111022",
+      "latency_ms": 16253.536625008564,
+      "usage": {
+        "input_tokens": 17472,
+        "output_tokens": 589,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 18061
+      },
+      "cost_usd": 0.10208500000000001,
+      "success": true,
+      "error": null,
+      "category": "Minimum Commitment",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T19:00:54.226139",
+      "latency_ms": 11552.664874994662,
+      "usage": {
+        "input_tokens": 8863,
+        "output_tokens": 612,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 9475
+      },
+      "cost_usd": 0.059615,
+      "success": true,
+      "error": null,
+      "category": "Uncapped Liability",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T19:00:54.494259",
+      "latency_ms": 6804.980416985927,
+      "usage": {
+        "input_tokens": 1092,
+        "output_tokens": 261,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1353
+      },
+      "cost_usd": 0.011985,
+      "success": true,
+      "error": null,
+      "category": "Competitive Restriction Exception",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T19:00:54.803488",
+      "latency_ms": 9528.165958006866,
+      "usage": {
+        "input_tokens": 3412,
+        "output_tokens": 479,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 3891
+      },
+      "cost_usd": 0.029035,
+      "success": true,
+      "error": null,
+      "category": "Affiliate License-Licensor",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T19:00:55.448143",
+      "latency_ms": 8680.18349999329,
+      "usage": {
+        "input_tokens": 3480,
+        "output_tokens": 305,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 3785
+      },
+      "cost_usd": 0.025025,
+      "success": true,
+      "error": null,
+      "category": "Volume Restriction",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T19:00:56.126651",
+      "latency_ms": 10196.355583990226,
+      "usage": {
+        "input_tokens": 2993,
+        "output_tokens": 453,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 3446
+      },
+      "cost_usd": 0.02629,
+      "success": true,
+      "error": null,
+      "category": "Volume Restriction",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T19:00:58.989484",
+      "latency_ms": 8786.957707983674,
+      "usage": {
+        "input_tokens": 6562,
+        "output_tokens": 277,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 6839
+      },
+      "cost_usd": 0.039735,
+      "success": true,
+      "error": null,
+      "category": "Revenue/Profit Sharing",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T19:00:59.213112",
+      "latency_ms": 11677.519999997457,
+      "usage": {
+        "input_tokens": 26350,
+        "output_tokens": 429,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 26779
+      },
+      "cost_usd": 0.14247500000000002,
+      "success": true,
+      "error": null,
+      "category": "Price Restrictions",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T19:01:00.372541",
+      "latency_ms": 4919.735584000591,
+      "usage": {
+        "input_tokens": 1467,
+        "output_tokens": 169,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1636
+      },
+      "cost_usd": 0.01156,
+      "success": true,
+      "error": null,
+      "category": "Most Favored Nation",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T19:01:00.911781",
+      "latency_ms": 8796.982083993498,
+      "usage": {
+        "input_tokens": 4438,
+        "output_tokens": 362,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 4800
+      },
+      "cost_usd": 0.031239999999999997,
+      "success": true,
+      "error": null,
+      "category": "Volume Restriction",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T19:01:02.358521",
+      "latency_ms": 7554.388874996221,
+      "usage": {
+        "input_tokens": 6471,
+        "output_tokens": 264,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 6735
+      },
+      "cost_usd": 0.038955000000000004,
+      "success": true,
+      "error": null,
+      "category": "Unlimited/All-You-Can-Eat-License",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T19:01:02.564476",
+      "latency_ms": 11191.379625000991,
+      "usage": {
+        "input_tokens": 6312,
+        "output_tokens": 384,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 6696
+      },
+      "cost_usd": 0.04116,
+      "success": true,
+      "error": null,
+      "category": "Notice Period To Terminate Renewal",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T19:01:03.405287",
+      "latency_ms": 7276.594333990943,
+      "usage": {
+        "input_tokens": 972,
+        "output_tokens": 294,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1266
+      },
+      "cost_usd": 0.012209999999999999,
+      "success": true,
+      "error": null,
+      "category": "Liquidated Damages",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T19:01:04.452155",
+      "latency_ms": 9955.9785000165,
+      "usage": {
+        "input_tokens": 54293,
+        "output_tokens": 321,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 54614
+      },
+      "cost_usd": 0.27949,
+      "success": true,
+      "error": null,
+      "category": "Most Favored Nation",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T19:01:06.599701",
+      "latency_ms": 12369.728624995332,
+      "usage": {
+        "input_tokens": 10931,
+        "output_tokens": 539,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 11470
+      },
+      "cost_usd": 0.06813,
+      "success": true,
+      "error": null,
+      "category": "Affiliate License-Licensor",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T19:01:07.167814",
+      "latency_ms": 4806.752707983833,
+      "usage": {
+        "input_tokens": 4316,
+        "output_tokens": 170,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 4486
+      },
+      "cost_usd": 0.02583,
+      "success": true,
+      "error": null,
+      "category": "Non-Disparagement",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T19:01:07.594831",
+      "latency_ms": 8603.96891599521,
+      "usage": {
+        "input_tokens": 21587,
+        "output_tokens": 394,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 21981
+      },
+      "cost_usd": 0.117785,
+      "success": true,
+      "error": null,
+      "category": "Source Code Escrow",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T19:01:07.814023",
+      "latency_ms": 8595.319749991177,
+      "usage": {
+        "input_tokens": 4899,
+        "output_tokens": 370,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 5269
+      },
+      "cost_usd": 0.033745,
+      "success": true,
+      "error": null,
+      "category": "Joint Ip Ownership",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T19:01:08.220232",
+      "latency_ms": 18289.40354200313,
+      "usage": {
+        "input_tokens": 19864,
+        "output_tokens": 638,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 20502
+      },
+      "cost_usd": 0.11527000000000001,
+      "success": true,
+      "error": null,
+      "category": "Price Restrictions",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T19:01:09.694028",
+      "latency_ms": 7128.2637499971315,
+      "usage": {
+        "input_tokens": 4901,
+        "output_tokens": 289,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 5190
+      },
+      "cost_usd": 0.03173,
+      "success": true,
+      "error": null,
+      "category": "Volume Restriction",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T19:01:09.759217",
+      "latency_ms": 9385.22812500014,
+      "usage": {
+        "input_tokens": 3364,
+        "output_tokens": 528,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 3892
+      },
+      "cost_usd": 0.030019999999999998,
+      "success": true,
+      "error": null,
+      "category": "Unlimited/All-You-Can-Eat-License",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T19:01:12.418876",
+      "latency_ms": 11506.28337499802,
+      "usage": {
+        "input_tokens": 4348,
+        "output_tokens": 660,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 5008
+      },
+      "cost_usd": 0.038239999999999996,
+      "success": true,
+      "error": null,
+      "category": "Affiliate License-Licensee",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T19:01:13.708590",
+      "latency_ms": 7106.561916996725,
+      "usage": {
+        "input_tokens": 815,
+        "output_tokens": 287,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1102
+      },
+      "cost_usd": 0.01125,
+      "success": true,
+      "error": null,
+      "category": "Affiliate License-Licensor",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T19:01:14.461512",
+      "latency_ms": 11054.951832978986,
+      "usage": {
+        "input_tokens": 6806,
+        "output_tokens": 374,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 7180
+      },
+      "cost_usd": 0.04338,
+      "success": true,
+      "error": null,
+      "category": "Unlimited/All-You-Can-Eat-License",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T19:01:14.938245",
+      "latency_ms": 7769.2971659998875,
+      "usage": {
+        "input_tokens": 23553,
+        "output_tokens": 324,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 23877
+      },
+      "cost_usd": 0.125865,
+      "success": true,
+      "error": null,
+      "category": "Non-Disparagement",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T19:01:15.042753",
+      "latency_ms": 7228.029500023695,
+      "usage": {
+        "input_tokens": 5613,
+        "output_tokens": 292,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 5905
+      },
+      "cost_usd": 0.035365,
+      "success": true,
+      "error": null,
+      "category": "Notice Period To Terminate Renewal",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T19:01:15.794083",
+      "latency_ms": 7569.315332977567,
+      "usage": {
+        "input_tokens": 10121,
+        "output_tokens": 229,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 10350
+      },
+      "cost_usd": 0.056330000000000005,
+      "success": true,
+      "error": null,
+      "category": "Non-Disparagement",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T19:01:16.511147",
+      "latency_ms": 12057.744458987145,
+      "usage": {
+        "input_tokens": 24432,
+        "output_tokens": 463,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 24895
+      },
+      "cost_usd": 0.133735,
+      "success": true,
+      "error": null,
+      "category": "Competitive Restriction Exception",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T19:01:16.633167",
+      "latency_ms": 6872.976291022496,
+      "usage": {
+        "input_tokens": 1664,
+        "output_tokens": 287,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 1951
+      },
+      "cost_usd": 0.015494999999999998,
+      "success": true,
+      "error": null,
+      "category": "Competitive Restriction Exception",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T19:01:17.988930",
+      "latency_ms": 10392.12299999781,
+      "usage": {
+        "input_tokens": 3782,
+        "output_tokens": 741,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 4523
+      },
+      "cost_usd": 0.037434999999999996,
+      "success": true,
+      "error": null,
+      "category": "Volume Restriction",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T19:01:19.326241",
+      "latency_ms": 9631.330625008559,
+      "usage": {
+        "input_tokens": 6780,
+        "output_tokens": 420,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 7200
+      },
+      "cost_usd": 0.0444,
+      "success": true,
+      "error": null,
+      "category": "Notice Period To Terminate Renewal",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    },
+    {
+      "model_key": "claude-opus-4.6",
+      "model_id": "claude-opus-4-6",
+      "timestamp": "2026-04-16T19:01:21.240368",
+      "latency_ms": 8744.27274998743,
+      "usage": {
+        "input_tokens": 5513,
+        "output_tokens": 322,
+        "cache_read_tokens": 0,
+        "cache_creation_tokens": 0,
+        "total_tokens": 5835
+      },
+      "cost_usd": 0.035615,
+      "success": true,
+      "error": null,
+      "category": "Affiliate License-Licensee",
+      "agent_name": "combined_prompts",
+      "experiment_id": "test_combined_prompts_claude-opus-4.6_20260416_185848"
+    }
+  ]
+}
