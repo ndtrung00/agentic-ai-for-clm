@@ -22,7 +22,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { ExportButton } from "@/components/ui/export-button";
+import { ExportDropdown } from "@/components/ui/export-dropdown";
 import { Pagination, paginate } from "@/components/ui/pagination";
 
 interface ExperimentsTableProps {
@@ -95,6 +95,26 @@ function saveHiddenRuns(hidden: Set<string>) {
   } catch {
     // ignore
   }
+}
+
+function toExportRow(e: ExperimentListItem): Record<string, unknown> {
+  return {
+    model: e.model_key,
+    provider: e.provider,
+    config: e.baseline_type,
+    run_mode: e.run_mode,
+    date: e.timestamp ?? "",
+    f1: e.f1,
+    f2: e.f2,
+    precision: e.precision,
+    recall: e.recall,
+    jaccard: e.avg_jaccard,
+    laziness: e.laziness_rate,
+    cost_usd: e.total_cost_usd ?? "",
+    duration_s: e.duration_seconds ?? "",
+    samples: e.sample_count,
+    run_id: e.run_id,
+  };
 }
 
 export function ExperimentsTable({ experiments }: ExperimentsTableProps) {
@@ -235,11 +255,31 @@ export function ExperimentsTable({ experiments }: ExperimentsTableProps) {
       const next = new Set(prev);
       if (next.has(runId)) {
         next.delete(runId);
-      } else if (next.size < 4) {
+      } else {
         next.add(runId);
       }
       return next;
     });
+  };
+
+  const allFilteredSelected = filtered.length > 0 && filtered.every((e) => selectedRuns.has(e.run_id));
+
+  const toggleSelectAll = () => {
+    if (allFilteredSelected) {
+      // Deselect all filtered
+      setSelectedRuns((prev) => {
+        const next = new Set(prev);
+        for (const e of filtered) next.delete(e.run_id);
+        return next;
+      });
+    } else {
+      // Select all filtered
+      setSelectedRuns((prev) => {
+        const next = new Set(prev);
+        for (const e of filtered) next.add(e.run_id);
+        return next;
+      });
+    }
   };
 
   const toggleHideRun = (runId: string) => {
@@ -359,25 +399,10 @@ export function ExperimentsTable({ experiments }: ExperimentsTableProps) {
             Clear filters
           </button>
         )}
-        <ExportButton
-          data={filtered.map((e) => ({
-            run_id: e.run_id,
-            model_key: e.model_key,
-            provider: e.provider,
-            config: e.baseline_type,
-            f1: e.f1,
-            f2: e.f2,
-            precision: e.precision,
-            recall: e.recall,
-            avg_jaccard: e.avg_jaccard,
-            laziness_rate: e.laziness_rate,
-            cost_usd: e.total_cost_usd ?? "",
-            duration_seconds: e.duration_seconds ?? "",
-            samples: e.sample_count,
-            timestamp: e.timestamp ?? "",
-          }))}
+        <ExportDropdown
+          data={filtered.map(toExportRow)}
           filename="experiments"
-          label="Export CSV"
+          label="Export All"
         />
       </div>
 
@@ -405,7 +430,7 @@ export function ExperimentsTable({ experiments }: ExperimentsTableProps) {
       {selectedRuns.size > 0 && (
         <div className="flex items-center gap-3 p-3 bg-muted rounded-md">
           <span className="text-sm font-medium">
-            {selectedRuns.size} selected (max 4)
+            {selectedRuns.size} selected
           </span>
           <button
             onClick={goToCompare}
@@ -414,6 +439,13 @@ export function ExperimentsTable({ experiments }: ExperimentsTableProps) {
           >
             Compare Selected
           </button>
+          <ExportDropdown
+            data={filtered
+              .filter((e) => selectedRuns.has(e.run_id))
+              .map(toExportRow)}
+            filename="experiments_selected"
+            label="Export Selected"
+          />
           <button
             onClick={() => setSelectedRuns(new Set())}
             className="text-sm text-muted-foreground hover:text-foreground underline underline-offset-2"
@@ -427,7 +459,12 @@ export function ExperimentsTable({ experiments }: ExperimentsTableProps) {
         <Table>
           <TableHeader>
             <TableRow>
-              <TableHead className="w-10"></TableHead>
+              <TableHead className="w-10">
+                <Checkbox
+                  checked={allFilteredSelected}
+                  onCheckedChange={toggleSelectAll}
+                />
+              </TableHead>
               <SortHeader k="model_key">Model</SortHeader>
               <SortHeader k="baseline_type">Config</SortHeader>
               <SortHeader k="timestamp">Date</SortHeader>
@@ -458,7 +495,7 @@ export function ExperimentsTable({ experiments }: ExperimentsTableProps) {
                     <Checkbox
                       checked={selectedRuns.has(exp.run_id)}
                       onCheckedChange={() => toggleRunSelection(exp.run_id)}
-                      disabled={!selectedRuns.has(exp.run_id) && selectedRuns.size >= 4}
+                      disabled={false}
                     />
                   </TableCell>
                   <TableCell>
