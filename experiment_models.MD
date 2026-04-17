@@ -10,13 +10,13 @@
 | Claude Haiku 4.5       | Anthropic | ☑   | ☑   | ☑   | ☑   | ☐   | ☐   | ☑   |
 | GPT 4.1                | OpenAI    | ☑   | ☐   | ☑   | ☑   | ☐   | ☐   | ☐   |
 | GPT 4.1 Mini           | OpenAI    | ☑   | ☑   | ☑   | ☑   | ☐   | ☐   | ☐   |
-| GPT 4.1 Nano           | OpenAI    | ☑   | ☑   | ☑   | ☑   | ☐   | ☐   | ☐   |
-| Gemini 2.5 Pro         | Google    | ☑   | ☑   | ☑   | ☑   | ☐   | ☐   | ☐   |
-| Gemini 2.5 Flash       | Google    | ☑   | ☑   | ☑   | ☑   | ☐   | ☐   | ☐   |
-| Gemini 3 Flash Preview | Google    | ☑   | ☑   | ☑   | ☑   | ☐   | ☐   | ☐   |
-| Gemini 3.1 Pro Preview | Google    | ☑   | ☑   | ☑   | ☑   | ☐   | ☐   | ☐   |
+| GPT 4.1 Nano           | OpenAI    | ☑   | ☑   | ☑   | ☑   | ☐   | ☐   | ☑   |
+| Gemini 2.5 Pro         | Google    | ☑   | ☑   | ☑   | ☑   | ☐   | ☐   | ☑   |
+| Gemini 2.5 Flash       | Google    | ☑   | ☑   | ☑   | ☑   | ☐   | ☐   | ☑   |
+| Gemini 3 Flash Preview | Google    | ☑   | ☑   | ☑   | ☑   | ☐   | ☐   | ☑   |
+| Gemini 3.1 Pro Preview | Google    | ☑   | ☑   | ☑   | ☑   | ☐   | ☐   | ☑   |
 
-**Completed: 51 / 77** (11 models × 7 configs)
+**Completed: 59 / 77** (11 models × 7 configs)
 
 ## Config Key
 
