@@ -5,7 +5,7 @@
     "model_key": "gemini-2.5-flash",
     "model_id": "gemini-2.5-flash",
     "provider": "google",
-    "run_mode": "official",
+    "run_mode": "test",
     "samples_per_tier": 200,
     "temperature": 0.0,
     "max_tokens": 4096,
