@@ -1,6 +1,6 @@
 {
   "experiment_id": "test_zero_shot_gemini-2.5-flash_20260414_000841",
-  "run_mode": "official",
+  "run_mode": "test",
   "start_time": "2026-04-14T00:08:41.337437",
   "summary": {
     "experiment_id": "test_zero_shot_gemini-2.5-flash_20260414_000841",
